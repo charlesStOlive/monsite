@@ -1,0 +1,5 @@
+1.0.1: 
+  'First version of marketing'
+  - create_clients_table.php
+  - create_expertises_table.php
+  - create_projects_table.php

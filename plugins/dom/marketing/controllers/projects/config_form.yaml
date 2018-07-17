@@ -1,0 +1,10 @@
+name: Projects
+form: $/dom/marketing/models/project/fields.yaml
+modelClass: Dom\Marketing\Models\Project
+defaultRedirect: dom/marketing/projects
+create:
+    redirect: 'dom/marketing/projects/update/:id'
+    redirectClose: dom/marketing/projects
+update:
+    redirect: dom/marketing/projects
+    redirectClose: dom/marketing/projects

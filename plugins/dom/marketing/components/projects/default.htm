@@ -1,0 +1,7 @@
+{% set projects = __SELF__.projects %}
+
+{% for project in projects %}
+    <div class="col-md-4 pb-5">
+        <a href="project/{{project.slug}}"><img class="border border-primary" src="{{project.thumbnail.thumb(400, 400)}}"/></a>
+    </div>
+{% endfor %}

@@ -1,0 +1,4 @@
+title: Poles
+modelClass: Dom\Marketing\Models\Pole
+toolbar:
+    buttons: reorder_toolbar

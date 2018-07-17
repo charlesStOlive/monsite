@@ -1,0 +1,10 @@
+name: Sectors
+form: $/dom/marketing/models/sector/fields.yaml
+modelClass: Dom\Marketing\Models\Sector
+defaultRedirect: dom/marketing/sectors
+create:
+    redirect: 'dom/marketing/sectors/update/:id'
+    redirectClose: dom/marketing/sectors
+update:
+    redirect: dom/marketing/sectors
+    redirectClose: dom/marketing/sectors

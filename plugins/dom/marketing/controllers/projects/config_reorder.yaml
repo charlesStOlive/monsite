@@ -1,0 +1,4 @@
+title: Projects
+modelClass: Dom\Marketing\Models\Project
+toolbar:
+    buttons: reorder_toolbar

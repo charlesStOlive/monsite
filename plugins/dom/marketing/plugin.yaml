@@ -1,0 +1,32 @@
+plugin:
+    name: 'dom.marketing::lang.plugin.name'
+    description: 'dom.marketing::lang.plugin.description'
+    author: DOM
+    icon: oc-icon-briefcase
+    homepage: ''
+navigation:
+    main-marketing-item:
+        label: Marketing
+        url: dom/marketing/clients
+        icon: icon-briefcase
+        sideMenu:
+            side-marketing-sectors:
+                label: 'Secteurs d''activité'
+                url: dom/marketing/sectors
+                icon: icon-sitemap
+            side-marketing-clients:
+                label: Clients
+                url: dom/marketing/clients
+                icon: icon-star
+            side-marketing-projects:
+                label: Projets
+                url: dom/marketing/projects
+                icon: icon-folder-open
+            side-marketing-jobs:
+                label: Métiers
+                url: dom/marketing/jobs
+                icon: icon-suitcase
+            side-marketing-poles:
+                label: Pôles
+                url: dom/marketing/poles
+                icon: icon-tasks

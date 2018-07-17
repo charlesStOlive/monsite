@@ -1,0 +1,71 @@
+description = "Menu et model du menu"
+==
+<?
+//les eveneemnt AJAX ne fonctionnent pas dans le partiel j'ai donc bougé le tout dans le layout. c'est crade mais ça marche.
+?>
+==
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" title="Site CV Charles Saint Olive" data-placement="bottom" data-toggle="tooltip" href="#">CV Charles Saint Olive</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNowUIKitFree">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-center justify-content-end" id="navbarNowUIKitFree">
+        <ul class="navbar-nav">
+          <li class="nav-item mx-1 align-items-center d-flex justify-content-center">
+            <a class="nav-link" href="#" data-request-success="" data-toggle="modal" data-target="#modal1">
+              <i class="now-ui-icons arrows-1_cloud-download-93 x2 mr-2"></i>&nbsp;CV</a>
+          </li>
+          
+          <li class="nav-item dropdown mx-1" >
+            <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown">
+              <i class="now-ui-icons files_paper x2 mr-2"></i>&nbsp;Accès direct</a>
+              <div class="dropdown-menu dropdown-menu-right ">
+                <a class="dropdown-item" href="#">Data Scientist</a>
+                <a class="dropdown-item" href="#">Manager digital</a>
+                <a class="dropdown-item" href="#">Chef de projet technique</a>
+              </div>
+        </li>
+        </ul>
+        
+        <a class="btn btn-light text-primary" href="#pro">
+          <i class="now-ui-icons arrows-1_share-66 mr-1"></i>Back Office</a>
+        <ul class="navbar-nav flex-row justify-content-center mt-2 mt-md-0">
+          <li class="nav-item ml-1">
+            <a class="nav-link" href="#" data-placement="bottom" data-toggle="tooltip" title="Compte Linkedin">
+              <i class="fa fa-fw fa-linkedin fa-2x"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="modal fade" id="modal1">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header pb-0">
+          <h4 class="modal-title text-dark mx-auto">
+            <b>Télecharger mon CV</b>
+          </h4>
+          <button type="button" class="close text-danger pt-4 ml-0" data-dismiss="modal">
+            <span>
+              <i class="now-ui-icons ui-1_simple-remove lg"></i>
+            </span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="m-0">Cliquez ci dessous pour telecharger mon CV.vous pouvez choisir deux types :</p>
+          <ul>
+            <li>CV (parsed )<br><span class="small">idéal si vous avez des robots ou des parser de CV</span></li>
+            <li>CV (normal )<br><span class="small">Cv mis en forme sous word.</span></li>
+          </ul>
+        </div>
+        <div class="modal-footer d-flex flex-row justify-content-right">
+          <button type="button" class="btn btn-primary" data-request="onSubmitCv" data-dismiss="modal">CV normal</button>
+          <button type="button" class="btn btn-primary" data-request="onSubmitCV2" data-dismiss="modal">CV parsed</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+        </div>
+      </div>
+    </div>
+  </div>

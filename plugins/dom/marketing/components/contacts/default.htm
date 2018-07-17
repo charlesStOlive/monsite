@@ -1,0 +1,12 @@
+<form data-request="{{__SELF__}}::onSend" data-request-validate data-request-flash>
+	<div class="form-group mb-1">
+	<label name="name">Votre Nom  <span class="text-danger" data-validate-for="name"></span></label>
+			<input class="form-control" type="text" name="name">
+		<label name="email">Votre email  <span class="text-danger"  data-validate-for="email"></span></label>
+			<input class="form-control" type="email" name="email">
+		<label name="body">Votre message</label>
+			<textarea class="form-control" name="body"></textarea>
+		<hr>
+		<button class="btn btn-primary" type="submit" data-attach-loading>Envoyer</button>
+	</div>
+</form>

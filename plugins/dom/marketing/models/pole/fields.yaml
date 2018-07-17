@@ -1,0 +1,7 @@
+tabs:
+    fields:
+        name:
+            label: Nom
+            span: auto
+            type: text
+            tab: 'Tab 1'

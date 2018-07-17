@@ -1,0 +1,10 @@
+name: Jobs
+form: $/dom/marketing/models/job/fields.yaml
+modelClass: Dom\Marketing\Models\Job
+defaultRedirect: dom/marketing/jobs
+create:
+    redirect: 'dom/marketing/jobs/update/:id'
+    redirectClose: dom/marketing/jobs
+update:
+    redirect: dom/marketing/jobs
+    redirectClose: dom/marketing/jobs

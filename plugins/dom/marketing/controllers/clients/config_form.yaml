@@ -1,0 +1,10 @@
+name: Clients
+form: $/dom/marketing/models/client/fields.yaml
+modelClass: Dom\Marketing\Models\Client
+defaultRedirect: dom/marketing/clients
+create:
+    redirect: 'dom/marketing/clients/update/:id'
+    redirectClose: dom/marketing/clients
+update:
+    redirect: dom/marketing/clients
+    redirectClose: dom/marketing/clients
