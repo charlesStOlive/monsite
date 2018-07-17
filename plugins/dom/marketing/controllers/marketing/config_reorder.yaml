@@ -1,5 +1,0 @@
-title: Marketing
-modelClass: Dom\Marketing\Models\Client
-nameFrom: name
-toolbar:
-    buttons: reorder_toolbar

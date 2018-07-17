@@ -1,4 +1,0 @@
-title: Clients
-modelClass: Dom\Marketing\Models\Client
-toolbar:
-    buttons: reorder_toolbar

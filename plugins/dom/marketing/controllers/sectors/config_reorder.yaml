@@ -1,4 +1,0 @@
-title: Sectors
-modelClass: Dom\Marketing\Models\Sector
-toolbar:
-    buttons: reorder_toolbar

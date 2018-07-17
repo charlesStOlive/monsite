@@ -1,4 +1,0 @@
-title: Jobs
-modelClass: Dom\Marketing\Models\Job
-toolbar:
-    buttons: reorder_toolbar
