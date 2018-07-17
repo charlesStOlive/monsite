@@ -17,14 +17,7 @@ class CreateExpertisesTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('charles_marketing_expertises_project', function($table)
-        {
-            $table->engine = 'InnoDB';
-            $table->integer('project_id')->unsigned();
-            $table->integer('expertise_id')->unsigned()
-            $table->primary(['project_id', 'expertise_id'], 'project_provision');
-            $table->timestamps();
-        });
+        
 
 
     }

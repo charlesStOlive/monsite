@@ -22,7 +22,7 @@ class CreateProjectsTable extends Migration
         {
             $table->engine = 'InnoDB';
             $table->integer('project_id')->unsigned();
-            $table->integer('expertise_id')->unsigned()
+            $table->integer('expertise_id')->unsigned();
             $table->primary(['expertise_id', 'project_id' ], 'expertise_project');
             $table->timestamps();
         });
@@ -31,7 +31,7 @@ class CreateProjectsTable extends Migration
         {
             $table->engine = 'InnoDB';
             $table->integer('project_id')->unsigned();
-            $table->integer('competence_id')->unsigned()
+            $table->integer('competence_id')->unsigned();
             $table->primary(['competence_id', 'project_id'], 'competence_project');
             $table->timestamps();
         });
@@ -42,5 +42,7 @@ class CreateProjectsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('charles_marketing_projects');
+        Schema::dropIfExists('charles_marketing_expertises_project');
+        Schema::dropIfExists('charles_marketing_competence_project');
     }
 }
