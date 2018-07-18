@@ -1,10 +1,12 @@
 description = "Menu et model du menu"
 ==
-<?
+<?php
 //les eveneemnt AJAX ne fonctionnent pas dans le partiel j'ai donc bougé le tout dans le layout. c'est crade mais ça marche.
 ?>
 ==
-<nav class="navbar navbar-expand-lg bg-primary navbar-dark fixed-top">
+<!-- <nav class="navbar-expand-md navbar-dark navbar-fixe bg-primary"> -->
+
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark  {% if this.page.title == 'Accueil' %}fixed-top animated- {% else %} navbar-fixe {% endif %}">
     <div class="container">
       <a class="navbar-brand" title="Site CV Charles Saint Olive" data-placement="bottom" data-toggle="tooltip" href="#">CV Charles Saint Olive</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNowUIKitFree">

@@ -6261,32 +6261,53 @@ a.text-gray:hover, a.text-gray:focus {
   font-size: 20px;
   line-height: 30px; }
 
-.navbar {
+.animated- {
   transition: all 0.5s;
   transition-delay: 0.25s;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15); }
-  .navbar.navbar-ontop {
+  .animated-.navbar-ontop {
     background-color: transparent !important;
     padding-top: 20px;
     box-shadow: none !important; }
-  .navbar .nav-item .nav-link {
+  .animated- .nav-item .nav-link {
     font-size: 10px;
     transition: background-color 0.4s;
     border-radius: 3px;
     padding-top: 11px;
     padding-bottom: 11px;
     line-height: 21px; }
-    .navbar .nav-item .nav-link:hover {
+    .animated- .nav-item .nav-link:hover {
       background-color: rgba(255, 255, 255, 0.2); }
-    .navbar .nav-item .nav-link.active {
+    .animated- .nav-item .nav-link.active {
       background-color: rgba(255, 255, 255, 0.2); }
-  .navbar.transparent {
+  .animated-.transparent {
     box-shadow: none !important; }
-  .navbar .btn {
+  .animated- .btn {
     padding-top: 11px;
     padding-bottom: 11px;
     line-height: 21px;
     border: none; }
+
+.navbar-fixe .nav-item .nav-link {
+  font-size: 10px;
+  transition: background-color 0.4s;
+  border-radius: 3px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  line-height: 21px; }
+  .navbar-fixe .nav-item .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2); }
+  .navbar-fixe .nav-item .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2); }
+
+.navbar-fixe.transparent {
+  box-shadow: none !important; }
+
+.navbar-fixe .btn {
+  padding-top: 11px;
+  padding-bottom: 11px;
+  line-height: 21px;
+  border: none; }
 
 .btn {
   font-size: 0.74375rem; }

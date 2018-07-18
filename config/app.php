@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'fr',
 
     /*
     |--------------------------------------------------------------------------
@@ -128,6 +128,8 @@ return [
         // 'Illuminate\Html\HtmlServiceProvider', // Example
 
         'System\ServiceProvider',
+        'Maatwebsite\Excel\ExcelServiceProvider',
+        'Illuminated\Wikipedia\ServiceProvider',
     ]),
 
     /*
@@ -144,6 +146,8 @@ return [
     'aliases' => array_merge(include(base_path('modules/system/aliases.php')), [
 
         // 'Str' => 'Illuminate\Support\Str', // Example
+        'Excel' => 'Maatwebsite\Excel\Facades\Excel'
+        // 
 
     ]),
 

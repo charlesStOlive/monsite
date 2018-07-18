@@ -4,6 +4,10 @@ use Cms\Classes\ComponentBase;
 use Validator;
 use ValidationException;
 use Flash;
+// use Illuminated\Wikipedia\Wikipedia;
+
+    
+
 
 class Basicform extends ComponentBase
 {
@@ -22,6 +26,21 @@ class Basicform extends ComponentBase
 
     public function onRun()
     {
+        // $wikiSections = (new Wikipedia)->page('php')->getSections();
+        // $wikiSectionTabs  = $wikiSections[0]; 
+        // trace_log($wikiSectionTabs->getImages()[0]->getUrl());
+        // trace_log($wikiSectionTabs->getTitle());
+        // trace_log(str_limit($wikiSectionTabs->getBody(),200));
+
+
+
+        // foreach($wikiSectionTabs as $key => $value ) {
+        //     trace_log($key);
+        //     trace_log($value);
+        //  }
+        //$intro = str_limit($wiki->getSections(), 200);
+        //trace_log($wiki[0][2]);
+
         $this->addJs('assets/js/control.js');
     }
 

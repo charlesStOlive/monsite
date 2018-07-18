@@ -27,11 +27,17 @@ class Project extends Model
      */
     public $hasOne = [];
     public $hasMany = [];
-    public $belongsTo = [];
+    public $belongsTo = [
+        'client' => ['Charles\Marketing\Models\Client'],
+    ];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];
-    public $attachOne = [];
-    public $attachMany = [];
+    public $attachOne = [
+        'main_picture' => ['System\Models\File'],
+        ];
+    public $attachMany = [
+        'pictures' => ['System\Models\File'],
+    ];
 }

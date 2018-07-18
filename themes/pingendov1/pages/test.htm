@@ -1,0 +1,56 @@
+title = "test"
+url = "/test"
+layout = "default"
+is_hidden = 0
+
+[basicform]
+==
+<?
+
+
+
+
+?>
+
+
+
+==
+<div class="py-1 text-center parallax cover gradient-overlay" style="background-image: url('{{ 'assets/images/header.jpg'|theme }}');position:relative;background-position:center center;background-size:cover;">
+    <div class="container d-flex flex-column">
+      <div class="row my-auto">
+        <div class="col-md-12 text-white">
+          <img class="mb-2 shadow rounded-circle " src="{{ 'assets/images/moi.jpg'|theme }}" width="100">
+          <h1 class="mb-2 display-1">Site CV de Charles Saint Olive</h1>
+          <p>{!! $coin !!}</p>
+            <a href="#">#data-scientist</a>
+            <a href="#">#manager-digital</a>
+            <a href="#">#CP-techique</a>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-overlapping">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4" id="contact">
+          <h2 class="text-white"><a href="#contact" class="test text-white">Contactez moi&nbsp;<i class="fa fa-arrow-circle-down"></i></a></h2>
+          <div class="pt-5">
+          	<h4 class="mb-2 pt-2"><b>Formulaire de contact</b></h4>
+          	<p>Le mail va transiter par l'api mailgun.</p>
+            {% component 'basicform' %}
+          </div>
+          <div>
+            <hr>
+            <h4 class="mb-2 pt-2"><b>Envoyer mon contact</b></h4>
+            <p> le mail va être crée dans votre boite email.</p>
+            <button class="btn btn-secondary" type="button">
+              <i class="fa fa-external-link-square"></i>&nbsp;Generer un email</button>
+          </div>
+        </div>
+        <div class="col-md-8 mx-auto px-0">
+          <img src="{{ 'assets/images/device_1.png'|theme }}" alt="" class="d-none d-md-block img-fluid">
+          <img src="{{ 'assets/images/device_2.png'|theme }}" alt="" class="img-fluid d-block d-md-none"> </div>
+      </div>
+    </div>
+  </div>

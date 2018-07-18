@@ -14,6 +14,17 @@ class CreateExpertisesTable extends Migration
             $table->string('name')->nullable();
             $table->string('slug')->nullable();
             $table->text('description')->nullable();
+            $table->text('header_description')->nullable();
+            $table->text('header_link')->nullable();
+            $table->timestamps();
+        });
+
+        Schema::create('charles_marketing_competence_expertise', function($table)
+        {
+            $table->engine = 'InnoDB';
+            $table->integer('competence_id')->unsigned();
+            $table->integer('expertise_id')->unsigned();
+            $table->primary(['competence_id', 'expertise_id' ], 'competence_expertise');
             $table->timestamps();
         });
 

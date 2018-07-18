@@ -26,12 +26,16 @@ class Client extends Model
      * @var array Relations
      */
     public $hasOne = [];
-    public $hasMany = [];
+    public $hasMany = [
+        'projects' => ['Charles\Marketing\Models\Project'],
+    ];
     public $belongsTo = [];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];
-    public $attachOne = [];
+    public $attachOne = [
+        'main_picture' => ['System\Models\File'],
+        ];
     public $attachMany = [];
 }

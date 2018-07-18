@@ -14,6 +14,10 @@ class CreateCompetencesTable extends Migration
             $table->string('name')->nullable();
             $table->string('slug')->nullable();
             $table->text('description')->nullable();
+            $table->text('wiki_description')->nullable();
+            $table->text('wiki_picture')->nullable();
+            $table->boolean('error_wiki')->nullable();
+            $table->boolean('disabled_wiki')->nullable();
             $table->timestamps();
         });
     }
