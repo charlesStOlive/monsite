@@ -1,0 +1,16 @@
+description = "Menu et model du menu"
+==
+<?php
+//les eveneemnt AJAX ne fonctionnent pas dans le partiel j'ai donc bougé le tout dans le layout. c'est crade mais ça marche.
+?>
+==
+<header class="header-global">
+  <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom"> 
+     <div class="container">
+        {% partial 'navbar-content' %}
+    </div>
+  </nav>
+</header>
+
+{% partial 'popup-cv' %}
+

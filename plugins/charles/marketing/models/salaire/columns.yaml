@@ -1,0 +1,14 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    salaire_start:
+        label: salaire_start
+
+    salaire_end:
+        label: salaire_end
+
+    description:
+        label: description
+

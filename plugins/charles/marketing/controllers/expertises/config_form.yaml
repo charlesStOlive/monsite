@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Expertise
+
+# Model Form Field configuration
+form: $/charles/marketing/models/expertise/fields.yaml
+
+# Model Class name
+modelClass: Charles\Marketing\Models\Expertise
+
+# Default redirect location
+defaultRedirect: charles/marketing/expertises
+
+# Create page
+create:
+    title: Create Expertise
+    redirect: charles/marketing/expertises/update/:id
+    redirectClose: charles/marketing/expertises
+
+# Update page
+update:
+    title: Edit Expertise
+    redirect: charles/marketing/expertises
+    redirectClose: charles/marketing/expertises
+
+# Preview page
+preview:
+    title: Preview Expertise

@@ -1,5 +1,25 @@
-1.0.1: 
-  - 'First version of marketing'
-  - create_clients_table.php
-  - create_expertises_table.php
-  - create_projects_table.php
+1.0.1:
+    - 'First version of marketing'
+    - create_clients_table.php
+    - create_expertises_table.php
+    - create_projects_table.php
+    - create_competences_table.php
+    - create_competencetypes_table.php
+1.0.2:
+    - 'Ajout des données de base via excel'
+    - seed_all_table.php
+1.0.3:
+    - 'Ajout de la table salaire'
+    - create_salaires_table.php
+1.0.4:
+    - 'Modification table expertise'
+    - create_expertise_table_update1.php
+1.0.5:
+    - 'Modification table compétences'
+    - create_competences_table_update1.php
+1.0.6:
+    - 'Modification table compétencetypes'
+    - create_competencetypes_table_update1.php
+1.0.7:
+    - 'Modification table expertise'
+    - create_expertises_table_update1.php

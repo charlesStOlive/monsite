@@ -22,7 +22,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            '\October\Demo\Components\Todo' => 'demoTodo'
+            '\october\demo\Components\Todo' => 'demoTodo'
         ];
     }
 }

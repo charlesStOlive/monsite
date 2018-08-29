@@ -3,6 +3,60 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
+    name:
+        label: Nom
+        span: auto
+        type: text
+
+    slug:
+        label: Slug
+        span: right
+        preset:
+            field: name
+            type: slug
+        type: text
+
+    external_link:
+        label: URL
+        span: auto
+
+    competencetype:
+            label: Type de compétence
+            type: relation
+            nameFrom: name
+            required: 1
+            span: auto
+
+    description:
+            label: Description
+            type: textarea
+            # toolbarButtons: bold,italic,underline|formatOL, formatUL|clearFormatting
+            # 
+    wiki_picture:
+        label: Icon
+        type: dropdown
+        span: left
+
+
+    disabled_wiki:
+        label: Bloquer le wiki
+        type: checkbox
+        span: auto
+        cssClass: col-sm-6
+        default: 0
+
+    error_wiki:
+        label: Erreur wiki
+        type: checkbox
+        span: auto
         disabled: true
+    
+
+    wiki_description:
+        label: Description depuis wikipedia
+        type: textarea
+        trigger:
+            field: disabled_wiki
+            condition: checked
+            action: hide
+

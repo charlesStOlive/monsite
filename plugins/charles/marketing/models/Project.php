@@ -30,7 +30,16 @@ class Project extends Model
     public $belongsTo = [
         'client' => ['Charles\Marketing\Models\Client'],
     ];
-    public $belongsToMany = [];
+    public $belongsToMany = [
+        'competences' => [
+            'Charles\Marketing\Models\Competence',
+            'table' => 'charles_marketing_competence_project',
+        ],
+        'expertises' => [
+            'Charles\Marketing\Models\Expertise',
+            'table' => 'charles_marketing_expertises_project',
+        ],
+    ];
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];

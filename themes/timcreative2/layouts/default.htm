@@ -1,0 +1,63 @@
+description = "Basic layout"
+==
+<?php
+function onSubmitCv()
+{
+    return Redirect::to("/themes/pingendov1/assets/doc/CV_charles_Saint-Olive.pdf");
+}
+function onSubmitCv2()
+{
+    return Redirect::to("/themes/pingendov1/assets/doc/CV_simple_charles_Saint-Olive.pdf");
+}
+?>
+==
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link href="{{ [
+      'assets/css/font-autumn.css',
+      'assets/img/brand/favicon.png',
+      'assets/vendor/nucleo/css/nucleo.css',
+      'assets/vendor/font-awesome/css/font-awesome.min.css',
+      'assets/css/argon.css',
+      ]|theme }}" rel="stylesheet"> 
+  <script src="{{ 'assets/js/navbar-ontop.js'|theme }}"></script>
+  <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
+  <title>Accueil site CSO</title>
+  <meta name="description" content="site CV Charles Saint olive : chef de projet technique, data-scientist">
+  <meta name="keywords" content="data scientist, manager, digital, data"> </head>
+  {% styles %}
+<body class="">
+
+  {% if this.page.title == 'Accueil' %}
+      {% partial 'navbar-home' %}
+  {% else %}
+     {% partial 'navbar-others' %}
+  {% endif %}
+  
+  
+
+
+  {% page %}
+  
+
+  {% partial 'footer' %}
+
+  <script src="{{ [
+  'assets/js/argon.js?v=1.0.1',
+  'assets/vendor/headroom/headroom.min.js',
+  'assets/vendor/jquery/jquery.min.js',
+  'assets/vendor/popper/popper.min.js',
+  'assets/vendor/bootstrap/bootstrap.min.js',
+  ] |theme }}"></script>
+  {% framework extras %}
+  {% scripts %}
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Salaire
+
+# Model Form Field configuration
+form: $/charles/marketing/models/salaire/fields.yaml
+
+# Model Class name
+modelClass: Charles\Marketing\Models\Salaire
+
+# Default redirect location
+defaultRedirect: charles/marketing/salaires
+
+# Create page
+create:
+    title: Create Salaire
+    redirect: charles/marketing/salaires/update/:id
+    redirectClose: charles/marketing/salaires
+
+# Update page
+update:
+    title: Edit Salaire
+    redirect: charles/marketing/salaires
+    redirectClose: charles/marketing/salaires
+
+# Preview page
+preview:
+    title: Preview Salaire

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Competence
+
+# Model Form Field configuration
+form: $/charles/marketing/models/competence/fields.yaml
+
+# Model Class name
+modelClass: Charles\Marketing\Models\Competence
+
+# Default redirect location
+defaultRedirect: charles/marketing/competences
+
+# Create page
+create:
+    title: Create Competence
+    redirect: charles/marketing/competences/update/:id
+    redirectClose: charles/marketing/competences
+
+# Update page
+update:
+    title: Edit Competence
+    redirect: charles/marketing/competences
+    redirectClose: charles/marketing/competences
+
+# Preview page
+preview:
+    title: Preview Competence

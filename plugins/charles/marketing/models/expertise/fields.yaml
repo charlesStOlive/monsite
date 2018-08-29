@@ -3,6 +3,48 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    name:
+        label: Nom de l'expertise
+        span: auto
+
+    slug:
+        label: Slug
+        span: auto
+
+    color:
+        label: choisissez une couleurs
+        type: dropdown
+        options:
+            primary: primary
+            success: success
+            warning: warning
+    
+    description:
+        label: description
+        type: markdown
+        mode: split
+        size: huge
+
+    description_2:
+        label: description
+        type: markdown
+        mode: split
+        size: huge
+
+    competences: # This is currently broken for creation
+        label: Compétences principales
+        type: taglist
+        mode: relation
+        customTags: false
+        nameFrom: name
+        span: auto
+
+    projects: # This is currently broken for creation
+        label: Projets
+        type: taglist
+        mode: relation
+        customTags: false
+        nameFrom: name
+        span: auto
+
+

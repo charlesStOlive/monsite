@@ -3,6 +3,19 @@
 # ===================================
 
 columns:
-    id:
-        label: ID
+    name:
+        label: Nom
         searchable: true
+        span: auto 
+
+    slug:
+        label: Slug
+        searchable: true
+        span: auto 
+
+    client:
+        name: Client
+        relation: client
+        select: name
+        searchable: true
+

@@ -3,6 +3,33 @@
 # ===================================
 
 columns:
-    id:
-        label: ID
+    sort_order:
+        label: ordre
+        invisible: true
+        
+    name:
+        label: Nom
         searchable: true
+        span: auto 
+
+    slug:
+        label: Slug
+        searchable: true
+        span: auto 
+
+    competencetype:
+        label: Type de compétence
+        searchable: true
+        select: name
+        relation: competencetype
+
+    description:
+        label: description
+
+    error_wiki:
+        label: Erreur WIKI
+        type: switch
+
+    disabled_wiki:
+        label: WIKI bloqué
+        type: switch

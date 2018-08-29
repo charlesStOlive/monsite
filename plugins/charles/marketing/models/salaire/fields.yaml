@@ -1,0 +1,43 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+
+    salaire_start:
+        label: Debut du salaire ( >= )
+        default: 1 
+
+    salaire_end:
+        label: Debut du salaire ( <= )
+        default: 1 
+
+    description:
+        label: Texte
+        type: markdown
+        span: auto
+
+    iframe:
+        label: Code iframe
+        type: richeditor
+        span: auto
+
+    iframe_code:
+        label: texte
+        span: storm
+        cssClass: col-sm-3
+
+    _show_iframe:
+        type: partial
+        dependsOn: iframe_code
+        span: storm
+        cssClass: col-sm-3
+
+    link_name:
+        label: Nom du bouton
+        span: auto
+
+    link_url:
+        label: lien du bouton
+        span: auto

@@ -44,6 +44,14 @@
 *::after {
   box-sizing: border-box; }
 
+  @font-face {
+    font-family: 'Nucleo Outline';
+    src: url("../fonts/nucleo-outline.eot");
+    src: url("../fonts/nucleo-outline.eot") format("embedded-opentype"), url("../fonts/nucleo-outline.woff2") format("woff2"), url("../fonts/nucleo-outline.woff") format("woff"), url("../fonts/nucleo-outline.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;

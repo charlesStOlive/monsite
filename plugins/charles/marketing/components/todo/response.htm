@@ -1,0 +1,13 @@
+    <div class="row  m-md-5">
+      <div class="col-md-4 p-0" style="min-height:200px;">
+        <div>
+          <iframe src="https://giphy.com/embed/{{ salaire.iframe_code }}" width="100%" height="100%" style="position:absolute" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>
+        </div>
+      </div>
+      <div class="align-self-center p-md-5 col-md-8">
+        <h5 class="mb-4" contenteditable="true" >Votre proposition : {{ amount }} € brut par ans</h5>
+        <p class="mb-4">{{ salaire.description | md }}</p>
+        {% if salaire.link_name %}<a class="btn btn-lg btn-outline-primary mb-2" href="{{ salaire.link_url }}" target="_blank">{{ salaire.link_name }}</a>{% endif %}
+      </div>
+        
+  	</div>

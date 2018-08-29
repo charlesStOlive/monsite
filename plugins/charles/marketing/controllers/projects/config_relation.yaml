@@ -1,0 +1,32 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+
+competences:
+    label: Projets
+    view:
+        list: $/charles/marketing/models/competence/columns.yaml
+        toolbarButtons: create|delete
+        recordUrl: charles/marketing/competence/update/:id
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+        list: $/charles/marketing/models/competence/columns.yaml
+        form: $/charles/marketing/models/competence/fields.yaml
+
+# provisions:
+#     label: dom.crm::lang.projects.provisions
+#     view:
+#         list: $/dom/crm/models/projectprovisionpivot/columns.yaml
+#         toolbarButtons: add|remove
+#     manage:
+#         showSearch: true
+#         recordsPerPage: 10
+#         list: $/dom/crm/models/provision/columns_simple.yaml
+#         scope: closed
+#     pivot:
+#         form: $/dom/crm/models/projectprovisionpivot/fields.yaml
+
+
+

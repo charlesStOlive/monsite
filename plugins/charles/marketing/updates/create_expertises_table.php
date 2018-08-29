@@ -36,5 +36,6 @@ class CreateExpertisesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('charles_marketing_expertises');
+        Schema::dropIfExists('charles_marketing_competence_expertise');
     }
 }

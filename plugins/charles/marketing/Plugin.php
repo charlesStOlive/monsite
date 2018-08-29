@@ -50,10 +50,10 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-        return []; // Remove this line to activate
 
         return [
-            'Charles\Marketing\Components\MyComponent' => 'myComponent',
+            'Charles\Marketing\Components\Competences' => 'myCompetences',
+            'Charles\Marketing\Components\Todo' => 'demoTodo'
         ];
     }
 
@@ -81,16 +81,43 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
 
         return [
             'marketing' => [
                 'label'       => 'marketing',
-                'url'         => Backend::url('charles/marketing/mycontroller'),
+                'url'         => Backend::url('charles/marketing/expertises'),
                 'icon'        => 'icon-leaf',
                 'permissions' => ['charles.marketing.*'],
                 'order'       => 500,
-            ],
+
+                'sideMenu' => [
+                        'side-menu-clients' => [
+                            'label'       => 'Clients',
+                            'icon'        => 'icon-building',
+                            'url'         => Backend::url('charles/marketing/clients'),
+                        ],
+                        'side-menu-projects' => [
+                            'label'       => 'Projets',
+                            'icon'        => 'icon-folder-open',
+                            'url'         => Backend::url('charles/marketing/projects'),
+                        ],
+                        'side-menu-expertises' => [
+                            'label'       => 'Expertises',
+                            'icon'        => 'icon-file-text-o',
+                            'url'         => Backend::url('charles/marketing/expertises'),
+                        ],
+                        'side-menu-competences' => [ 
+                            'label'       => 'Competences',
+                            'icon'        => 'icon-tasks',
+                            'url'         => Backend::url('charles/marketing/competences'),
+                        ],
+                        'side-menu-salaires' => [ 
+                            'label'       => 'Grille des salaires',
+                            'icon'        => 'icon-money',
+                            'url'         => Backend::url('charles/marketing/salaires'),
+                        ],
+                    ],
+                ],
         ];
     }
 }

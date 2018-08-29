@@ -31,7 +31,7 @@ class Expertise extends Model
     public $belongsToMany = [
         'competences' => [
             'Charles\Marketing\Models\Competence',
-            'table' => 'dom_crm_competence_expertise',
+            'table' => 'charles_marketing_competence_expertise',
         ],
         'projects' => [
             'Charles\Marketing\Models\Project',

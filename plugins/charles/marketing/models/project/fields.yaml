@@ -3,6 +3,47 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    name:
+        label: Nom
+        span: auto
+        type: text
+
+    slug:
+        label: Slug
+        span: right
+        preset:
+            field: name
+            type: slug
+        type: text
+
+    main_picture:
+        mode: image
+        imageWidth: '160'
+        imageHeight: '96'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+
+
+    description:
+            label: Description
+            type: markdown
+            mode: split
+            size: huge
+
+    competences:
+            label: Compétences
+            type: taglist
+            mode: relation
+            customTags: false
+            nameFrom: name
+
+    expertises:
+            label: Compétences
+            type: taglist
+            mode: relation
+            customTags: false
+            nameFrom: name
