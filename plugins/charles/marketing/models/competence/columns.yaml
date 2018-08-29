@@ -5,7 +5,6 @@
 columns:
     sort_order:
         label: ordre
-        invisible: true
         
     name:
         label: Nom

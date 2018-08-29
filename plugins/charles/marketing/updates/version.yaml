@@ -23,3 +23,6 @@
 1.0.7:
     - 'Modification table expertise'
     - create_expertises_table_update1.php
+1.0.8:
+    - 'Modification table expertise'
+    - create_projects_table_update1.php
