@@ -4,6 +4,8 @@ use Cms\Classes\ComponentBase;
 use Validator;
 use ValidationException;
 use Flash;
+
+use Mail;
 // use Illuminated\Wikipedia\Wikipedia;
 
     
@@ -58,6 +60,13 @@ class Basicform extends ComponentBase
         if ($validation->fails()) {
             throw new ValidationException($validation);
         }
+
+        trace_log("data");
+        trace_log($data['email']);
+
+        Mail::send('front::mail.contact', $data, function($message) use ($data) {
+            $message->to($data['email']);
+        });
 
         Flash::success('Message envoyé ! ');
     }
