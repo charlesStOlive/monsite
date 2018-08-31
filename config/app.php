@@ -130,6 +130,7 @@ return [
         'System\ServiceProvider',
         'Maatwebsite\Excel\ExcelServiceProvider',
         'Illuminated\Wikipedia\ServiceProvider',
+        'JD\Cloudder\CloudderServiceProvider'
     ]),
 
     /*
@@ -146,7 +147,8 @@ return [
     'aliases' => array_merge(include(base_path('modules/system/aliases.php')), [
 
         // 'Str' => 'Illuminate\Support\Str', // Example
-        'Excel' => 'Maatwebsite\Excel\Facades\Excel'
+        'Excel' => 'Maatwebsite\Excel\Facades\Excel',
+        'Cloudder' => 'JD\Cloudder\Facades\Cloudder'
         // 
 
     ]),
