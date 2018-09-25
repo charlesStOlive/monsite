@@ -1,0 +1,61 @@
+description = "Static Layout"
+
+[session]
+security = "all"
+
+[staticPage]
+useContent = 0
+default = 0
+
+[contactForm]
+loadJS = 1
+
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
+searchPage = "search-results.htm"
+
+[mailSignup]
+==
+<?php
+function onSubmitCv()
+{
+    return Redirect::to("/themes/pingendov1/assets/doc/CV_charles_Saint-Olive.pdf");
+}
+function onSubmitCv2()
+{
+    return Redirect::to("/themes/pingendov1/assets/doc/CV_simple_charles_Saint-Olive.pdf");
+}
+?>
+==
+<!DOCTYPE html>
+<html lang="{{ this.theme.site_locale }}">
+    <head>
+        {% partial "site/meta" %}
+        {% partial "site/css" %}
+    </head><!--/#head-->
+    <body class="page-{{ this.page.title }} layout-{{ this.page.layout }}">
+
+        <header id="header-wrap">
+            {% partial "site/top" %}
+            {% partial "site/my_nav" %}
+        </header><!--/#header-->
+    
+        <!-- Analytics -->
+        {{ this.theme.google_analytics|raw }}
+
+        {% page %}
+
+        <footer id="footer">
+        	{% partial "site/footer" %}
+        </footer><!--/#footer-->
+    
+        <!-- Scroll to top -->
+        {% partial "site/scrolltop" %}
+    
+        <!-- Scripts -->
+        {% partial "site/scripts" %}
+
+</body><!--/#body-->
+</html>

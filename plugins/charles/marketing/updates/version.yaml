@@ -24,5 +24,8 @@
     - 'Modification table expertise'
     - create_expertises_table_update1.php
 1.0.8:
-    - 'Modification table expertise'
+    - 'Modification table project'
     - create_projects_table_update1.php
+1.0.9:
+    - 'Updated table charles_marketing_expertises'
+    - builder_table_update_charles_marketing_expertises.php

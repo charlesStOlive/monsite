@@ -1,0 +1,68 @@
+name: 'Footer Main Menu'
+items:
+    -
+        title: Home
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: index
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'About Us'
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: pages-about-us
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Services
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: services
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Pricing
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: pages-pricing
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Team
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: pages-team
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Contact Us'
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: contact-us-contact-us
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

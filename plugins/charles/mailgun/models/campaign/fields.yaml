@@ -1,0 +1,47 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: Nom de la campagne
+        span: auto
+
+    subject:
+        label: Objet du mail
+        span: left
+
+    template:
+        label: Modèle
+        type: relation
+        nameFrom: name
+        span: right
+
+
+
+tabs:
+    fields:
+        yo:
+            label: Stats
+            tab: Reporting
+            type: totalboard
+            fields:
+                - totalWarning:
+                    label: En attente ou erreur
+                    icon: oc-icon-warning
+                    slabel: en qté
+                - totaldelivered:
+                    label: Envoyé
+                    icon: oc-icon-envelope
+                    slabel: en qté
+                - totalOpened:
+                    label: Ouvert
+                    icon: oc-icon-envelope-open
+                    slabel: en qté
+
+        contacts@update:
+            label: Liste des contacts
+            tab: Reporting
+            type: partial
+            path: field_contacts

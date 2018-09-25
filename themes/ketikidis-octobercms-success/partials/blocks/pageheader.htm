@@ -1,0 +1,23 @@
+description = "Page Header Section"
+
+[viewBag]
+==
+{% if data.section_pageheader %}
+<div class="page-header-section">
+   <div class="container">
+      <div class="row" data-aos="fade-up" data-aos-delay="300">
+         <div class="page-header-area">
+            <div class="page-header-content">
+               <h2>{{ title ?: this.page.title }}</h2>
+               {% if this.page.meta_title %}
+               <h4>{{ tagline ?: this.page.meta_title }}</h4>
+               {% endif %}
+               {% if this.page.meta_description %}
+               <p>{{ tagline ?: this.page.meta_description }}</p>
+               {% endif %}
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% endif %}

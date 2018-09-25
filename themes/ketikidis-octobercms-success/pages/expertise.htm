@@ -1,0 +1,78 @@
+title = "Expertises"
+url = "/expertises/:slug"
+layout = "pages"
+description = "Expertise"
+is_hidden = 0
+==
+<?php
+use Charles\Marketing\Models\Expertise;
+
+function onStart()
+{
+      $expertise = Expertise::where('slug', $this->param('slug'))->first();
+      if (! $expertise )  {
+          return Redirect::to('/404'); 
+      } else { 
+          $this['expertise'] = $expertise;
+      }
+  
+}
+?>
+==
+<section class="split section" style="background-color: {{ data.section_about_bg }};">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4 col-sm-12 col-xs-12" data-aos="fade-down" data-aos-delay="100">
+            <div>
+               <img src="{{ expertise.img_featured |media | resize(350, 200, {mode:'crop'}) }}" alt="">
+            </div>
+         </div>
+         <div class="col-md-8 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="200">
+            <div class="content-inner">
+               <h2 class="title">{{ expertise.name }}</h2>
+               {{ expertise.description | md }}
+               <div class="details-list">
+                  <div class="row">
+                     {% for fields in data.section_about_small %}
+                     <div class="col-md-4 col-sm-12 col-xs-12">
+                        <h3>{{ fields.section_about_small_title }}</h3>
+                        <p>{{ fields.section_about_small_desc }}</p>
+                     </div>
+                     {% endfor %}
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<section class="section" style="background-color: {{ data.section_about_bg }};">
+<div class="container">
+  <div class="row row-grid">
+    <div class="col-md-8 " data-aos="fade-right" data-aos-delay="400">
+      {{ expertise.description_2 | md }}
+    </div>
+    <div class="col-md-4" data-aos="fade-left" data-aos-delay="500">
+      <div >
+          <h3>Liste des compétences : </h3>
+          <!-- <p>The kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go.</p> -->
+          <ul class="list-unstyled  ">
+          {% for competence in expertise.competences %}
+              <li class="py-2">
+              <div class="d-flex align-items-center">
+                <div class="badge badge-lg badge-{{ expertise.color }} mr-3">
+                       <i class="fa {{ competence.wiki_picture }}"></i>
+                </div>
+                <div>
+                    <h6 class="mb-0"><small>{{ competence.name }}<small>&nbsp;<a href="../competences#{{ competence.slug }}">Voir la compétence</a></small></small></h6>
+                </div>
+                
+              </div>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+    </div>
+  </div>
+</div>
+</section>

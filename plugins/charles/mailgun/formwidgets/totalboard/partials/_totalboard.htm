@@ -1,0 +1,28 @@
+<!-- Result container -->
+<div id="myDiv"  class="scoreboard">
+    <div data-control="toolbar">
+    	<?php foreach($fields as $field) {
+
+    	//$champsTotal = key($field);
+
+
+    													 ?>
+			<div class="scoreboard-item title-value">
+				<h4><?= e($field['label']) ?></h4>
+				<p class="<?=$field['icon']?>"><?= e($field['value']) ?></p>
+				<p class="description"><?=$field['slabel']?></p>
+			 </div>
+
+
+
+    	<?php } ?>
+        <a href="javascript:;"
+        class="btn btn-primary"
+        data-attach-loading
+        data-request="<?= $this->getEventHandler('onUpdate') ?>">
+        Actualiser
+    </a>
+    </div>
+</div>
+
+

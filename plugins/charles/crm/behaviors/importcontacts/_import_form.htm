@@ -1,0 +1,45 @@
+<?= Form::open() ?>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="popup">×</button>
+        <h4 class="modal-title">Importer des contacts</h4>
+    </div>
+
+    <div class="modal-body">
+        <div class="callout fade in callout-info no-subheader">
+            <div class="header">
+                <i class="icon-info"></i>
+                <h3>Il doit y avoir les champs suivant dans votre feuille excel : </h3>
+                <ul>
+                    <li>nom</li>
+                    <li>prenom </li>
+                    <li>email ( ne doit pas être vide )</li>
+                </ul> 
+            </div>
+        </div>
+        <?= $importContactsWidget->render() ?>
+        <div id='errors'></div>
+        
+    </div>
+
+    <div class="modal-footer">
+        <button
+
+            type="submit"
+            data-request="onFileContactsValidation"
+            data-request-data="redirect:0"
+            data-hotkey="ctrl+s, cmd+s"
+            data-popup-load-indicator
+            class="btn btn-primary">
+            Valider le fichier
+        </button>
+
+        <button
+            type="button"
+            class="btn btn-default"
+            data-dismiss="popup">
+            Annuler
+        </button>
+    </div>
+
+<?= Form::close() ?>

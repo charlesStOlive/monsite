@@ -1,0 +1,7 @@
+fields:
+
+    footer:
+        label: footer email
+        type: codeeditor
+        size: huge
+        language: html

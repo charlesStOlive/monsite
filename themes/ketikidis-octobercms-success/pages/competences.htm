@@ -1,0 +1,19 @@
+title = "Competences"
+url = "/competences"
+layout = "pages"
+is_hidden = 0
+
+[myCompetences]
+==
+ <section class="section service2-intro" style="background-color: {{ data.section_services2_bg }};">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+		 	<h1 class="section-title">Mes compétences</h1>
+		 	<p class="section-subcontent">Cette page est un autre exemple d'utilisation d'API. dans le back office, j'ai branché la liste des compétences sur l'API de wikipédia afin d'absorber ( ou grabber ) des informations. l'API cherche à partir du nom de la compétence s'il trouve une page françaises puis une page anglaises en cas c'échec. Si l'API ne trouve rien je reçoit l'information et il n' y a plus qu'à saisir un commentaire à la main.</p>
+ 		</div>
+ 	</div>
+ </div>
+</section>
+        
+{% component 'myCompetences' %}

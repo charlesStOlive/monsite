@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Template
+
+# Model Form Field configuration
+form: $/charles/mailgun/models/template/fields.yaml
+
+# Model Class name
+modelClass: Charles\Mailgun\Models\Template
+
+# Default redirect location
+defaultRedirect: charles/mailgun/templates
+
+# Create page
+create:
+    title: Create Template
+    redirect: charles/mailgun/templates/update/:id
+    redirectClose: charles/mailgun/templates
+
+# Update page
+update:
+    title: Edit Template
+    redirect: charles/mailgun/templates
+    redirectClose: charles/mailgun/templates
+
+# Preview page
+preview:
+    title: Preview Template

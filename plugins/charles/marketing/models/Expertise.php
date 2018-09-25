@@ -7,6 +7,7 @@ use Model;
  */
 class Expertise extends Model
 {
+    use \Charles\Mybehaviors\Classes\Traits\Icones;
     /**
      * @var string The database table used by the model.
      */
@@ -42,8 +43,5 @@ class Expertise extends Model
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];
-    public $attachOne = [
-        'main_picture' => ['System\Models\File'],
-        ];
     public $attachMany = [];
 }

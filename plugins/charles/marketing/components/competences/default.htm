@@ -1,46 +1,26 @@
 {% set competencetypes = __SELF__.competencetypes %}
 
+
 {% for competencetype in competencetypes %}
-<div class="container" >
-    <h2 class="text-secondary pt-5">{{ competencetype.name }}</h2>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="p-2 d-inline-flex flex-wrap justify-content-center">
-
-
-
+ <section class="section service2-intro" style="background-color: {{ data.section_services2_bg }};">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <h1 class="section-title">{{ competencetype.name }}</h1>
+         </div>
         {% for competence in competencetype.competences %}
-          <div class="col-sm-4 py-3" id="{{ competence.slug }}">
-            <div class="row">
-
-              <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                <i class="fa  {{ competence.wiki_picture }} text-primary"></i>
-              </div>
-              <!-- <div class="text-center col-4">
-                <i class="d-block mx-auto fa fa-4x  {{ competence.wiki_picture }} "></i>
-              </div> -->
-              <div class="col-8 text-secondary">
-                <h5 class="mb-3 text-secondary ">
-                  <b>{{ competence.name }}</b>
-                </h5>
-                <p class="my-1 small">
-                  {% if competence.description  %} 
-                    {{ str_limit(competence.description, 200)}}<a class="text-white" href="{{competence.external_link}}" target="_blank"> <b>site&nbsp;></b></a>
+         <div class="col-md-4 service2-single-service" id="{{ competence.slug }}" data-aos="zoom-in-down"  >
+            <i class="fa {{ competence.wiki_picture }} "></i>
+            <h3>{{ competence.name }}</h3>
+            <p>{% if competence.description  %}
+                    {{ str_limit(competence.description, 200)}}<a href="{{competence.external_link}}" target="_blank"> <b>site&nbsp;></b></a>
                   {% else %}
-                    {{ str_limit(competence.wiki_description, 200) }}<a class="text-white" href="{{competence.external_link}}" target="_blank"> <b>wikipédia&nbsp;></b></a>
+                    {{ str_limit(competence.wiki_description, 200) }}<a href="{{competence.external_link}}" target="_blank"> <b>wikipédia&nbsp;></b></a>
                   {% endif %}
-                </p>
-              </div>
-            </div>
-          </div>
-         {% endfor %}
-          
-          
-          
-          
-        </div>
+            </p>
+         </div>
+        {% endfor %}
       </div>
-    </div>
-    <hr>
- </div>
+   </div>
+</section>
  {% endfor %}

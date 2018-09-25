@@ -10,6 +10,7 @@ class CreateExpertisesTableUpdate1 extends Migration
         Schema::table('charles_marketing_expertises', function($table)
         {
             $table->string('color')->nullable();
+            $table->string('icone')->nullable();
         });
     }
 
@@ -18,6 +19,7 @@ class CreateExpertisesTableUpdate1 extends Migration
         Schema::table('charles_marketing_expertises', function($table)
         {
             $table->dropColumn('color');
+            $table->dropColumn('icone');
         });
     }
 }

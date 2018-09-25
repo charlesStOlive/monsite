@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Compagny
+
+# Model Form Field configuration
+form: $/charles/crm/models/compagny/fields.yaml
+
+# Model Class name
+modelClass: Charles\Crm\Models\Compagny
+
+# Default redirect location
+defaultRedirect: charles/crm/compagnys
+
+# Create page
+create:
+    title: Create Compagny
+    redirect: charles/crm/compagnys/update/:id
+    redirectClose: charles/crm/compagnys
+
+# Update page
+update:
+    title: Edit Compagny
+    redirect: charles/crm/compagnys
+    redirectClose: charles/crm/compagnys
+
+# Preview page
+preview:
+    title: Preview Compagny

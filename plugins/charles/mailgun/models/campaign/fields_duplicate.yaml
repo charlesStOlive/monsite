@@ -1,0 +1,23 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: intitulé de la nouvelle campagne
+
+    date_info_update:
+        label:  Date de mise à jours des données de ventes contacts
+        type: datepicker
+        format: d-m-Y
+        mode: date
+        span: auto
+
+
+
+
+
+
+
+

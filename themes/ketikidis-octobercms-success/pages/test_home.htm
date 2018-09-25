@@ -1,0 +1,92 @@
+title = "home"
+url = "/"
+layout = "accueil"
+meta_title = "test"
+meta_description = "test"
+is_hidden = 0
+
+[Charles\Marketing\Components\Todo demoTodo]
+max = 10
+
+[basicform]
+==
+<?php
+use Charles\Marketing\Models\Expertise;
+
+function onStart()
+{
+      $expertises = Expertise::all();
+      if (! $expertises )  {
+          return Redirect::to('/404'); 
+      } else { 
+          $this['expertises'] = $expertises;
+      }
+      trace_log($expertises->toArray());
+  
+}
+?>
+==
+<div class="owlcarousel-area">
+<div id="owlcarousel-area" class="owl-carousel owl-theme">
+{% for expertise in expertises %}
+<div class="item">
+    <div class="overlay"></div>
+    <div class="owl-image owl-lazy" data-src="{{ expertise.img_featured |media | resize(1980, false) }}"></div>
+    <div class="owlcarousel-caption">
+
+                <h1 class="owlcarousel-title">{{ expertise.name }}</h1>
+                <p class="owlcarousel-desc">&nbsp;</p>
+                
+                <a class="btn btn-lg btn-border" href="expertise/{{ expertise.slug }}">  
+                <i class="fa {{ expertise.icone }}"></i>
+                Voir l'expertise</a>
+            </div>
+        </div>
+{% endfor %}
+        
+    </div>
+</div>
+
+<section id="service-block-main" class="section" style="background-color: {{ data.section_services1_bg }};">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <h1 class="section-title" data-aos="fade-up" data-aos-delay="300">Mes expertises</h1>
+            <p class="section-subcontent" data-aos="fade-up" data-aos-delay="400">J'ai trois domaines majeurs. </p>
+         </div>
+         {% for expertise in expertises %}
+         <div class="col-sm-6  col-md-4">
+            <div class="service-item" data-aos="fade-down" data-aos-delay="500">
+               <div class="icon-wrapper">
+                  <i class="fa {{ expertise.icone }} pulse-shrink" aria-hidden="true"></i>
+               </div>
+               <h2>{{ expertise.name }}</h2>
+               <p>{{ str_limit(expertise.description, 100) }}<a href="#" data-aos="fade-up" data-aos-delay="300">...plus</a></p>
+            </div>
+         </div>
+         {% endfor %}
+      </div>
+   </div>
+</section>
+
+<section class="split section" style="background-color: {{ data.section_about_bg }};">
+      <div class="container " data-aos="fade-up" data-aos-delay="300">
+          <h1 class="section-title">Mini jeu</h1>
+          <p class="section-subcontent">Tentez de faire la proposition financière idéale. </p>
+        {% component 'demoTodo' %}
+      </div>
+</section>
+
+<section class="contact2-section section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" data-aos="fade-up" data-aos-delay="300">
+            <h1 class="section-title">Contactez moi ! </h1>
+            <p class="section-subcontent">Le plus simple est sans doute de prendre rendez vous...</p>
+        </div>
+      <div class="col-md-12" data-aos="fade-right" data-aos-delay="400">
+        {% component 'basicform' %}
+      </div>
+    </div>
+  </div>
+</section>

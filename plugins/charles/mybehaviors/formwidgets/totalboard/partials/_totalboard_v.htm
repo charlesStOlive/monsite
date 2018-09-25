@@ -1,0 +1,24 @@
+<!-- Result container -->
+<div id="myDiv"  class="d-flex">
+    <div data-control="toolbar">
+        <?php foreach($fields as $field) { ?>
+            <div class="scoreboard-item title-value">
+                <h4><?= e($field['label']) ?> | <span class="small"><?=$field['slabel']?></span></h4>
+                <p class="<?=$field['icon']?>"><?= e($field['value']) ?></p>
+                
+             </div>
+
+
+
+        <?php } ?>
+        <div>
+                <a href="javascript:;"
+                class="btn btn-small btn-secondary oc-icon-refresh"
+                data-attach-loading
+                data-request="<?= $this->getEventHandler('onUpdate') ?>">
+            </a>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Contact
+
+# Model Form Field configuration
+form: $/charles/crm/models/contact/fields.yaml
+
+# Model Class name
+modelClass: Charles\Crm\Models\Contact
+
+# Default redirect location
+defaultRedirect: charles/crm/contacts
+
+# Create page
+create:
+    title: Create Contact
+    redirect: charles/crm/contacts/update/:id
+    redirectClose: charles/crm/contacts
+
+# Update page
+update:
+    title: Edit Contact
+    redirect: charles/crm/contacts
+    redirectClose: charles/crm/contacts
+
+# Preview page
+preview:
+    title: Preview Contact

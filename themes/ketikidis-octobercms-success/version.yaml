@@ -1,0 +1,18 @@
+1.0.0: Initial release
+1.0.1: Fix error count() Parameter must be an array or an object that implements Countable
+1.0.2: Translate Plugin support, Language selector option, Improved meta tags, Minor fixes
+1.0.3: Fixed wrong path on blocks.yaml, Minor fixes with fields
+1.0.4: Typo fix on theme folder name
+1.0.5: Fix layout folder name
+1.0.6: Fix on partial about.htm
+1.1.0: This is a major update that changes a lot of files. If you use theme on a production site is possible to lose some fields data.
+1.1.1: Fixed wrong path on blocks.yaml
+1.1.2: Fixed bug with subscribe widget
+1.1.3: Fixed partial banner image issue
+1.1.4: Updated prefixes to scss for maximum browser support
+2.0.1: Updated Owl carousel to version 2. Also updated all css and js that have dependences.
+2.0.2: Added section block owlcarousel. Images and video supported.
+2.0.3: Added section custom block. To create your own custom blocks everywhere in the page.
+2.0.4: Added second home version with Owl carousel. Images and Video supported.
+2.0.5: Deleted old js version files.
+2.0.6: Changed google map region field type on contactus and contactus2 blocks.

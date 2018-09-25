@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Campagne
+
+# Model Form Field configuration
+form: $/charles/mailgun/models/campaign/fields.yaml
+
+# Model Class name
+modelClass: Charles\Mailgun\Models\Campaign
+
+# Default redirect location
+defaultRedirect: charles/mailgun/campaigns
+
+# Create page
+create:
+    title: Créer une Campagne
+    redirect: charles/mailgun/campaigns/update/:id
+    redirectClose: charles/mailgun/campaigns
+
+# Update page
+update:
+    title: Éditer la campagne
+    redirect: charles/mailgun/campaigns
+    redirectClose: charles/mailgun/campaigns
+
+# Preview page
+preview:
+    title: Prévisualiser la campagne

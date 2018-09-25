@@ -1,0 +1,44 @@
+{% set competencetypes = __SELF__.competencetypes %}
+
+{% for competencetype in competencetypes %}
+<div class="container" >
+    <h2 class="text-secondary pt-5">{{ competencetype.name }}</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="p-2 d-inline-flex flex-wrap justify-content-center">
+
+
+
+        {% for competence in competencetype.competences %}
+          <div class="col-sm-4 py-3" id="{{ competence.slug }}">
+            <div class="row">
+
+              <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                <i class="fa  {{ competence.wiki_picture }} text-primary"></i>
+              </div>
+              <div class="col-8 text-secondary">
+                <h5 class="mb-3 text-secondary ">
+                  <b>{{ competence.name }}</b>
+                </h5>
+                <p class="my-1 small">
+                  {% if competence.description  %} 
+                    {{ str_limit(competence.description, 200)}}<a class="text-white" href="{{competence.external_link}}" target="_blank"> <b>site&nbsp;></b></a>
+                  {% else %}
+                    {{ str_limit(competence.wiki_description, 200) }}<a class="text-white" href="{{competence.external_link}}" target="_blank"> <b>wikipédia&nbsp;></b></a>
+                  {% endif %}
+                </p>
+              </div>
+            </div>
+          </div>
+         {% endfor %}
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+    <hr>
+ </div>
+ {% endfor %}
+

@@ -3,17 +3,16 @@
     data-request-update="'{{ __SELF__ }}::response': '#result'"
     data-request-success="$('#input-item').val('')"
     data-request-flash>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="mb-2 pt-2"><b>Faire une proposition financière </b></h4>
+    <div>
+        <div>
             <p>la proposition doit être en € brut par Ans, le nombre entre 0 et 200 000 ...( on peut toujours rever non ? )<br>Et puisque c'est vous, vous avez le droit à plusieurs essais.<br>
-            <a href="#" data-request-success="" data-toggle="modal" data-target="#modalSalaire">Plus d'explication</a></p>
+            <a href="#" data-toggle="modal" data-target="#modalSalaire">Plus d'explication</a></p>
         </div>
-        <div class="pb-2 panel-body">
+        <div class="">
             <div class="input-group">
-                <input type="number" id="input-item" class="form-control" value="" name="amount" placeholder="Entrez un nombre ( élevé si possible ) "> 
+                <input type="number" id="input-item" class="form-control" name="amount" placeholder="Entrez un nombre ( élevé si possible ) "> 
                 <span class="input-group-btn">
-                    <button type="submit" class="btn btn btn-primary" data-attach-loading>Faire une proposition</button>
+                    <button type="submit" class="btn btn-common" data-attach-loading>Faire une proposition</button>
                 </span>
             </div>
         </div>
@@ -21,33 +20,3 @@
         </div>
     </div>
 </form>
-
-<div class="modal fade" id="modalSalaire">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header pb-0">
-          <h4 class="modal-title text-dark mx-auto">
-            <b>pourquoi cette partie sur les salaires</b>
-          </h4>
-          <button type="button" class="close text-danger pt-4 ml-0" data-dismiss="modal">
-            <span>
-              <i class="now-ui-icons ui-1_simple-remove lg"></i>
-            </span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p class="m-0">Alors bien sur il ne faut pas prendre tout au premier degré. ce mini jeu permet de vous montrer 4 choses : </p>
-          <ul>
-            <li>Je capte de la donné</li>
-            <li>je la mouline</li>
-            <li>j'associe un service tiers</li>
-            <li>je la réstitue transformé</li>
-          </ul>
-          <p class="m-0">A partir de ce petit principe, nous pouvons batir des applications extrement puissantes. je captent des données de ventes, de devis, des informations sur les tendances marketing, je moulinne le tout et je sort des feuilles de routes, des levier marketing, etc.</p>
-        </div>
-        <div class="modal-footer d-flex flex-row justify-content-right">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
-        </div>
-      </div>
-    </div>
-  </div>

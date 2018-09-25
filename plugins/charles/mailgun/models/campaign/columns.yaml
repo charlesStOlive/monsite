@@ -1,0 +1,30 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+
+    name:
+        label: Intitulé
+        searchable: true
+
+    subject:
+        label: objet de l'email
+        searchable: true
+
+    status:
+        label: Statut
+        relation: status
+        select: name
+
+    sent_at:
+        label: Envoyé le
+
+    duplicate:
+        label: Dupliquer
+        type: partial
+        path: duplicate_button
+        clickable: false

@@ -1,0 +1,17 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+contacts:
+    label: Reporting
+    view:
+        list: $/charles/mailgun/models/campaigncontactpivot/columns.yaml
+        toolbarButtons: add|remove
+        recordUrl: charles/crm/contacts/update/:id
+    
+    pivot:
+        form: $/charles/mailgun/models/campaigncontactpivot/fields.yaml
+
+
+
+

@@ -130,7 +130,7 @@ return [
         'System\ServiceProvider',
         'Maatwebsite\Excel\ExcelServiceProvider',
         'Illuminated\Wikipedia\ServiceProvider',
-        'JD\Cloudder\CloudderServiceProvider'
+        'JD\Cloudder\CloudderServiceProvider',
     ]),
 
     /*

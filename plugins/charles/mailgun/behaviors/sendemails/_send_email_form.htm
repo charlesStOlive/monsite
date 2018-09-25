@@ -1,0 +1,48 @@
+<?= Form::open()  ?>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="popup">×</button>
+        <h4 class="modal-title">Envoyer la campagne - "<?= $thisCampaign['name'] ?>"</h4>
+    </div>
+
+    <div class="modal-body">
+        <div class="callout fade in callout-warning no-subheader">
+            <div class="header">
+                <i class="icon-warning"></i>
+                <h3>Veuillez vérifier les informations suivantes  </h3>
+                <ul>
+                    <li>Objet du mail : <?= $thisCampaign['subject'] ?></li>
+                    <li>Date de mise à jour : <?= $thisCampaign['date_info_update'] ?></li>
+                </ul>
+                <h3>Informations d'envoi  </h3>
+                <ul>
+                    <li>Nombre total de contacts  : <?= $contacts['total'] ?></li>
+                    <li>Nombre de contacts non éligibles à l'email  : <?= $contacts['totalNotEligibles'] ?></li>
+                    <li><strong>Nombre de contacts éligibles  : <?= $contacts['totalEligibles'] ?></strong></li>
+                </ul>
+            </div>
+        </div>
+        <div id='errors'></div>
+
+    </div>
+
+    <div class="modal-footer">
+        <button
+
+            type="submit"
+            data-request="onSendEmailValidation"
+            data-request-data="id:<?= $thisCampaign['id'] ?>"
+            data-popup-load-indicator
+            class="btn btn-primary oc-icon-share">
+            Envoyer aux contacts
+        </button>
+
+        <button
+            type="button"
+            class="btn btn-default"
+            data-dismiss="popup">
+            Annuler
+        </button>
+    </div>
+
+<?= Form::close() ?>

@@ -1,0 +1,35 @@
+name: 'Footer Menu'
+items:
+    -
+        title: 'Terms Of Services'
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: terms-services
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Privacy Policy'
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: privacy-policy
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Sitemap
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: sitemap
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

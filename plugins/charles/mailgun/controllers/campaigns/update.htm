@@ -1,0 +1,87 @@
+<?php
+ if (!$this->fatalError): ?>
+
+
+    <?= Form::open(['class' => 'layout']) ?>
+
+    <div class="form-buttons">
+            <div class="loading-indicator-container">
+                <?php if($this->vars['formModel']->status_id !== 2) { ?>
+                <button
+                    type="submit"
+                    data-request="onSave"
+                    data-request-data="redirect:0"
+                    data-hotkey="ctrl+s, cmd+s"
+                    data-load-indicator="Enregistrement de la campagne..."
+                    class="btn btn-primary">
+                    <u>E</u>nregistrer
+                </button>
+                <button
+                    type="button"
+                    data-request="onSave"
+                    data-request-data="close:1"
+                    data-hotkey="ctrl+enter, cmd+enter"
+                    data-load-indicator="Enregistrement de la campagne..."
+                    class="btn btn-default">
+                    Enregistrer et fermer
+                </button>
+                <button
+                    type="button"
+                    class="oc-icon-trash-o btn-icon danger pull-right"
+                    data-request="onDelete"
+                    data-load-indicator="Deleting Campaign..."
+                    data-request-confirm="Supprimer cette campagne ?">
+                </button>
+                <span class="btn-text">
+                    ou <a href="<?= Backend::url('charles/mailgun/campaigns') ?>">Annuler</a>&nbsp;&nbsp;
+                </span>
+
+                
+                <button
+                    href="javascript:;"
+                    class="btn btn-secondary oc-icon-user-md"
+                    data-request-data="id:<?=$this->params[0]?>"
+                    data-control="popup"
+                    data-handler="onLoadSendEmailTestForm"
+                    data-hotkey="ctrl+i, cmd+i"
+                    data-size="large">
+                    Envoyer un test
+                </button>
+                <button
+                    href="javascript:;"
+                    class="btn btn-warning oc-icon-envelope-open"
+                    data-request-data="id:<?=$this->params[0]?>"
+                    data-control="popup"
+                    data-handler="onLoadSendEmailForm"
+                    data-hotkey="ctrl+i, cmd+i"
+                    data-size="large">
+                    Envoyer la campagne
+                </button>
+
+
+                <?php } else {  ?>
+                <div class="row">
+                    <p class='flash-message static success'>La campagne a déjà été envoyée </p>";
+                    <a href="<?= Backend::url('charles/mailgun/campaigns/exportexcel/'.$this->params[0]) ?>" class="btn btn-secondary oc-icon-file-excel-o">Exporter</a> 
+                </div>
+                <?php }
+                ?>
+
+
+            </div>
+        </div>
+
+        <div class="layout-row">
+            <?= $this->formRender() ?>
+        </div>
+
+        
+
+    <?= Form::close() ?>
+
+<?php else: ?>
+
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+    <p><a href="<?= Backend::url('charles/mailgun/campaigns') ?>" class="btn btn-default">Retourner à la liste des campagnes</a></p>
+
+<?php endif ?>

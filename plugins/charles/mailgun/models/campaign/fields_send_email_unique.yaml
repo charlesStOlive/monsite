@@ -1,0 +1,11 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    sent_campaign:
+      label: Choisissez la campagne
+      type: dropdown
+      nameFrom: name
+    

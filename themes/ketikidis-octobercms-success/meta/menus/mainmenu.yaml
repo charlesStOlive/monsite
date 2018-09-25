@@ -1,0 +1,67 @@
+name: 'Main Menu'
+items:
+    -
+        title: Home
+        nesting: '1'
+        type: static-page
+        url: ''
+        code: ''
+        reference: index
+        cmsPage: ''
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Pages
+        nesting: '1'
+        type: static-page
+        url: ''
+        code: ''
+        reference: pages
+        cmsPage: ''
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Portfolio
+        nesting: '1'
+        type: static-page
+        url: ''
+        code: ''
+        reference: portfolio
+        cmsPage: ''
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Blog
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: blog/blog
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Contact Us'
+        nesting: '1'
+        type: static-page
+        url: ''
+        code: ''
+        reference: contact-us
+        cmsPage: ''
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

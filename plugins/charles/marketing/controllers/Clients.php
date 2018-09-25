@@ -3,6 +3,8 @@
 use BackendMenu;
 use Backend\Classes\Controller;
 
+use Cloudder;
+
 /**
  * Clients Back-end Controller
  */
@@ -21,5 +23,13 @@ class Clients extends Controller
         parent::__construct();
 
         BackendMenu::setContext('Charles.Marketing', 'marketing', 'side-menu-clients');
+    }
+
+    public function onTest() {
+        trace_log("test");
+        trace_log(Cloudder::show('test_toile'));
+
+
+
     }
 }

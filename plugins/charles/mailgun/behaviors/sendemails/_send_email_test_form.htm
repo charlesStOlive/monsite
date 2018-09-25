@@ -1,0 +1,43 @@
+<?= Form::open()  ?>
+    
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="popup">×</button>
+        <h4 class="modal-title">Envoyer un test</h4>
+    </div>
+
+    <div class="modal-body">
+        <div class="callout fade in callout-warning no-subheader">
+            <div class="header">
+                <i class="icon-warning"></i>
+                <h3>Veuillez vérifier les informations suivantes  </h3>
+                <ul>
+                    <li>Objet du mail : <?= $thisCampaign['subject'] ?></li>
+                    <li>Date de mise à jour : <?= $thisCampaign['date_info_update'] ?></li>
+                </ul>
+            </div>
+        </div>
+        <?= $sendEmailTestWidget->render() ?>
+        <div id='errors'></div>
+        
+    </div>
+
+    <div class="modal-footer">
+        <button
+
+            type="submit"
+            data-request="onSendEmailTestValidation"
+            data-request-data="id:<?= $thisCampaign['id'] ?>"
+            data-popup-load-indicator
+            class="btn btn-primary oc-icon-share">
+            Envoyer le test
+        </button>
+
+        <button
+            type="button"
+            class="btn btn-default"
+            data-dismiss="popup">
+            Annuler
+        </button>
+    </div>
+
+<?= Form::close() ?>

@@ -1,0 +1,49 @@
+description = "Main Menu"
+
+[viewBag]
+
+[staticMenu]
+code = "mainmenu"
+==
+{% import _self as nav %}
+<nav class="navbar navbar-expand-md navbar-light nav-bg" {% if this.theme.stickymenu_js %} data-toggle="sticky-onscroll" {% endif %}>
+<div class="container">
+   <a class="navbar-brand" href="{{ '/'|app }}">
+      <div class="navbar-brand">Charles Saint Olive</div>
+   </a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+   <i class="fa fa-bars" aria-hidden="true"></i>
+   </button>
+   <div class="collapse navbar-collapse" id="main-menu">
+      <ul class="navbar-nav mr-auto w-100 justify-content-end">
+
+         <li role="presentation" class="nav-item {{ item.isActive ? 'active' }} {{ item.isChildActive ? 'active' }}">
+            <a class="nav-link" href="#" data-request-success="" data-toggle="modal" data-target="#modal1">Mon CV</a>
+         </li>
+
+         <li role="presentation" class="nav-item dropdown {{ item.isActive ? 'active' }} {{ item.isChildActive ? 'active' }}">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Expertises</a>
+            <ul class="dropdown-menu">
+               <li role="presentation" class="nav-item {{ item.isActive ? 'active' }} {{ item.isChildActive ? 'active' }}">
+                  <a href="{{ 'expertises/manager-digital' | app }}" class="nav-link">Manager digital</a>
+               </li>
+               <li role="presentation" class="nav-item {{ item.isActive ? 'active' }} {{ item.isChildActive ? 'active' }}">
+                  <a href="{{ 'expertises/data-scientist' | app }}" class="nav-link">data-scientist</a>
+               </li>
+               <li role="presentation" class="nav-item {{ item.isActive ? 'active' }} {{ item.isChildActive ? 'active' }}">
+                  <a href="{{ 'expertises/chef-projet-technique' | app }}" class="nav-link">Chef de projet technique</a>
+               </li>
+
+            </ul>
+
+         <li role="presentation" class="nav-item {{ item.isActive ? 'active' }} {{ item.isChildActive ? 'active' }}">
+            <a class="nav-link" href="{{ 'competences' | app }}">Compétences</a>
+         </li>
+
+
+         </li>
+      </ul>
+   </div>
+</div>
+</nav>
+{% partial 'site/popups' %}

@@ -1,0 +1,27 @@
+<?php
+
+$contact = Charles\Crm\Models\Contact::find($record->id);
+
+if($contact->eligible) {
+
+?>
+
+<button
+        href="javascript:;"
+        class="btn btn-primary"
+        data-request-data="id:<?=$record->id?>"
+        data-control="popup"
+        data-handler="onLoadSendEmailUniqueForm"
+        data-hotkey="ctrl+i, cmd+i"
+       >
+    Envoyer une relance
+</button>
+
+<?php
+} else {
+        ?>
+<span>Contact non éligible au mail</span>
+
+<?php
+}
+?>

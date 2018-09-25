@@ -36,6 +36,7 @@ fields:
         label: Icon
         type: dropdown
         span: left
+        options: iconesAutumnList
 
 
     disabled_wiki:

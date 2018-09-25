@@ -1,0 +1,24 @@
+description = "Owl Carousel Section"
+
+[viewBag]
+==
+<div class="owlcarousel-area">
+<div id="owlcarousel-area" class="owl-carousel owl-theme">
+<div class="item">
+    <div class="overlay"></div>
+    <div class="owl-image owl-lazy" data-src="{{ fields.section_carouselowl_type_image|media }}"></div>
+    
+    <div class="owl-image owl-lazy" data-src="{{ 'assets/images/img/1920x1000.png'|theme }}"></div>
+      
+    <div class="owlcarousel-caption">
+
+                <h1 class="owlcarousel-title">Mon titre</h1>
+                <p class="owlcarousel-desc">Mon sous titre</p>
+                
+                <a class="btn btn-lg btn-border" href="{{ fields.section_carouselowl_buttonlink }}">  
+                <i class="{{ fields.section_carouselowl_buttonicon }}"></i>
+                label</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    emailTest:
+        label: Email de test 
+        default: charles.stolive@dayonmars.fr
+
+    contacts:
+      label: Choisissez jusqu'à 4 contacts
+      type: taglist
+      mode: relation
+      nameFrom: code_asp
+    

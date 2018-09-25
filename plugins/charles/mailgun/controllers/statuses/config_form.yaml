@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Status
+
+# Model Form Field configuration
+form: $/charles/mailgun/models/status/fields.yaml
+
+# Model Class name
+modelClass: Charles\Mailgun\Models\Status
+
+# Default redirect location
+defaultRedirect: charles/mailgun/statuses
+
+# Create page
+create:
+    title: Create Status
+    redirect: charles/mailgun/statuses/update/:id
+    redirectClose: charles/mailgun/statuses
+
+# Update page
+update:
+    title: Edit Status
+    redirect: charles/mailgun/statuses
+    redirectClose: charles/mailgun/statuses
+
+# Preview page
+preview:
+    title: Preview Status

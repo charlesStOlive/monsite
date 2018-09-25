@@ -1,0 +1,24 @@
+# ===================================
+#  Reorder Behavior Config
+# 
+# ATTENTION LE TITRE NE DOIT PAS AVOIR D ESPACE
+
+# Model Class name
+modelClass: Charles\Mailgun\Models\Campaign
+# En saisissant un attribut, l'export va s'occuper d'une relation plutôt que du modèle principal. 
+# Dans ce cas : 
+# le bouton d'export doit être dans une page d'update ou sur une ligne de tableau 
+# le bouton  doit embarquer l'id de la classe.
+attribute: contacts 
+
+exportdefault:
+  title: export_contacts_campagnes
+  items: 
+    name:
+      label: Nom
+    fname:
+      label: Prenom
+    pivot@result_type:
+      label: Resultat
+    pivot@email:
+      label: Email du moment

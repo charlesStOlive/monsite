@@ -20,16 +20,31 @@ fields:
             warning: warning
     
     description:
-        label: description
+        label: Courte description
         type: markdown
         mode: split
         size: huge
 
     description_2:
-        label: description
+        label: longue description
         type: markdown
         mode: split
         size: huge
+
+    icone:
+        label: Choisissez une icones
+        type: dropdown
+        placeholder: -- Choisissez une icone --
+        options: iconesAutumnList
+        span: left
+
+    img_featured:
+        label: Image du carrousel
+        type: mediafinder
+        mode: image
+        span: left
+
+
 
     competences: # This is currently broken for creation
         label: Compétences principales
