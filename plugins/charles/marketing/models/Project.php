@@ -27,7 +27,6 @@ class Project extends Model
      * @var array Relations
      */
     public $hasOne = [];
-    public $hasMany = [];
     public $belongsTo = [
         'client' => ['Charles\Marketing\Models\Client'],
     ];

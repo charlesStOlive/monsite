@@ -1,12 +1,15 @@
 <?php namespace Charles\Marketing\Models;
 
 use Model;
+use \ToughDeveloper\ImageResizer\Classes\Image;
+use Config;
 
 /**
  * Client Model
  */
 class Client extends Model
 {
+    
     /**
      * @var string The database table used by the model.
      */
@@ -34,8 +37,13 @@ class Client extends Model
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];
-    public $attachOne = [
-        'main_picture' => ['System\Models\File'],
-        ];
     public $attachMany = [];
+
+
+    public function getlogoAfficheAttribute()
+    {
+        $mediaUrl = url(Config::get('cms.storage.media.path'));
+        $image = new Image($mediaUrl.'/'.$this->logo);
+        return '<img src="'.$image->resize(50, 50, [ 'mode' => 'auto' ]).'">';
+    }
 }

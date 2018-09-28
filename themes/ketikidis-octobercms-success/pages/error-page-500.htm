@@ -1,6 +1,6 @@
 title = "Error Page (500)"
 url = "/error"
-layout = "default"
+layout = "pages"
 is_hidden = 0
 
 [viewBag]
@@ -10,5 +10,5 @@ localeUrl[gr] = "/error-page-500"
    <h1>Ooops! An Error Occured.</h1>
    <p>We're so sorry, the page you requested cannot be displayed due to an error.</p>
    <p><small><em>Error code: 500</em></small></p>
-   <a href="{{ 'index'|staticPage }}" class="btn btn-common btn-lg" data-aos="fade-up" data-aos-delay="800">GO BACK TO THE HOMEPAGE</a>
+   <a href="{{ '/'| app }}" class="btn btn-common btn-lg" data-aos="fade-up" data-aos-delay="800">GO BACK TO THE HOMEPAGE</a>
 </section>

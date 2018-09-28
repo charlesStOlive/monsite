@@ -29,3 +29,6 @@
 1.0.9:
     - 'Updated table charles_marketing_expertises'
     - builder_table_update_charles_marketing_expertises.php
+1.0.10:
+    - 'Updated table charles_marketing_clients'
+    - builder_table_update_charles_marketing_clients.php

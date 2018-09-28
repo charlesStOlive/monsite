@@ -9,6 +9,7 @@ fields:
 
     slug:
         label: Slug
+        preset: name
         span: auto
 
     color:

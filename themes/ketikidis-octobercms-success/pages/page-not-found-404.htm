@@ -1,13 +1,13 @@
 title = "Page Not Found (404)"
 url = "/404"
-layout = "default"
+layout = "pages"
 is_hidden = 0
 
 [viewBag]
 localeUrl[gr] = "/page-not-found-404"
 ==
 <section id="error" class="section text-center">
-   <h1>404, Page Not Found</h1>
-   <p>The page you are looking for doesn't exist or another error occurred.</p>
-   <a href="{{ 'index'|staticPage }}" class="btn btn-common btn-lg" data-aos="fade-up" data-aos-delay="800">GO BACK TO THE HOMEPAGE</a>
+   <h1>404, Oups ! la page n'existe pas. </h1>
+   <p>La page que vous cherchez n'est pas ou plus disponible. </p>
+   <a href="{{ '/'| app }}" class="btn btn-common btn-lg" data-aos="fade-up" data-aos-delay="800">Retour sur la page d'accueil</a>
 </section>

@@ -3,6 +3,11 @@
 # ===================================
 
 columns:
-    id:
-        label: ID
+    name:
+        label: Nom
         searchable: true
+
+    logo:
+        label: Image
+        type: partial
+        path: $/charles/marketing/models/client/_column_image.htm

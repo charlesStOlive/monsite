@@ -3,6 +3,19 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    name:
+        label: nom de l'entreprise
+
+    slug:
+        label: Slug
+        preset: name
+
+    logo:
+        label: logo du client
+        type: mediafinder
+        mode: image
+        span: left
+
+    description:
+        label: description
+        type: textarea
