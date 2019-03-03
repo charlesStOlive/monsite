@@ -18,5 +18,3 @@ composer.lock
 
 # for netbeans
 nbproject
-
-config/database\.php
