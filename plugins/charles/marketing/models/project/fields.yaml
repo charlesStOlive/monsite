@@ -16,7 +16,25 @@ fields:
             type: slug
         type: text
 
+    client:
+        type: relation
+        selectFrom: name
+        placeholder: --select client--
+
     main_picture:
+        label: Image principale
+        mode: image
+        imageWidth: '160'
+        imageHeight: '96'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+
+    pictures:
+        label: Autres images
         mode: image
         imageWidth: '160'
         imageHeight: '96'
