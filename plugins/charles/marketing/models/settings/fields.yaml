@@ -1,0 +1,10 @@
+fields:
+    site_intro:
+        label: Introduction du site
+        type: richeditor
+        size: huge
+
+    site_intro_en:
+        label: Introduction du site
+        type: richeditor
+        size: huge

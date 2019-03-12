@@ -120,4 +120,20 @@ class Plugin extends PluginBase
                 ],
         ];
     }
+    public function registerSettings()
+    {
+        return [
+            'site_settings' => [
+                'label'       => 'Site option',
+                'description' => 'Champs fixe du site en vue.',
+                'category'    => 'Site vue',
+                'icon'        => 'icon-cog',
+                'class'       => 'Charles\Marketing\Models\Settings',
+                'order'       => 500
+                // 'keywords'    => 'security location',
+                // 'permissions' => ['acme.users.access_settings']
+            ]
+        ];
+    }
+
 }
