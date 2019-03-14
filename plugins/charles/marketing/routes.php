@@ -28,7 +28,9 @@ Route::options('api/settings', function() {
 });
 
 Route::get('api/settings', function() {
-	$data = Settings::instance()->value;
+	$data['settings'] = Settings::instance()->value;
+	$data['projects'] = Project::with('main_picture', 'client')->get();
+	$data['clients'] = Client::get();
 	return $data;
 });
 Route::options('api/project/{any}', function() {

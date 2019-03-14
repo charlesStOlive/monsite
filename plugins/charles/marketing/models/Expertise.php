@@ -18,6 +18,8 @@ class Expertise extends Model
      */
     protected $guarded = ['*'];
 
+    
+
     /**
      * @var array Fillable fields
      */

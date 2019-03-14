@@ -18,6 +18,8 @@ class Project extends Model
      */
     protected $guarded = ['*'];
 
+    protected $jsonable = ['video'];
+
     /**
      * @var array Fillable fields
      */

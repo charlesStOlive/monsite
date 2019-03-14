@@ -45,6 +45,22 @@ fields:
         span: auto
         type: fileupload
 
+    video:
+        label: Vidéo
+        type: nestedform
+        usePanelStyles: true
+        form:
+          fields:
+            code:
+              label: Code
+            source:
+              label: source
+              type: dropdown
+              placeholder: --choose video--
+              options:
+                vimeo: Vimeo
+                youtube: Youtube
+
 
     description:
             label: Description

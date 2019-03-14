@@ -32,3 +32,6 @@
 1.0.10:
     - 'Updated table charles_marketing_clients'
     - builder_table_update_charles_marketing_clients.php
+1.0.11:
+    - 'Updated table projects'
+    - update_projects_table_1.php
