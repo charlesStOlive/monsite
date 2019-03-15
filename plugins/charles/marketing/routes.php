@@ -3,6 +3,7 @@
 use Charles\Marketing\Models\Client;
 use Charles\Marketing\Models\Project;
 use Charles\Marketing\Models\Settings;
+use Charles\Marketing\Models\Competence;
 
 
 Route::options('api/clients', function() {
@@ -31,6 +32,7 @@ Route::get('api/settings', function() {
 	$data['settings'] = Settings::instance()->value;
 	$data['projects'] = Project::with('main_picture', 'client')->get();
 	$data['clients'] = Client::get();
+	$data['competences'] = Competence::get();
 	return $data;
 });
 Route::options('api/project/{any}', function() {
@@ -38,6 +40,6 @@ Route::options('api/project/{any}', function() {
 });
 
 Route::get('api/project/{slug}', function($slug) {
-	$data = Project::where('slug', $slug)->with('main_picture', 'pictures', 'client')->first();
+	$data = Project::where('slug', $slug)->with('main_picture', 'video_picture', 'pictures', 'client')->first();
 	return $data;
 });

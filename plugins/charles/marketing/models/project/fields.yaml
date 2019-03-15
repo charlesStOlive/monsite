@@ -61,6 +61,18 @@ fields:
                 vimeo: Vimeo
                 youtube: Youtube
 
+    video_picture:
+        label: vignette Vidéo
+        mode: image
+        imageWidth: '160'
+        imageHeight: '96'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+
 
     description:
             label: Description

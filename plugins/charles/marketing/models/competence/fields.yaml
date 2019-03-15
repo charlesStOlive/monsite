@@ -34,9 +34,11 @@ fields:
             # 
     wiki_picture:
         label: Icon
-        type: dropdown
+        type: awesomeiconslist
+        unicodeValue: false
+        emptyOption: true
+        placeholder: Select Icon
         span: left
-        options: iconesAutumnList
 
 
     disabled_wiki:

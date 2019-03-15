@@ -47,6 +47,7 @@ class Project extends Model
     public $morphMany = [];
     public $attachOne = [
         'main_picture' => ['System\Models\File'],
+        'video_picture' =>['System\Models\File'],
         ];
     public $attachMany = [
         'pictures' => ['System\Models\File'],
