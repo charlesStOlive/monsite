@@ -35,3 +35,6 @@
 1.0.11:
     - 'Updated table projects'
     - update_projects_table_1.php
+1.0.12:
+    - 'create tables mission & target'
+    - create_missions_and_targets_tables.php

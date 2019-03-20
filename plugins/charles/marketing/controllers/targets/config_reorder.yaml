@@ -1,0 +1,17 @@
+# ===================================
+#  Reorder Behavior Config
+# ===================================
+
+# Reorder Title
+title: Réordonner les tâches
+
+# Attribute name
+nameFrom: name
+
+# Model Class name
+modelClass: Charles\marketing\Models\Target
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: reorder_toolbar

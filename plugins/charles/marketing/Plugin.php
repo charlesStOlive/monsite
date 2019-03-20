@@ -111,11 +111,27 @@ class Plugin extends PluginBase
                             'icon'        => 'icon-tasks',
                             'url'         => Backend::url('charles/marketing/competences'),
                         ],
-                        'side-menu-salaires' => [ 
-                            'label'       => 'Grille des salaires',
-                            'icon'        => 'icon-money',
-                            'url'         => Backend::url('charles/marketing/salaires'),
+                        'side-menu-missions' => [
+                            'label'       => 'Missions',
+                            'icon'        => 'icon-flag-checkered',
+                            'url'         => Backend::url('charles/marketing/missions'),
                         ],
+                        'side-menu-missions' => [
+                            'label'       => 'Missions',
+                            'icon'        => 'icon-flag-checkered',
+                            'url'         => Backend::url('charles/marketing/missions'),
+                        ],
+                         'side-menu-targets' => [
+                            'label'       => 'Cibles',
+                            'icon'        => 'icon-dot-circle-o',
+                            'url'         => Backend::url('charles/marketing/targets'),
+                        ],
+
+                        // 'side-menu-salaires' => [ 
+                        //     'label'       => 'Grille des salaires',
+                        //     'icon'        => 'icon-money',
+                        //     'url'         => Backend::url('charles/marketing/salaires'),
+                        // ],
                     ],
                 ],
         ];

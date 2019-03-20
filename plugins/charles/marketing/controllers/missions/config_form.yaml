@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Mission
+
+# Model Form Field configuration
+form: $/charles/marketing/models/mission/fields.yaml
+
+# Model Class name
+modelClass: Charles\Marketing\Models\Mission
+
+# Default redirect location
+defaultRedirect: charles/marketing/missions
+
+# Create page
+create:
+    title: Create Mission
+    redirect: charles/marketing/missions/update/:id
+    redirectClose: charles/marketing/missions
+
+# Update page
+update:
+    title: Edit Mission
+    redirect: charles/marketing/missions
+    redirectClose: charles/marketing/missions
+
+# Preview page
+preview:
+    title: Preview Mission

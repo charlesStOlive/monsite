@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Target
+
+# Model Form Field configuration
+form: $/charles/marketing/models/target/fields.yaml
+
+# Model Class name
+modelClass: Charles\Marketing\Models\Target
+
+# Default redirect location
+defaultRedirect: charles/marketing/targets
+
+# Create page
+create:
+    title: Create Target
+    redirect: charles/marketing/targets/update/:id
+    redirectClose: charles/marketing/targets
+
+# Update page
+update:
+    title: Edit Target
+    redirect: charles/marketing/targets
+    redirectClose: charles/marketing/targets
+
+# Preview page
+preview:
+    title: Preview Target
