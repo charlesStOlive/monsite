@@ -9,12 +9,14 @@ modelClass: Charles\Mailgun\Models\Campaign
 # Dans ce cas : 
 # le bouton d'export doit être dans une page d'update ou sur une ligne de tableau 
 # le bouton  doit embarquer l'id de la classe.
-attribute: contacts 
+attribute: courtiers 
 
 exportdefault:
-  title: export_contacts_campagnes
+  title: export_courtiers_campagnes
   items: 
-    name:
+    code_asp:
+      label: Code ASP
+    sname:
       label: Nom
     fname:
       label: Prenom
@@ -22,3 +24,19 @@ exportdefault:
       label: Resultat
     pivot@email:
       label: Email du moment
+    count_win_gammes:
+      label: NB gammes gagnantes
+    count_gammes_to_work:
+      label: NB gammes à travailler
+    total_earn:
+      label: Gains total
+    list_win_gammes:
+      label: Liste des gammes gagnantes
+    list_gammes_to_work:
+      label: Liste des gammes à travailler
+    interlocuteur@fname:
+      label: Prénom de l'interlocuteur
+    interlocuteur@sname:
+      label: Nom de l'interlocuteur 
+    interlocuteur@email:
+      label: Email de l'interlocuteur  

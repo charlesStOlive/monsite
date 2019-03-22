@@ -1,0 +1,28 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    code_asp:
+        label: Code ASP
+        disabled: true
+
+    sname:
+        label: Nom
+
+    fname:
+        label: Prénom
+
+    cabinet:
+        label: Cabinet
+        searchable: true
+
+    pivot[email]:
+        label: Email
+        searchable: true
+        disabled: true
+
+    pivot[result_type]:
+        label: Action
+        width: 150px
+        disabled: true

@@ -1,0 +1,22 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    cabinet:
+        label: Cabinet
+        searchable: true
+
+    pivot[email]:
+        label: Email
+        searchable: true
+
+    pivot[result_type]:
+        label: Action
+        width: 150px
+
+    pivot[mg_timestamp]:
+        label: date evenement
+        type: datetime
+        with: 150px
+        format: d/m/y H:i:s

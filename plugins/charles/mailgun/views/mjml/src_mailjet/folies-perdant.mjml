@@ -1,0 +1,586 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+      <mj-class name="fd-vert-clair" background-color="#c9d200" />
+      <mj-class name="texte-vert-clair" color="#c9d200" />
+      <mj-class name="borderup-vert-clair" border-top="1px solid #c9d200"  border-left="1px solid #c9d200" border-right="1px solid #c9d200" />
+      <mj-class name="borderdwn-vert-clair" border-bottom="1px solid #c9d200"  border-left="1px solid #c9d200" border-right="1px solid #c9d200" />
+      <mj-class name="bordermid-vert-clair"  border-left="1px solid #c9d200" border-right="1px solid #c9d200" padding-bottom="0px" padding-top="0px"  />
+
+      <mj-class name="fd-vert-moyen" background-color="#a5c400" />
+      <mj-class name="texte-vert-moyen" color="#a5c400"/>
+      <mj-class name="borderup-vert-moyen" border-top="1px solid #a5c400"  border-left="1px solid #a5c400" border-right="1px solid #a5c400" />
+      <mj-class name="borderdwn-vert-moyen" border-bottom="1px solid #a5c400"  border-left="1px solid #a5c400" border-right="1px solid #a5c400" />
+      <mj-class name="bordermid-vert-moyen" border-left="1px solid #a5c400" border-right="1px solid #a5c400" padding-bottom="0px" padding-top="0px" />
+
+      <mj-class name="fd-vert-fonce" background-color="#799c13" />
+      <mj-class name="texte-vert-fonce" color="#799c13"/>
+      <mj-class name="borderup-vert-fonce" border-top="1px solid #799c13"  border-left="1px solid #799c13" border-right="1px solid #799c13" />
+      <mj-class name="borderdwn-vert-fonce" border-bottom="1px solid #799c13"  border-left="1px solid #799c13" border-right="1px solid #799c13" />
+      <mj-class name="bordermid-vert-fonce" border-left="1px solid #799c13" border-right="1px solid #799c13" padding-bottom="0px" padding-top="0px" />
+
+
+      <mj-class name="fd-orange-clair" background-color="#fdc300" />
+      <mj-class name="texte-orange-clair" color="#fdc300"/>
+      <mj-class name="borderup-orange-clair" border-top="1px solid #fdc300"  border-left="1px solid #fdc300" border-right="1px solid #fdc300" />
+      <mj-class name="borderdwn-orange-clair" border-bottom="1px solid #fdc300"  border-left="1px solid #fdc300" border-right="1px solid #fdc300" />
+      <mj-class name="bordermid-orange-clair" border-left="1px solid #fdc300" border-right="1px solid #fdc300" padding-bottom="0px" padding-top="0px" />
+
+      <mj-class name="fd-orange-moyen" background-color="#f49e00" />
+      <mj-class name="texte-orange-moyen" color="#f49e00"/>
+      <mj-class name="borderup-orange-moyen" border-top="1px solid #f49e00"  border-left="1px solid #f49e00" border-right="1px solid #f49e00" />
+      <mj-class name="borderdwn-orange-moyen" border-bottom="1px solid #f49e00"  border-left="1px solid #f49e00" border-right="1px solid #f49e00" />
+      <mj-class name="bordermid-orange-moyen" border-left="1px solid #f49e00" border-right="1px solid #f49e00" padding-bottom="0px" padding-top="0px" />
+
+      <mj-class name="fd-orange-fonce" background-color="#ee7f00" />
+      <mj-class name="texte-orange-fonce" color="#ee7f00"/>
+      <mj-class name="borderup-orange-fonce" border-top="1px solid #ee7f00"  border-left="1px solid #ee7f00" border-right="1px solid #ee7f00" />
+      <mj-class name="borderdwn-orange-fonce" border-bottom="1px solid #ee7f00"  border-left="1px solid #ee7f00" border-right="1px solid #ee7f00" />
+      <mj-class name="bordermid-orange-fonce"  border-left="1px solid #ee7f00" border-right="1px solid #ee7f00" padding-bottom="0px" padding-top="0px" />
+
+     
+      <mj-class name="fd-taupe-clair" background-color="#a69f8f" />
+      <mj-class name="texte-taupe-clair" color="#a69f8f" />
+      <mj-class name="borderup-taupe-clair" border-top="1px solid #a69f8f"  border-left="1px solid #a69f8f" border-right="1px solid #a69f8f" />
+      <mj-class name="borderdwn-taupe-clair" border-bottom="1px solid #a69f8f"  border-left="1px solid #a69f8f" border-right="1px solid #a69f8f" />
+      <mj-class name="bordermid-taupe-clair" border-left="1px solid #a69f8f" border-right="1px solid #a69f8f" padding-bottom="0px" padding-top="0px"  />
+
+      <mj-class name="fd-taupe" background-color="#6b6351" />
+      <mj-class name="texte-taupe" color="#6b6351" />
+      <mj-class name="borderup-taupe" border-top="1px solid #6b6351"  border-left="1px solid #6b6351" border-right="1px solid #6b6351" />
+      <mj-class name="borderdwn-taupe" border-bottom="1px solid #6b6351"  border-left="1px solid #6b6351" border-right="1px solid #6b6351" />
+      <mj-class name="bordermid-taupe" border-left="1px solid #6b6351" border-right="1px solid #6b6351" padding-bottom="0px" padding-top="0px" />
+
+      <mj-class name="fd-noir" background-color="#707070" />
+      <mj-class name="texte-noir" color="#707070"/>
+      <mj-class name="borderup-noir" border-top="1px solid #707070"  border-left="1px solid #707070" border-right="1px solid #707070" />
+      <mj-class name="borderdwn-noir" border-bottom="1px solid #707070"  border-left="1px solid #707070" border-right="1px solid #707070" />
+      <mj-class name="bordermid-noir" border-left="1px solid #707070" border-right="1px solid #707070" padding-bottom="0px" padding-top="0px" />
+
+
+
+
+      <mj-class name="fd-orange-jaune" background-color="#fd800" />
+      <mj-class name="fd-vert-jaune" background-color="#dedc00" />
+      <mj-class name="fd-vert-vitrine" background-color="#438f29" />
+      
+      
+      
+      
+      <mj-class name="texte-blanc" color="#ffffff"/>
+      
+     
+      <mj-section padding-left="10px" padding-right="10px" padding-bottom="10px" padding-top="10px"/>
+      <mj-class name="textefinale" line-height="12px"/>
+
+
+
+
+      <mj-class name="titre"  text-transform="uppercase" align="center" />
+      <mj-class name="grand" font-size="28px" font-weight="700" line-height="22px" padding-top="0px" padding-bottom="0px" align="center" />
+      <mj-class name="moyen" font-size="18px" line-height="15px" padding-bottom="0px" align="center" />
+      <mj-class name="small" font-size="10px" padding-top="0px" padding-bottom="0px" line-height="14px" align="center" />
+      <mj-class name="alinea" padding-top="0px" align="center" />
+      <mj-class name="texte-sans-padding" padding-top="0" padding-bottom="0" />
+      
+    </mj-attributes>
+  </mj-head>
+
+
+
+
+  <mj-body>
+    <mj-container background-color="#FBFBF9">
+    
+       <mj-raw>
+       <?php 
+        /*******************************
+        santé individuelle et animale
+        *******************************/
+       ?>
+      </mj-raw>
+      <mj-wrapper padding="5px">
+      <mj-section mj-class="borderup-orange-clair">
+        <mj-column>
+
+          <mj-text mj-class="texte-orange-clair titre moyen">santé individuelle et animale</mj-text>
+          <mj-text mj-class="alinea">(sur les contrats phares* et sur les 58 ans et/+, TNS, fonctionnaires et frontaliers suisses)</mj-text>
+        </mj-column>
+      </mj-section>
+      
+      <mj-section  mj-class="bordermid-orange-clair" > 
+        
+        
+         <mj-column width="35%" mj-class="fd-orange-clair">
+
+           <mj-text mj-class="texte-blanc titre">Encore un effort</mj-text>
+          <mj-text mj-class="texte-blanc titre ">et vous gagnerez </mj-text>
+          <mj-text mj-class="texte-blanc titre">des chèques-cadeaux</mj-text>
+        </mj-column>
+        
+        <mj-column width="65%">
+
+          <mj-text>Entre le 02/05 et le 30/06/2016, vous avez réalisé <b><!--XXX--><?=$valeur_bloc_nm1;?> </b> affaire(s) en santé individuelle et animale.</mj-text>
+          
+          <mj-text>Depuis le 2 mai 2017, vous avez réalisé <b><!--XXX--><?=$valeur_bloc;?></b> affaire(s) en santé individuelle et animale.</mj-text>
+
+        </mj-column>
+      </mj-section>
+      <mj-section mj-class="borderdwn-orange-clair" >
+        <mj-column>
+           <mj-text mj-class="small">*Ma sant évolutive, mon assurance santé globale, ma santé essentielle+, Assurance santé chiens-chats</mj-text>
+        </mj-column>
+      </mj-section>
+      </mj-wrapper>
+      <mj-raw>
+       <?php
+        /*******************************
+        Fin santé individuelle et animale
+        *******************************/
+        ?>
+      </mj-raw>
+
+
+      <mj-raw>
+       <?php 
+        /*******************************
+        santé pro
+        *******************************/
+       ?>
+      </mj-raw>
+      <mj-wrapper padding="5px">
+      <mj-section mj-class="borderup-orange-moyen">
+        <mj-column>
+
+          <mj-text mj-class="texte-orange-moyen titre moyen">Santé professionnelle</mj-text>
+          <mj-text mj-class="alinea">Mon assurance santé PRO</mj-text>
+        </mj-column>
+      </mj-section>
+      
+      <mj-section  mj-class="bordermid-orange-moyen"> 
+        
+        
+        <mj-column width="35%" mj-class="fd-orange-moyen">
+
+          <mj-text mj-class="texte-blanc titre">Encore un effort</mj-text>
+          <mj-text mj-class="texte-blanc titre ">et vous gagnerez </mj-text>
+          <mj-text mj-class="texte-blanc titre">des chèques-cadeaux</mj-text>
+        </mj-column>
+        
+        <mj-column width="65%">
+
+          <mj-text>Entre le 02/05 et le 30/06/2016, vous avez réalisé <b><!--XXX--><?=$valeur_bloc_nm1;?> </b> affaire(s) en santé pro.*</mj-text>
+          
+          <mj-text>Depuis le 2  mai 2017, vous avez réalisé <b><!--XXX--><?=$valeur_bloc;?></b> affaire(s) en santé pro.*</mj-text>
+
+        </mj-column>
+        </mj-section>
+        <mj-section  mj-class="borderdwn-orange-moyen"> 
+        
+        
+     
+        
+        <mj-column>
+
+          <mj-text mj-class="small">avec primes > à 400€TTC par an</mj-text>
+          
+          
+
+        </mj-column>
+        </mj-section>
+      </mj-wrapper>
+      <mj-raw>
+       <?php
+        /*******************************
+        Fin santé pro
+        *******************************/
+        ?>
+      </mj-raw>
+
+      <mj-raw>
+       <?php 
+        /*******************************
+        Assurance de prêt
+        *******************************/
+       ?>
+      </mj-raw>
+      <mj-wrapper padding="5px">
+      <mj-section mj-class="borderup-orange-fonce">
+        <mj-column>
+
+          <mj-text mj-class="texte-orange-fonce titre moyen">Assurance de prêt</mj-text>
+          <!--<mj-text mj-class="alinea">(sur les contrats phares* et sur les 58 ans et+, TNS, fonctionnaires et frontaliers suiddes</mj-text>-->
+        </mj-column>
+      </mj-section>
+      
+      <mj-section  mj-class="borderdwn-orange-fonce"> 
+        
+        
+        <mj-column width="35%" mj-class="fd-orange-fonce">
+
+           <mj-text mj-class="texte-blanc titre">Encore un effort</mj-text>
+          <mj-text mj-class="texte-blanc titre ">et vous gagnerez </mj-text>
+          <mj-text mj-class="texte-blanc titre">des chèques-cadeaux</mj-text>
+        </mj-column>
+        
+        <mj-column width="65%">
+
+          <mj-text>Entre le 02/05 et le 30/06/2016, vous avez réalisé <b><!--XXX--><?=$valeur_bloc_nm1;?> </b> dossier(s) en assurance de prêt.</mj-text>
+          
+          <mj-text>Depuis le 2  mai 2017, vous avez réalisé <b><!--XXX--><?=$valeur_bloc;?></b> dossier(s) en assurance de prêt.</mj-text>
+
+        </mj-column>
+        </mj-section>
+      </mj-wrapper>
+      <mj-raw>
+       <?php
+        /*******************************
+        Fin Assurance de prêt
+        *******************************/
+        ?>
+      </mj-raw>
+
+
+
+      <mj-raw>
+       <?php 
+        /*******************************
+        prévoyance privée
+        *******************************/
+       ?>
+      </mj-raw>
+
+
+      <mj-wrapper padding="5px">
+      <mj-section mj-class="borderup-taupe-clair">
+        <mj-column>
+
+          <mj-text mj-class="texte-taupe-clair titre moyen">prévoyance privée</mj-text>
+          <mj-text mj-class="alinea">(toute la gamme prévoyance privée)*</mj-text>
+        </mj-column>
+      </mj-section>
+      
+      <mj-section  mj-class="bordermid-taupe-clair"> 
+        
+        
+         <mj-column width="35%" mj-class="fd-taupe-clair">
+
+           <mj-text mj-class="texte-blanc titre">Encore un effort</mj-text>
+          <mj-text mj-class="texte-blanc titre ">et vous gagnerez </mj-text>
+          <mj-text mj-class="texte-blanc titre">des chèques-cadeaux</mj-text>
+        </mj-column>
+        
+        <mj-column width="65%">
+
+          <mj-text>Entre le 02/05 et le 30/06/2016, vous avez réalisé <b><!--XXX--><?=$valeur_bloc_nm1;?> </b> affaire(s) en prévoyance privée.</mj-text>
+          
+          <mj-text>Depuis le 2 mai 2017, vous avez réalisé <b><!--XXX--><?=$valeur_bloc;?></b> affaire(s) en prévoyance privée.</mj-text>
+
+        </mj-column>
+      </mj-section>
+      <mj-section mj-class="borderdwn-taupe-clair" >
+        <mj-column>
+           <mj-text mj-class="small">*avec primes > à 180€ TTC par an</mj-text>
+        </mj-column>
+      </mj-section>
+      </mj-wrapper>
+
+      <mj-raw>
+       <?php 
+        /*******************************
+        fin prévoyance privée
+        *******************************/
+       ?>
+      </mj-raw>
+
+
+
+      <mj-raw>
+       <?php 
+        /*******************************
+        prévoyance professionnelle
+        *******************************/
+       ?>
+      </mj-raw>
+
+
+      <mj-wrapper padding="5px">
+      <mj-section mj-class="borderup-taupe">
+        <mj-column>
+
+          <mj-text mj-class="texte-taupe titre moyen">prévoyance professionnelle</mj-text>
+          <mj-text mj-class="alinea">(toute la gamme prévoyance professionnelle)*</mj-text>
+        </mj-column>
+      </mj-section>
+      
+      <mj-section  mj-class="bordermid-taupe"> 
+        
+        
+         <mj-column width="35%" mj-class="fd-taupe">
+
+           <mj-text mj-class="texte-blanc titre">Encore un effort</mj-text>
+          <mj-text mj-class="texte-blanc titre ">et vous gagnerez </mj-text>
+          <mj-text mj-class="texte-blanc titre">des chèques-cadeaux</mj-text>
+        </mj-column>
+        
+        <mj-column width="65%">
+
+          <mj-text>Entre le 02/05 et le 30/06/2016, vous avez réalisé <b><!--XXX--><?=$valeur_bloc_nm1;?> </b> dossier(s) en prévoyance professionnelle.</mj-text>
+          
+          <mj-text>Depuis le 2 mai 2017, vous avez réalisé <b><!--XXX--><?=$valeur_bloc;?></b> dossier(s) en prévoyance professionnelle.</mj-text>
+
+        </mj-column>
+      </mj-section>
+      <mj-section mj-class="borderdwn-taupe" >
+        <mj-column>
+           <mj-text mj-class="small">*avec primes > à 400€ TTC par an</mj-text>
+        </mj-column>
+      </mj-section>
+      </mj-wrapper>
+
+      <mj-raw>
+       <?php 
+        /*******************************
+        fin prévoyance professionnelle
+        *******************************/
+       ?>
+      </mj-raw>
+
+
+
+
+
+        <mj-raw>
+       <?php 
+        /*******************************
+        nouveau:couplage contrats indiv et/ou pro
+        *******************************/
+       ?>
+      </mj-raw>
+      <mj-wrapper padding="5px">
+      <mj-section mj-class="borderup-noir fd-noir">
+        <mj-column width="100%">
+          <mj-text mj-class=" titre moyen texte-blanc" padding-top="0px" padding-bottom="0px" align="center">NOUVEAU : COUPLAGE CONTRATS INDIV ET/OU PRO</mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section mj-class="bordermid-noir" padding-top="5px">
+        <mj-column width="100%">
+          <mj-text mj-class="alinea">valable en cas d'adhésion de plusieurs contrats individuels et/ou pro d'un même adhérent sur la période du challenge</mj-text>
+        </mj-column>
+      </mj-section>
+      
+      <mj-section  mj-class="bordermid-noir" > 
+        
+        
+         <mj-column width="35%" mj-class="fd-noir">
+
+           <mj-text mj-class="texte-blanc titre">Encore un effort</mj-text>
+          <mj-text mj-class="texte-blanc titre ">et vous gagnerez </mj-text>
+          <mj-text mj-class="texte-blanc titre">des chèques-cadeaux</mj-text>
+        </mj-column>
+        
+        <mj-column width="65%">
+
+          <mj-text>Entre le 02/05 et le 30/06/2016, vous avez réalisé <b><!--XXX--><?=$valeur_bloc_nm1;?> </b> couplage(s).</mj-text>
+          
+          <mj-text>Depuis le 2  mai 2017, vous avez réalisé <b><!--XXX--><?=$valeur_bloc;?></b> couplage(s).</mj-text>
+
+        </mj-column>
+      </mj-section>
+      <mj-section mj-class="borderdwn-noir" >
+        <mj-column>
+           
+        </mj-column>
+      </mj-section>
+      
+      </mj-wrapper>
+      <mj-raw>
+       <?php
+        /*******************************
+        Fin nouveau:couplage indiv et/ou pro
+        *******************************/
+        ?>
+      </mj-raw>
+
+
+
+      
+
+
+
+
+       
+
+
+      <mj-raw>
+       <?php 
+        /*******************************
+        entreprise santé
+        *******************************/
+       ?>
+      </mj-raw>
+
+
+      <mj-wrapper padding="5px">
+      <mj-section mj-class="borderup-vert-clair">
+        <mj-column>
+
+          <mj-text mj-class="texte-vert-clair titre moyen">entreprise santé</mj-text>
+          <mj-text mj-class="alinea">(toute la gamme santé* collective)</mj-text>
+        </mj-column>
+      </mj-section>
+      
+      <mj-section  mj-class="bordermid-vert-clair"> 
+        
+        
+         <mj-column width="35%" mj-class="fd-vert-clair">
+
+           <mj-text mj-class="texte-blanc titre">Encore un effort</mj-text>
+          <mj-text mj-class="texte-blanc titre ">et vous gagnerez </mj-text>
+          <mj-text mj-class="texte-blanc titre">des chèques-cadeaux</mj-text>
+        </mj-column>
+        
+        <mj-column width="65%">
+
+          <mj-text>Entre le 02/05 et le 30/06/2016, vous avez réalisé <b><!--XXX--><?=$valeur_bloc_nm1;?> </b> nouvelle(s) adhésion(s) dans la gamme prévoyance TPE.</mj-text>
+          
+          <mj-text>Depuis le 2 mai 2017, vous avez réalisé <b><!--XXX--><?=$valeur_bloc;?></b> nouvelle(s) adhésion(s) dans la gamme prévoyance TPE.</mj-text>
+
+        </mj-column>
+      </mj-section>
+      <mj-section mj-class="borderdwn-vert-clair" >
+        <mj-column>
+           <mj-text mj-class="small">* Hors contrats pour ordre, sur mesure. Récompense pour un ou plusieurs collèges pour un même risque assuré.</mj-text>
+        </mj-column>
+      </mj-section>
+      </mj-wrapper>
+
+      <mj-raw>
+       <?php 
+        /*******************************
+        fin entreprise santé
+        *******************************/
+       ?>
+      </mj-raw>
+
+      <mj-raw>
+       <?php 
+        /*******************************
+         entreprise prévoyance
+        *******************************/
+       ?>
+      </mj-raw>
+
+
+
+
+
+
+
+      <mj-wrapper padding="5px">
+      <mj-section mj-class="borderup-vert-moyen">
+        <mj-column>
+
+          <mj-text mj-class="texte-vert-moyen titre moyen">entreprise prévoyance</mj-text>
+          <mj-text mj-class="alinea">(toute la gamme prévoyance* collective)</mj-text>
+        </mj-column>
+      </mj-section>
+      
+      <mj-section  mj-class="bordermid-vert-moyen"> 
+        
+        
+         <mj-column width="35%" mj-class="fd-vert-moyen">
+
+           <mj-text mj-class="texte-blanc titre">Encore un effort</mj-text>
+          <mj-text mj-class="texte-blanc titre ">et vous gagnerez </mj-text>
+          <mj-text mj-class="texte-blanc titre">des chèques-cadeaux</mj-text>
+        </mj-column>
+        
+        <mj-column width="65%">
+
+          <mj-text>Entre le 02/05 et le 30/06/2016, vous avez réalisé <b><!--XXX--><?=$valeur_bloc_nm1;?> </b>nouvelle(s) adhésion(s) dans la gamme prévoyance TPE.</mj-text>
+          
+          <mj-text>Depuis le 2 mai 2017, vous avez réalisé <b><!--XXX--><?=$valeur_bloc;?></b> nouvelle(s) adhésion(s) dans la gamme prévoyance TPE.</mj-text>
+
+        </mj-column>
+      </mj-section>
+      <mj-section mj-class="borderdwn-vert-moyen" >
+        <mj-column>
+           <mj-text mj-class="small">* Hors contrats pour ordre, sur mesure. Récompense pour un ou plusieurs collèges pour un même risque assuré.</mj-text>
+        </mj-column>
+      </mj-section>
+      </mj-wrapper>
+
+
+
+      <mj-raw>
+       <?php 
+        /*******************************
+        fin entreprise prévoyance
+        *******************************/
+       ?>
+      </mj-raw>
+
+
+      <mj-raw>
+       <?php 
+        /*******************************
+        nouveau : couplage contrats entreprise
+        *******************************/
+       ?>
+      </mj-raw>
+
+
+
+       <mj-wrapper padding="5px">
+      <mj-section mj-class="borderup-vert-fonce fd-vert-fonce">
+        <mj-column width="100%">
+          <mj-text mj-class=" titre moyen texte-blanc" padding-top="0px" padding-bottom="0px" align="center">NOUVEAU : COUPLAGE CONTRATS ENTRERPISE</mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section mj-class="bordermid-vert-fonce" padding-top="5px">
+        <mj-column width="100%">
+          <mj-text mj-class="alinea">valable en cas d'adhésion d'un contrat santé et d'un contra prévoyance entreprise d'un même adhérent sur la période du challenge</mj-text>
+        </mj-column>
+      </mj-section>
+      
+      <mj-section  mj-class="bordermid-vert-fonce" > 
+        
+        
+         <mj-column width="35%" mj-class="fd-vert-fonce">
+
+           <mj-text mj-class="texte-blanc titre">Encore un effort</mj-text>
+          <mj-text mj-class="texte-blanc titre ">et vous gagnerez </mj-text>
+          <mj-text mj-class="texte-blanc titre">des chèques-cadeaux</mj-text>
+        </mj-column>
+        
+        <mj-column width="65%">
+
+          <mj-text>Entre le 02/05 et le 30/06/2016, vous avez réalisé <b><!--XXX--><?=$valeur_bloc_nm1;?> </b> couplage(s).</mj-text>
+          
+          <mj-text>Depuis le 2  mai 2017, vous avez réalisé <b><!--XXX--><?=$valeur_bloc;?></b> couplage(s).</mj-text>
+
+        </mj-column>
+      </mj-section>
+      <mj-section mj-class="borderdwn-vert-fonce" >
+        <mj-column>
+           
+        </mj-column>
+      </mj-section>
+      
+      </mj-wrapper>
+
+
+      <mj-raw>
+       <?php 
+        /*******************************
+        fin nouveau : couplage contrats entreprise
+        *******************************/
+       ?>
+      </mj-raw>
+      
+      
+     
+    </mj-container>  
+  </mj-body>
+</mjml>

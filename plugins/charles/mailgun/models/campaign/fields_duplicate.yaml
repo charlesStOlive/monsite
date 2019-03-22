@@ -8,7 +8,7 @@ fields:
         label: intitulé de la nouvelle campagne
 
     date_info_update:
-        label:  Date de mise à jours des données de ventes contacts
+        label:  Date de mise à jours des données de ventes courtiers
         type: datepicker
         format: d-m-Y
         mode: date

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Contact
+
+# Model Form Field configuration
+form: $/charles/mailgun/models/contact/fields.yaml
+
+# Model Class name
+modelClass: Charles\Mailgun\Models\Contact
+
+# Default redirect location
+defaultRedirect: charles/mailgun/contacts
+
+# Create page
+create:
+    title: Create Contact
+    redirect: charles/mailgun/contacts/update/:id
+    redirectClose: charles/mailgun/contacts
+
+# Update page
+update:
+    title: Edit Contact
+    redirect: charles/mailgun/contacts
+    redirectClose: charles/mailgun/contacts
+
+# Preview page
+preview:
+    title: Preview Contact

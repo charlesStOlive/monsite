@@ -3,9 +3,10 @@ date_default_timezone_set("Europe/Helsinki");
 
 use Backend\Classes\ControllerBehavior;
 
-use Charles\Crm\Models\Contact;
+use Charles\Mailgun\Models\Contact;
+use Charles\Folies\Models\Gamme;
 use Charles\Mailgun\Models\Campaign;
-use Charles\Crm\Models\Settings;
+use Charles\Folies\Models\Settings;
 
 use Flash;
 use Redirect;
@@ -109,11 +110,17 @@ class SendEmails extends ControllerBehavior
         //boucle sur les contacts eligibles. 
         foreach($contacts['eligibles'] as $contact) {
 
-            $this->assign_campaign($contact, $campaign);
 
-            $this->sendEmail($contact->id, $dataCampaign);
-           
-            $campaign->increment('nb_email_sent');
+            //sécurtier pour verifier si campagne d'éjà envoyé. 
+            $dejaEnvoye = $contact->results()->where('campaign_id', $campaignId)->count();
+
+            if(!$dejaEnvoye) {
+                $this->assign_campaign($contact, $campaign);
+
+                $this->sendEmail($contact->id, $dataCampaign);
+               
+                $campaign->increment('nb_email_sent');
+            }  
        }
 
         $campaign->status_id = 2;
@@ -154,9 +161,6 @@ class SendEmails extends ControllerBehavior
         //création du array data email
         $dataEmail = [];
         $dataEmail['contact'] = $contact->toArray();
-        $dataEmail['campaign'] = $dataCampaign;
-        $dataEmail['campaign']['settings'] = Settings::instance();
-        
         //Affectation sujet, cible etc. 
         $subject = $dataCampaign['subject'];
         $email = $contact->email;
@@ -168,16 +172,16 @@ class SendEmails extends ControllerBehavior
             $isTest = true;
         }
 
-        $html = View::make('charles.mailgun::contact', $dataEmail)->render();
+        $html = View::make('dom.mailgun::contact', $dataEmail)->render();
 
         Mail::raw(['html' => $html], function ($message) use($dataCampaign, $email, $subject, $contact, $isTest ) {
             $message->to($email);
             $message->subject($subject);
-            $message->from('postmaster@mg.april-crm.com', 'APRIL FOLIES');
+            $message->from('embauche@charles-saint-olive.com', 'Charles Saint-Olive');
             if(!$isTest) {
             //Si ce n'est pas un test on met les headers. 
                 $headers = $message->getHeaders();
-                $headers->addTextHeader('X-Mailgun-Variables', '{"code_asp": "' .  $contact->code_asp . '", '. '"email": "'. $contact->email . '", ' .'"campaign_id": "' . $dataCampaign['id'] . '"}');
+                $headers->addTextHeader('X-Mailgun-Variables', '{"email": "'. $contact->email . '", ' .'"campaign_id": "' . $dataCampaign['id'] . '"}');
             }
         });
     }

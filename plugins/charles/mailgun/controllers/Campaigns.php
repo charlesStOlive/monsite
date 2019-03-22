@@ -19,8 +19,8 @@ class Campaigns extends Controller
         'Backend.Behaviors.FormController',
         'Backend.Behaviors.ListController',
         'Backend.Behaviors.RelationController',
-        'Charles.Mailgun.Behaviors.SendEmails',
-        'Charles.Mailgun.Behaviors.ExportExcel',
+        'Dom.Mailgun.Behaviors.SendEmails',
+        'Dom.Mailgun.Behaviors.ExportExcel',
     ];
 
     public $formConfig = 'config_form.yaml';
@@ -28,7 +28,7 @@ class Campaigns extends Controller
     public $relationConfig = 'config_relation.yaml';
     public $excelConfig = 'config_export.yaml';
 
-    public $requiredPermissions = ['charles.mailgun.*'];
+    public $requiredPermissions = ['dom.mailgun.*'];
 
     protected $duplicateCampaignWidget;
 
@@ -38,8 +38,8 @@ class Campaigns extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Charles.Mailgun', 'mailgun', 'side-menu-campaigns');
-        SettingsManager::setContext('charles.mailgun', 'settings');
+        BackendMenu::setContext('Dom.Mailgun', 'mailgun', 'side-menu-campaigns');
+        SettingsManager::setContext('dom.mailgun', 'settings');
 
 
         $this->duplicateCampaignWidget = $this->duplicateCampaignFormWidget();
@@ -70,13 +70,15 @@ class Campaigns extends Controller
     protected function onDuplicateValidation(){
         $data = $this->duplicateCampaignWidget->getSaveData();
 
-        $sourceCampaign = Campaign::find(post('campaign_id'));
+        $sourceCampaign = Campaign::with('picture')->find(post('campaign_id'));
         $newCampaign = $sourceCampaign->replicate();
 
         $newCampaign->date_info_update = $data['date_info_update'];
         $newCampaign->name = $data['name'];
         $newCampaign->status_id = 1;
         $newCampaign->sent_at = null;
+        $newCampaign->nb_email_sent = 0;
+        $newCampaign->picture = $sourceCampaign->picture;
         $newCampaign->save();
 
         Flash::info("La campagne a été dupliquée ");

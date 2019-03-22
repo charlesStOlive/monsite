@@ -1,0 +1,250 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+      
+      <mj-class name="fd-orange-clair" background-color="#fdc300"></mj-class>
+      <mj-class name="texte-orange-clair" color="#fdc300"></mj-class>
+      <mj-class name="borderup-orange-clair" border-top="1px solid #fdc300" border-left="1px solid #fdc300" border-right="1px solid #fdc300"></mj-class>
+      <mj-class name="borderdwn-orange-clair" border-bottom="1px solid #fdc300" border-left="1px solid #fdc300" border-right="1px solid #fdc300"></mj-class>
+      <mj-class name="bordermid-orange-clair" border-left="1px solid #fdc300" border-right="1px solid #fdc300" padding-bottom="0px" padding-top="0px"></mj-class>
+      <mj-class name="fd-orange-moyen" background-color="#f49e00"></mj-class>
+      <mj-class name="texte-orange-moyen" color="#f49e00"></mj-class>
+      <mj-class name="borderup-orange-moyen" border-top="1px solid #f49e00" border-left="1px solid #f49e00" border-right="1px solid #f49e00"></mj-class>
+      <mj-class name="borderdwn-orange-moyen" border-bottom="1px solid #f49e00" border-left="1px solid #f49e00" border-right="1px solid #f49e00"></mj-class>
+      <mj-class name="bordermid-orange-moyen" border-left="1px solid #f49e00" border-right="1px solid #f49e00" padding-bottom="0px" padding-top="0px"></mj-class>
+      <mj-class name="fd-taupe" background-color="#6b6351"></mj-class>
+      <mj-class name="texte-taupe" color="#6b6351"></mj-class>
+      <mj-class name="borderup-taupe" border-top="1px solid #6b6351" border-left="1px solid #6b6351" border-right="1px solid #6b6351"></mj-class>
+      <mj-class name="borderdwn-taupe" border-bottom="1px solid #6b6351" border-left="1px solid #6b6351" border-right="1px solid #6b6351"></mj-class>
+      <mj-class name="bordermid-taupe" border-left="1px solid #6b6351" border-right="1px solid #6b6351" padding-bottom="0px" padding-top="0px"></mj-class>
+      <mj-class name="fd-orange-jaune" background-color="#fd800"></mj-class>
+      <mj-class name="fd-vert-jaune" background-color="#dedc00"></mj-class>
+      <mj-class name="fd-vert-vitrine" background-color="#438f29"></mj-class>
+      
+      <mj-class name="texte-blanc" color="#ffffff"></mj-class>
+       <mj-class name="textefinale" line-height="12px"></mj-class>
+      
+      <!-- <mj-column border="1px%20solid%20%23ff0000"/> -->
+
+        
+      <mj-class name="titre" text-transform="uppercase" align="center"></mj-class>
+      <mj-class name="grand" font-size="28px" font-weight="700" line-height="24px" padding-top="0px" padding-bottom="0px" align="center"></mj-class>
+      <mj-class name="moyen" font-size="18px"   align="center"></mj-class>
+      <mj-class name="small" font-size="10px" padding-top="0px" padding-bottom="0px" line-height="14px" align="center"></mj-class>
+      <mj-class name="alinea" padding-top="0px" align="center"></mj-class>
+      <mj-class name="texte-sans-padding" padding-top="0" padding-bottom="0px"></mj-class>
+      
+      
+      <mj-section padding-left="10px" padding-right="10px" padding-bottom="10px" padding-top="10px"></mj-section>
+    </mj-attributes>
+    
+    
+    
+    
+    
+  </mj-head>
+  <mj-body background-color="#F2F2F5">
+    
+    
+    <mj-section padding="0px">
+      <mj-column width="30%">
+        <mj-image padding="0px" align="left" src="http://april-folies.com/admin/NL_folie/imgs/picto.jpg" width="150px"></mj-image>
+      </mj-column>
+      <mj-column width="70%">
+        <mj-text text-transform="uppercase" padding-top="30" padding-left="5px" color="#6b6351" font-size="15px" line-height="15px" font-weight="500">
+        <!--*origin--> DU 11 SEPTEMBRE AU 10 NOVEMBRE 2017 <!--origin*-->
+        </mj-text>
+        <mj-text text-transform="uppercase" padding-top="0" padding-left="5px" color="#ee7f00" font-size="20px" line-height="18px" font-weight="500">
+         1 mois gratuit pour vos clients
+        </mj-text>
+        <mj-text text-transform="uppercase" padding-top="0" padding-left="5px" color="#fdc300" font-size="20px" line-height="18px" font-weight="500">des chèques cadeaux pour vous</mj-text>
+      </mj-column>
+    </mj-section>
+    
+    <mj-section>
+      <mj-column>
+        <mj-text>Salut marlène !</mj-text>
+      </mj-column>
+      <mj-column>
+        <mj-text>Salut marlène !</mj-text>
+      </mj-column>
+      <mj-column>
+        <mj-text>Salut marlène !</mj-text>
+      </mj-column>
+    </mj-section>
+    
+    
+    
+    <mj-section padding-left="0px" padding-right="0px" padding-top="0px">
+      <mj-column>
+        <mj-text>Cher Partenaire,</mj-text>
+        <mj-text><b>Pour vous un challenge sur-mesure jusqu'au 10 novembre 2017 pour dynamiser votre business&nbsp;:</b>
+          <p>Augmentez votre production d'affaires nouvelles par rapport à l'année dernière sur la même période et gagnez des chèques cadeaux par nouveau dossier supplémentaire (par rapport à la période du 11 septembre au 10 novembre 2016)*. <br/> Si vous
+          n'avez jamais produit sur une gamme, vous remportez un chèque-cadeau dès la première affaire !</p></mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding-left="0px">
+      <mj-column width="70%">
+        <mj-text text-transform="uppercase" padding-top="0" padding-left="20px" color="#ee7f00" font-size="18px" line-height="18px" font-weight="500">Bravo ! vous gagnez des chèques&#8209;cadeaux.</mj-text>
+        <mj-text padding-left="20px" padding-top="0px"><b>Résultats intermédiaires au <?= $date_resultats ?></b></mj-text>
+      </mj-column>
+      <mj-column width="30%" mj-class="fd-taupe">
+        <mj-text mj-class="texte-blanc titre ">Total des gains</mj-text>
+        <mj-text padding-bottom="10px" mj-class="texte-blanc titre grand">
+          <!--XXX-->
+          <?= $total_cc ?> €</mj-text>
+      </mj-column>
+    </mj-section>
+
+
+
+   
+    <mj-raw>
+      <?php 
+        /*******************************
+        santé individuelle et animale
+        *******************************/
+       ?>
+    </mj-raw>
+    
+    <mj-wrapper padding="5px">
+      <mj-section mj-class="borderup-orange-clair">
+        <mj-column>
+          <mj-text mj-class="texte-orange-clair titre moyen">santé individuelle et animale</mj-text>
+          <mj-text mj-class="alinea">(sur les contrats phares* et sur les 58 ans et/+, TNS, fonctionnaires et frontaliers suisses)</mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section mj-class="bordermid-orange-clair">
+        <mj-column width="35%" mj-class="fd-orange-clair">
+          <mj-text mj-class="texte-blanc titre">bravo ! vous remportez</mj-text>
+          <mj-text mj-class="texte-blanc titre grand">
+            <!--XXX-->
+            <?=$valeur_bloc_cc;?> €</mj-text>
+          <mj-text mj-class="texte-blanc titre">de chèques-cadeaux</mj-text>
+        </mj-column>
+        <mj-column width="65%">
+          <mj-text>Entre le 02/05 et le 30/06/2016, vous avez réalisé <b><!--XXX--><?=$valeur_bloc_nm1;?> </b> affaire(s) en santé individuelle et animale.</mj-text>
+          <mj-text>Depuis le 2 mai 2017, vous avez réalisé <b><!--XXX--><?=$valeur_bloc;?></b> affaire(s) en santé individuelle et animale.</mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section mj-class="borderdwn-orange-clair">
+        <mj-column>
+          <mj-text mj-class="small">*Ma sant évolutive, mon assurance santé globale, ma santé essentielle+, Assurance santé chiens-chats</mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+    
+    <mj-raw>
+      <?php
+        /*******************************
+        Fin santé individuelle et animale
+        *******************************/
+        ?>
+    </mj-raw>
+    
+    
+    
+    
+    <mj-raw>
+      <?php 
+        /*******************************
+        santé pro
+        *******************************/
+       ?>
+    </mj-raw>
+    <mj-wrapper padding="5px">
+      <mj-section mj-class="borderup-orange-moyen">
+        <mj-column>
+          <mj-text mj-class="texte-orange-moyen titre moyen">Santé professionnelle</mj-text>
+          <mj-text mj-class="alinea">Mon assurance santé PRO</mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section mj-class="bordermid-orange-moyen">
+        <mj-column width="35%" mj-class="fd-orange-moyen">
+          <mj-text mj-class="texte-blanc titre">bravo ! vous remportez</mj-text>
+          <mj-text mj-class="texte-blanc titre grand">
+            <!--XXX-->
+            <?=$valeur_bloc_cc;?> €</mj-text>
+          <mj-text mj-class="texte-blanc titre">de chèques-cadeaux</mj-text>
+        </mj-column>
+        <mj-column width="65%">
+          <mj-text>Entre le 02/05 et le 30/06/2016, vous avez réalisé <b><!--XXX--><?=$valeur_bloc_nm1;?> </b> affaire(s) en santé pro.*</mj-text>
+          <mj-text>Depuis le 2 mai 2017, vous avez réalisé <b><!--XXX--><?=$valeur_bloc;?></b> affaire(s) en santé pro.*</mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section mj-class="borderdwn-orange-moyen">
+        <mj-column>
+          <mj-text mj-class="small">avec primes > à 400€TTC par an</mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+    <mj-raw>
+      <?php
+        /*******************************
+        Fin santé pro
+        *******************************/
+        ?>
+    </mj-raw>
+    
+    <mj-section padding-top="30px">
+      <mj-column>
+        <mj-text text-transform="uppercase" padding-top="0" padding-left="20px" color="#ee7f00" font-size="18px" line-height="18px" font-weight="500">Bravo ! vous gagnez des chèques&#8209;cadeaux.</mj-text>
+        <mj-section>
+      <mj-column>
+        <mj-table>
+          <tr style="border-bottom:1px solid #ecedee;text-align:left;padding:15px 0;">
+            <th style="padding: 0 15px 0 0;">Year</th>
+            <th style="padding: 0 15px;">Language</th>
+            <th style="padding: 0 0 0 15px;">Inspired from</th>
+          </tr>
+          <tr>
+            <td style="padding: 0 15px 0 0;">1995</td>
+            <td style="padding: 0 15px;">PHP</td>
+            <td style="padding: 0 0 0 15px;">C, Shell Unix</td>
+          </tr>
+          <tr>
+            <td style="padding: 0 15px 0 0;">1995</td>
+            <td style="padding: 0 15px;">JavaScript</td>
+            <td style="padding: 0 0 0 15px;">Scheme, Self</td>
+          </tr>
+        </mj-table>
+      </mj-column>
+    </mj-section>
+      </mj-column>
+    </mj-section>
+   
+   
+   
+    <mj-section padding-left="0px" padding-right="0px">
+      <mj-column>
+        <mj-text>Retrouvez toutes les informations concernant les APRIL Folies sur <a style="color:#f49e00; text-decoration:none" href="https://www.intrapril.fr/" target="_blank">Intrapril.fr</a> ou</mj-text>
+        <mj-button mj-class="fd-vert-moyen" align="left" href="#LINK#">
+          CONTACTER JOHN DOE
+        </mj-button>
+        <mj-text>Consultez le règlement <a style="color:#f49e00; text-decoration:none" href="https://www.april-folies/doc/Reglement_Challenge_APRIL_Folies_Automne_2017.pdf" target="_blank">ici</a></mj-text>
+        <mj-text>Je vous souhaite de très bonnes ventes.</mj-text>
+        <mj-text>
+          <b>John Doe</b>
+        </mj-text>
+        <mj-text>Votre interlocuteur commercial.</mj-text>
+      </mj-column>
+    </mj-section>
+   
+   
+    <mj-section padding-bottom="20px" padding-top="20px" background-color="#cccccc">
+      <mj-column width="100%">
+        <mj-text mj-class="small"><b>APRIL Entreprise Prévoyance</b> Immeuble Aprilium - 114 boulevard Marius Vivier Merle 69439 LYON Cedex 03 - <a style="color:black; text-decoration:none" href="https://www.pro.april.fr/" target="_blank">www.pro.april.fr</a> - S.A.S. au capital
+          de 2 441 600 € - RCS LYON 493 481 816 - Intermédiaire en assurances immatriculé l’ORIAS sous le n° 08 040 197 (<a style="color:black; text-decoration:none" href="https://www.orias.fr/" target="_blank">www.orias.fr</a>) - Autorité de contrôle
+          prudentiel et de résolution - 61 rue Taitbout - 75436 PARIS Cedex 09.</mj-text>
+        <mj-text mj-class="small"><b>APRIL Santé Prévoyance</b> Immeuble Aprilium - 114 boulevard Marius Vivier Merle - 69439 LYON Cedex 03 - Tél. : 09 74 50 75 75 - Fax : 04 78 53 65 18 - <a style="color:black; text-decoration:none" href="https://www.pro.april.fr/" target="_blank">www.april.fr</a>          - S.A.S. au capital de 500 000 € - RCS Lyon 428 702 419. Intermédiaire en assurances - Immatriculée à l’ORIAS sous le n° 07 002 609 (<a style="color:black; text-decoration:none" href="https://www.orias.fr/" target="_blank">www.orias.fr</a>).
+          Autorité de contrôle prudentiel et de résolution - 61 rue Taitbout - 75436 Paris cedex 09.</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section>
+      <mj-column>
+        <mj-text align="center" mj-class="small"><a style="color:#f49e00; text-decoration:none" href="#">Pour vous désinscrire cliquez ici</a></mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

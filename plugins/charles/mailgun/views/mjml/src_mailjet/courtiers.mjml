@@ -1,0 +1,209 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+      <mj-class name="fd-vert-clair" background-color="#c9d200" />
+      <mj-class name="texte-vert-clair" color="#c9d200" />
+      <mj-class name="borderup-vert-clair" border-top="1px solid #c9d200"  border-left="1px solid #c9d200" border-right="1px solid #c9d200" />
+      <mj-class name="borderdwn-vert-clair" border-bottom="1px solid #c9d200"  border-left="1px solid #c9d200" border-right="1px solid #c9d200" />
+      <mj-class name="bordermid-vert-clair"  border-left="1px solid #c9d200" border-right="1px solid #c9d200" padding-bottom="0px" padding-top="0px"  />
+
+      <mj-class name="fd-vert-moyen" background-color="#a5c400" />
+      <mj-class name="texte-vert-moyen" color="#a5c400"/>
+      <mj-class name="borderup-vert-moyen" border-top="1px solid #a5c400"  border-left="1px solid #a5c400" border-right="1px solid #a5c400" />
+      <mj-class name="borderdwn-vert-moyen" border-bottom="1px solid #a5c400"  border-left="1px solid #a5c400" border-right="1px solid #a5c400" />
+      <mj-class name="bordermid-vert-moyen" border-left="1px solid #a5c400" border-right="1px solid #a5c400" padding-bottom="0px" padding-top="0px" />
+
+      <mj-class name="fd-vert-fonce" background-color="#799c13" />
+      <mj-class name="texte-vert-fonce" color="#799c13"/>
+      <mj-class name="borderup-vert-fonce" border-top="1px solid #799c13"  border-left="1px solid #799c13" border-right="1px solid #799c13" />
+      <mj-class name="borderdwn-vert-fonce" border-bottom="1px solid #799c13"  border-left="1px solid #799c13" border-right="1px solid #799c13" />
+      <mj-class name="bordermid-vert-fonce" border-left="1px solid #799c13" border-right="1px solid #799c13" padding-bottom="0px" padding-top="0px" />
+
+
+      <mj-class name="fd-orange-clair" background-color="#fdc300" />
+      <mj-class name="texte-orange-clair" color="#fdc300"/>
+      <mj-class name="borderup-orange-clair" border-top="1px solid #fdc300"  border-left="1px solid #fdc300" border-right="1px solid #fdc300" />
+      <mj-class name="borderdwn-orange-clair" border-bottom="1px solid #fdc300"  border-left="1px solid #fdc300" border-right="1px solid #fdc300" />
+      <mj-class name="bordermid-orange-clair" border-left="1px solid #fdc300" border-right="1px solid #fdc300" padding-bottom="0px" padding-top="0px" />
+
+      <mj-class name="fd-orange-moyen" background-color="#f49e00" />
+      <mj-class name="texte-orange-moyen" color="#f49e00"/>
+      <mj-class name="borderup-orange-moyen" border-top="1px solid #f49e00"  border-left="1px solid #f49e00" border-right="1px solid #f49e00" />
+      <mj-class name="borderdwn-orange-moyen" border-bottom="1px solid #f49e00"  border-left="1px solid #f49e00" border-right="1px solid #f49e00" />
+      <mj-class name="bordermid-orange-moyen" border-left="1px solid #f49e00" border-right="1px solid #f49e00" padding-bottom="0px" padding-top="0px" />
+
+      <mj-class name="fd-orange-fonce" background-color="#ee7f00" />
+      <mj-class name="texte-orange-fonce" color="#ee7f00"/>
+      <mj-class name="borderup-orange-fonce" border-top="1px solid #ee7f00"  border-left="1px solid #ee7f00" border-right="1px solid #ee7f00" />
+      <mj-class name="borderdwn-orange-fonce" border-bottom="1px solid #ee7f00"  border-left="1px solid #ee7f00" border-right="1px solid #ee7f00" />
+      <mj-class name="bordermid-orange-fonce"  border-left="1px solid #ee7f00" border-right="1px solid #ee7f00" padding-bottom="0px" padding-top="0px" />
+
+     
+      <mj-class name="fd-taupe-clair" background-color="#a69f8f" />
+      <mj-class name="texte-taupe-clair" color="#a69f8f" />
+      <mj-class name="borderup-taupe-clair" border-top="1px solid #a69f8f"  border-left="1px solid #a69f8f" border-right="1px solid #a69f8f" />
+      <mj-class name="borderdwn-taupe-clair" border-bottom="1px solid #a69f8f"  border-left="1px solid #a69f8f" border-right="1px solid #a69f8f" />
+      <mj-class name="bordermid-taupe-clair" border-left="1px solid #a69f8f" border-right="1px solid #a69f8f" padding-bottom="0px" padding-top="0px"  />
+
+      <mj-class name="fd-taupe" background-color="#6b6351" />
+      <mj-class name="texte-taupe" color="#6b6351" />
+      <mj-class name="borderup-taupe" border-top="1px solid #6b6351"  border-left="1px solid #6b6351" border-right="1px solid #6b6351" />
+      <mj-class name="borderdwn-taupe" border-bottom="1px solid #6b6351"  border-left="1px solid #6b6351" border-right="1px solid #6b6351" />
+      <mj-class name="bordermid-taupe" border-left="1px solid #6b6351" border-right="1px solid #6b6351" padding-bottom="0px" padding-top="0px" />
+
+      <mj-class name="fd-noir" background-color="#707070" />
+      <mj-class name="texte-noir" color="#707070"/>
+      <mj-class name="borderup-noir" border-top="1px solid #707070"  border-left="1px solid #707070" border-right="1px solid #707070" />
+      <mj-class name="borderdwn-noir" border-bottom="1px solid #707070"  border-left="1px solid #707070" border-right="1px solid #707070" />
+      <mj-class name="bordermid-noir" border-left="1px solid #707070" border-right="1px solid #707070" padding-bottom="0px" padding-top="0px" />
+
+
+
+
+      <mj-class name="fd-orange-jaune" background-color="#fd800" />
+      <mj-class name="fd-vert-jaune" background-color="#dedc00" />
+      <mj-class name="fd-vert-vitrine" background-color="#438f29" />
+      
+      
+      
+      
+      <mj-class name="texte-blanc" color="#ffffff"/>
+      
+     
+      <mj-section padding-left="10px" padding-right="10px" padding-bottom="10px" padding-top="10px"/>
+      <mj-class name="textefinale" line-height="12px"/>
+
+
+
+
+      <mj-class name="titre"  text-transform="uppercase" align="center" />
+      <mj-class name="grand" font-size="28px" font-weight="700" line-height="22px" padding-top="0px" padding-bottom="0px" align="center" />
+      <mj-class name="moyen" font-size="18px" line-height="15px" padding-bottom="0px" align="center" />
+      <mj-class name="small" font-size="10px" padding-top="0px" padding-bottom="0px" line-height="14px" align="center" />
+      <mj-class name="alinea" padding-top="0px" align="center" />
+      <mj-class name="texte-sans-padding" padding-top="0" padding-bottom="0" />
+      
+    </mj-attributes>
+  </mj-head>
+
+
+
+
+  <mj-body>
+    <mj-container background-color="#FBFBF9">
+
+      <mj-section>
+      	<mj-column>
+      		<mj-text align="center" mj-class="small">
+      			Si vous ne pouvez pas visualiser cet email, <a style="color:#f49e00; text-decoration:none" href="#">consultez sa version en ligne</a> .
+      		</mj-text>
+      	</mj-column>
+      </mj-section>
+
+
+
+
+
+      
+      
+
+
+      <mj-section padding="0px" padding-left="0px" padding-right="0px">
+        <mj-column width="600px">
+          <mj-image padding="0" src="http://april-folies.com/admin/NL_folie/imgs/header1.jpg" />
+        </mj-column>
+      </mj-section>
+
+
+
+
+
+      <mj-section>
+      	<mj-column>
+      		<mj-text>Bonjour <?php echo utf8_encode($row_select_courtiers2['Prenom_interlocuteur']);?> <?php echo utf8_encode($row_select_courtiers2['Nom_interlocuteur']);?>,</mj-text>
+ 			
+      		<mj-text><b>Vos courtiers recevront prochainement les newsletter suivantes :</b></mj-text>
+    
+      	</mj-column>
+      </mj-section>
+        
+      
+      
+      
+       <mj-raw>
+       <?php 
+        /*******************************bloc lien*******************************/
+       ?>
+      </mj-raw>
+      
+      <mj-section padding-bottom="0"> 
+                
+         <mj-column width="65%" >
+          <mj-text mj-class="" padding-top="0" padding-bottom="0">Code courtier : <b><!--XXX--><?php echo $row_select_courtiers2['Code_ASP'];?></b> </mj-text>
+          <mj-text mj-class="" padding-top="0" padding-bottom="0">Cabinet : <b><!--XXX--><?php echo $row_select_courtiers2['Cabinet'];?></b> </mj-text>
+        </mj-column>
+        
+        <mj-column width="35%">
+        <mj-button mj-class="fd-vert-moyen" align="left" href="#">Voir l'email<?=utf8_encode($row_menu_DEPT['Nom_interlocuteur']);?></mj-button>
+        </mj-column>
+
+      </mj-section>
+
+      
+      <mj-section padding-top="0" padding-bottom="0"><mj-column><mj-divider padding-top="0" border-width="1px" border-style="dashed" border-color="lightgrey" /></mj-column></mj-section>
+     
+      <mj-raw>
+       <?php
+        /*******************************Fin bloc*******************************/
+        ?>
+      </mj-raw>
+
+
+
+     
+     
+
+
+
+        <mj-section padding-bottom="20px" padding-top="20px" background-color="#cccccc">
+        <mj-column width="100%">
+        <mj-text mj-class="small">
+        <b>APRIL Entreprise Prévoyance</b>
+          Immeuble Aprilium - 114 boulevard Marius Vivier Merle 69439 LYON Cedex
+          03 - <a style="color:black; text-decoration:none" href="https://www.pro.april.fr/" target="_blank">www.pro.april.fr</a> - S.A.S. au capital de 2 441 600 € - RCS LYON 493 481
+          816 - Intermédiaire en assurances immatriculé l’ORIAS sous le n° 08 040
+          197 (<a style="color:black; text-decoration:none" href="https://www.orias.fr/" target="_blank">www.orias.fr</a>) - Autorité de contrôle prudentiel et de résolution - 61 rue
+          Taitbout - 75436 PARIS Cedex 09.
+          </mj-text>
+          <mj-text mj-class="small">
+          <b>APRIL Santé Prévoyance</b>
+          Immeuble Aprilium - 114 boulevard Marius Vivier Merle - 69439 LYON Cedex
+          03 - Tél. : 09 74 50 75 75 - Fax : 04 78 53 65 18 - <a style="color:black; text-decoration:none" href="https://www.pro.april.fr/" target="_blank">www.april.fr</a> - S.A.S. au
+          capital de 500 000 € - RCS Lyon 428 702 419. Intermédiaire en assurances
+          - Immatriculée à l’ORIAS sous le n° 07 002 609 (<a style="color:black; text-decoration:none" href="https://www.orias.fr/" target="_blank">www.orias.fr</a>). Autorité de
+          contrôle prudentiel et de résolution - 61 rue Taitbout - 75436 Paris cedex 09.
+        </mj-text>
+          
+        </mj-column>
+      </mj-section>
+      
+
+      <mj-section>
+      	<mj-column>
+      		
+
+      		<mj-text align="center" mj-class="small">
+      			<a style="color:#f49e00; text-decoration:none" href="#">Pour vous désinscrire cliquez ici</a>
+      		</mj-text>
+      	</mj-column>
+      </mj-section>
+      
+      
+      
+      
+      
+      
+      
+    </mj-container>
+  </mj-body>
+</mjml>

@@ -4,9 +4,6 @@ use Backend;
 use System\Classes\PluginBase;
 use Event;
 
-use Charles\Crm\Models\Contact as ContactModel;
-use Charles\Crm\Controllers\Contacts as ContactsController;
-
 use Charles\Mailgun\Models\Campaign;
 
 
@@ -15,6 +12,12 @@ use Charles\Mailgun\Models\Campaign;
  */
 class Plugin extends PluginBase
 {
+
+
+     public $require = [
+        'Dom.Folies',
+    ];
+
 
     /**
      * Returns information about this plugin.
@@ -65,32 +68,32 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        ContactModel::extend(function($model){
-                $model->belongsToMany['results'] = [
-                    'Charles\Crm\Models\Contact',
-                    'table' => 'charles_mailgun_campaign_contact',
-                    'pivot' => ['result_type'],
-                    'pivotModel' => 'Charles\Mailgun\Models\ContactCampaignPivot'
-                ];
-            });
+        // ContactModel::extend(function($model){
+        //         $model->belongsToMany['results'] = [
+        //             'Charles\Folies\Models\Contact',
+        //             'table' => 'charles_mailgun_campaign_courtier',
+        //             'pivot' => ['result_type'],
+        //             'pivotModel' => 'Charles\Mailgun\Models\ContactCampaignPivot'
+        //         ];
+        //     });
 
-        Event::listen('backend.list.extendColumns', function($widget) {
-            if(($widget->getController() instanceof ContactsController) && ($widget->model instanceof ContactModel)) {
-                $widget->addColumns([
-                    'campaigns' => [
-                        'label' => 'Campagnes',
-                        'clickable' => false,
-                        'searchable' => false,
-                        'sortable' => false,
-                        'type' => 'partial',
-                        'path' => '$/charles/mailgun/widget/_sendUnique.htm',                    ]
-                ]);
-            }
-        });
+        // Event::listen('backend.list.extendColumns', function($widget) {
+        //     if(($widget->getController() instanceof ContactsController) && ($widget->model instanceof ContactModel)) {
+        //         $widget->addColumns([
+        //             'campaigns' => [
+        //                 'label' => 'Campagnes',
+        //                 'clickable' => false,
+        //                 'searchable' => false,
+        //                 'sortable' => false,
+        //                 'type' => 'partial',
+        //                 'path' => '$/charles/mailgun/widget/_sendUnique.htm',                    ]
+        //         ]);
+        //     }
+        // });
 
-        ContactsController::extend(function($controller) {
-            $controller->implement[] = 'Charles.Mailgun.Behaviors.SendEmails';
-        });
+        // ContactsController::extend(function($controller) {
+        //     $controller->implement[] = 'Dom.Mailgun.Behaviors.SendEmails';
+        // });
 
     }
 
@@ -117,7 +120,7 @@ class Plugin extends PluginBase
     {
 
         return [
-            'charles.mailgun.*' => [
+            'dom.mailgun.*' => [
                 'tab' => 'Campagnes',
                 'label' => 'Gerer les campagnes'
             ],
@@ -145,24 +148,20 @@ class Plugin extends PluginBase
                 'label'       => 'Gestion des campagnes',
                 'url'         => Backend::url('charles/mailgun/campaigns'),
                 'icon'        => 'icon-envelope',
-                'permissions' => ['charles.mailgun.*'],
+                'permissions' => ['dom.mailgun.*'],
                 'order'       => 500,
+
                 'sideMenu' => [
                         'side-menu-campaigns' => [
                             'label'       => 'Campagnes',
                             'icon'        => 'icon-envelope',
                             'url'         => Backend::url('charles/mailgun/campaigns'),
                         ],
-                        'side-menu-templates' => [
-                            'label'       => 'Modeles',
-                            'icon'        => 'icon-pen',
-                            'url'         => Backend::url('charles/mailgun/templates'),
-                        ],
-                        'side-menu-statuses' => [
-                            'label'       => 'status',
-                            'icon'        => 'icon-gear',
-                            'url'         => Backend::url('charles/mailgun/statuses'),
-                        ],
+                        // 'side-menu-statuses' => [
+                        //     'label'       => 'Statuts',
+                        //     'icon'        => 'icon-folder-open',
+                        //     'url'         => Backend::url('charles/mailgun/statuses'),
+                        // ],
                 ],
             ],
         ];

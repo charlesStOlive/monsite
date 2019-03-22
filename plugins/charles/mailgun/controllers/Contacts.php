@@ -4,9 +4,9 @@ use BackendMenu;
 use Backend\Classes\Controller;
 
 /**
- * Statuses Back-end Controller
+ * Contacts Back-end Controller
  */
-class Statuses extends Controller
+class Contacts extends Controller
 {
     public $implement = [
         'Backend.Behaviors.FormController',
@@ -20,6 +20,6 @@ class Statuses extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Dom.Mailgun', 'mailgun', 'side-menu-statuses');
+        BackendMenu::setContext('Charles.Mailgun', 'mailgun', 'contacts');
     }
 }

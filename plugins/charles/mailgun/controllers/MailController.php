@@ -5,7 +5,7 @@ namespace Charles\Mailgun\Controllers;
 use Config;
 use Illuminate\Http\Request;
 
-use Charles\Crm\Models\Contact;
+use Charles\Folies\Models\Contact;
 use Charles\Mailgun\Models\Log;
 
 class MailController {
@@ -22,17 +22,17 @@ class MailController {
         ) {
 
             $code_asp = $mailDatas['event-data']['user-variables']['code_asp'];
-            $contact = Contact::where('code_asp', '=', $code_asp)->first();
+            $courtier = Contact::where('code_asp', '=', $code_asp)->first();
             $campaignId = $mailDatas['event-data']['user-variables']['campaign_id'];
             $emailRecipient = $mailDatas['event-data']['recipient'];
             $mgTimestamp = $mailDatas['signature']['timestamp'];
 
-            $existingEntry = $contact->campaigns()->where('id', $campaignId)->exists();
+            $existingEntry = $courtier->campaigns()->where('id', $campaignId)->exists();
 
             if($existingEntry) {
-                $this->updateOnPriority($contact, $campaignId, $mailDatas['event-data']['event'], $mgTimestamp, $emailRecipient);
+                $this->updateOnPriority($courtier, $campaignId, $mailDatas['event-data']['event'], $mgTimestamp, $emailRecipient);
             } else {
-                $contact->campaigns()->attach($campaignId, ['result_type' => $mailDatas['event-data']['event'], 'mg_timestamp' => $mgTimestamp, 'email' => $emailRecipient]);
+                $courtier->campaigns()->attach($campaignId, ['result_type' => $mailDatas['event-data']['event'], 'mg_timestamp' => $mgTimestamp, 'email' => $emailRecipient]);
             }
             return 200;
         }
@@ -53,7 +53,7 @@ class MailController {
     }
 
     // Met à jour la liaison uniquement si la priortié est supérieure
-    private function updateOnPriority($contact, $campaignId, $newTypeValue, $mgTimestamp, $emailRecipient) // liste des paramètres à préciser
+    private function updateOnPriority($courtier, $campaignId, $newTypeValue, $mgTimestamp, $emailRecipient) // liste des paramètres à préciser
     {
         $events = [
             'waiting' => 0,
@@ -67,15 +67,15 @@ class MailController {
             'complained' => 5
         ];
 
-        $oldTypeValue = $contact->campaigns->where('id', $campaignId)->first()->pivot->result_type;
+        $oldTypeValue = $courtier->campaigns->where('id', $campaignId)->first()->pivot->result_type;
 
         if ($events[$newTypeValue] >  $events[$oldTypeValue]) {
-            $contact->campaigns()->updateExistingPivot($campaignId, ['result_type' => $newTypeValue, 'mg_timestamp' => $mgTimestamp, 'email' => $emailRecipient ]);
+            $courtier->campaigns()->updateExistingPivot($campaignId, ['result_type' => $newTypeValue, 'mg_timestamp' => $mgTimestamp, 'email' => $emailRecipient ]);
 
-            // on vérifie s'il s'agit d'un unsubscribe et on met à jour le contact
+            // on vérifie s'il s'agit d'un unsubscribe et on met à jour le courtier
             if ($events[$newTypeValue] == 4) {
-                $contact->optin = 0;
-                $contact->save();
+                $courtier->optin = 0;
+                $courtier->save();
             }
         } else {
         }

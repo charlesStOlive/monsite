@@ -1,0 +1,76 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+      <mj-class name='light_dashed' border-width="1px" border-style="dashed" border-color="lightgrey" />
+      <mj-class name="texte-blanc" color="#ffffff"></mj-class>
+      <mj-class name="textefinale" line-height="12px"></mj-class>
+      <mj-class name="texte-footer" line-height="10px" font-size="10px" padding-bottom="0px" color="#6B6351"></mj-class>
+      <mj-text padding-top="0" padding-bottom="5px" />
+      <mj-section padding-bottom="5px" padding-top="5px" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#FBFBF9">
+
+    <mj-section padding-bottom="0px">
+      <mj-column>
+        <mj-text padding-bottom="20px">Bonjour {{ interlocuteur.sname }} {{ interlocuteur.fname }} ,</mj-text>
+        <mj-text><b>Voici les informations envoyé à vos courtiers pour les folies : </b></mj-text>
+
+        <mj-divider></mj-divider>
+      </mj-column>
+    </mj-section>
+    <mj-raw>
+      {% foreach courtier in interlocuteur.courtiers %}
+    </mj-raw>
+
+    <mj-section>
+      <mj-column>
+        <mj-text>Code courtier : <b>{{ courtier.code_asp }}</b></mj-text>
+        <mj-text>Cabinet : <b>{{ courtier.cabinet }}</b></mj-text>
+        <mj-text>Gains : <b> {{ courtier.totalEarn }}</b></mj-text>
+        <mj-text>
+          Gammes génerant des gains : <b> 
+          {{ if courtier.listWinGammes is not empty %} {{ courtier.listWinGammes }}{% else %} Aucune {% endif %}
+          </b>
+        </mj-text>
+        <mj-text>
+          Gammes à travailler : <b> 
+          {{ if courtier.listWinGammes is not empty %} {{ courtier.listWinGammes }}{% else %} Aucune {% endif %}
+          </b>
+        </mj-text>
+        <mj-raw>
+          {% if loop.last %}
+        </mj-raw>
+        <mj-divider mj-class='light_dashed'></mj-divider>
+        <mj-raw>
+          {% endif %}
+        </mj-raw>
+      </mj-column>
+    </mj-section>
+
+    <mj-raw>
+      {% end foreach %}
+    </mj-raw>
+
+    <mj-section padding-bottom="20px" padding-top="20px" background-color="#cccccc">
+      <mj-column width="100%">
+        <mj-image width="130px" src="/img/signature.gif" align="left" />
+        <mj-image width="130px" src="img/signature.gif" align="left" />
+      </mj-column>
+
+      <mj-column width="100%">
+        <mj-text mj-class="texte-footer">Immeuble Aprilium </mj-text>
+        <mj-text mj-class="texte-footer">114 boulevard Marius Vivier Merle - 69439 LYON Cedex 03 </mj-text>
+        <mj-text mj-class="texte-footer">Tél. : 09 74 50 91 9 - Fax : 04 78 53 65 18 - www.april.fr </mj-text>
+        <mj-text mj-class="texte-footer">SASU au capital de 540 640€ - RCS Lyon 428 702 419.</mj-text>
+
+        <mj-text mj-class="texte-footer">Intermédiaire en assurances - Immatriculée à l’ORIAS sous le n° 07 002 609 (www.orias.fr).</mj-text>
+        <mj-text mj-class="texte-footer">Autorité de contrôle prudentiel et de résolution - 61 rue Taitbout - 75436 Paris cedex 09. </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-text align="center" mj-class="small"><a style="color:#f49e00; text-decoration:none" href="#">Pour vous désinscrire cliquez ici</a></mj-text>
+    </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml>
