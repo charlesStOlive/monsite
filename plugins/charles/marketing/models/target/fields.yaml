@@ -15,3 +15,14 @@ fields:
             field: name
             type: slug
         type: text
+
+    description:
+        label: Description
+        type: markdown
+        mode: split
+        size: huge
+
+    missions:
+        label: Missions
+        type: partial
+        path: field_missions
