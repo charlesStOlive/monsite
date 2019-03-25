@@ -1,39 +1,100 @@
 <mjml>
+  <mj-head>
+    <mj-attributes>
+      <mj-class name="bg-primary" background-color="#546e7a" color="#ffffff"></mj-class>
+      <mj-class name="bg-secondary" background-color="#263238" color="#ffffff"></mj-class>
+      <mj-class name="primary"  color="#546e7a"></mj-class>
+      <mj-class name="secondary"  color="#263238"></mj-class>
+      <!--<mj-column border="1px dotted #ff0000"></mj-column>-->
+      <mj-class name="titre" text-transform="uppercase" align="center"></mj-class>
+      <mj-class name="grand" font-size="28px" font-weight="700" line-height="24px" padding-top="0px" padding-bottom="0px" align="center"></mj-class>
+      <mj-class name="moyen" font-size="18px" align="center"></mj-class>
+      <mj-class name="small" font-size="10px" padding-top="0px" padding-bottom="0px" line-height="14px" align="center"></mj-class>
+      <mj-class name="alinea" padding-top="0px" align="center"></mj-class>
+      <mj-class name="texte-sans-padding" padding-top="0" padding-bottom="0px"></mj-class>
+      <mj-text line-height="20px"></mj-text>
+      <mj-class name="texte-footer" line-height="12px" font-size="10px" padding-bottom="0px" color="#6B6351"></mj-class>
+      <mj-section  padding-bottom="0px" padding-top="0px"></mj-section>
+    </mj-attributes>
+  </mj-head>
   <mj-body>
     <mj-raw>
       <!-- Intro text -->
     </mj-raw>
-    <mj-section>
+    <mj-section padding-top="10px">
       <mj-column>
-        <mj-text font-size="20px" color="#626262">Bonjour {{ contact.name }}</mj-text>
+        <mj-text font-size="20px" color="#546e7a">Bonjour {{ contact.name }}</mj-text>
         <mj-text color="#525252">{{ content.messages[0].text | raw }}</mj-text>
         <mj-raw>
-          <?php if(contact.message_perso) { ?>
+          {% if contact.message_perso %}
         </mj-raw>
         <mj-text color="#525252">{{ contact.message_perso | raw }}</mj-text>
         <mj-raw>
-          <?php } ?>
+          {% endif %}
         </mj-raw>
       </mj-column>
     </mj-section>
-    <mj-raw>
-      <!-- Side image -->
-    </mj-raw>
     <mj-section>
       <mj-raw>
         <!-- Left image -->
       </mj-raw>
       <mj-column>
-        <mj-image  src='http://admin.charles-saint-olive.com{{ content.messages[1].picture }}'></mj-image>
-        <mj-text font-style="italic" font-size="20px" font-family="Helvetica Neue" color="#626262">Mon site</mj-text>
+        <mj-image href="http://demobo.charles-saint-olive.com/"  src="http://admin.charles-saint-olive.com/storage/app/media/{{ content.messages[1].picture }}"></mj-image>
+        <mj-button href="http://charles-saint-olive.com/" mj-class="bg-primary">mon site</mj-button>
       </mj-column>
       <mj-raw>
         <!-- Left image -->
       </mj-raw>
       <mj-column>
-        <mj-image  src="http://admin.charles-saint-olive.com{{ content.messages[2].picture }}"></mj-image>
-        <mj-text font-style="italic" font-size="20px" font-family="Helvetica Neue" color="#626262">Une démo</mj-text>
+        <mj-image href="http://demobo.charles-saint-olive.com/" src="http://admin.charles-saint-olive.com/storage/app/media/{{ content.messages[2].picture }}"></mj-image>
+         <mj-button href="http://demobo.charles-saint-olive.com/" mj-class="bg-primary">Une démo</mj-button>
       </mj-column>
     </mj-section>
+
+    <mj-raw>
+       {% if missions %}
+    </mj-raw>
+    <mj-section >
+      <mj-column padding-bottom="0px" padding-top="10px" >
+        <mj-text   ><b>Ces missions pourraient vous interesser :</b> </mj-text>
+        <mj-divider padding-top="0px" border-width="1px" border-style="dashed" border-color="lightgrey" />
+         <mj-text padding-left="30px" padding-bottom="0px" padding-top="0px" >
+           
+            {% for mission in missions %}
+         
+            &nbsp;-{{ mission.name }} <a href="http://charles-saint-olive.com/target/{{ target[0].slug }}/mission/{{ mission.slug }}">voir</a><br/>
+           
+            {% endfor %}
+        
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-raw>
+        {% endif %}
+    </mj-raw>
+
+
+    <mj-raw>
+       {% if projects %}
+    </mj-raw>
+    <mj-section>
+      <mj-column padding-bottom="0px" padding-top="10px" >
+        <mj-text padding-top="5px"  ><b>Ces projets pourraient vous interesser :</b> </mj-text>
+        <mj-divider padding-top="0px" border-width="1px" border-style="dashed" border-color="lightgrey" />
+         <mj-text padding-left="30px" padding-bottom="0px" padding-top="0px" >
+           
+            {% for project in projects %}
+          
+            &nbsp;-{{ project.name }} <a href="http://charles-saint-olive.com/projects/{{ project.slug }}">voir</a><br/>
+          
+            {% endfor %}
+        
+         </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-raw>
+       {% endif %}
+    </mj-raw>
+    
   </mj-body>
 </mjml>

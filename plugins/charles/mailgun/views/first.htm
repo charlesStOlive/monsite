@@ -97,7 +97,7 @@
           <tbody>
             <tr>
               <td
-                 style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;"
+                 style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:10px;text-align:center;vertical-align:top;"
               >
                 <!--[if mso | IE]>
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
@@ -123,7 +123,7 @@
               >
                 
       <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:20px;line-height:1;text-align:left;color:#626262;"
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:20px;line-height:20px;text-align:left;color:#546e7a;"
       >
         Bonjour {{ contact.name }}
       </div>
@@ -137,28 +137,28 @@
               >
                 
       <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:left;color:#525252;"
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#525252;"
       >
-        {{ content.messages[1].text | raw }}
+        {{ content.messages[0].text | raw }}
       </div>
     
               </td>
             </tr>
-          <?php if(contact.message) { ?>
+          {% if contact.message_perso %}
             <tr>
               <td
                  align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
               >
                 
       <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:left;color:#525252;"
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#525252;"
       >
-        {{ contact.message | raw }}
+        {{ contact.message_perso | raw }}
       </div>
     
               </td>
             </tr>
-          <?php } ?>
+          {% endif %}
       </table>
     
       </div>
@@ -182,11 +182,7 @@
           </td>
         </tr>
       </table>
-      <![endif]-->
-    
-    <!-- Side image -->
       
-      <!--[if mso | IE]>
       <table
          align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
       >
@@ -203,7 +199,7 @@
           <tbody>
             <tr>
               <td
-                 style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;"
+                 style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0px;text-align:center;vertical-align:top;"
               >
                 <!--[if mso | IE]>
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
@@ -237,10 +233,16 @@
           <tr>
             <td  style="width:250px;">
               
+        <a
+           href="http://demobo.charles-saint-olive.com/" target="_blank"
+        >
+          
       <img
-         height="auto" src="http://admin.charles-saint-olive.com/storage/app/media/Campagnes/final.jpg" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="250"
+         height="auto" src="http://admin.charles-saint-olive.com/storage/app/media/{{ content.messages[1].picture }}" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;" width="250"
       />
     
+        </a>
+      
             </td>
           </tr>
         </tbody>
@@ -251,14 +253,24 @@
           
             <tr>
               <td
-                 align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                 align="center" vertical-align="middle" style="font-size:0px;padding:10px 25px;word-break:break-word;"
               >
                 
-      <div
-         style="font-family:Helvetica Neue;font-size:20px;font-style:italic;line-height:1;text-align:left;color:#626262;"
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;line-height:100%;"
       >
-        Mon site
-      </div>
+        <tr>
+          <td
+             align="center" bgcolor="#546e7a" role="presentation" style="border:none;border-radius:3px;cursor:auto;padding:10px 25px;background:#546e7a;" valign="middle"
+          >
+            <a
+               href="http://charles-saint-olive.com/" style="background:#546e7a;color:#ffffff;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:120%;Margin:0;text-decoration:none;text-transform:none;" target="_blank"
+            >
+              mon site
+            </a>
+          </td>
+        </tr>
+      </table>
     
               </td>
             </tr>
@@ -297,10 +309,16 @@
           <tr>
             <td  style="width:250px;">
               
+        <a
+           href="http://demobo.charles-saint-olive.com/" target="_blank"
+        >
+          
       <img
-         height="auto" src="http://admin.charles-saint-olive.com/storage/app/media/Campagnes/creademo.jpg" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="250"
+         height="auto" src="http://admin.charles-saint-olive.com/storage/app/media/{{ content.messages[2].picture }}" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;" width="250"
       />
     
+        </a>
+      
             </td>
           </tr>
         </tbody>
@@ -311,14 +329,24 @@
           
             <tr>
               <td
-                 align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                 align="center" vertical-align="middle" style="font-size:0px;padding:10px 25px;word-break:break-word;"
               >
                 
-      <div
-         style="font-family:Helvetica Neue;font-size:20px;font-style:italic;line-height:1;text-align:left;color:#626262;"
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;line-height:100%;"
       >
-        Une démo
-      </div>
+        <tr>
+          <td
+             align="center" bgcolor="#546e7a" role="presentation" style="border:none;border-radius:3px;cursor:auto;padding:10px 25px;background:#546e7a;" valign="middle"
+          >
+            <a
+               href="http://demobo.charles-saint-olive.com/" style="background:#546e7a;color:#ffffff;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:120%;Margin:0;text-decoration:none;text-transform:none;" target="_blank"
+            >
+              Une démo
+            </a>
+          </td>
+        </tr>
+      </table>
     
               </td>
             </tr>
@@ -348,7 +376,275 @@
       </table>
       <![endif]-->
     
+    {% if missions %}
+      
+      <!--[if mso | IE]>
+      <table
+         align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+      >
+        <tr>
+          <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+      <![endif]-->
     
+      
+      <div  style="Margin:0px auto;max-width:600px;">
+        
+        <table
+           align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;"
+        >
+          <tbody>
+            <tr>
+              <td
+                 style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0px;text-align:center;vertical-align:top;"
+              >
+                <!--[if mso | IE]>
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                
+        <tr>
+      
+            <td
+               class="" style="vertical-align:top;width:600px;"
+            >
+          <![endif]-->
+            
+      <div
+         class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+      >
+        
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"
+      >
+        <tbody>
+          <tr>
+            <td  style="vertical-align:top;padding-top:10px;padding-bottom:0px;">
+              
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%"
+      >
+        
+            <tr>
+              <td
+                 align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+              >
+                
+      <div
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
+      >
+        <b>Ces missions pourraient vous interesser :</b>
+      </div>
+    
+              </td>
+            </tr>
+          
+            <tr>
+              <td
+                 style="font-size:0px;padding:10px 25px;padding-top:0px;word-break:break-word;"
+              >
+                
+      <p
+         style="border-top:dashed 1px lightgrey;font-size:1;margin:0px auto;width:100%;"
+      >
+      </p>
+      
+      <!--[if mso | IE]>
+        <table
+           align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:dashed 1px lightgrey;font-size:1;margin:0px auto;width:550px;" role="presentation" width="550px"
+        >
+          <tr>
+            <td style="height:0;line-height:0;">
+              &nbsp;
+            </td>
+          </tr>
+        </table>
+      <![endif]-->
+    
+    
+              </td>
+            </tr>
+          
+            <tr>
+              <td
+                 align="left" style="font-size:0px;padding:10px 25px;padding-top:0px;padding-bottom:0px;padding-left:30px;word-break:break-word;"
+              >
+                
+      <div
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
+      >
+        {% for mission in missions %}
+         
+            &nbsp;-{{ mission.name }} <a href="http://charles-saint-olive.com/target/{{ target[0].slug }}/mission/{{ mission.slug }}">voir</a><br/>
+           
+            {% endfor %}
+      </div>
+    
+              </td>
+            </tr>
+          
+      </table>
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]>
+            </td>
+          
+        </tr>
+      
+                  </table>
+                <![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]>
+          </td>
+        </tr>
+      </table>
+      <![endif]-->
+    
+    {% endif %}{% if projects %}
+      
+      <!--[if mso | IE]>
+      <table
+         align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+      >
+        <tr>
+          <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+      <![endif]-->
+    
+      
+      <div  style="Margin:0px auto;max-width:600px;">
+        
+        <table
+           align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;"
+        >
+          <tbody>
+            <tr>
+              <td
+                 style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0px;text-align:center;vertical-align:top;"
+              >
+                <!--[if mso | IE]>
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                
+        <tr>
+      
+            <td
+               class="" style="vertical-align:top;width:600px;"
+            >
+          <![endif]-->
+            
+      <div
+         class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+      >
+        
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"
+      >
+        <tbody>
+          <tr>
+            <td  style="vertical-align:top;padding-top:10px;padding-bottom:0px;">
+              
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%"
+      >
+        
+            <tr>
+              <td
+                 align="left" style="font-size:0px;padding:10px 25px;padding-top:5px;word-break:break-word;"
+              >
+                
+      <div
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
+      >
+        <b>Ces projets pourraient vous interesser :</b>
+      </div>
+    
+              </td>
+            </tr>
+          
+            <tr>
+              <td
+                 style="font-size:0px;padding:10px 25px;padding-top:0px;word-break:break-word;"
+              >
+                
+      <p
+         style="border-top:dashed 1px lightgrey;font-size:1;margin:0px auto;width:100%;"
+      >
+      </p>
+      
+      <!--[if mso | IE]>
+        <table
+           align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:dashed 1px lightgrey;font-size:1;margin:0px auto;width:550px;" role="presentation" width="550px"
+        >
+          <tr>
+            <td style="height:0;line-height:0;">
+              &nbsp;
+            </td>
+          </tr>
+        </table>
+      <![endif]-->
+    
+    
+              </td>
+            </tr>
+          
+            <tr>
+              <td
+                 align="left" style="font-size:0px;padding:10px 25px;padding-top:0px;padding-bottom:0px;padding-left:30px;word-break:break-word;"
+              >
+                
+      <div
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
+      >
+        {% for project in projects %}
+          
+            &nbsp;-{{ project.name }} <a href="http://charles-saint-olive.com/projects/{{ project.slug }}">voir</a><br/>
+          
+            {% endfor %}
+      </div>
+    
+              </td>
+            </tr>
+          
+      </table>
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]>
+            </td>
+          
+        </tr>
+      
+                  </table>
+                <![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]>
+          </td>
+        </tr>
+      </table>
+      <![endif]-->
+    
+    {% endif %}
       </div>
     
       </body>

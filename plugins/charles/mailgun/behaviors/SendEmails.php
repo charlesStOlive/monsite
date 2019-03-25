@@ -105,8 +105,6 @@ class SendEmails extends ControllerBehavior
         $contacts = $campaign->getContactsEligiblesAttribute();
         $dataCampaign = $campaign->toArray();
 
-        trace_log($contacts);
-
         //boucle sur les contacts eligibles. 
         foreach($contacts['eligibles'] as $contact) {
 
@@ -161,7 +159,9 @@ class SendEmails extends ControllerBehavior
         //création du array data email
         $dataEmail = [];
         $dataEmail['contact'] = $contact->toArray();
-        $dataEmail['missions'] = $contact->missions->toArray();
+        $dataEmail['target'] = $contact->target()->get(['name', 'slug'])->toArray();
+        $dataEmail['missions'] = $contact->missions()->get(['name', 'slug'])->toArray();
+        $dataEmail['projects'] = $contact->projects()->get(['name', 'slug'])->toArray();
         $dataEmail['content'] = $dataCampaign;
         //Affectation sujet, cible etc. 
         $subject = $dataCampaign['subject'];
