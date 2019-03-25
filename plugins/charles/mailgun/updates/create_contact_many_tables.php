@@ -27,6 +27,7 @@ class CreateContactManyTables extends Migration
 
         Schema::table('charles_mailgun_contacts', function($table)
         {
+            $table->text('message_perso')->nullable();
             $table->integer('target_id')->nullable();
         });
 
@@ -41,6 +42,7 @@ class CreateContactManyTables extends Migration
         Schema::table('charles_mailgun_contacts', function($table)
         {
             $table->dropColumn('target_id');
+            $table->dropColumn('message_perso');
         });
 
     }

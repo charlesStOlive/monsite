@@ -11,6 +11,10 @@ fields:
         label: email
         span: auto
 
+    message_perso:
+        type: richeditor
+        size: huge
+
     target:
         type: relation
         selectFrom: name

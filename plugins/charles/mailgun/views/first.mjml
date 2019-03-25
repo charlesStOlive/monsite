@@ -6,11 +6,11 @@
     <mj-section>
       <mj-column>
         <mj-text font-size="20px" color="#626262">Bonjour {{ contact.name }}</mj-text>
-        <mj-text color="#525252">{{ content.messages[1].text | raw }}</mj-text>
+        <mj-text color="#525252">{{ content.messages[0].text | raw }}</mj-text>
         <mj-raw>
-          <?php if(contact.message) { ?>
+          <?php if(contact.message_perso) { ?>
         </mj-raw>
-        <mj-text color="#525252">{{ contact.message | raw }}</mj-text>
+        <mj-text color="#525252">{{ contact.message_perso | raw }}</mj-text>
         <mj-raw>
           <?php } ?>
         </mj-raw>
@@ -24,14 +24,14 @@
         <!-- Left image -->
       </mj-raw>
       <mj-column>
-        <mj-image  src="http://admin.charles-saint-olive.com/storage/app/media/Campagnes/final.jpg"></mj-image>
+        <mj-image  src='http://admin.charles-saint-olive.com{{ content.messages[1].picture }}'></mj-image>
         <mj-text font-style="italic" font-size="20px" font-family="Helvetica Neue" color="#626262">Mon site</mj-text>
       </mj-column>
       <mj-raw>
         <!-- Left image -->
       </mj-raw>
       <mj-column>
-        <mj-image  src="http://admin.charles-saint-olive.com/storage/app/media/Campagnes/creademo.jpg"></mj-image>
+        <mj-image  src="http://admin.charles-saint-olive.com{{ content.messages[2].picture }}"></mj-image>
         <mj-text font-style="italic" font-size="20px" font-family="Helvetica Neue" color="#626262">Une démo</mj-text>
       </mj-column>
     </mj-section>
