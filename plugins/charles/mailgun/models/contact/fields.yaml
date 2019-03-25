@@ -3,6 +3,29 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    name:
+        label: Nom ou prenom ( bonjour xxx )
+        span: auto
+
+    email:
+        label: email
+        span: auto
+
+    target:
+        type: relation
+        selectFrom: name
+        placeholder: --select Target--
+
+    projects:
+            label: Projets
+            type: taglist
+            mode: relation
+            customTags: false
+            nameFrom: name
+
+    missions:
+            label: Missions
+            type: taglist
+            mode: relation
+            customTags: false
+            nameFrom: name

@@ -3,6 +3,8 @@
 # ===================================
 
 columns:
-    id:
-        label: ID
-        searchable: true
+    name:
+        label: Nom ou prenom ( bonjour xxx )
+
+    email:
+        label: email

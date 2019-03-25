@@ -65,8 +65,8 @@ class TotalBoard extends FormWidgetBase
      */
     public function loadAssets()
     {
-        $this->addCss('css/totalboard.css', 'dom.mailgun');
-        $this->addJs('js/totalboard.js', 'dom.mailgun');
+        $this->addCss('css/totalboard.css', 'charles.mailgun');
+        $this->addJs('js/totalboard.js', 'charles.mailgun');
     }
 
     /**

@@ -4,9 +4,7 @@ date_default_timezone_set("Europe/Helsinki");
 use Backend\Classes\ControllerBehavior;
 
 use Charles\Mailgun\Models\Contact;
-use Charles\Folies\Models\Gamme;
 use Charles\Mailgun\Models\Campaign;
-use Charles\Folies\Models\Settings;
 
 use Flash;
 use Redirect;
@@ -107,6 +105,8 @@ class SendEmails extends ControllerBehavior
         $contacts = $campaign->getContactsEligiblesAttribute();
         $dataCampaign = $campaign->toArray();
 
+        trace_log($contacts);
+
         //boucle sur les contacts eligibles. 
         foreach($contacts['eligibles'] as $contact) {
 
@@ -161,6 +161,8 @@ class SendEmails extends ControllerBehavior
         //création du array data email
         $dataEmail = [];
         $dataEmail['contact'] = $contact->toArray();
+        $dataEmail['missions'] = $contact->missions->toArray();
+        $dataEmail['content'] = $dataCampaign;
         //Affectation sujet, cible etc. 
         $subject = $dataCampaign['subject'];
         $email = $contact->email;
@@ -171,8 +173,10 @@ class SendEmails extends ControllerBehavior
             $subject = '[TEST]' . $subject;
             $isTest = true;
         }
+        trace_log("dataEmail");
+        trace_log($dataEmail);
 
-        $html = View::make('dom.mailgun::contact', $dataEmail)->render();
+        $html = View::make('charles.mailgun::first', $dataEmail)->render();
 
         Mail::raw(['html' => $html], function ($message) use($dataCampaign, $email, $subject, $contact, $isTest ) {
             $message->to($email);

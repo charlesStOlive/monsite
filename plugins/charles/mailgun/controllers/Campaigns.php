@@ -19,16 +19,14 @@ class Campaigns extends Controller
         'Backend.Behaviors.FormController',
         'Backend.Behaviors.ListController',
         'Backend.Behaviors.RelationController',
-        'Dom.Mailgun.Behaviors.SendEmails',
-        'Dom.Mailgun.Behaviors.ExportExcel',
+        'Charles.Mailgun.Behaviors.SendEmails',
     ];
 
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
     public $relationConfig = 'config_relation.yaml';
-    public $excelConfig = 'config_export.yaml';
 
-    public $requiredPermissions = ['dom.mailgun.*'];
+    public $requiredPermissions = ['charles.mailgun.*'];
 
     protected $duplicateCampaignWidget;
 
@@ -38,8 +36,8 @@ class Campaigns extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Dom.Mailgun', 'mailgun', 'side-menu-campaigns');
-        SettingsManager::setContext('dom.mailgun', 'settings');
+        BackendMenu::setContext('Charles.Mailgun', 'mailgun', 'side-menu-campaigns');
+        // SettingsManager::setContext('charles.mailgun', 'settings');
 
 
         $this->duplicateCampaignWidget = $this->duplicateCampaignFormWidget();

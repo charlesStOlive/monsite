@@ -27,8 +27,19 @@ class Contact extends Model
      */
     public $hasOne = [];
     public $hasMany = [];
-    public $belongsTo = [];
-    public $belongsToMany = [];
+    public $belongsTo = [
+        'target' => ['Charles\Marketing\Models\Target'],
+    ];
+    public $belongsToMany = [
+        'projects' => [
+            'Charles\Marketing\Models\Project',
+            'table' => 'charles_mailgun_contact_project',
+        ],
+        'missions' => [
+            'Charles\Marketing\Models\Mission',
+            'table' => 'charles_mailgun_contact_mission',
+        ],
+    ];
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];

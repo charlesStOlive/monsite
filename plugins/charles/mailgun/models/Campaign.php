@@ -1,7 +1,7 @@
 <?php namespace Charles\Mailgun\Models;
 
 use Model;
-use Charles\Folies\Models\Contact;
+use Charles\Mailgun\Models\Contact;
 
 /**
  * Campaign Model
@@ -23,6 +23,8 @@ class Campaign extends Model
      */
     protected $fillable = [];
 
+    protected $jsonable = ['messages'];
+
     /**
      * @var array Relations
      */
@@ -33,10 +35,10 @@ class Campaign extends Model
         'status' => ['Charles\Mailgun\Models\Status',]
     ];
     public $belongsToMany = [
-        'courtiers' => [
-            'Charles\Folies\Models\Contact',
-            'table' => 'charles_mailgun_campaign_courtier',
-            'pivot' => ['result_type', 'email', 'mg_timestamp'],
+        'contacts' => [
+            'Charles\Mailgun\Models\Contact',
+            'table' => 'charles_mailgun_campaign_contact',
+            'pivot' => ['result_type','perso', 'email', 'mg_timestamp'],
             'pivotModel' => 'Charles\Mailgun\Models\CampaignContactPivot'
             ],
     ];
@@ -53,8 +55,8 @@ class Campaign extends Model
         $newTypeValue = 'delivered';
         $code_asp = 68445;
 
-        $courtier = Contact::where('code_asp', '=', $code_asp)->first();
-        $existingEntry = $courtier->campaigns()->where('id', $campaignId)->exists();
+        $contact = Contact::where('code_asp', '=', $code_asp)->first();
+        $existingEntry = $contact->campaigns()->where('id', $campaignId)->exists();
 
         trace_log($existingEntry);
         dd($existingEntry);
@@ -63,28 +65,27 @@ class Campaign extends Model
     }
     public function getContactsOptinAttribute()
     {
-        return Contact::with(['gammes', 'interlocuteur'])->where('optin', true)->get();
+        return Contact::where('optin', true)->get();
     }
 
     public function getContactsEligiblesAttribute()
     {
-        $courtier = [];
+        $contact = [];
         $allContacts = Contact::get();
-        $courtiers['eligibles'] = $allContacts;
-        $courtiers['totalNotEligibles'] = 0;
-        $courtiers['total'] = $allContacts->count();
+        $contacts['eligibles'] = $allContacts;
+        $contacts['totalNotEligibles'] = 0;
+        $contacts['total'] = $allContacts->count();
 
-        foreach ($allContacts as $key => $courtier) {
-            if(!$courtier->Eligible) {
-                $courtiers['eligibles']->forget($key);
-                $courtiers['totalNotEligibles']++;
+        foreach ($allContacts as $key => $contact) {
+            if(!$contact->Eligible) {
+                $contacts['eligibles']->forget($key);
+                $contacts['totalNotEligibles']++;
             }
         }
-        $courtiers['totalEligibles'] = $courtiers['total'] -  $courtiers['totalNotEligibles'];
-        trace_log($courtiers['totalEligibles']);
+        $contacts['totalEligibles'] = $contacts['total'] -  $contacts['totalNotEligibles'];
 
 
-        return $courtiers;
+        return $contacts;
 
     }
 
@@ -95,7 +96,7 @@ class Campaign extends Model
     public function getTotalWarningAttribute() { 
         
        
-        return $this->courtiers()
+        return $this->contacts()
             ->where(function($q){
                 $q->where('result_type', 'waiting')
                     ->orWhere('result_type', 'failed');
@@ -104,12 +105,12 @@ class Campaign extends Model
 
     public function getTotalDeliveredAttribute() {
         
-        return $this->courtiers()->wherePivot('result_type','=' ,'delivered')->count();
+        return $this->contacts()->wherePivot('result_type','=' ,'delivered')->count();
     }
 
     public function getTotalOpenedAttribute() {
         
-        return $this->courtiers()
+        return $this->contacts()
             ->where(function($q){
                 $q->where('result_type', 'opened')
                     ->orWhere('result_type', 'clicked');
@@ -118,7 +119,7 @@ class Campaign extends Model
 
     public function getTotalSpamAttribute() {
         
-        return $this->courtiers()
+        return $this->contacts()
             ->where(function($q){
                 $q->where('result_type', 'unsubscribed')
                     ->orWhere('result_type', 'complained');

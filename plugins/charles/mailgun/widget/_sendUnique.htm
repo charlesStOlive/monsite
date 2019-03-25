@@ -1,8 +1,8 @@
 <?php
 
-$courtier = Charles\Folies\Models\Contact::find($record->id);
+$contact = Charles\Mailgun\Models\Contact::find($record->id);
 
-if($courtier->eligible) {
+if($contact->eligible) {
 
 ?>
 

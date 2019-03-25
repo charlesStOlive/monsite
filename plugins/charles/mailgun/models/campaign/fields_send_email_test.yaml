@@ -8,9 +8,9 @@ fields:
         label: Email de test 
         default: charles.stolive@dayonmars.fr
 
-    courtiers:
-      label: Choisissez jusqu'à 4 courtiers
+    contacts:
+      label: Choisissez jusqu'à 4 contacts
       type: taglist
       mode: relation
-      nameFrom: code_asp
+      nameFrom: name
     

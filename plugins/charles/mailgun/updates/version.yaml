@@ -1,3 +1,7 @@
 1.0.1:
     - 'First version of Mailgun'
     - create_mailgun_tables.php
+    - create_contacts_table.php
+1.0.2:
+    - 'Ajout contact relations'
+    - create_contact_many_tables.php

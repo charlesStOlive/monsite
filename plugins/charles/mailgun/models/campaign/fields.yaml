@@ -12,19 +12,19 @@ fields:
         label: Objet du mail
         span: left
 
-    date_info_update:
-        label: Date de mise à jours des données de ventes courtiers
-        type: datepicker
-        span: right
-        format: d-m-Y
-        mode: date
+    # date_info_update:
+    #     label: Date de mise à jours des données de ventes courtiers
+    #     type: datepicker
+    #     span: right
+    #     format: d-m-Y
+    #     mode: date
 
 
 
 tabs:
     fields:
         picture@update:
-            tab: Contenu de l'email courtier
+            tab: Contenu de l'email
             label: Pastille
             mode: image
             imageWidth: '80'
@@ -32,84 +32,11 @@ tabs:
             type: fileupload
             span: left
 
-        title_1@update:
-            tab: Contenu de l'email courtier
-            label: Titre 1 bandeau email
-            span: left
-
-        title_2@update:
-            tab: Contenu de l'email courtier
-            label: Titre 2 bandeau email
-            span: left
-
-        title_3@update:
-            tab: Contenu de l'email courtier
-            label: Titre 3 bandeau email
-            span: left
-
-        mail_intro@update:
-            tab: Contenu de l'email courtier
-            label: Texte d'introduction de l'email
-            type: richeditor
-            toolbarButtons: bold,italic,underline,insertLink,clearFormatting,html
-            comment: Attention, si vous souhaitez mettre un lien vous devez modifier la balise <a> à la main
-            size: huge
-
-        win_message@update:
-            tab: Contenu de l'email courtier
-            label: Message 'succès'
-            type: richeditor
-            toolbarButtons: bold,italic,underline,insertLink,clearFormatting,html
-            comment: Attention, si vous souhaitez mettre un lien vous devez modifier la balise <a> à la main
-            size: small
-            span: left
-
-        # enable_tab_win_gam@update:
-        #     tab: Contenu de l'email courtier
-        #     label: Afficher les tableaux gagnants
-        #     type: checkbox
-        #     default: 1
-        #     span: right
-
-        lost_message@update:
-            tab: Contenu de l'email courtier
-            label: Message 'perdu'
-            type: richeditor
-            toolbarButtons: bold,italic,underline,insertLink,clearFormatting,html
-            comment: Attention, si vous souhaitez mettre un lien vous devez modifier la balise <a> à la main
-            size: small
-            span: left
-
-        enable_tab_lost_gam@update:
-            tab: Contenu de l'email courtier
-            label: Afficher le tableau des gammes perdantes
-            type: checkbox
-            default: 1 
-            span: left
-
-        lost_gamme_tab_title@update:
-            tab: Contenu de l'email courtier
-            label: Titre du tableau gamme perdante
-            type: richeditor
-            toolbarButtons: bold,italic,underline,insertLink,clearFormatting,html
-            comment: Attention, si vous souhaitez mettre un lien vous devez modifier la balise <a> à la main
-            size: small
-            span: left
-
-        end_message@update:
-            tab: Contenu de l'email courtier
-            label: Texte de conclusion
-            type: richeditor
-            toolbarButtons: bold,italic,underline,insertLink,clearFormatting,html
-            comment: Attention, si vous souhaitez mettre un lien vous devez modifier la balise <a> à la main
-            size: huge
-
-        # interlocuteur_message@update:
-        #     tab: email interlocuteur
-        #     label: Texte d'introduction de l'email
-        #     type: richeditor
-        #     toolbarButtons: bold,italic,underline|formatOL, formatUL|clearFormatting
-        #     size: huge
+        messages:
+            tab: Contenu de l'email
+            type: repeater
+            prompt: Add content block
+            groups: $/charles/mailgun/models/campaign/repeater_fields.yaml
 
         yo:
             label: Stats
@@ -128,9 +55,3 @@ tabs:
                     label: Ouvert
                     icon: oc-icon-envelope-open
                     slabel: en qté
-
-        courtiers@update:
-            label: Liste des courtiers
-            tab: Reporting
-            type: partial
-            path: field_courtiers

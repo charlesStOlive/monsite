@@ -12,13 +12,6 @@ use Charles\Mailgun\Models\Campaign;
  */
 class Plugin extends PluginBase
 {
-
-
-     public $require = [
-        'Dom.Folies',
-    ];
-
-
     /**
      * Returns information about this plugin.
      *
@@ -29,7 +22,7 @@ class Plugin extends PluginBase
         return [
             'name'        => 'Mailgun',
             'description' => 'No description provided yet...',
-            'author'      => 'Dom',
+            'author'      => 'Charles',
             'icon'        => 'icon-leaf'
         ];
     }
@@ -70,7 +63,7 @@ class Plugin extends PluginBase
     {
         // ContactModel::extend(function($model){
         //         $model->belongsToMany['results'] = [
-        //             'Charles\Folies\Models\Contact',
+        //             'Charles\Mailgun\Models\Contact',
         //             'table' => 'charles_mailgun_campaign_courtier',
         //             'pivot' => ['result_type'],
         //             'pivotModel' => 'Charles\Mailgun\Models\ContactCampaignPivot'
@@ -92,7 +85,7 @@ class Plugin extends PluginBase
         // });
 
         // ContactsController::extend(function($controller) {
-        //     $controller->implement[] = 'Dom.Mailgun.Behaviors.SendEmails';
+        //     $controller->implement[] = 'Charles.Mailgun.Behaviors.SendEmails';
         // });
 
     }
@@ -120,7 +113,7 @@ class Plugin extends PluginBase
     {
 
         return [
-            'dom.mailgun.*' => [
+            'charles.mailgun.*' => [
                 'tab' => 'Campagnes',
                 'label' => 'Gerer les campagnes'
             ],
@@ -148,7 +141,7 @@ class Plugin extends PluginBase
                 'label'       => 'Gestion des campagnes',
                 'url'         => Backend::url('charles/mailgun/campaigns'),
                 'icon'        => 'icon-envelope',
-                'permissions' => ['dom.mailgun.*'],
+                'permissions' => ['charles.mailgun.*'],
                 'order'       => 500,
 
                 'sideMenu' => [
@@ -157,11 +150,12 @@ class Plugin extends PluginBase
                             'icon'        => 'icon-envelope',
                             'url'         => Backend::url('charles/mailgun/campaigns'),
                         ],
-                        // 'side-menu-statuses' => [
-                        //     'label'       => 'Statuts',
-                        //     'icon'        => 'icon-folder-open',
-                        //     'url'         => Backend::url('charles/mailgun/statuses'),
-                        // ],
+
+                        'side-menu-contacts' => [
+                            'label'       => 'Contacts',
+                            'icon'        => 'icon-users',
+                            'url'         => Backend::url('charles/mailgun/contacts'),
+                        ],
                 ],
             ],
         ];

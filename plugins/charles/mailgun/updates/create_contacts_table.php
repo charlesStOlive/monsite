@@ -11,6 +11,9 @@ class CreateContactsTable extends Migration
         Schema::create('charles_mailgun_contacts', function(Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->string('name');
+            $table->string('email');
+            $table->string('client_id')->nullable();
             $table->timestamps();
         });
     }

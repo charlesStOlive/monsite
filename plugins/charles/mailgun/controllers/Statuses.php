@@ -20,6 +20,6 @@ class Statuses extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Dom.Mailgun', 'mailgun', 'side-menu-statuses');
+        BackendMenu::setContext('Charles.Mailgun', 'mailgun', 'side-menu-statuses');
     }
 }

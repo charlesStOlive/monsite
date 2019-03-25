@@ -1,0 +1,41 @@
+title:
+    name: Title
+    description: Title h2
+    icon: icon-header
+    fields:
+        code: 
+            span: auto
+            label: code
+        label:
+            span: auto
+            label: Title
+        
+text:
+    name: Textarea
+    description: Basic text field
+    icon: icon-file-text-o
+    fields:
+        code: 
+            label: code
+        text:
+            type: richeditor
+            size: huge
+
+        
+picture:
+    name: Picture
+    description: Quote item
+    icon: icon-picture-o
+    fields:
+        code:
+            label: code
+        picture:
+            label: Picture
+            type: mediafinder
+            mode: image
+            prompt: choose image
+            imageWidth: 160
+            imageHeight: 90
+        
+
+
