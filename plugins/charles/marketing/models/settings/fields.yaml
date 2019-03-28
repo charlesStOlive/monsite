@@ -8,3 +8,7 @@ fields:
         label: Introduction du site
         type: richeditor
         size: huge
+
+    mycv:
+        label: cv pdf
+        type: mediafinder
