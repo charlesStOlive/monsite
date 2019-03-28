@@ -16,6 +16,10 @@ fields:
             type: slug
         type: text
 
+    accroche:
+        label: Accroche
+        type: text
+
 
     description:
             label: Description

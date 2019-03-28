@@ -38,3 +38,6 @@
 1.0.12:
     - 'create tables mission & target'
     - create_missions_and_targets_tables.php
+1.0.13:
+    - 'Add acchroche to marketing and project'
+    - add_accroche_to_projectand_mission.php

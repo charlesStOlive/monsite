@@ -173,8 +173,8 @@ class SendEmails extends ControllerBehavior
             $subject = '[TEST]' . $subject;
             $isTest = true;
         }
-        trace_log("dataEmail");
-        trace_log($dataEmail);
+        // trace_log("dataEmail");
+        // trace_log($dataEmail);
 
         $html = View::make('charles.mailgun::first', $dataEmail)->render();
 
