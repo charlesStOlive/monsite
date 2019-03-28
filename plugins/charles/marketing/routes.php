@@ -38,6 +38,14 @@ Route::get('api/settings', function() {
 	$data['targets'] = Target::with('missions', 'missions.competences' )->get();
 	return $data;
 });
+Route::options('api/competences', function() {
+    return Response::make('You are connected to the API');
+});
+
+Route::get('api/competences', function() {
+	 return Competence::get();
+	 
+});
 Route::options('api/project/{any}', function() {
     return Response::make('You are connected to the API');
 });
