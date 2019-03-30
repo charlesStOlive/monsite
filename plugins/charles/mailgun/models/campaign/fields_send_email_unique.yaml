@@ -3,7 +3,6 @@
 # ===================================
 
 fields:
-
     sent_campaign:
       label: Choisissez la campagne
       type: dropdown

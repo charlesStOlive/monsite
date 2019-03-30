@@ -10,7 +10,8 @@ class Contacts extends Controller
 {
     public $implement = [
         'Backend.Behaviors.FormController',
-        'Backend.Behaviors.ListController'
+        'Backend.Behaviors.ListController',
+        'Charles.Mailgun.Behaviors.SendEmails',
     ];
 
     public $formConfig = 'config_form.yaml';

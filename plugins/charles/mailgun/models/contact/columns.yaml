@@ -8,3 +8,10 @@ columns:
 
     email:
         label: email
+
+    campaigns:
+      clickable: false
+      searchable: false
+      sortable: false
+      type: 'partial'
+      path: "$/charles/mailgun/widget/_sendUnique.htm"

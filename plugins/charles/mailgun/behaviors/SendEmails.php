@@ -140,15 +140,13 @@ class SendEmails extends ControllerBehavior
     {
         $data = $this->sendEmailUniqueWidget->getSaveData();
         $idContact = post('id');
-        $dataCampaign = Campaign::with('picture')->find($data['sent_campaign']);
+        $dataCampaign = Campaign::find($data['sent_campaign']);
 
-        trace_log($data['sent_campaign']);
-
-        $this->assign_campaign(Contact::find($idContact), $dataCampaign);
+        //$this->assign_campaign(Contact::find($idContact), $dataCampaign);
 
         $this->sendEmail($idContact, $dataCampaign);
 
-        Flash::info("L'email de relance a bien été envoyé ");
+        Flash::info("L'email  a bien été envoyé ");
         return Redirect::refresh();
     }
 
@@ -160,8 +158,8 @@ class SendEmails extends ControllerBehavior
         $dataEmail = [];
         $dataEmail['contact'] = $contact->toArray();
         $dataEmail['target'] = $contact->target()->get(['name', 'slug'])->toArray();
-        $dataEmail['missions'] = $contact->missions()->get(['name', 'slug'])->toArray();
-        $dataEmail['projects'] = $contact->projects()->get(['name', 'slug'])->toArray();
+        $dataEmail['missions'] = $contact->missions()->get(['name', 'slug', 'accroche'])->toArray();
+        $dataEmail['projects'] = $contact->projects()->get(['name', 'slug', 'accroche'])->toArray();
         $dataEmail['content'] = $dataCampaign;
         //Affectation sujet, cible etc. 
         $subject = $dataCampaign['subject'];
@@ -173,8 +171,8 @@ class SendEmails extends ControllerBehavior
             $subject = '[TEST]' . $subject;
             $isTest = true;
         }
-        // trace_log("dataEmail");
-        // trace_log($dataEmail);
+        trace_log("dataEmail");
+        trace_log($dataEmail);
 
         $html = View::make('charles.mailgun::first', $dataEmail)->render();
 

@@ -90,7 +90,8 @@ class Campaign extends Model
     }
 
     public function getSentCampaignOptions() {
-        return $this->where('status_id', '2')->lists('name', 'id');
+        //return $this->where('status_id', '2')->lists('name', 'id');
+        return $this->lists('name', 'id');
     }
 
     public function getTotalWarningAttribute() { 

@@ -9,7 +9,7 @@
       <mj-class name="titre" text-transform="uppercase" align="center"></mj-class>
       <mj-class name="grand" font-size="28px" font-weight="700" line-height="24px" padding-top="0px" padding-bottom="0px" align="center"></mj-class>
       <mj-class name="moyen" font-size="18px" align="center"></mj-class>
-      <mj-class name="small" font-size="10px" padding-top="0px" padding-bottom="0px" line-height="14px" align="center"></mj-class>
+      <mj-class name="small" font-size="10px" padding-top="0px" padding-bottom="0px" line-height="14px" color="#C9C9C9"></mj-class>
       <mj-class name="alinea" padding-top="0px" align="center"></mj-class>
       <mj-class name="texte-sans-padding" padding-top="0" padding-bottom="0px"></mj-class>
       <mj-text line-height="20px"></mj-text>
@@ -56,15 +56,33 @@
     </mj-raw>
     <mj-section>
       <mj-column padding-bottom="0px" padding-top="10px">
-        <mj-text><b>Ces missions pourraient vous interesser :</b> </mj-text>
+        <mj-text padding-top="5px"><b>Ces missions pourraient vous interesser :</b> </mj-text>
         <mj-divider padding-top="0px" border-width="1px" border-style="dashed" border-color="lightgrey" />
-        <mj-text padding-left="30px" padding-bottom="0px" padding-top="0px">
-
-          {% for mission in missions %} &nbsp;-{{ mission.name }} <a href="http://charles-saint-olive.com/target/{{ target[0].slug }}/mission/{{ mission.slug }}">voir</a><br/> {% endfor %}
-
-        </mj-text>
       </mj-column>
     </mj-section>
+    <mj-raw>
+      {% for mission in missions %}
+    </mj-raw>
+    <mj-section>
+      <mj-column width="75%">
+        <mj-text padding-left="30px" padding-bottom="0px" padding-top="0px">
+          -{{ mission.name }}
+        </mj-text>
+        <mj-text mj-class="small" padding-left="30px" padding-bottom="0px" padding-top="0px">
+        {{ mission.accroche }}
+        </mj-text>
+      </mj-column>
+      <mj-column width="25%">
+
+
+        <mj-button mj-class="bg-primary" href="http://charles-saint-olive.com/target/{{ target[0].slug }}/mission/{{ mission.slug}}">voir</mj-button>
+
+      </mj-column>
+
+    </mj-section>
+    <mj-raw>
+      {% endfor %}
+    </mj-raw>
     <mj-raw>
       {% endif %}
     </mj-raw>
@@ -85,15 +103,16 @@
     <mj-section>
       <mj-column width="75%">
         <mj-text padding-left="30px" padding-bottom="0px" padding-top="0px">
-
-          -{{ project.name }}<br/><span style="color:#C9C9C9">&nbsp;{{ project.accroche }}</span>
-
+          -{{ project.name }}
+        </mj-text>
+        <mj-text mj-class="small" padding-left="30px" padding-bottom="0px" padding-top="0px">
+        {{ project.accroche }}
         </mj-text>
       </mj-column>
       <mj-column width="25%">
 
 
-        <mj-button href="http://charles-saint-olive.com/projects/{{ project.slug }}">voir</mj-button>
+        <mj-button mj-class="bg-primary" href="http://charles-saint-olive.com/projects/{{ project.slug }}">voir</mj-button>
 
       </mj-column>
 
