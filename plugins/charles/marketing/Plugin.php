@@ -85,12 +85,22 @@ class Plugin extends PluginBase
         return [
             'marketing' => [
                 'label'       => 'marketing',
-                'url'         => Backend::url('charles/marketing/expertises'),
+                'url'         => Backend::url('charles/marketing/targets'),
                 'icon'        => 'icon-leaf',
                 'permissions' => ['charles.marketing.*'],
                 'order'       => 500,
 
                 'sideMenu' => [
+                        'side-menu-targets' => [
+                            'label'       => 'Cibles',
+                            'icon'        => 'icon-dot-circle-o',
+                            'url'         => Backend::url('charles/marketing/targets'),
+                        ],
+                        'side-menu-missions' => [
+                            'label'       => 'Missions',
+                            'icon'        => 'icon-flag-checkered',
+                            'url'         => Backend::url('charles/marketing/missions'),
+                        ],
                         'side-menu-clients' => [
                             'label'       => 'Clients',
                             'icon'        => 'icon-building',
@@ -101,31 +111,17 @@ class Plugin extends PluginBase
                             'icon'        => 'icon-folder-open',
                             'url'         => Backend::url('charles/marketing/projects'),
                         ],
-                        'side-menu-expertises' => [
-                            'label'       => 'Expertises',
-                            'icon'        => 'icon-file-text-o',
-                            'url'         => Backend::url('charles/marketing/expertises'),
-                        ],
+                        // 'side-menu-expertises' => [
+                        //     'label'       => 'Expertises',
+                        //     'icon'        => 'icon-file-text-o',
+                        //     'url'         => Backend::url('charles/marketing/expertises'),
+                        // ],
                         'side-menu-competences' => [ 
                             'label'       => 'Competences',
                             'icon'        => 'icon-tasks',
                             'url'         => Backend::url('charles/marketing/competences'),
                         ],
-                        'side-menu-missions' => [
-                            'label'       => 'Missions',
-                            'icon'        => 'icon-flag-checkered',
-                            'url'         => Backend::url('charles/marketing/missions'),
-                        ],
-                        'side-menu-missions' => [
-                            'label'       => 'Missions',
-                            'icon'        => 'icon-flag-checkered',
-                            'url'         => Backend::url('charles/marketing/missions'),
-                        ],
-                         'side-menu-targets' => [
-                            'label'       => 'Cibles',
-                            'icon'        => 'icon-dot-circle-o',
-                            'url'         => Backend::url('charles/marketing/targets'),
-                        ],
+                       
 
                         // 'side-menu-salaires' => [ 
                         //     'label'       => 'Grille des salaires',
