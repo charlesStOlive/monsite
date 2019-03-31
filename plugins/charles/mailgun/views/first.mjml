@@ -24,7 +24,13 @@
     <mj-section padding-top="10px">
       <mj-column>
         <mj-text font-size="20px" color="#546e7a">Bonjour {{ contact.name }}</mj-text>
+        <mj-raw>
+          {% if contact.show_intro %}
+        </mj-raw>
         <mj-text color="#525252">{{ content.messages[0].text | raw }}</mj-text>
+        <mj-raw>
+          {% endif %}
+        </mj-raw>
         <mj-raw>
           {% if contact.message_perso %}
         </mj-raw>
@@ -39,15 +45,15 @@
         <!-- Left image -->
       </mj-raw>
       <mj-column>
-        <mj-image href="http://demobo.charles-saint-olive.com/" src="http://admin.charles-saint-olive.com/storage/app/media/{{ content.messages[1].picture }}"></mj-image>
-        <mj-button href="http://charles-saint-olive.com/" mj-class="bg-primary">mon site</mj-button>
+        <mj-image href="https://demobo.charles-saint-olive.com/" src="https://admin.charles-saint-olive.com/storage/app/media/{{ content.messages[1].picture }}"></mj-image>
+        <mj-button href="https://charles-saint-olive.com/" mj-class="bg-primary">mon site</mj-button>
       </mj-column>
       <mj-raw>
         <!-- Left image -->
       </mj-raw>
       <mj-column>
-        <mj-image href="http://demobo.charles-saint-olive.com/" src="http://admin.charles-saint-olive.com/storage/app/media/{{ content.messages[2].picture }}"></mj-image>
-        <mj-button href="http://demobo.charles-saint-olive.com/" mj-class="bg-primary">Une démo</mj-button>
+        <mj-image href="https://demobo.charles-saint-olive.com/" src="https://admin.charles-saint-olive.com/storage/app/media/{{ content.messages[2].picture }}"></mj-image>
+        <mj-button href="https://demobo.charles-saint-olive.com/" mj-class="bg-primary">Une démo</mj-button>
       </mj-column>
     </mj-section>
 
@@ -75,7 +81,7 @@
       <mj-column width="25%">
 
 
-        <mj-button mj-class="bg-primary" href="http://charles-saint-olive.com/target/{{ target[0].slug }}/mission/{{ mission.slug}}">voir</mj-button>
+        <mj-button mj-class="bg-primary" href="https://charles-saint-olive.com/target/{{ target[0].slug }}/mission/{{ mission.slug}}">voir</mj-button>
 
       </mj-column>
 
@@ -112,7 +118,7 @@
       <mj-column width="25%">
 
 
-        <mj-button mj-class="bg-primary" href="http://charles-saint-olive.com/projects/{{ project.slug }}">voir</mj-button>
+        <mj-button mj-class="bg-primary" href="https://charles-saint-olive.com/projects/{{ project.slug }}">voir</mj-button>
 
       </mj-column>
 

@@ -5,3 +5,6 @@
 1.0.2:
     - 'Ajout contact relations'
     - create_contact_many_tables.php
+1.0.3:
+    - 'Ajout de la colonne contacte'
+    - add_column_show_contacts.php

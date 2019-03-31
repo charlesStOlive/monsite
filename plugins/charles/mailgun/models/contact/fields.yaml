@@ -11,9 +11,23 @@ fields:
         label: email
         span: auto
 
+    show_intro: 
+        label: Utiliser l'intro commune du mail.
+        default: true
+        type: checkbox
+
+    show_message_perso:
+        label: Mettre un message perso 
+        default: false
+        type: checkbox
+
     message_perso:
         type: richeditor
         size: huge
+        trigger:
+            action: show
+            field: show_message_perso
+            condition: checked
 
     target:
         type: relation
