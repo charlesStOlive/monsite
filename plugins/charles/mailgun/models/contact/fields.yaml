@@ -11,7 +11,7 @@ fields:
         label: email
         span: auto
 
-    projects:
+    segments:
         label: Segments
         type: taglist
         mode: relation
