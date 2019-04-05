@@ -8,3 +8,6 @@
 1.0.3:
     - 'Ajout de la colonne contacte'
     - add_column_show_contacts.php
+1.0.4:
+    - 'Ajout tables segments & relation'
+    - create_segments_table.php

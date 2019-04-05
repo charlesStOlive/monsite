@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Segment
+
+# Model Form Field configuration
+form: $/charles/mailgun/models/segment/fields.yaml
+
+# Model Class name
+modelClass: Charles\Mailgun\Models\Segment
+
+# Default redirect location
+defaultRedirect: charles/mailgun/segments
+
+# Create page
+create:
+    title: Create Segment
+    redirect: charles/mailgun/segments/update/:id
+    redirectClose: charles/mailgun/segments
+
+# Update page
+update:
+    title: Edit Segment
+    redirect: charles/mailgun/segments
+    redirectClose: charles/mailgun/segments
+
+# Preview page
+preview:
+    title: Preview Segment

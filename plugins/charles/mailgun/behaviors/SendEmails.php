@@ -11,6 +11,7 @@ use Redirect;
 use Db;
 use View;
 use Mail;
+use Session;
 use Illuminate\Database\QueryException;
 
 
@@ -19,6 +20,7 @@ class SendEmails extends ControllerBehavior
     public $model;
     protected $sendEmailTestWidget;
     protected $sendEmailUniqueWidget;
+    protected $sendEmailGroupeWidget;
     protected $campaignId;
 
     public function __construct($controller)
@@ -26,6 +28,7 @@ class SendEmails extends ControllerBehavior
         parent::__construct($controller);
         $this->sendEmailTestWidget = $this->createSendEmailTestFormWidget();
         $this->sendEmailUniqueWidget = $this->createSendEmailUniqueFormWidget();
+        $this->sendEmailGroupeWidget = $this->createSendEmailGroupeFormWidget();
     }
 
     // Envoi d'email de test (3)
@@ -47,6 +50,17 @@ class SendEmails extends ControllerBehavior
         $this->campaignId = $thisCampaign->id;
 
        return $this->makePartial('$/charles/mailgun/behaviors/sendemails/_send_email_form.htm');
+    }
+
+    public function onLoadSendGroupeEmail()
+    {
+        trace_log("onLoadSendGroupeEmail");
+        
+        $contactsChecked = post('checked');
+        trace_log($contactsChecked);
+        Session::push('email.contacts', $contactsChecked);
+        $this->vars['sendEmailGroupeWidget'] = $this->sendEmailGroupeWidget;
+        return $this->makePartial('$/charles/mailgun/behaviors/sendemails/_send_email_groupe_form.htm');
     }
 
     public function onLoadSendEmailUniqueForm() {
@@ -76,11 +90,20 @@ class SendEmails extends ControllerBehavior
         $widget->bindToController();
         return $widget;
     }
+    protected function createSendEmailGroupeFormWidget()
+    {
+        $config = $this->makeConfig('$/charles/mailgun/models/campaign/fields_send_email_groupe.yaml');
+        $config->alias = 'uploadSendEmailGroupeForm';
+        $config->arrayName = 'UploadSendEmailGroupe';
+        $config->model = new Campaign;
+        $widget = $this->makeWidget('Backend\Widgets\Form', $config);
+        $widget->bindToController();
+        return $widget;
+    }
 
     public function onSendEmailTestValidation()
     {
         $data = $this->sendEmailTestWidget->getSaveData();
-        trace_log($data);
         $dataCampaign = Campaign::with('picture')->find(post('id'))->toArray();
         $emailTest = $data['emailTest'];
 
@@ -138,15 +161,31 @@ class SendEmails extends ControllerBehavior
 
     public function onSendEmailUniqueValidation()
     {
+
         $data = $this->sendEmailUniqueWidget->getSaveData();
         $idContact = post('id');
         $dataCampaign = Campaign::find($data['sent_campaign']);
 
-        //$this->assign_campaign(Contact::find($idContact), $dataCampaign);
-
         $this->sendEmail($idContact, $dataCampaign);
 
         Flash::info("L'email  a bien été envoyé ");
+        return Redirect::refresh();
+    }
+
+    public function onSendEmailGroupeValidation()
+    {
+        $contactsID = Session::pull('email.contacts');
+        //je supprime le premier array je ne sais pas ce qu'il fait la...
+        $contactsID = $contactsID[0];
+        //
+        $data = $this->sendEmailGroupeWidget->getSaveData();
+        $dataCampaign = Campaign::find($data['active_campaign']);
+        //
+        //
+        foreach($contactsID as $id) {
+            $this->sendEmail($id, $dataCampaign); 
+        }
+        Flash::info("les emails on bien été envoyés");
         return Redirect::refresh();
     }
 
@@ -171,9 +210,6 @@ class SendEmails extends ControllerBehavior
             $subject = '[TEST]' . $subject;
             $isTest = true;
         }
-        trace_log("dataEmail");
-        trace_log($dataEmail);
-
         $html = View::make('charles.mailgun::first', $dataEmail)->render();
 
         Mail::raw(['html' => $html], function ($message) use($dataCampaign, $email, $subject, $contact, $isTest ) {

@@ -11,6 +11,13 @@ fields:
         label: email
         span: auto
 
+    projects:
+        label: Segments
+        type: taglist
+        mode: relation
+        customTags: false
+        nameFrom: name
+
     show_intro: 
         label: Utiliser l'intro commune du mail.
         default: true

@@ -88,6 +88,10 @@ class Campaign extends Model
         return $contacts;
 
     }
+    public function getActiveCampaignOptions() {
+        //return $this->where('status_id', '2')->lists('name', 'id');
+        return $this->lists('name', 'id');
+    }
 
     public function getSentCampaignOptions() {
         //return $this->where('status_id', '2')->lists('name', 'id');

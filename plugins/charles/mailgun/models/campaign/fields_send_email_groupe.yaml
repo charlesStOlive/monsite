@@ -1,0 +1,10 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    active_campaign:
+      label: Choisissez la campagne
+      type: dropdown
+      nameFrom: name
+    
