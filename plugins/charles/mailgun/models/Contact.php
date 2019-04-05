@@ -41,7 +41,7 @@ class Contact extends Model
             'table' => 'charles_mailgun_contact_mission',
         ],
         'segments' => [
-            'Charles\Marketing\Models\Segment',
+            'Charles\Mailgun\Models\Segment',
             'table' => 'charles_mailgun_contact_segment',
         ],
     ];
