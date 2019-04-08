@@ -13,7 +13,7 @@
       <mj-class name="alinea" padding-top="0px" align="center"></mj-class>
       <mj-class name="texte-sans-padding" padding-top="0" padding-bottom="0px"></mj-class>
       <mj-text line-height="20px"></mj-text>
-      <mj-class name="texte-footer" line-height="12px" font-size="10px" padding-bottom="0px" color="#6B6351"></mj-class>
+      <mj-class name="texte-footer" line-height="12px" font-size="10px" padding-bottom="0px"></mj-class>
       <mj-section padding-bottom="0px" padding-top="0px"></mj-section>
     </mj-attributes>
   </mj-head>
@@ -32,7 +32,7 @@
           {% endif %}
         </mj-raw>
         <mj-raw>
-          {% if contact.message_perso %}
+          {% if contact.show_message_perso %}
         </mj-raw>
         <mj-text color="#525252">{{ contact.message_perso | raw }}</mj-text>
         <mj-raw>
@@ -129,6 +129,16 @@
     <mj-raw>
       {% endif %}
     </mj-raw>
+    <mj-section padding-bottom="20px" padding-top="20px" background-color="#cccccc">
+      <mj-column width="100%">
+        <!--<mj-image width="130px" src="{{ 'storage/app/media/signature.gif' | app }}" align="left" />-->
+        <mj-text  mj-class="texte-footer">Charles Saint Olive</mj-text>
+        <mj-text  padding-bottom="0px" mj-class="texte-footer">06 64 83 42 87</mj-text>
+        <mj-text  padding-bottom="0px" mj-class="texte-footer">embauche@charles-saint-olive.com</mj-text>
+        <mj-text  padding-bottom="0px" mj-class="texte-footer"><a href="https://charles-saint-olive.com" style="color:#3a5059">charles-saint-olive.com</a></mj-text>
+        
+      </mj-column>
+    </mj-section>
 
   </mj-body>
 </mjml>

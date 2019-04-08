@@ -6,7 +6,7 @@ fields:
 
     emailTest:
         label: Email de test 
-        default: charles.stolive@dayonmars.fr
+        default: charles.stolive@gmail.com
 
     contacts:
       label: Choisissez jusqu'à 4 contacts
