@@ -207,7 +207,7 @@ class SendEmails extends ControllerBehavior
         //Modification si c'est un test
         if($testEmail) {
             $email = $testEmail;
-            $subject = '[TEST]' . $subject;
+            //$subject = '[TEST]' . $subject;
             $isTest = true;
         }
         $html = View::make('charles.mailgun::first', $dataEmail)->render();
