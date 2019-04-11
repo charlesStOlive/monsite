@@ -197,8 +197,9 @@ class SendEmails extends ControllerBehavior
         $dataEmail = [];
         $dataEmail['contact'] = $contact->toArray();
         $dataEmail['target'] = $contact->target()->get(['name', 'slug'])->toArray();
-        $dataEmail['missions'] = $contact->missions()->get(['name', 'slug', 'accroche'])->toArray();
+        //$dataEmail['missions'] = $contact->missions()->get(['name', 'slug', 'accroche'])->toArray();
         $dataEmail['projects'] = $contact->projects()->get(['name', 'slug', 'accroche'])->toArray();
+        $dataEmail['moas'] = $contact->moas()->get(['name', 'slug', 'accroche'])->toArray();
         $dataEmail['content'] = $dataCampaign;
         //Affectation sujet, cible etc. 
         $subject = $dataCampaign['subject'];

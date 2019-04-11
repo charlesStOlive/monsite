@@ -24,7 +24,8 @@ columns:
         label: Envoyé le
 
     duplicate:
-        label: Dupliquer
-        type: partial
-        path: duplicate_button
-        clickable: false
+      clickable: false
+      searchable: false
+      sortable: false
+      type: 'partial'
+      path: "$/charles/mybehaviors/widget/_duplicate.htm"

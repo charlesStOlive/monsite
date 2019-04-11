@@ -9,6 +9,21 @@
 
     <?= Form::open(['class' => 'layout']) ?>
 
+        <div class="form-buttons">
+                <button
+                    href="javascript:;"
+                    class="btn btn-secondary oc-icon-files-o "
+                    data-request-data="id:<?= $this->params[0] ?>"
+                    data-control="popup"
+                    data-handler="onLoadDuplicateForm"
+                    data-hotkey="ctrl+i, cmd+i"
+                    >
+                        Dupliquer
+                </button>
+
+
+        </div>
+
         <div class="layout-row">
             <?= $this->formRender() ?>
         </div>

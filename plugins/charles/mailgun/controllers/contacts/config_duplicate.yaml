@@ -1,0 +1,48 @@
+# ===================================
+#  Reorder Behavior Config
+# 
+# ATTENTION LE TITRE NE DOIT PAS AVOIR D ESPACE
+
+# Model Class name
+modelClass: Charles\Mailgun\Models\Contact
+
+title: Dupliquer le contact
+redirect: backend/charles/mailgun/contacts/update/
+
+
+duplication:
+    #Les champs dans le tableau relation seront cloné et attaché au nouveau model 
+    relations:
+        - projects
+        - moas
+        - segments
+
+
+    #Les champs dans le tableau transformation auront les valeurs listé ci dessous 
+    # transformation:
+    #     quotestatus_id: 1
+    #     code: null
+    #     unblock: false
+
+    #Les champs qui seront modifié dans le formulaire du popup 
+    fields:
+        name:
+          label: Nom
+
+        email:
+          label: Email
+
+
+        # _keep:
+        #   label: Dupliquer dans ce projet
+        #   type: checkbox
+        #   default: 0
+
+
+
+          
+    
+        
+
+
+

@@ -1,0 +1,56 @@
+# ===================================
+#  Reorder Behavior Config
+# 
+# ATTENTION LE TITRE NE DOIT PAS AVOIR D ESPACE
+
+# Model Class name
+modelClass: Charles\Mailgun\Models\Campaign
+
+title: Dupliquer la campagne
+redirect: backend/charles/mailgun/campaigns/update/
+
+
+duplication:
+    #Les champs dans le tableau relation seront cloné et attaché au nouveau model 
+    # relations:
+    #     - quotesdetails
+
+
+    #Les champs dans le tableau transformation auront les valeurs listé ci dessous 
+    # transformation:
+    #     quotestatus_id: 1
+    #     code: null
+    #     unblock: false
+
+    #Les champs qui seront modifié dans le formulaire du popup 
+    fields:
+        name:
+          label: intitulé de la campagne
+
+        subject:
+          label: objet de la campagne
+
+
+        # _keep:
+        #   label: Dupliquer dans ce projet
+        #   type: checkbox
+        #   default: 0
+
+        # project:
+        #   label: Choisissez un projet
+        #   type: relation
+        #   placeholder: -- choisissez un projet --
+        #   select: concat(name,' | ' ,code)
+        #   trigger:
+        #     action: hide
+        #     field: _keep
+        #     condition: checked
+
+
+
+          
+    
+        
+
+
+

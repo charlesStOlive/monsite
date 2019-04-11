@@ -87,13 +87,16 @@ class DuplicateModel extends ControllerBehavior
     public function onDuplicateValidation(){
         $data = $this->duplicateWidget->getSaveData();
 
+        $transformations = new Collection($this->getConfig('duplication[transformation]'));
+        $manipulations = new Collection($this->getConfig('duplication[fields]'));
+        $relations = $this->getConfig('duplication[relations]');
+        //$relationsManyToMany = new Collection($this->getConfig('duplication[relationsManyToMany]'));
+
         $modelName = $this->getConfig('modelClass');
         $sourceModel = $modelName::find(post('id'));
         $cloneModel = $sourceModel->replicate();
 
-        $transformations = new Collection($this->getConfig('duplication[transformation]'));
-        $manipulations = new Collection($this->getConfig('duplication[fields]'));
-        $relations = new Collection($this->getConfig('duplication[relations]'));
+        
 
         if($transformations) {
             foreach($transformations as $key => $value ) {
@@ -108,24 +111,44 @@ class DuplicateModel extends ControllerBehavior
                 if(!starts_with($key , '_') && $data[$key]) $cloneModel[$key] = $data[$key];
             }
         }
+
+        
         
         $cloneModel->save();
 
+        //load relations on EXISTING MODEL
         if($relations) {
-            foreach($relations as $Keyrelation => $fieldRelation  ) {
-                
-                foreach($sourceModel[$Keyrelation] as $related ) { 
-                    $new_relation = $related->replicate();
-                    // suppression des champs nested
-                    $new_relation->parent_id = null;
-                    $new_relation[$fieldRelation] = $cloneModel->id;
-                    $new_relation->save();
-                }
+            $sourceModel->load($relations);
+            //re-sync everything
+            foreach ($sourceModel->getRelations() as $relationName => $values){
+                $cloneModel->{$relationName}()->sync($values);
             }
-        }  
+        }
+
+        // if($relations) {
+        //     foreach($relations as $Keyrelation => $fieldRelation  ) {
+                
+        //         foreach($sourceModel[$Keyrelation] as $related ) { 
+        //             $new_relation = $related->replicate();
+        //             // suppression des champs nested si existe
+        //             if($new_relation->parent_id) $new_relation->parent_id = null;
+        //             $new_relation[$fieldRelation] = $cloneModel->id;
+        //             $new_relation->save();
+        //         }
+        //     }
+        // } 
+        // if($relationsManyToMany) {
+        //     foreach($relationsManyToMany as $Keyrelation => $fieldRelation  ) {
+        //         foreach($sourceModel[$Keyrelation] as $related ) { 
+        //             $cloneModel->attach($related);
+        //         }
+        //         trace_log('----');
+        //     }
+        // }  
 
         Flash::info("Duplication effectuée");
         return  Redirect::to($this->getConfig('redirect').$cloneModel->id);
+        //return true;
 
     }
 
