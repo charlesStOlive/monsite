@@ -132,7 +132,7 @@
     
               </td>
             </tr>
-          {% if contact.show_message_perso %}
+          
             <tr>
               <td
                  align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
@@ -141,40 +141,20 @@
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#525252;"
       >
-        {{ contact.message_perso[0].text | raw }}
-      </div>
-    
-              </td>
-            </tr>
-          {% endif %}{% if contact.show_intro %}
-            <tr>
-              <td
-                 align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
-              >
-                
-      <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#525252;"
-      >
-        {{ content.messages[0].text | raw }}
-      </div>
-    
-              </td>
-            </tr>
-          {% endif %}{% if contact.show_message_perso and contact.message_perso[1]  %}
-            <tr>
-              <td
-                 align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
-              >
-                
-      <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#525252;"
-      >
-        {{ contact.message_perso[1].text | raw }}
-      </div>
-    
-              </td>
-            </tr>
+        {% if contact.show_message_perso %}
+            {{ contact.message_perso[0].text | raw }}
           {% endif %}
+          {% if contact.show_intro %}
+            {{ content.messages[0].text | raw }}
+          {% endif %}
+          {% if contact.show_message_perso and contact.message_perso[1]  %}
+            {{ contact.message_perso[1].text | raw }}
+          {% endif %}
+      </div>
+    
+              </td>
+            </tr>
+          
       </table>
     
       </div>

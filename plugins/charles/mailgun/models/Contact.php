@@ -23,6 +23,8 @@ class Contact extends Model
      */
     protected $fillable = [];
 
+    protected $jsonable = ['message_perso'];
+
     /**
      * @var array Relations
      */

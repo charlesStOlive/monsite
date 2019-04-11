@@ -29,8 +29,13 @@ fields:
         type: checkbox
 
     message_perso:
-        type: richeditor
-        size: huge
+        type: repeater
+        titleFrom: title_when_collapsed
+        form:
+            fields:
+                text:
+                    type: richeditor
+                    size: huge
         trigger:
             action: show
             field: show_message_perso
