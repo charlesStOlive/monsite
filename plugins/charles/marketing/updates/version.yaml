@@ -41,3 +41,6 @@
 1.0.13:
     - 'Add acchroche to marketing and project'
     - add_accroche_to_projectand_mission.php
+1.0.14:
+    - 'Add acchroche to marketing and project'
+    - create_moas_table.php

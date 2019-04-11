@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Moa
+
+# Model Form Field configuration
+form: $/charles/marketing/models/moa/fields.yaml
+
+# Model Class name
+modelClass: Charles\Marketing\Models\Moa
+
+# Default redirect location
+defaultRedirect: charles/marketing/moas
+
+# Create page
+create:
+    title: Create Moa
+    redirect: charles/marketing/moas/update/:id
+    redirectClose: charles/marketing/moas
+
+# Update page
+update:
+    title: Edit Moa
+    redirect: charles/marketing/moas
+    redirectClose: charles/marketing/moas
+
+# Preview page
+preview:
+    title: Preview Moa

@@ -41,6 +41,10 @@ class Competence extends Model
             'Charles\Marketing\Models\Project',
             'table' => 'charles_marketing_expertises_project',
         ],
+        'moas' => [
+            'Charles\Marketing\Models\Moa',
+            'table' => 'charles_marketing_competence_moa',
+        ],
     ];
     public $morphTo = [];
     public $morphOne = [];

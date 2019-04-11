@@ -6,6 +6,7 @@ use Charles\Marketing\Models\Settings;
 use Charles\Marketing\Models\Competence;
 use Charles\Marketing\Models\Expertise;
 use Charles\Marketing\Models\Target;
+use Charles\Marketing\Models\Moa;
 
 
 Route::options('api/clients', function() {
@@ -36,6 +37,7 @@ Route::get('api/settings', function() {
 	$data['clients'] = Client::get();
 	$data['competences'] = Competence::get();
 	$data['targets'] = Target::with('missions', 'missions.competences' )->get();
+	$data['moas'] = MOA::get();
 	return $data;
 });
 Route::options('api/competences', function() {
@@ -63,7 +65,7 @@ Route::get('api/expertises/{slug}', function($slug) {
 	$data = Expertise::where('slug', $slug)->with('competences', 'projects', 'projects.main_picture' )->first();
 	return $data;
 });
-
+//ABANDON DES TARGETS
 Route::options('api/targets', function() {
     return Response::make('You are connected to the API');
 });
@@ -81,4 +83,12 @@ Route::get('api/targets/{slug}', function($slug) {
 	$data = Target::where('slug', $slug)->with('missions', 'missions.competences')->first();
 	return $data;
 });
+// MOA
+Route::options('api/moas/{any}', function() {
+    return Response::make('You are connected to the API');
+});
 
+Route::get('api/moas', function() {
+	$data = MOA::with('competences')->get();
+	return $data;
+});

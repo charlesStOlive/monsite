@@ -101,6 +101,11 @@ class Plugin extends PluginBase
                             'icon'        => 'icon-flag-checkered',
                             'url'         => Backend::url('charles/marketing/missions'),
                         ],
+                        'side-menu-moas' => [
+                            'label'       => "Maitrise d'ouvrages",
+                            'icon'        => 'icon-flag-checkered',
+                            'url'         => Backend::url('charles/marketing/moas'),
+                        ],
                         'side-menu-clients' => [
                             'label'       => 'Clients',
                             'icon'        => 'icon-building',

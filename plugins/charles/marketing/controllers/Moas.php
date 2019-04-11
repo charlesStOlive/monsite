@@ -4,24 +4,22 @@ use BackendMenu;
 use Backend\Classes\Controller;
 
 /**
- * Missions Back-end Controller
+ * Moas Back-end Controller
  */
-class Missions extends Controller
+class Moas extends Controller
 {
     public $implement = [
         'Backend.Behaviors.FormController',
-        'Backend.Behaviors.ListController',
-        'Backend.Behaviors.ReorderController',
+        'Backend.Behaviors.ListController'
     ];
 
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
-    public $reorderConfig = 'config_reorder.yaml';
 
     public function __construct()
     {
         parent::__construct();
 
-        BackendMenu::setContext('Charles.Marketing', 'marketing', 'side-menu-missions');
+        BackendMenu::setContext('Charles.Marketing', 'marketing', 'side-menu-moas');
     }
 }

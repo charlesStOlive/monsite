@@ -1,0 +1,30 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Nom
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: right
+        preset:
+            field: name
+            type: slug
+        type: text
+    accroche:
+        label: Accroche
+        type: text
+    description:
+            label: Description
+            type: markdown
+            mode: split
+            size: huge
+    competences:
+            label: Compétences
+            type: taglist
+            mode: relation
+            customTags: false
+            nameFrom: name
