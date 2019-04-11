@@ -104,8 +104,9 @@ class DuplicateModel extends ControllerBehavior
        
         if($manipulations) {
             foreach($manipulations as  $key => $value ) { 
-                $cloneModel[$key] = $data[$key];
-            }  
+                //Verification si le champs ne commence pas par _ ( instruction de ne pas enregistrer ) et si la valeur existe ( cas ches champs caché)
+                if(!starts_with($key , '_') && $data[$key]) $cloneModel[$key] = $data[$key];
+            }
         }
         
         $cloneModel->save();
