@@ -40,6 +40,12 @@
       </mj-column>
     </mj-section>
     <mj-section>
+      <mj-column padding-bottom="0px" padding-top="10px">
+        <mj-text padding-top="5px"><b>Comprendre mon activité</b> </mj-text>
+        <mj-divider padding-top="0px" border-width="1px" border-style="dashed" border-color="lightgrey" />
+      </mj-column>
+    </mj-section>
+    <mj-section>
       <mj-raw>
         <!-- Left image -->
       </mj-raw>
