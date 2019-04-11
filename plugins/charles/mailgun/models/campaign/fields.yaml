@@ -12,6 +12,9 @@ fields:
         label: Objet du mail
         span: left
 
+    template:
+        label: Code du template
+
     # date_info_update:
     #     label: Date de mise à jours des données de ventes courtiers
     #     type: datepicker

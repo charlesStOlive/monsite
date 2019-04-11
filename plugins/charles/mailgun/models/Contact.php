@@ -40,6 +40,10 @@ class Contact extends Model
             'Charles\Marketing\Models\Mission',
             'table' => 'charles_mailgun_contact_mission',
         ],
+        'moas' => [
+            'Charles\Marketing\Models\Moa',
+            'table' => 'charles_mailgun_contact_moa',
+        ],
         'segments' => [
             'Charles\Mailgun\Models\Segment',
             'table' => 'charles_mailgun_contact_segment',

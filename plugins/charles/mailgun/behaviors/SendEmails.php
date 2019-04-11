@@ -210,7 +210,7 @@ class SendEmails extends ControllerBehavior
             //$subject = '[TEST]' . $subject;
             $isTest = true;
         }
-        $html = View::make('charles.mailgun::first', $dataEmail)->render();
+        $html = View::make($dataCampaign['template'], $dataEmail)->render();
 
         Mail::raw(['html' => $html], function ($message) use($dataCampaign, $email, $subject, $contact, $isTest ) {
             $message->to($email);

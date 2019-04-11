@@ -11,3 +11,9 @@
 1.0.4:
     - 'Ajout tables segments & relation'
     - create_segments_table.php
+1.0.5:
+    - 'Ajout tables contact_moa'
+    - create_contact_moa_table.php
+1.0.6:
+    - 'Ajout colonne template campaign'
+    - add_column_template_campaigns.php

@@ -54,3 +54,10 @@ fields:
             mode: relation
             customTags: false
             nameFrom: name
+
+    moas:
+            label: Moas
+            type: taglist
+            mode: relation
+            customTags: false
+            nameFrom: name
