@@ -4,8 +4,16 @@
 
 fields:
     name:
-        label: Nom ou prenom ( bonjour xxx )
+        label: prenomou titre
         span: auto
+
+    fname:
+        label: Nom de famille
+        span: auto
+
+    strict:
+        label: Utiliser la version stricte
+        type: checkbox
 
     email:
         label: email

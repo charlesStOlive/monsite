@@ -127,7 +127,11 @@
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:20px;line-height:20px;text-align:left;color:#546e7a;"
       >
-        Bonjour {{ contact.name }}
+        {% if contact.strict %}
+            Bonjour {{ contact.name }} {{ contact.fname }}, 
+        {% else %}
+            Bonjour {{ contact.name }},
+        {% endif %}
       </div>
     
               </td>

@@ -17,3 +17,6 @@
 1.0.6:
     - 'Ajout colonne template campaign'
     - add_column_template_campaigns.php
+1.0.7:
+    - 'Ajout colonne prenom dans contacts'
+    - add_column_contacts_prenom.php

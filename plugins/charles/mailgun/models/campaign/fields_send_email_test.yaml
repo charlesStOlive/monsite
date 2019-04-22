@@ -12,5 +12,5 @@ fields:
       label: Choisissez jusqu'à 4 contacts
       type: taglist
       mode: relation
-      nameFrom: name
+      nameFrom: fname
     

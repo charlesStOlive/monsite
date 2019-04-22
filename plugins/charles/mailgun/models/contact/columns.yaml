@@ -4,7 +4,11 @@
 
 columns:
     name:
-        label: Nom ou prenom ( bonjour xxx )
+        label: Prenom ( bonjour xxx )
+        searchable: true
+
+    fname:
+        label: Nom
         searchable: true
 
     email:

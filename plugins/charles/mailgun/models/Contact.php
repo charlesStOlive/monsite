@@ -25,6 +25,10 @@ class Contact extends Model
 
     protected $jsonable = ['message_perso'];
 
+    protected $casts = [
+        'nameFname' => 'string',
+    ];
+
     /**
      * @var array Relations
      */
@@ -96,5 +100,8 @@ class Contact extends Model
 
         // }
         return true;
+
+
     }
+
 }

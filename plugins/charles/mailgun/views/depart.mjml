@@ -23,7 +23,13 @@
     </mj-raw>
     <mj-section padding-top="10px">
       <mj-column>
-        <mj-text font-size="20px" color="#546e7a">Bonjour {{ contact.name }}</mj-text>
+        <mj-text font-size="20px" color="#546e7a">
+        {% if contact.strict %}
+            Bonjour {{ contact.name }} {{ contact.fname }}, 
+        {% else %}
+            Bonjour {{ contact.name }},
+        {% endif %}
+        </mj-text>
         
         <mj-text color="#525252">
           {% if contact.show_message_perso %}
