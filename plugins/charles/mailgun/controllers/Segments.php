@@ -20,6 +20,6 @@ class Segments extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Charles.Mailgun', 'mailgun', 'segments');
+        BackendMenu::setContext('Charles.Mailgun', 'mailgun', 'side-menu-segments');
     }
 }

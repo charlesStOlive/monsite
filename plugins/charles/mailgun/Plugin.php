@@ -156,6 +156,11 @@ class Plugin extends PluginBase
                             'icon'        => 'icon-users',
                             'url'         => Backend::url('charles/mailgun/contacts'),
                         ],
+                        'side-menu-segments' => [
+                            'label'       => 'Segments',
+                            'icon'        => 'icon-dot-circle-o',
+                            'url'         => Backend::url('charles/mailgun/segments'),
+                        ],
                 ],
             ],
         ];

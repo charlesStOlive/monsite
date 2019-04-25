@@ -104,4 +104,15 @@ class Contact extends Model
 
     }
 
+    /*
+    ** SCOPE
+    */
+
+    public function scopeSegmentFilter($query, $filtered)
+    {
+         return $query->whereHas('segments', function($q) use ($filtered) {
+            $q->whereIn('id', $filtered);
+        });
+    }
+
 }

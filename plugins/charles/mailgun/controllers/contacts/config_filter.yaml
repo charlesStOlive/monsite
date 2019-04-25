@@ -1,0 +1,10 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+    segments:
+        label: Filtrer par segment
+        scope: segmentFilter
+        modelClass: Charles\Mailgun\Models\Segment
+        nameFrom: name

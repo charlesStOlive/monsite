@@ -24,6 +24,6 @@ class Contacts extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Charles.Mailgun', 'mailgun', 'contacts');
+        BackendMenu::setContext('Charles.Mailgun', 'mailgun', 'side-menu-contacts');
     }
 }
