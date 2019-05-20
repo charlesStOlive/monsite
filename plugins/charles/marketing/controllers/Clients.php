@@ -27,7 +27,7 @@ class Clients extends Controller
 
     public function onTest() {
         trace_log("test");
-        trace_log(Cloudder::show('test_toile'));
+        trace_log(Cloudder::show('hero-email-bellecour'));
 
 
 

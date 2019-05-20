@@ -394,7 +394,7 @@ class Index extends Controller
 
         $widgetConfig = $this->makeConfig($formConfigs[$type]);
         $widgetConfig->model = $object;
-        $widgetConfig->alias = $alias ?: 'form'.studly_case($type).md5($object->getFileName()).uniqid();
+        $widgetConfig->alias = $alias ?: 'form'.studly_case($type).md5($object->getFileName());
         $widgetConfig->context = !$object->exists ? 'create' : 'update';
 
         $widget = $this->makeWidget('Backend\Widgets\Form', $widgetConfig);
@@ -584,6 +584,13 @@ class Index extends Controller
 
             if ($extension === 'htm' || $extension === 'html' || !strlen($extension)) {
                 $objectData['markup'] = array_get($saveData, 'markup_html');
+            }
+        }
+
+        if ($type == 'menu') {
+            // If no item data is sent through POST, this means the menu is empty
+            if (!isset($objectData['itemData'])) {
+                $objectData['itemData'] = [];
             }
         }
 
