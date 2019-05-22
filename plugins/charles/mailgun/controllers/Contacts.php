@@ -12,13 +12,15 @@ class Contacts extends Controller
         'Backend.Behaviors.FormController',
         'Backend.Behaviors.ListController',
         'Charles.Mailgun.Behaviors.SendEmails',
-        'Charles.Mybehaviors.Behaviors.DuplicateModel'
+        'Charles.Mybehaviors.Behaviors.DuplicateModel',
+        'Charles.Mybehaviors.Behaviors.PdfCvExport',
 
     ];
 
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
     public $duplicateConfig = 'config_duplicate.yaml';
+    public $pdfConfig = 'config_pdfexport.yaml';
 
     public function __construct()
     {

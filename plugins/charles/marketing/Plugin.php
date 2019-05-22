@@ -96,6 +96,11 @@ class Plugin extends PluginBase
                             'icon'        => 'icon-dot-circle-o',
                             'url'         => Backend::url('charles/marketing/targets'),
                         ],
+                        'side-menu-experiences' => [
+                            'label'       => 'Experiences',
+                            'icon'        => 'icon-flag-checkered',
+                            'url'         => Backend::url('charles/marketing/experiences'),
+                        ],
                         'side-menu-missions' => [
                             'label'       => 'Missions',
                             'icon'        => 'icon-flag-checkered',

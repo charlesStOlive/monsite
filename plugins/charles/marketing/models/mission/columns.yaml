@@ -5,12 +5,12 @@
 columns:
     sort_order:
         label: ordre
-        
     name:
         label: Nom
         searchable: true
-        span: auto 
-
+        span: auto
+    show_home:
+        label: show in home page ? 
     slug:
         label: Slug
         searchable: true

@@ -1,0 +1,43 @@
+# ===================================
+#  Reorder Behavior Config
+# 
+# ATTENTION LE TITRE NE DOIT PAS AVOIR D ESPACE
+
+# Model Class name
+modelClass: Charles\Mailgun\Models\Contact
+
+#Pas très pratique mais cible le controller qui embarque le behavior
+controllerRoute: charles/mailgun/contacts
+
+#le code enregitré dans les modèles pdf. 
+template_code: cv_1 
+
+
+
+
+##OPTIONS
+#
+#Attribut : permet d'exporter les données à partir d'un élement parent. 
+#Dans ce cas dans le model_class on cible le model parent et dans l'attribut le modèle cible
+#attribut: quotes
+
+# prefix debut pdf
+prefix_fr: CV_CharlesSaintOlive
+# prefix_en: Quote_DOM
+
+#prefix optionel pour ajouter la valeur d'un champ du modèle. 
+prefix_code_attribut: code
+
+
+
+# s'il y a des élements nested, il faut le preciser ici; 
+#nested_model: quotesdetails
+  
+
+
+          
+    
+        
+
+
+

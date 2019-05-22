@@ -26,6 +26,21 @@ fields:
             type: markdown
             mode: split
             size: huge
+    options:
+        label: Autres infos
+        type: nestedform
+        usePanelStyles: true
+        form:
+          fields:
+            show_home:
+              label: Show home page
+            source:
+              label: source
+              type: dropdown
+              placeholder: --choose video--
+              options:
+                vimeo: Vimeo
+                youtube: Youtube
 
     competences:
             label: Compétences

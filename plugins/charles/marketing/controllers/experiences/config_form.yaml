@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Experience
+
+# Model Form Field configuration
+form: $/charles/marketing/models/experience/fields.yaml
+
+# Model Class name
+modelClass: Charles\Marketing\Models\Experience
+
+# Default redirect location
+defaultRedirect: charles/marketing/experiences
+
+# Create page
+create:
+    title: Create Experience
+    redirect: charles/marketing/experiences/update/:id
+    redirectClose: charles/marketing/experiences
+
+# Update page
+update:
+    title: Edit Experience
+    redirect: charles/marketing/experiences
+    redirectClose: charles/marketing/experiences
+
+# Preview page
+preview:
+    title: Preview Experience
