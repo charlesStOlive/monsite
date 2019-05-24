@@ -1,0 +1,10 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+    competencetype:
+        label: Filtrer par type
+        scope: competencetypeFilter
+        modelClass: Charles\Marketing\Models\Competencetype
+        nameFrom: name

@@ -3,7 +3,7 @@
 use Backend\Classes\ControllerBehavior;
 use October\Rain\Exception\ApplicationException;
 use Renatio\DynamicPDF\Classes\PDFWrapper;
-// use Dom\Crm\Models\Settings;
+use Charles\Marketing\Models\Settings;
 use Charles\Marketing\Models\Experience;
 use October\Rain\Support\Collection;
 
@@ -190,7 +190,7 @@ class PdfCvExport extends ControllerBehavior
          * A modifier plus tard j'appelle en dur une liaison
          */
         $data['experiences'] =  Experience::with('projects', 'competences')->get();
-        trace_log($data );
+        $data['settings'] = Settings::instance()->value;
 
 
         /**

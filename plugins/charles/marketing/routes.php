@@ -45,7 +45,12 @@ Route::options('api/competences', function() {
 });
 
 Route::get('api/competences', function() {
-	 return Competence::get();
+	 //return Competence::get();
+	 $data['technical'] = Competence::CompetencetypeFilter([1,2,3,4])->get();
+	 $data['marketing'] = Competence::CompetencetypeFilter([5])->get();
+	 $data['soft_skills'] = Competence::CompetencetypeFilter([6])->get();
+	 $data['fonctionelle'] = Competence::CompetencetypeFilter([7])->get();
+	 return $data;
 	 
 });
 Route::options('api/project/{any}', function() {

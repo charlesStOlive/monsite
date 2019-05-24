@@ -54,6 +54,18 @@ class Competence extends Model
         ];
     public $attachMany = [];
 
+
+    public function scopeCompetencetypeFilter($query, $filtered)
+    {
+         return $query->whereHas('competencetype', function($q) use ($filtered) {
+            $q->whereIn('id', $filtered);
+        });
+    }
+
+    
+
+
+
 }
 
 

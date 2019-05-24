@@ -1,14 +1,49 @@
-fields:
-    site_intro:
-        label: Introduction du site
-        type: richeditor
-        size: huge
+tabs:
+    stretch: true
+    defaultTab: Option du site
+    fields:
+        site_intro:
+            label: Introduction du site
+            type: richeditor
+            size: huge
 
-    site_intro_en:
-        label: Introduction du site
-        type: richeditor
-        size: huge
+        site_intro_en:
+            label: Introduction du site
+            type: richeditor
+            size: huge
 
-    mycv:
-        label: cv pdf
-        type: mediafinder
+        mycv:
+            label: cv pdf fixe
+            type: mediafinder
+
+        color:
+            label: Couleur de bases
+            type: colorpicker
+            tab: Option du CV
+        title:
+            label: Titre
+            tab: Option du CV
+        secteur:
+            label: Secteur
+            tab: Option du CV
+        technical:
+            label: Compétences techniques
+            type: taglist
+            options: listTechnical
+            tab: Option du CV
+        marketing:
+            label: Compétences marketing
+            type: taglist
+            options: listMarketing
+            tab: Option du CV
+        soft_skills:
+            label: Soft Skills
+            type: taglist
+            options: listSoftSkills
+            tab: Option du CV
+        fonctionel:
+            label: Compétences Fonctionelles
+            type: taglist
+            options: listFonctionel
+            tab: Option du CV
+                    

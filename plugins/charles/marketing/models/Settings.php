@@ -1,6 +1,7 @@
 <?php namespace Charles\Marketing\Models;
 
 use Model;
+use Charles\Marketing\Models\Competence;
 
 class Settings extends Model
 {
@@ -11,4 +12,21 @@ class Settings extends Model
 
     // Reference to field configuration
     public $settingsFields = 'fields.yaml';
+
+    public function listTechnical($fieldName, $value, $formData)
+    {
+        return Competence::CompetencetypeFilter([1,2,3,4])->lists('name', 'id');
+    }
+    public function listMarketing($fieldName, $value, $formData)
+    {
+        return Competence::CompetencetypeFilter([5])->lists('name', 'id');
+    }
+    public function listSoftSkills($fieldName, $value, $formData)
+    {
+        return Competence::CompetencetypeFilter([6])->lists('name', 'id');
+    }
+    public function listFonctionel($fieldName, $value, $formData)
+    {
+        return Competence::CompetencetypeFilter([7])->lists('name', 'id');
+    }
 }
