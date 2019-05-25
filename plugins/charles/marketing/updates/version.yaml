@@ -50,3 +50,6 @@
 1.0.16:
     - 'add experience table'
     - create_experiences_table.php
+1.0.17:
+    - 'add client option cv table'
+    - create_clients_add_optioncv_php.php

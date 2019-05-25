@@ -108,37 +108,6 @@ class PdfCvExport extends ControllerBehavior
         if ($data === null) {
             throw new ApplicationException('model not found.');
         }
-
-
-
-        // $settings = Settings::instance();
-
-        // $traduction = new Collection(Yaml::parse($settings->traduction));
-
-        // if($data->is_english) {
-        //     $traduction = $traduction['en'];
-        // } else {
-        //     $traduction = $traduction['fr'];
-        // }
-
-        // $data['txt'] = $traduction;
-
-
-
-
-
-        // if($data->is_forced_user) {
-        //     $data['user'] = $data->forced_user;
-        // } else {
-        //     $data['user'] = BackendAuth::getUser()->fullName;
-        // }
-
-
-        /**
-         * Prefix en ou fr. 
-         */
-
-
         $prefix;
 
         if($data->is_english) {
@@ -190,8 +159,31 @@ class PdfCvExport extends ControllerBehavior
          * A modifier plus tard j'appelle en dur une liaison
          */
         $data['experiences'] =  Experience::with('projects', 'competences')->get();
-        $data['settings'] = Settings::instance()->value;
-
+        $settings = Settings::instance()->value;
+        
+        /**
+         * TRAVAIL SUR LES OPTIONS DU CV
+         */
+        trace_log("travail sur les options du CV");
+        if($data->client) {
+            if($data->client->is_cv_option) {
+                $clientOption = $data->client->cv_option;
+                if($clientOption['color']) $settings['cv_option']['color'] = $clientOption['color'];
+                if($clientOption['title']) $settings['cv_option']['title'] = $clientOption['title'];
+                if($clientOption['secteur']) $settings['cv_option']['secteur'] = $clientOption['secteur'];
+                if(array_key_exists('technical', $clientOption)) {
+                    $settings['cv_option']['technical'] = $clientOption['technical'];
+                }
+                if(array_key_exists('marketing', $clientOption)) $settings['cv_option']['marketing'] = $clientOption['marketing'];
+                if(array_key_exists('soft_skills', $clientOption)) $settings['cv_option']['soft_skills'] = $clientOption['soft_skills'];
+                if(array_key_exists('fonctionel', $clientOption)) $settings['cv_option']['fonctionel'] = $clientOption['fonctionel'];
+            }
+        }
+        $data['settings'] = $settings;
+        trace_log($data['settings']);
+        trace_log($data->name);
+        trace_log($data->client->name);
+        trace_log($data->client->logo);
 
         /**
          * Construction du pdf

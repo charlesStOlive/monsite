@@ -25,12 +25,15 @@ class Client extends Model
      */
     protected $fillable = [];
 
+    protected $jsonable = ['cv_option'];
+
     /**
      * @var array Relations
      */
     public $hasOne = [];
     public $hasMany = [
         'projects' => ['Charles\Marketing\Models\Project'],
+        'contacts' => ['Charles\Mailgun\Models\Contact'],
     ];
     public $belongsTo = [];
     public $belongsToMany = [];
@@ -45,5 +48,22 @@ class Client extends Model
         $mediaUrl = url(Config::get('cms.storage.media.path'));
         $image = new Image($mediaUrl.'/'.$this->logo);
         return '<img src="'.$image->resize(50, 50, [ 'mode' => 'auto' ]).'">';
+    }
+
+    public function listTechnical($fieldName, $value, $formData)
+    {
+        return Competence::CompetencetypeFilter([1,2,3,4])->lists('name', 'id');
+    }
+    public function listMarketing($fieldName, $value, $formData)
+    {
+        return Competence::CompetencetypeFilter([5])->lists('name', 'id');
+    }
+    public function listSoftSkills($fieldName, $value, $formData)
+    {
+        return Competence::CompetencetypeFilter([6])->lists('name', 'id');
+    }
+    public function listFonctionel($fieldName, $value, $formData)
+    {
+        return Competence::CompetencetypeFilter([7])->lists('name', 'id');
     }
 }

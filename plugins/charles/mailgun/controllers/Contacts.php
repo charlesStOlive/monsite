@@ -2,6 +2,7 @@
 
 use BackendMenu;
 use Backend\Classes\Controller;
+use Charles\Marketing\Models\Client;
 
 /**
  * Contacts Back-end Controller
@@ -28,4 +29,18 @@ class Contacts extends Controller
 
         BackendMenu::setContext('Charles.Mailgun', 'mailgun', 'side-menu-contacts');
     }
+    public function formExtendModel($model)
+    {
+        /*
+         * Init proxy field model if we are creating the model
+         */
+        if ($this->action == 'create') {
+            $model->client = new Client;
+        }
+        return $model;
+    }
+    // public function onLoadClient() {
+    //     $idClient = Contact::find(post('id'))->client_id;
+    //     return 
+    // }
 }

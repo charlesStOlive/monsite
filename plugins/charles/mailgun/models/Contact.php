@@ -36,6 +36,7 @@ class Contact extends Model
     public $hasMany = [];
     public $belongsTo = [
         'target' => ['Charles\Marketing\Models\Target'],
+        'client' => ['Charles\Marketing\Models\Client'],
     ];
     public $belongsToMany = [
         'projects' => [

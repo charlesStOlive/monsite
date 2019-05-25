@@ -4,6 +4,7 @@ use Charles\Marketing\Models\Client;
 use Charles\Marketing\Models\Project;
 use Charles\Marketing\Models\Settings;
 use Charles\Marketing\Models\Competence;
+use Charles\Marketing\Models\Competencetype;
 use Charles\Marketing\Models\Expertise;
 use Charles\Marketing\Models\Target;
 use Charles\Marketing\Models\Moa;
@@ -45,13 +46,14 @@ Route::options('api/competences', function() {
 });
 
 Route::get('api/competences', function() {
-	 //return Competence::get();
-	 $data['technical'] = Competence::CompetencetypeFilter([1,2,3,4])->get();
-	 $data['marketing'] = Competence::CompetencetypeFilter([5])->get();
-	 $data['soft_skills'] = Competence::CompetencetypeFilter([6])->get();
-	 $data['fonctionelle'] = Competence::CompetencetypeFilter([7])->get();
-	 return $data;
-	 
+	 return Competence::get();
+});
+Route::options('api/competencestypes', function() {
+    return Response::make('You are connected to the API');
+});
+Route::get('api/competencestypes', function() {
+	return Competencetype::with('competences')->get();
+	
 });
 Route::options('api/project/{any}', function() {
     return Response::make('You are connected to the API');
