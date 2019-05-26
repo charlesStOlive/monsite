@@ -133,7 +133,7 @@ class PdfCvExport extends ControllerBehavior
 
         if ($prefixCodeAttribut) $filename .= "_". $data[$prefixCodeAttribut];
 
-        $filename .= '_'.Str::slug($data->name);
+        $filename .= '_'.Str::slug($data->client->name).'_'.Str::slug($data->fname);
 
         $filename = $filename . '.pdf';
 

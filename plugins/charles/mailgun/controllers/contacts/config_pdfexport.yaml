@@ -22,7 +22,7 @@ template_code: cv_1
 #attribut: quotes
 
 # prefix debut pdf
-prefix_fr: CV_CharlesSaintOlive
+prefix_fr: cv_charles_saint-olive
 # prefix_en: Quote_DOM
 
 #prefix optionel pour ajouter la valeur d'un champ du modèle. 
