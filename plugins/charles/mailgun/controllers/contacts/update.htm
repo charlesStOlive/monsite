@@ -15,6 +15,8 @@
         data-hotkey="ctrl+i, cmd+i">
         Dupliquer
     </button>
+    
+    
     <!-- <button class="btn btn-primary oc-icon-file-pdf-o" data-request="onLoadClient"
         data-request-data="id:<?=$this->params[0];?>" data-size="large">
         Fiche client
@@ -23,6 +25,10 @@
         data-request-data="id:<?=$this->params[0];?>" data-size="large">
         Génerer CV
     </button>
+    <?= $idClient = Charles\Mailgun\Models\Contact::find($this->params[0])->client_id;
+    $url = 'charles/marketing/clients/update/'.$idClient;
+    ?>
+    <a  class="btn btn-secondary oc-icon-files-o " href="<?= Backend::url($url) ?>" target="_blank">Fiche client</a>
 
 
 </div>
