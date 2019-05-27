@@ -166,6 +166,9 @@ class PdfCvExport extends ControllerBehavior
          */
         trace_log("travail sur les options du CV");
         if($data->client) {
+            if($data->client->base_color) {
+                $settings['base_color'] = $data->client->base_color;
+            }
             if($data->client->is_cv_option) {
                 $clientOption = $data->client->cv_option;
                 if($clientOption['color']) $settings['cv_option']['color'] = $clientOption['color'];

@@ -15,17 +15,24 @@ tabs:
             type: mediafinder
             mode: image
             span: left
+        base_color:
+            label: Couleur de bases
+            type: colorpicker
+
         contacts@update:
             type: partial
             path: field_contacts
+            tab: Contacts
         
         is_cv_option:
             label: Personaliser le CV
             type: checkbox
+            tab: CV
         cv_option:
             label: Option du cv
             type: nestedform
             usePanelStyles: true
+            tab: CV
             form:
                 fields:
                     color:

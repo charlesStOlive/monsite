@@ -53,3 +53,6 @@
 1.0.17:
     - 'add client option cv table'
     - create_clients_add_optioncv_php.php
+1.0.18:
+    - 'add xolor to Client'
+    - create_clients_add_color_php.php

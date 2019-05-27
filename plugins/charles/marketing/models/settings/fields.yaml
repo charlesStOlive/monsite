@@ -15,16 +15,15 @@ tabs:
         mycv:
             label: cv pdf fixe
             type: mediafinder
-
+        base_color:
+            label: Couleur de bases
+            type: colorpicker
         cv_option:
             label: Option du cv
             type: nestedform
             usePanelStyles: true
             form:
                 fields:
-                    color:
-                        label: Couleur de bases
-                        type: colorpicker
                     title:
                         label: Titre
                     secteur:
