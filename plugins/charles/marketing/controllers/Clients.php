@@ -84,7 +84,7 @@ class Clients extends Controller
                 ],
                 [
                     "height"=>800,
-                    "width"=>800,
+                    "width"=>600,
                     "crop"=>"lfill"
                 ] ,
                 ["effect"=>"replace_color:$colorClient:20:00e831"],
