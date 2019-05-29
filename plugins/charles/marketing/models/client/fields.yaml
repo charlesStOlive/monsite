@@ -15,9 +15,12 @@ tabs:
             type: mediafinder
             mode: image
             span: left
+            imageWidth: 300
+            imageHeight: 150
         base_color:
             label: Couleur de bases
             type: colorpicker
+            span: auto
 
         contacts@update:
             type: partial

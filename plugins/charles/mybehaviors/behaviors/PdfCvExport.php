@@ -85,8 +85,6 @@ class PdfCvExport extends ControllerBehavior
          * @var Collection
          */
         $model = $this->exportGetModel();
-
-
         /**
          * @var string permet de savoir s'il faut prendre en compte l'attribut ou le modele ( si attribut vide )  
          */
@@ -183,11 +181,6 @@ class PdfCvExport extends ControllerBehavior
             }
         }
         $data['settings'] = $settings;
-        trace_log($data['settings']);
-        trace_log($data->name);
-        trace_log($data->client->name);
-        trace_log($data->client->logo);
-
         /**
          * Construction du pdf
          */
@@ -209,10 +202,6 @@ class PdfCvExport extends ControllerBehavior
             throw new ApplicationException($e->getMessage());
         }
     }
-
-
-
-
 
     public function exportGetModel()
     {
