@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Cloudinary
+
+# Model Form Field configuration
+form: $/charles/mailgun/models/cloudinary/fields.yaml
+
+# Model Class name
+modelClass: Charles\Mailgun\Models\Cloudinary
+
+# Default redirect location
+defaultRedirect: charles/mailgun/cloudinarys
+
+# Create page
+create:
+    title: Create Cloudinary
+    redirect: charles/mailgun/cloudinarys/update/:id
+    redirectClose: charles/mailgun/cloudinarys
+
+# Update page
+update:
+    title: Edit Cloudinary
+    redirect: charles/mailgun/cloudinarys
+    redirectClose: charles/mailgun/cloudinarys
+
+# Preview page
+preview:
+    title: Preview Cloudinary
