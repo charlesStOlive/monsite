@@ -3,7 +3,7 @@
 # ===================================
 
 # Model List Column configuration
-list: $/charles/mailgun/models/Cloudi/columns.yaml
+list: $/charles/mailgun/models/cloudi/columns.yaml
 
 # Model Class name
 modelClass: Charles\Mailgun\Models\Cloudi

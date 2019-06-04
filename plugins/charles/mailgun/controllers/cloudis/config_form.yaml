@@ -6,7 +6,7 @@
 name: Cloudi
 
 # Model Form Field configuration
-form: $/charles/mailgun/models/Cloudi/fields.yaml
+form: $/charles/mailgun/models/cloudi/fields.yaml
 
 # Model Class name
 modelClass: Charles\Mailgun\Models\Cloudi
