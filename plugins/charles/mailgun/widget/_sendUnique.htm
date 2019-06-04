@@ -14,8 +14,13 @@ if($contact->eligible) {
         data-handler="onLoadSendEmailUniqueForm"
         data-hotkey="ctrl+i, cmd+i"
        >
-    Envoyer un email
+    Email
 </button>
+-
+<button class="btn btn-primary oc-icon-file-pdf-o" data-request="onLoadPdfExport"
+        data-request-data="id:<?=$record->id?>" data-size="large">
+        CV
+    </button>
 
 <?php
 } else {

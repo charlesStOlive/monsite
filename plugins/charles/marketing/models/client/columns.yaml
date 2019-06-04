@@ -11,3 +11,13 @@ columns:
         label: Image
         type: partial
         path: $/charles/marketing/models/client/_column_image.htm
+    
+    base_color:
+        label: Coueur
+        type: colorpicker
+
+    cloudis:
+        label: Cloudinary pictures
+        relation: cloudis
+        select: name
+    

@@ -84,25 +84,25 @@ tabs:
             customTags: false
             nameFrom: name
         
-        client@update:
+        client:
             label: Client
             type: relation
             selectFrom: name
             placeholder: --select Target--
 
-        user_details_section@create:
-            label: Creer la fiche client
-            type: section
-            comment: Cette section concerne le client
-        client[name]@create:
-            label: Nom du client
-        client[slug]@create:
-            label: Slug
-            preset: client[name]
-        client[logo]@create:
-            label: logo du client
-            type: mediafinder
-            mode: image
-            span: left
+        # user_details_section@create:
+        #     label: Creer la fiche client
+        #     type: section
+        #     comment: Cette section concerne le client
+        # client[name]@create:
+        #     label: Nom du client
+        # client[slug]@create:
+        #     label: Slug
+        #     preset: client[name]
+        # client[logo]@create:
+        #     label: logo du client
+        #     type: mediafinder
+        #     mode: image
+        #     span: left
 
 

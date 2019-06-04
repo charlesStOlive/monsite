@@ -14,6 +14,12 @@ columns:
     email:
         label: email
 
+    client:
+        label: client
+        relation: client
+        select: name
+        searchable: true
+
     campaigns:
       clickable: false
       searchable: false
