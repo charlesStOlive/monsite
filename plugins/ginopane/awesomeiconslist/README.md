@@ -1,6 +1,6 @@
 # Awesome Icons List
 
-The latest Font Awesome icons ([5.8.1](https://fontawesome.com/changelog/latest)) list as a backend form widget.
+The latest Font Awesome icons ([5.8.2](https://fontawesome.com/changelog/latest)) list as a backend form widget.
 
 [![GitHub tag](https://img.shields.io/github/tag/ginopane/oc-awesomeiconslist-plugin.svg)](https://github.com/GinoPane/oc-awesomeiconslist-plugin)
 [![Maintainability](https://api.codeclimate.com/v1/badges/95b49d826902f738c4a3/maintainability)](https://codeclimate.com/github/GinoPane/oc-awesomeiconslist-plugin/maintainability)
@@ -10,7 +10,7 @@ The latest Font Awesome icons ([5.8.1](https://fontawesome.com/changelog/latest)
 
 You may ask "Why do I need this plugin if October CMS itself has icon list in the Builder Plugin?". Here's why:
 * a backend widget for your forms;
-* 1516 icons vs 590 icons;
+* 1518 icons vs 590 icons;
 * the latest Font Awesome version.
 
 ## Backend Form Widget
@@ -18,12 +18,12 @@ You may ask "Why do I need this plugin if October CMS itself has icon list in th
 Awesome Icons List registers a new backend form widget named `awesomeiconslist` with all available links. Usage example via `yaml` config:
 
     awesome_icon:
-        label: Icon,
-        type: awesomeiconslist,
-        unicodeValue: false,
-        emptyOption: false,
-        iconTypes: brands,
-        placeholder: Select Icon,
+        label: Icon
+        type: awesomeiconslist
+        unicodeValue: false
+        emptyOption: false
+        iconTypes: brands
+        placeholder: Select Icon
         span: left
 
 And in the code:
