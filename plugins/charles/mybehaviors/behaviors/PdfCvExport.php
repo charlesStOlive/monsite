@@ -106,34 +106,34 @@ class PdfCvExport extends ControllerBehavior
         if ($data === null) {
             throw new ApplicationException('model not found.');
         }
-        $prefix;
+        // $prefix;
 
-        if($data->is_english) {
-            $prefix = $this->getConfig('prefix_en');
-        } else {
-            $prefix = $this->getConfig('prefix_fr');
-        }
+        // if($data->is_english) {
+        //     $prefix = $this->getConfig('prefix_en');
+        // } else {
+        //     $prefix = $this->getConfig('prefix_fr');
+        // }
         
 
-        /**
-         * Construction du nom du fichier. 
-         */
+        // /**
+        //  * Construction du nom du fichier. 
+        //  */
 
-        /**
-         * @var string 
-         */
-        $prefixCodeAttribut = $this->getConfig('prefix_code_attribut');
+        // /**
+        //  * @var string 
+        //  */
+        // $prefixCodeAttribut = $this->getConfig('prefix_code_attribut');
 
 
-        $filename ='';
+        // $filename ='';
 
-        if ($prefix) $filename .= $prefix;
+        // if ($prefix) $filename .= $prefix;
 
-        if ($prefixCodeAttribut) $filename .= "_". $data[$prefixCodeAttribut];
+        // //if ($prefixCodeAttribut) $filename .= "_". $data[$prefixCodeAttribut];
 
-        $filename .= '_'.Str::slug($data->client->name).'_'.Str::slug($data->fname);
+        // $filename .= '_'.Str::slug($data->client->name).'_cv'.$data->id;
 
-        $filename = $filename . '.pdf';
+        // $filename = $filename . '.pdf';
 
 
 
@@ -202,7 +202,8 @@ class PdfCvExport extends ControllerBehavior
             return $pdf
                 ->loadTemplate($templateCode, compact('data'))
                 ->setOptions($options)
-                ->download($filename);
+                ->save(storage_path('app/media/cv/'.$data->cv_name.'.pdf'))
+                ->stream();
 
         } catch (Exception $e) {
             throw new ApplicationException($e->getMessage());

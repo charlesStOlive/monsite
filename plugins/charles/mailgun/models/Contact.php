@@ -2,6 +2,7 @@
 
 use Model;
 use Validator;
+use Storage;
 
 /**
  * Contact Model
@@ -119,6 +120,18 @@ class Contact extends Model
          return $query->whereHas('segments', function($q) use ($filtered) {
             $q->whereIn('id', $filtered);
         });
+    }
+
+    /**
+    * MUTATOR
+    **/
+    public function getCvNameAttribute() {
+
+        return 'cv_charles_saint-olive_'.Contact::find($this->id)->client['slug'].'_C'.$this->id;
+    }
+    public function getCvExisteAttribute() {
+
+        return Storage::exists('media/cv/'.$this->cv_name.'.pdf');
     }
 
 }
