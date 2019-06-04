@@ -6,7 +6,7 @@ use Backend\Classes\Controller;
 /**
  * Cloudinarys Back-end Controller
  */
-class Cloudinarys extends Controller
+class Cloudis extends Controller
 {
     public $implement = [
         'Backend.Behaviors.FormController',

@@ -163,6 +163,12 @@ class PdfCvExport extends ControllerBehavior
          * TRAVAIL SUR LES OPTIONS DU CV
          */
         trace_log("travail sur les options du CV");
+        $compostings = new \October\Rain\Support\Collection();
+        foreach ($data->client->cloudis as $cloudi) {
+            $compostings->put($cloudi->name, $cloudi->pivot->url );
+        }
+
+        $data['compostings'] = $compostings;
         if($data->client) {
             if($data->client->base_color) {
                 $settings['base_color'] = $data->client->base_color;

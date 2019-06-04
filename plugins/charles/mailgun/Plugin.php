@@ -161,6 +161,11 @@ class Plugin extends PluginBase
                             'icon'        => 'icon-dot-circle-o',
                             'url'         => Backend::url('charles/mailgun/segments'),
                         ],
+                        'side-menu-cloudis' => [
+                            'label'       => 'Cloudinaries',
+                            'icon'        => 'icon-cloud',
+                            'url'         => Backend::url('charles/mailgun/cloudis'),
+                        ],
                 ],
             ],
         ];

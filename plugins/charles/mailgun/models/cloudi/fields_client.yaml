@@ -1,0 +1,12 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: nom campagne cloudinaries
+    slug:
+        label: Slug
+        preset: name
+    pivot[name]:
+        label: Nom du pivot

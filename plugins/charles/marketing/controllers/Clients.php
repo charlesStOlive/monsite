@@ -1,8 +1,11 @@
 <?php namespace Charles\Marketing\Controllers;
 
 use BackendMenu;
+use Redirect;
+use Flash;
 use Backend\Classes\Controller;
 use Charles\Marketing\Models\Client;
+use Charles\Mailgun\Models\Cloudi;
 
 use Cloudder;
 
@@ -38,12 +41,85 @@ class Clients extends Controller
         // $publicId = "client_logo_".$client->slug;
         // trace_log(Cloudder::secureShow($publicId.'aaa'));
     }
+
+    public function onLoadCreateGroupeCloudis()
+    {
+        $clientsChecked = post('checked');
+        
+        foreach($clientsChecked as $id) {
+            $this->createClientImage($id); 
+        }
+        
+    }
     
 
-    public function onCreateClientImage() {
-        $client = Client::find(post('id'));
-        trace_log($client->base_color);
+    public function createClientImage($id='null') {
+        if($id == 'null') {
+            $id = post('id');
+        }
+        $client = Client::find($id);
+        //
         $colorClient = substr($client->base_color, 1);
+
+        $cloudis = Cloudi::get();
+
+        foreach($cloudis as $cloudi) {
+            $url="";
+            if($cloudi->name == "book") {
+                $myOpt =  [
+                    "transformation"=>[
+                        [   "overlay"=>"client_logo_".$client->slug,
+                            "height"=>250, 
+                            "effect"=>"multiply",
+                            "width"=>250,
+                            "y"=>40,
+                            "crop"=>"limit"
+                        ],
+                        [
+                            "height"=>400,
+                            "width"=>300,
+                            "crop"=>"lfill"
+                        ] ,
+                        ["effect"=>"replace_color:$colorClient:20:00e831"],
+                    ]
+                ];
+                $url = Cloudder::secureShow('campagne/book/livre_plat', $myOpt);
+            };
+            if($cloudi->name == "banksi") {
+                    $myOpt =  [
+                        "transformation"=>[
+                                ["width"=>500, "crop"=>"scale"],
+                                ["effect"=>"replace_color:$colorClient:40:9e3544"], 
+                                ["angle"=>330,
+                                'x'=>50,
+                                'color' => "#28282890",
+                                "effect"=>"multiply",
+                                "overlay"=>[
+                                    "font_family"=>"Verdana",
+                                    "font_size"=>30,
+                                    "font_weight"=>"bold",
+                                    
+                                    "text"=>$client->name,
+                                ]],
+                                ["overlay"=>"client_logo_".$client->slug,
+                                "effect"=>"multiply",
+                                "angle"=>358,
+                                "width"=>150,
+                                "height"=>100,
+                                "gravity"=>"north_west",
+                                "crop"=>"fit",
+                                'x'=>120,
+                                'y'=>40]
+                        ]
+                    ];
+                    $url = Cloudder::secureShow('campagne/banksi/banksi_original', $myOpt);
+            };
+            $pivotData = ['url' => $url];
+            $client->cloudis()->add($cloudi, $pivotData);
+
+        }
+
+
 
         // $myOpt =  [
         //     "transformation"=>[
@@ -73,27 +149,28 @@ class Clients extends Controller
         // ];
         //$url = Cloudder::secureShow('campagne/banksi/banksi_original', $myOpt);
         //
-        $myOpt =  [
-            "transformation"=>[
-                [   "overlay"=>"client_logo_".$client->slug,
-                    "height"=>250, 
-                    "effect"=>"multiply",
-                    "width"=>250,
-                    "y"=>40,
-                    "crop"=>"limit"
-                ],
-                [
-                    "height"=>800,
-                    "width"=>600,
-                    "crop"=>"lfill"
-                ] ,
-                ["effect"=>"replace_color:$colorClient:20:00e831"],
-            ]
-        ];
-        $url = Cloudder::secureShow('campagne/book/livre_plat', $myOpt);
-        trace_log($myOpt);
-        trace_log($url);
-        $this->vars['src'] = $url;
-        return $this->makePartial('$/charles/marketing/controllers/clients/_img_form.htm');
+        // $myOpt =  [
+        //     "transformation"=>[
+        //         [   "overlay"=>"client_logo_".$client->slug,
+        //             "height"=>250, 
+        //             "effect"=>"multiply",
+        //             "width"=>250,
+        //             "y"=>40,
+        //             "crop"=>"limit"
+        //         ],
+        //         [
+        //             "height"=>800,
+        //             "width"=>600,
+        //             "crop"=>"lfill"
+        //         ] ,
+        //         ["effect"=>"replace_color:$colorClient:20:00e831"],
+        //     ]
+        // ];
+        // $url = Cloudder::secureShow('campagne/book/livre_plat', $myOpt);
+        // trace_log($myOpt);
+        // trace_log($url);
+        // $this->vars['src'] = $url;
+        // return $this->makePartial('$/charles/marketing/controllers/clients/_img_form.htm');
+        Flash::success('Info OK');
     }
 }

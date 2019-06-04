@@ -20,3 +20,6 @@
 1.0.7:
     - 'Ajout colonne prenom dans contacts'
     - add_column_contacts_prenom.php
+1.0.8:
+    - 'Ajout table cloudis et Compagnie'
+    - create_cloudis_table.php

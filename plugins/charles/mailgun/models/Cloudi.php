@@ -5,12 +5,12 @@ use Model;
 /**
  * cloudinary Model
  */
-class Cloudinary extends Model
+class Cloudi extends Model
 {
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'charles_mailgun_cloudinaries';
+    public $table = 'charles_mailgun_cloudis';
 
     /**
      * @var array Guarded fields

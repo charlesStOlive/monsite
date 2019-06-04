@@ -36,7 +36,13 @@ class Client extends Model
         'contacts' => ['Charles\Mailgun\Models\Contact'],
     ];
     public $belongsTo = [];
-    public $belongsToMany = [];
+    public $belongsToMany = [
+        'cloudis' => [
+            'Charles\Mailgun\Models\Cloudi',
+            'table' => 'charles_mailgun_cloudi_client',
+            'pivot' => ['url', 'url_ready']
+        ],
+    ];
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];

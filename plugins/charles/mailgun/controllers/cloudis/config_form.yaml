@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Cloudi
+
+# Model Form Field configuration
+form: $/charles/mailgun/models/Cloudi/fields.yaml
+
+# Model Class name
+modelClass: Charles\Mailgun\Models\Cloudi
+
+# Default redirect location
+defaultRedirect: charles/mailgun/cloudis
+
+# Create page
+create:
+    title: Create Cloudi
+    redirect: charles/mailgun/cloudis/update/:id
+    redirectClose: charles/mailgun/cloudis
+
+# Update page
+update:
+    title: Edit Cloudi
+    redirect: charles/mailgun/cloudis
+    redirectClose: charles/mailgun/cloudis
+
+# Preview page
+preview:
+    title: Preview Cloudi

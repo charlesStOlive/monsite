@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/charles/mailgun/models/cloudinary/columns.yaml
+list: $/charles/mailgun/models/Cloudi/columns.yaml
 
 # Model Class name
-modelClass: Charles\Mailgun\Models\Cloudinary
+modelClass: Charles\Mailgun\Models\Cloudi
 
 # List Title
-title: Manage Cloudinarys
+title: Manage Cloudis
 
 # Link URL for each record
-recordUrl: charles/mailgun/cloudinarys/update/:id
+recordUrl: charles/mailgun/cloudis/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

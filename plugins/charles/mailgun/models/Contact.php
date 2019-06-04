@@ -55,6 +55,11 @@ class Contact extends Model
             'Charles\Mailgun\Models\Segment',
             'table' => 'charles_mailgun_contact_segment',
         ],
+        'cloudis' => [
+            'Charles\Mailgun\Models\Cloudi',
+            'table' => 'charles_mailgun_cloudi_contact',
+            'pivot' => ['url', 'url_ready']
+        ],
     ];
     public $morphTo = [];
     public $morphOne = [];

@@ -1,0 +1,14 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Nom
+        searchable: true
+    slug:
+        label: Slug
+    pivot[url]:
+        label: Url
+    pivot[url_ready]:
+        label: Url Ready

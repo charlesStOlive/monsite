@@ -3,6 +3,8 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    name:
+        label: nom campagne cloudinaries
+    slug:
+        label: Slug
+        preset: name

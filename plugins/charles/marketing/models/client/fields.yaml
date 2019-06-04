@@ -27,6 +27,11 @@ tabs:
             path: field_contacts
             tab: Contacts
         
+        cloudis@update:
+            type: partial
+            path: field_cloudis
+            tab: Cloudinaries
+        
         is_cv_option:
             label: Personaliser le CV
             type: checkbox

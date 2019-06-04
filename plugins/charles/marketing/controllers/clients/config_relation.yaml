@@ -14,18 +14,19 @@ contacts:
         list: $/charles/mailgun/models/contact/columns.yaml
         form: $/charles/mailgun/models/contact/fields.yaml
 
-# provisions:
-#     label: dom.crm::lang.projects.provisions
-#     view:
-#         list: $/dom/crm/models/projectprovisionpivot/columns.yaml
-#         toolbarButtons: add|remove
-#     manage:
-#         showSearch: true
-#         recordsPerPage: 10
-#         list: $/dom/crm/models/provision/columns_simple.yaml
-#         scope: closed
-#     pivot:
-#         form: $/dom/crm/models/projectprovisionpivot/fields.yaml
+cloudis:
+    label: Image cloudinary
+    view:
+        list: $/charles/mailgun/models/cloudi/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        showSearch: true
+        list: $/charles/mailgun/models/cloudi/columns.yaml
+    pivot:
+        form:
+            fields:
+                pivot[url]:
+                    label: url
 
 
 
