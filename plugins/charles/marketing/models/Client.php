@@ -3,6 +3,7 @@
 use Model;
 use \ToughDeveloper\ImageResizer\Classes\Image;
 use Config;
+use Cloudder;
 
 /**
  * Client Model
@@ -54,6 +55,27 @@ class Client extends Model
         $mediaUrl = url(Config::get('cms.storage.media.path'));
         $image = new Image($mediaUrl.'/'.$this->logo);
         return '<img src="'.$image->resize(50, 50, [ 'mode' => 'auto' ]).'">';
+    }
+    public function getCloudiLogoIdAttribute() {
+        return "client_logo_".$this->slug;
+    }
+    public function getCloudiLogoExisteAttribute() {
+        $url = Cloudder::secureShow($this->CloudiLogoId);
+        $existe = true;
+        $handle = curl_init($url);
+        curl_setopt($handle, CURLOPT_NOBODY, true);
+
+        //  Get the HTML or whatever is linked in $url. 
+        $response = curl_exec($handle);
+
+        /* Check for 404 (file not found). */
+        return curl_getinfo($handle, CURLINFO_HTTP_CODE);
+        // if($httpCode == 404) {
+        //     $existe = false;
+        // }
+
+        // curl_close($handle);
+        // return $existe;
     }
 
     public function listTechnical($fieldName, $value, $formData)

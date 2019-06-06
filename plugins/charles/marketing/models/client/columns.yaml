@@ -20,4 +20,10 @@ columns:
         label: Cloudinary pictures
         relation: cloudis
         select: name
+
+    cloudi_logo_id:
+        label: nom du logo
+
+    cloudi_logo_existe:
+        label: logo ready
     
