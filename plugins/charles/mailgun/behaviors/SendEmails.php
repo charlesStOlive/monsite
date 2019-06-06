@@ -234,7 +234,7 @@ class SendEmails extends ControllerBehavior
             $message->to($email);
             $message->subject($subject);
             $message->from('embauche@charles-saint-olive.com', 'Charles Saint-Olive');
-            //$message->attach(storage_path('app/media/cv/'.$contact->cv_name.'.pdf'));
+            $message->attach(storage_path('app/media/cv/'.$contact->cv_name.'.pdf'));
             if(!$isTest) {
             //Si ce n'est pas un test on met les headers. 
                 $headers = $message->getHeaders();
