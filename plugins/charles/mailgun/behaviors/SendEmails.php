@@ -5,6 +5,8 @@ use Backend\Classes\ControllerBehavior;
 
 use Charles\Mailgun\Models\Contact;
 use Charles\Mailgun\Models\Campaign;
+use Charles\Marketing\Models\Moa;
+use Charles\Marketing\Models\Project;
 
 use Flash;
 use Redirect;
@@ -197,9 +199,18 @@ class SendEmails extends ControllerBehavior
         $dataEmail = [];
         $dataEmail['contact'] = $contact->toArray();
         $dataEmail['target'] = $contact->target()->get(['name', 'slug'])->toArray();
-        //$dataEmail['missions'] = $contact->missions()->get(['name', 'slug', 'accroche'])->toArray();
-        $dataEmail['projects'] = $contact->projects()->get(['name', 'slug', 'accroche'])->toArray();
-        $dataEmail['moas'] = $contact->moas()->get(['name', 'slug', 'accroche'])->toArray();
+        //
+        if($contact->projects()->count()) {
+            $dataEmail['projects'] = $contact->projects()->get(['name', 'slug', 'accroche'])->toArray();
+        } else {
+            $dataEmail['projects'] = Project::whereIn('id', array(2, 6, 8))->get(['name', 'slug', 'accroche'])->toArray();
+        }
+        if($contact->moas()->count()) {
+            $dataEmail['moas'] = $contact->moas()->get(['name', 'slug', 'accroche'])->toArray();
+        } else {
+            $dataEmail['moas'] = Moa::whereIn('id', array(4, 7, 8))->get(['name', 'slug', 'accroche'])->toArray();
+        }
+        
         $dataEmail['content'] = $dataCampaign;
         //Affectation sujet, cible etc. 
         $subject = $dataCampaign['subject'];
