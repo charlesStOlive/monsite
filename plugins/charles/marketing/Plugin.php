@@ -85,16 +85,16 @@ class Plugin extends PluginBase
         return [
             'marketing' => [
                 'label'       => 'marketing',
-                'url'         => Backend::url('charles/marketing/targets'),
+                'url'         => Backend::url('charles/marketing/clients'),
                 'icon'        => 'icon-leaf',
                 'permissions' => ['charles.marketing.*'],
                 'order'       => 500,
 
                 'sideMenu' => [
-                        'side-menu-targets' => [
-                            'label'       => 'Cibles',
-                            'icon'        => 'icon-dot-circle-o',
-                            'url'         => Backend::url('charles/marketing/targets'),
+                        'side-menu-clients' => [
+                            'label'       => 'Clients',
+                            'icon'        => 'icon-building',
+                            'url'         => Backend::url('charles/marketing/clients'),
                         ],
                         'side-menu-experiences' => [
                             'label'       => 'Experiences',
@@ -111,11 +111,7 @@ class Plugin extends PluginBase
                             'icon'        => 'icon-flag-checkered',
                             'url'         => Backend::url('charles/marketing/moas'),
                         ],
-                        'side-menu-clients' => [
-                            'label'       => 'Clients',
-                            'icon'        => 'icon-building',
-                            'url'         => Backend::url('charles/marketing/clients'),
-                        ],
+                        
                         'side-menu-projects' => [
                             'label'       => 'Projets',
                             'icon'        => 'icon-folder-open',
@@ -130,6 +126,11 @@ class Plugin extends PluginBase
                             'label'       => 'Competences',
                             'icon'        => 'icon-tasks',
                             'url'         => Backend::url('charles/marketing/competences'),
+                        ],
+                        'side-menu-targets' => [
+                            'label'       => 'Cibles',
+                            'icon'        => 'icon-dot-circle-o',
+                            'url'         => Backend::url('charles/marketing/targets'),
                         ],
                        
 

@@ -197,6 +197,7 @@ class SendEmails extends ControllerBehavior
         $contact = Contact::find($idContact);
         //création du array data email
         $dataEmail = [];
+        $dataEmail['base_color'] = $contact->client->base_color;
         $dataEmail['contact'] = $contact->toArray();
         $dataEmail['target'] = $contact->target()->get(['name', 'slug'])->toArray();
         //
@@ -210,6 +211,11 @@ class SendEmails extends ControllerBehavior
         } else {
             $dataEmail['moas'] = Moa::whereIn('id', array(4, 7, 8))->get(['name', 'slug', 'accroche'])->toArray();
         }
+        $compostings = new \October\Rain\Support\Collection();
+        foreach ($contact->client->cloudis as $cloudi) {
+            $compostings->put($cloudi->name, $cloudi->pivot->url );
+        }
+        $dataEmail['compostings'] = $compostings;
         
         $dataEmail['content'] = $dataCampaign;
         //Affectation sujet, cible etc. 
@@ -228,7 +234,7 @@ class SendEmails extends ControllerBehavior
             $message->to($email);
             $message->subject($subject);
             $message->from('embauche@charles-saint-olive.com', 'Charles Saint-Olive');
-            $message->attach(storage_path('app/media/cv/'.$contact->cv_name.'.pdf'));
+            //$message->attach(storage_path('app/media/cv/'.$contact->cv_name.'.pdf'));
             if(!$isTest) {
             //Si ce n'est pas un test on met les headers. 
                 $headers = $message->getHeaders();

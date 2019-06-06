@@ -58,7 +58,9 @@ class Clients extends Controller
             $id = post('id');
         }
         $client = Client::find($id);
-        //
+        //Suppresion des cloudis existant : 
+        $client->cloudis()->detach();
+
         $colorClient = substr($client->base_color, 1);
 
         $cloudis = Cloudi::get();
@@ -84,6 +86,25 @@ class Clients extends Controller
                     ]
                 ];
                 $url = Cloudder::secureShow('campagne/book/livre_plat', $myOpt);
+            };
+            if($cloudi->name == "bookmail") {
+                $myOpt =  [
+                    "transformation"=>[
+                        [   "overlay"=>"client_logo_".$client->slug,
+                            "height"=>50, 
+                            "effect"=>"multiply",
+                            "width"=>50,
+                            "y"=>10,
+                            "crop"=>"limit"
+                        ],
+                        [
+                            "width"=>200,
+                            "crop"=>"lfill"
+                        ] ,
+                        ["effect"=>"replace_color:$colorClient:20:00e831"],
+                    ]
+                ];
+                $url = Cloudder::secureShow('campagne/book/livre_mail', $myOpt);
             };
             if($cloudi->name == "banksi") {
                     $myOpt =  [
