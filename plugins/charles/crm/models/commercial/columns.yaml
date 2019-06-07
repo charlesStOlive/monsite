@@ -1,0 +1,27 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Nom Commercial
+        searchable: true
+    
+    region_name:
+        label: Région
+        relation: region
+        select: name
+        searchable: true
+    clients_count:
+        label: Nombre de clients
+        relation: clients
+        useRelationCount: true
+    sales_count:
+        label: Nombre de ventes
+        relation: sales
+        useRelationCount: true
+    sales_sum:
+        label: Somme des ventes
+        sortable: false
+
+

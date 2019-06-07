@@ -1,0 +1,24 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    sale_date:
+        label: date de vente
+        type: datetime
+    client_name:
+        label: Nom client
+        relation: client
+        select: name
+        searchable: true
+    gamme_name:
+        label: Nom Gamme
+        relation: gamme
+        select: name
+        searchable: true
+    amount:
+        label: Montant
+        type: number
+        format:  € %.0f
+
+

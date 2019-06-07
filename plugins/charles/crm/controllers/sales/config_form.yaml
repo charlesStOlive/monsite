@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Sale
+
+# Model Form Field configuration
+form: $/charles/crm/models/sale/fields.yaml
+
+# Model Class name
+modelClass: Charles\Crm\Models\Sale
+
+# Default redirect location
+defaultRedirect: charles/crm/sales
+
+# Create page
+create:
+    title: Create Sale
+    redirect: charles/crm/sales/update/:id
+    redirectClose: charles/crm/sales
+
+# Update page
+update:
+    title: Edit Sale
+    redirect: charles/crm/sales
+    redirectClose: charles/crm/sales
+
+# Preview page
+preview:
+    title: Preview Sale

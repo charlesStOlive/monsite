@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Region
+
+# Model Form Field configuration
+form: $/charles/crm/models/region/fields.yaml
+
+# Model Class name
+modelClass: Charles\Crm\Models\Region
+
+# Default redirect location
+defaultRedirect: charles/crm/regions
+
+# Create page
+create:
+    title: Create Region
+    redirect: charles/crm/regions/update/:id
+    redirectClose: charles/crm/regions
+
+# Update page
+update:
+    title: Edit Region
+    redirect: charles/crm/regions
+    redirectClose: charles/crm/regions
+
+# Preview page
+preview:
+    title: Preview Region

@@ -1,0 +1,9 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    client:
+        label: Nom
+        type: relation
+        select: name

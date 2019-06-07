@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Gamme
+
+# Model Form Field configuration
+form: $/charles/crm/models/gamme/fields.yaml
+
+# Model Class name
+modelClass: Charles\Crm\Models\Gamme
+
+# Default redirect location
+defaultRedirect: charles/crm/gammes
+
+# Create page
+create:
+    title: Create Gamme
+    redirect: charles/crm/gammes/update/:id
+    redirectClose: charles/crm/gammes
+
+# Update page
+update:
+    title: Edit Gamme
+    redirect: charles/crm/gammes
+    redirectClose: charles/crm/gammes
+
+# Preview page
+preview:
+    title: Preview Gamme

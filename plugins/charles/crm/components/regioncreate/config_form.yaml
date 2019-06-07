@@ -1,0 +1,6 @@
+modelClass: Charles\Crm\Models\Region
+
+form:
+    fields:
+        id:
+            label: 'Region ID'

@@ -1,0 +1,17 @@
+modelClass: Charles\Crm\Models\Region
+title: Liste des régions
+noRecordsMessage: Pas d'enregistrements
+toolbar: 
+    buttons: list_toolbar-button
+    search:
+        prompt: Rechercher
+
+columns:
+    name:
+        label: Nom Région
+        searchable: true
+    NbCommercials:
+        label: Nombre de nb_commerciaux
+    NbClients:
+        label: Nombre de clients
+

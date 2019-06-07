@@ -1,0 +1,16 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Nom Région
+        searchable: true
+    commercials_count:
+        label: Nombre de nb_commerciaux
+        relation: commercials
+        useRelationCount: true
+    clients_count:
+        label: Nombre de clients
+        relation: clients
+        useRelationCount: true

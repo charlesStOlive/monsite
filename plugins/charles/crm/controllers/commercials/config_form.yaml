@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Commercial
+
+# Model Form Field configuration
+form: $/charles/crm/models/commercial/fields.yaml
+
+# Model Class name
+modelClass: Charles\Crm\Models\Commercial
+
+# Default redirect location
+defaultRedirect: charles/crm/commercials
+
+# Create page
+create:
+    title: Create Commercial
+    redirect: charles/crm/commercials/update/:id
+    redirectClose: charles/crm/commercials
+
+# Update page
+update:
+    title: Edit Commercial
+    redirect: charles/crm/commercials
+    redirectClose: charles/crm/commercials
+
+# Preview page
+preview:
+    title: Preview Commercial

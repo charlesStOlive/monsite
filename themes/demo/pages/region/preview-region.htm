@@ -1,0 +1,16 @@
+title = "Preview Region"
+url = "/regions/:id/preview"
+layout = "default"
+is_hidden = 0
+
+[regionPreview]
+context = "preview"
+recordKey = "{{ :id }}"
+recordKeyName = "id"
+listPage = "region/list-region"
+createPage = "region/create-region"
+updatePage = "region/update-region"
+previewPage = "region/preview-region"
+
+==
+{% component 'regionPreview' %}

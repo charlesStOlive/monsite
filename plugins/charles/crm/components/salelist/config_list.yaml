@@ -1,0 +1,27 @@
+modelClass: Charles\Crm\Models\Sale
+title: 'Liste des ventes'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar-buttons
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+
+columns:
+    sale_date:
+        label: date de vente
+        type: datetime
+    client_name:
+        label: Nom client
+        relation: client
+        select: name
+        searchable: true
+    gamme_name:
+        label: Nom Gamme
+        relation: gamme
+        select: name
+        searchable: true
+    amount:
+        label: Montant
+        type: number
+        format:  € %.0f

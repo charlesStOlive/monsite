@@ -1,0 +1,16 @@
+title = "Update Region"
+url = "/regions/:id/update"
+layout = "default"
+is_hidden = 0
+
+[regionUpdate]
+context = "update"
+recordKey = "{{ :id }}"
+recordKeyName = "id"
+listPage = "region/list-region"
+createPage = "region/create-region"
+updatePage = "region/update-region"
+previewPage = "region/preview-region"
+
+==
+{% component 'regionUpdate' %}

@@ -1,0 +1,6 @@
+modelClass: Charles\Crm\Models\Sale
+
+form:
+    fields:
+        id:
+            label: 'Sale ID'

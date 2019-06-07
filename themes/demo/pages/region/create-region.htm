@@ -1,0 +1,16 @@
+title = "Create Region"
+url = "/regions/create"
+layout = "default"
+is_hidden = 0
+
+[regionCreate]
+context = "create"
+recordKey = "{{ :id }}"
+recordKeyName = "id"
+listPage = "region/list-region"
+createPage = "region/create-region"
+updatePage = "region/update-region"
+previewPage = "region/preview-region"
+
+==
+{% component 'regionCreate' %}

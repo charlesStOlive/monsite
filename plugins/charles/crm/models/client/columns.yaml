@@ -1,0 +1,11 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Nom client
+        searchable: true
+    sales_sum:
+        label: Somme des ventes
+        sortable: false

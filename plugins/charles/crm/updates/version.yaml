@@ -1,0 +1,10 @@
+1.0.1: 
+  - 'First version of Crm'
+  - create_clients_table.php
+  - create_commercials_table.php
+  - create_gammes_table.php
+  - create_regions_table.php
+  - create_sales_table.php
+1.0.2: 
+  - 'Seed'
+  - seed_all_tables.php
