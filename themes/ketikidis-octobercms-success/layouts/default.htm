@@ -21,6 +21,12 @@ forceUrl = 0
     <head>
         {% partial "site/meta" %}
         {% partial "site/css" %}
+        <!--POWER COMPONENTS -->
+        <!-- Add PowerComponent Storm UI -->
+        <link href="/plugins/initbiz/powercomponents/assets/ui/storm.css" rel="stylesheet">
+        {% styles %}
+        <!-- load jQuery in head section -->
+        <script src="{{ ['@jquery'] |theme }}"></script>
     </head><!--/#head-->
     <body class="page-{{ this.page.id }} layout-{{ this.page.layout }}">
 
@@ -45,6 +51,9 @@ forceUrl = 0
     
         <!-- Scroll to top -->
         {% partial "site/scrolltop" %}
+        <script src="/plugins/initbiz/powercomponents/assets/js/powercomponents.js"> </script>
+        {% framework extras %}
+        {% scripts %}
     
         <!-- Scripts -->
         {% partial "site/scripts" %}

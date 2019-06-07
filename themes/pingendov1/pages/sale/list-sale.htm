@@ -1,0 +1,26 @@
+title = "Sale list"
+url = "/sales"
+layout = "default"
+is_hidden = 0
+
+[saleList]
+recordPage = "sale/preview-sale"
+createPage = "sale/create-sale"
+
+==
+<div class="py-5  bg-secondary">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="text-light">Liste des ventes</h1>
+              <p class="text-light">Cette pages vous montre les données brutes sans traitement. Ce sont ce mêmes données qui sont utilisés pour créer les rapports automatiques. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% component 'saleList' %}

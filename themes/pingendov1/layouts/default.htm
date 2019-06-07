@@ -29,7 +29,11 @@ function onSubmitCv2()
   <title>Accueil site CSO</title>
   <meta name="description" content="site CV Charles Saint olive : chef de projet technique, data-scientist">
   <meta name="keywords" content="data scientist, manager, digital, data"> </head>
+  <!--POWER COMPONENTS -->
+  <!-- Add PowerComponent Storm UI -->
+  <link href="/plugins/initbiz/powercomponents/assets/ui/storm.css" rel="stylesheet">
   {% styles %}
+  <script src="{{ ['@jquery'] |theme }}"></script>
 <body class="">
   
   {% partial 'navbar' %}
@@ -56,6 +60,8 @@ function onSubmitCv2()
             });
           });
   </script>
+  
+  <script src="/plugins/initbiz/powercomponents/assets/js/powercomponents.js"> </script>
   {% framework extras %}
   {% scripts %}
 </body>

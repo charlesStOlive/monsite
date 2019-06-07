@@ -1,0 +1,16 @@
+title = "Update Sale"
+url = "/sales/:id/update"
+layout = "default"
+is_hidden = 0
+
+[saleUpdate]
+context = "update"
+recordKey = "{{ :id }}"
+recordKeyName = "id"
+listPage = "sale/list-sale"
+createPage = "sale/create-sale"
+updatePage = "sale/update-sale"
+previewPage = "sale/preview-sale"
+
+==
+{% component 'saleUpdate' %}

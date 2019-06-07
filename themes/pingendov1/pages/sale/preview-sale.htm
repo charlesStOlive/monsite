@@ -1,0 +1,16 @@
+title = "Preview Sale"
+url = "/sales/:id/preview"
+layout = "default"
+is_hidden = 0
+
+[salePreview]
+context = "preview"
+recordKey = "{{ :id }}"
+recordKeyName = "id"
+listPage = "sale/list-sale"
+createPage = "sale/create-sale"
+updatePage = "sale/update-sale"
+previewPage = "sale/preview-sale"
+
+==
+{% component 'salePreview' %}

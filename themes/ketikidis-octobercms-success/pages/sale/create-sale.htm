@@ -1,0 +1,16 @@
+title = "Create Sale"
+url = "/sales/create"
+layout = "default"
+is_hidden = 0
+
+[saleCreate]
+context = "create"
+recordKey = "{{ :id }}"
+recordKeyName = "id"
+listPage = "sale/list-sale"
+createPage = "sale/create-sale"
+updatePage = "sale/update-sale"
+previewPage = "sale/preview-sale"
+
+==
+{% component 'saleCreate' %}
