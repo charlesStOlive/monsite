@@ -218,6 +218,7 @@ class SendEmails extends ControllerBehavior
         $dataEmail['compostings'] = $compostings;
         
         $dataEmail['content'] = $dataCampaign;
+        $dataEmail['url_cv'] = 'app/media/cv/'.$contact->cv_name.'.pdf';
         //Affectation sujet, cible etc. 
         $subject = $dataCampaign['subject'];
         $email = $contact->email;
@@ -233,8 +234,8 @@ class SendEmails extends ControllerBehavior
         Mail::raw(['html' => $html], function ($message) use($dataCampaign, $email, $subject, $contact, $isTest ) {
             $message->to($email);
             $message->subject($subject);
-            $message->from('embauche@charles-saint-olive.com', 'Charles Saint-Olive');
-            $message->attach(storage_path('app/media/cv/'.$contact->cv_name.'.pdf'));
+            $message->from('contact@charles-saint-olive.com', 'Charles Saint-Olive');
+            //$message->attach(storage_path('app/media/cv/'.$contact->cv_name.'.pdf'));
             if(!$isTest) {
             //Si ce n'est pas un test on met les headers. 
                 $headers = $message->getHeaders();

@@ -218,16 +218,10 @@
           <tr>
             <td  style="width:200px;">
               
-        <a
-           href="https://admin.charles-saint-olive.com/storage/{{ url_cv }}" target="_blank"
-        >
-          
       <img
-         alt="" height="auto" src="{{ compostings.bookmail }}" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="200"
+         alt="" height="auto" src="{{ message.embed(compostings.bookmail ) }}" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="200"
       />
     
-        </a>
-      
             </td>
           </tr>
         </tbody>
@@ -519,12 +513,12 @@
         
             <tr>
               <td
-                 align="left" style="font-size:0px;padding:10px 25px;padding-top:2px;padding-bottom:2px;padding-left:10px;word-break:break-word;"
+                 align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
               >
                 
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
-      >Vous pouvez <b><a padding-left="10px" style="color:{{ base_color }}" href="https://charles-saint-olive.com/"><b>visiter mon site</a></b> , télécharger un <a padding-left="10px" href="https://admin.charles-saint-olive.com/storage/{{ url_cv }}" style="color:{{ base_color }}">CV personalisé</b><a> ou visitez directement des fiches metiers  :</div>
+      ><b><a padding-left="10px" style="color:{{ base_color }}" href="https://charles-saint-olive.com/">Accueil du site</a></b></div>
     
               </td>
             </tr>
@@ -536,7 +530,7 @@
                 
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
-      ><a style="color:{{ base_color }}" href="https://charles-saint-olive.com/moas/{{ moa.slug}}">{{ moa.name }} </a></div>
+      >&nbsp;-<a style="color:{{ base_color }}" href="https://charles-saint-olive.com/moas/{{ moa.slug}}">{{ moa.name }} </a></div>
     
               </td>
             </tr>
@@ -894,7 +888,7 @@
                 
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:10px;line-height:12px;text-align:left;color:#000000;"
-      >contact@charles-saint-olive.com</div>
+      >embauche@charles-saint-olive.com</div>
     
               </td>
             </tr>
