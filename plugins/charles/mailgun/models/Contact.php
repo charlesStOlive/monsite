@@ -33,11 +33,14 @@ class Contact extends Model
     /**
      * @var array Relations
      */
-    public $hasOne = [];
+    public $hasOne = [
+
+    ];
     public $hasMany = [];
     public $belongsTo = [
         'target' => ['Charles\Marketing\Models\Target'],
         'client' => ['Charles\Marketing\Models\Client'],
+        'region' => ['Charles\Crm\Models\Region'],
     ];
     public $belongsToMany = [
         'projects' => [

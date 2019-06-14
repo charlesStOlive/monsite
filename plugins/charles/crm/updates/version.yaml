@@ -5,6 +5,7 @@
   - create_gammes_table.php
   - create_regions_table.php
   - create_sales_table.php
+  - add_region_to_contact.php
 1.0.2: 
   - 'Seed'
   - seed_all_tables.php

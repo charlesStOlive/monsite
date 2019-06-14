@@ -1,6 +1,7 @@
 <?php
 
 
+
 Route::post('mail', 'Charles\Mailgun\Controllers\MailController@mails')
     ->name('mails');
 
@@ -9,3 +10,5 @@ Route::options('api/mg/formSubmit', function() {
 });
 
 Route::post('api/mg/formSubmit','Charles\Mailgun\Controllers\PostController@formSubmit');
+
+Route::get('maker/pdfreport/{user_id}/{sendDate?}/', 'Charles\Mailgun\Controllers\PdfReportController@index');

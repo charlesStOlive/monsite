@@ -28,12 +28,16 @@ class Region extends Model
     public $hasOne = [];
     public $hasMany = [
         'commercials' => ['Charles\Crm\Models\Commercial'],
+        'sales' => [
+            'Charles\Crm\Models\Sale',
+        ]
     ];
     public $hasManyThrough = [
         'clients' => [
             'Charles\Crm\Models\Client',
             'through' => 'Charles\Crm\Models\Commercial'
         ],
+        
     ];
     public $belongsTo = [];
     public $belongsToMany = [];

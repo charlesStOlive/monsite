@@ -14,6 +14,7 @@ class CreateSalesTable extends Migration
             $table->integer('amount');
             $table->integer('client_id')->unsigned();
             $table->integer('gamme_id')->unsigned();
+            $table->integer('region_id')->unsigned()->nullable();
             $table->dateTime('sale_date');
             $table->timestamps();
         });

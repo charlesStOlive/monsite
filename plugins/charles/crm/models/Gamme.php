@@ -27,7 +27,7 @@ class Gamme extends Model
      */
     public $hasOne = [];
     public $hasMany = [
-        'sales' => ['Charles\Crm\Models\Region'],
+        'sales' => ['Charles\Crm\Models\Sale'],
     ];
     public $belongsTo = [];
     public $belongsToMany = [];
