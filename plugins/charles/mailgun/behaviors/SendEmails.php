@@ -194,7 +194,7 @@ class SendEmails extends ControllerBehavior
 
 
     public function sendEmail($idContact, $dataCampaign, $testEmail=null) {
-        $contact = Contact::find($idContact);
+        $contact = Contact::with('region')->find($idContact);
         //création du array data email
         $dataEmail = [];
         $dataEmail['base_color'] = $contact->client->base_color;
