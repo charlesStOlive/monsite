@@ -11,7 +11,7 @@ use October\Rain\Database\Updates\Migration;
  *
  * @package GinoPane\AwesomeIconsList\Updates
  */
-class UpdateSettingsTo581 extends UpdateSettingsAbstract
+class UpdateSettingsTo582 extends UpdateSettingsAbstract
 {
     protected static $PREVIOUS_FONTAWESOME_LINK = 'https://use.fontawesome.com/releases/v5.8.1/css/all.css';
     protected static $PREVIOUS_FONTAWESOME_LINK_ATTRIBUTES = [
