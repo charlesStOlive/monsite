@@ -12,3 +12,5 @@ Route::options('api/mg/formSubmit', function() {
 Route::post('api/mg/formSubmit','Charles\Mailgun\Controllers\PostController@formSubmit');
 
 Route::get('maker/pdfreport/{user_id}/{sendDate?}/', 'Charles\Mailgun\Controllers\PdfReportController@index');
+//
+Route::get('maker/pdfcv/{user_id}', 'Charles\Mailgun\Controllers\PdfCvController@index');

@@ -39,7 +39,7 @@
     <mj-section padding="0">
       <mj-column padding="0" width="200px">
       <mj-image padding="0"
-         href="https://admin.charles-saint-olive.com/storage/{{ url_cv }}"
+         href="https://admin.charles-saint-olive.com/maker/pdfcv/{{ contact.id }}"
          src="
           {% if compostings.bookmailcontactclient is not null  %}{{ compostings.bookmailcontactclient }}{% else %}{{ compostings.bookmailcontact }}{% endif %}"
          alt=""
@@ -78,7 +78,7 @@
       </mj-raw>
       <mj-column>
         <mj-text padding-left="10px" padding-top="2px" padding-bottom="2px" >
-          Vous pouvez <b><a padding-left="10px" style="color:{{ base_color }}" href="https://charles-saint-olive.com/"><b>visiter mon site</a></b> , télécharger un <a padding-left="10px" href="https://admin.charles-saint-olive.com/storage/{{ url_cv }}" style="color:{{ base_color }}">CV personalisé</a>, créer un <a style="color:{{ base_color }}" href="https://admin.charles-saint-olive.com/maker/pdfreport/{{ contact.id }}">rapport CRM</a> ( vous êtes affilié à la région {{ contact.region.name }} ) </b>ou visitez directement des fiches metiers  : 
+          Vous pouvez <b><a padding-left="10px" style="color:{{ base_color }}" href="https://charles-saint-olive.com/"><b>visiter mon site</a></b> , télécharger un <a padding-left="10px" href="https://admin.charles-saint-olive.com/maker/pdfcv/{{ contact.id }}" style="color:{{ base_color }}">CV personalisé</a>, créer un <a style="color:{{ base_color }}" href="https://admin.charles-saint-olive.com/maker/pdfreport/{{ contact.id }}">rapport CRM</a> ( vous êtes affilié à la région {{ contact.region.name }} ) </b>ou visitez directement des fiches metiers  : 
         </mj-text>
         <mj-raw>
           {% for moa in moas %}

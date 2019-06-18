@@ -224,7 +224,7 @@ class SendEmails extends ControllerBehavior
         $dataEmail['compostings'] = $compostings;
         
         $dataEmail['content'] = $dataCampaign;
-        $dataEmail['url_cv'] = 'app/media/cv/'.$contact->cv_name.'.pdf';
+        //$dataEmail['url_cv'] = 'app/media/cv/'.$contact->cv_name.'.pdf';
         //Affectation sujet, cible etc. 
         $subject = $dataCampaign['subject'];
         $email = $contact->email;
