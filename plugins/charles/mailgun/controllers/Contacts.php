@@ -133,7 +133,7 @@ class Contacts extends Controller
             };
             if($cloudi->name == "bookmailcontactclient") {
                 if(!$client) {
-                    $receError = false;
+                    $receError = true;
                 } else {
                     $myOpt =  [
                         "transformation"=>[
