@@ -85,6 +85,7 @@ class Contacts extends Controller
         $cloudis = Cloudi::where('is_client',0)->get();
 
         foreach($cloudis as $cloudi) {
+            trace_log("debut de ".$cloudi->name);
             $url="";
             if($cloudi->name == "bookmailcontact") {
                 $myOpt =  [
@@ -129,9 +130,12 @@ class Contacts extends Controller
                 $url = Cloudder::secureShow('campagne/book/livre_mail', $myOpt);
             };
             if($cloudi->name == "bookmailcontactclient") {
-                trace_log($client);
-                trace_log(!$client);
-                if(! $client) return; //pas de création d'image si pas de client. 
+                if(!$client) {
+                    trace_log("pas de fin pour cette ligne");
+                    break; //pas de création d'image si pas de client. 
+                    trace_log("ligne invisible");
+                    
+                }
                 $myOpt =  [
                     "transformation"=>[
                             ["width"=>300, "crop"=>"lfill"],
@@ -159,7 +163,7 @@ class Contacts extends Controller
             };
             $pivotData = ['url' => $url];
             $contact->cloudis()->add($cloudi, $pivotData);
-
+            trace_log("fin de ".$cloudi->name);
         }
         Flash::success('Info OK');
     }
