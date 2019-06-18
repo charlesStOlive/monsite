@@ -133,7 +133,8 @@ class Contacts extends Controller
             };
             if($cloudi->name == "bookmailcontactclient") {
                 if(!$client) {
-                    $receError = true;
+                    trace_log("Pas de client");
+                    $recError = true;
                 } else {
                     $myOpt =  [
                         "transformation"=>[
@@ -162,6 +163,7 @@ class Contacts extends Controller
                 }
                 
             };
+            trace_log($cloudi->name." -> recError ".$recError);
             if(!$recError) {
                 $pivotData = ['url' => $url];
                 $contact->cloudis()->add($cloudi, $pivotData);
