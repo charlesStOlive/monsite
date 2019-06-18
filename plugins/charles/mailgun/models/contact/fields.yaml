@@ -90,6 +90,11 @@ tabs:
             selectFrom: name
             placeholder: --select Target--
 
+        cloudis@update:
+            type: partial
+            path: field_cloudis
+            tab: Cloudinaries
+
         # user_details_section@create:
         #     label: Creer la fiche client
         #     type: section

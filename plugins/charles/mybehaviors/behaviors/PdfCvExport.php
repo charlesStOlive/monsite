@@ -96,46 +96,10 @@ class PdfCvExport extends ControllerBehavior
         $templateCode = $this->getConfig('template_code');
 
 
-
-        
-
-       
-
-
         $data = $model::find($id);
         if ($data === null) {
             throw new ApplicationException('model not found.');
         }
-        // $prefix;
-
-        // if($data->is_english) {
-        //     $prefix = $this->getConfig('prefix_en');
-        // } else {
-        //     $prefix = $this->getConfig('prefix_fr');
-        // }
-        
-
-        // /**
-        //  * Construction du nom du fichier. 
-        //  */
-
-        // /**
-        //  * @var string 
-        //  */
-        // $prefixCodeAttribut = $this->getConfig('prefix_code_attribut');
-
-
-        // $filename ='';
-
-        // if ($prefix) $filename .= $prefix;
-
-        // //if ($prefixCodeAttribut) $filename .= "_". $data[$prefixCodeAttribut];
-
-        // $filename .= '_'.Str::slug($data->client->name).'_cv'.$data->id;
-
-        // $filename = $filename . '.pdf';
-
-
 
         /**
          * Verification si relation du model  = nesdetmodel. 
@@ -164,7 +128,7 @@ class PdfCvExport extends ControllerBehavior
          */
         trace_log("travail sur les options du CV");
         $compostings = new \October\Rain\Support\Collection();
-        foreach ($data->client->cloudis as $cloudi) {
+        foreach ($data->cloudis as $cloudi) {
             $compostings->put($cloudi->name, $cloudi->pivot->url );
         }
 

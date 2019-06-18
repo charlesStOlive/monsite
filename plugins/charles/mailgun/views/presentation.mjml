@@ -40,7 +40,8 @@
       <mj-column padding="0" width="200px">
       <mj-image padding="0"
          href="https://admin.charles-saint-olive.com/storage/{{ url_cv }}"
-         src="{{ compostings.bookmail }}"
+         src="
+          {% if compostings.bookmailcontactclient is not null  %}{{ compostings.bookmailcontactclient }}{% else %}{{ compostings.bookmailcontact }}{% endif %}"
          alt=""
          width="200px" />
       </mj-column>
@@ -135,7 +136,7 @@
         <!--<mj-image width="130px" src="{{ 'storage/app/media/signature.gif' | app }}" align="left" />-->
         <mj-text  mj-class="texte-footer">Charles Saint Olive</mj-text>
         <mj-text  padding-bottom="0px" mj-class="texte-footer">06 64 83 42 87</mj-text>
-        <mj-text  padding-bottom="0px" mj-class="texte-footer">contact@charles-saint-olive.com</mj-text>
+        <mj-text  padding-bottom="0px" mj-class="texte-footer">charles.stolive@gmail.com</mj-text>
         <mj-text  padding-bottom="0px" mj-class="texte-footer"><a href="https://charles-saint-olive.com" style="color:#3a5059">charles-saint-olive.com</a></mj-text>
         
       </mj-column>

@@ -223,7 +223,8 @@
         >
           
       <img
-         alt="" height="auto" src="{{ compostings.bookmail }}" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="200"
+         alt="" height="auto" src="
+          {% if compostings.bookmailcontactclient is not null  %}{{ compostings.bookmailcontactclient }}{% else %}{{ compostings.bookmailcontact }}{% endif %}" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="200"
       />
     
         </a>
@@ -894,7 +895,7 @@
                 
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:10px;line-height:12px;text-align:left;color:#000000;"
-      >contact@charles-saint-olive.com</div>
+      >charles.stolive@gmail.com</div>
     
               </td>
             </tr>

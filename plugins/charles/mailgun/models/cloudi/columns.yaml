@@ -8,6 +8,9 @@ columns:
         searchable: true
     slug:
         label: Slug
+    is_client:
+        label: Cloudi pour client ?
+        type: switch
     pivot[url]:
         label: Url
     pivot[url_ready]:

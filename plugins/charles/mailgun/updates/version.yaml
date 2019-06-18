@@ -23,3 +23,6 @@
 1.0.8:
     - 'Ajout table cloudis et Compagnie'
     - create_cloudis_table.php
+1.0.9:
+    - 'Ajout champs is_contact dans cloudi'
+    - create_cloudis_add_bool_client.php

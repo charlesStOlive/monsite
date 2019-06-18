@@ -7,6 +7,7 @@ use Charles\Mailgun\Models\Contact;
 use Charles\Mailgun\Models\Campaign;
 use Charles\Marketing\Models\Moa;
 use Charles\Marketing\Models\Project;
+use Charles\Marketing\Models\Settings;
 
 use Flash;
 use Redirect;
@@ -197,7 +198,12 @@ class SendEmails extends ControllerBehavior
         $contact = Contact::with('region')->find($idContact);
         //création du array data email
         $dataEmail = [];
-        $dataEmail['base_color'] = $contact->client->base_color;
+        $settings = Settings::instance()->value;
+        $dataEmail['base_color'] = $settings['base_color'];
+        if($contact->client) {
+            $dataEmail['base_color'] = $contact->client->base_color;
+        }
+        //$dataEmail['base_color'] = $contact->client->base_color;
         $dataEmail['contact'] = $contact->toArray();
         $dataEmail['target'] = $contact->target()->get(['name', 'slug'])->toArray();
         //
@@ -212,7 +218,7 @@ class SendEmails extends ControllerBehavior
             $dataEmail['moas'] = Moa::whereIn('id', array(4, 7, 8))->get(['name', 'slug', 'accroche'])->toArray();
         }
         $compostings = new \October\Rain\Support\Collection();
-        foreach ($contact->client->cloudis as $cloudi) {
+        foreach ($contact->cloudis as $cloudi) {
             $compostings->put($cloudi->name, $cloudi->pivot->url );
         }
         $dataEmail['compostings'] = $compostings;
@@ -234,7 +240,7 @@ class SendEmails extends ControllerBehavior
         Mail::raw(['html' => $html], function ($message) use($dataCampaign, $email, $subject, $contact, $isTest ) {
             $message->to($email);
             $message->subject($subject);
-            $message->from('contact@charles-saint-olive.com', 'Charles Saint-Olive');
+            $message->from('charles.stolive@gmail.com', 'Charles Saint-Olive');
             //$message->attach(storage_path('app/media/cv/'.$contact->cv_name.'.pdf'));
             if(!$isTest) {
             //Si ce n'est pas un test on met les headers. 

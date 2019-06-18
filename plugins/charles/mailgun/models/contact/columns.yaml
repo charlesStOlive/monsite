@@ -22,6 +22,10 @@ columns:
         relation: client
         select: name
         searchable: true
+    cloudis:
+        label: Cloudinary pictures
+        relation: cloudis
+        select: name
 
     campaigns:
       clickable: false

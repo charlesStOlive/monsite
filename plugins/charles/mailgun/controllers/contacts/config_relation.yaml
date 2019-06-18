@@ -1,0 +1,21 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+
+cloudis:
+    label: Image cloudinary
+    view:
+        list: $/charles/mailgun/models/cloudi/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        showSearch: true
+        list: $/charles/mailgun/models/cloudi/columns.yaml
+    pivot:
+        form:
+            fields:
+                pivot[url]:
+                    label: url
+
+
+
