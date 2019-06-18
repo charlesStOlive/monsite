@@ -86,6 +86,8 @@ class Contacts extends Controller
 
         foreach($cloudis as $cloudi) {
             trace_log("debut de ".$cloudi->name);
+            //recError me permet de savoir si j'attache ou pas le nouvel url. 
+            $recError = false;
             $url="";
             if($cloudi->name == "bookmailcontact") {
                 $myOpt =  [
@@ -130,12 +132,7 @@ class Contacts extends Controller
                 $url = Cloudder::secureShow('campagne/book/livre_mail', $myOpt);
             };
             if($cloudi->name == "bookmailcontactclient") {
-                if(!$client) {
-                    trace_log("pas de fin pour cette ligne");
-                    break; //pas de création d'image si pas de client. 
-                    trace_log("ligne invisible");
-                    
-                }
+                if(!$client) $recError = true;
                 $myOpt =  [
                     "transformation"=>[
                             ["width"=>300, "crop"=>"lfill"],
@@ -159,11 +156,13 @@ class Contacts extends Controller
                             ["effect"=>"replace_color:$colorClient:20:00e831"],
                     ]
                 ];
-                $url = Cloudder::secureShow('campagne/book/livre_mail', $myOpt);
+                if(!$recError) $url = Cloudder::secureShow('campagne/book/livre_mail', $myOpt);
             };
-            $pivotData = ['url' => $url];
-            $contact->cloudis()->add($cloudi, $pivotData);
-            trace_log("fin de ".$cloudi->name);
+            if(!$recError) {
+                $pivotData = ['url' => $url];
+                $contact->cloudis()->add($cloudi, $pivotData);
+            }
+            
         }
         Flash::success('Info OK');
     }
