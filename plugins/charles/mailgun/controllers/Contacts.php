@@ -132,31 +132,35 @@ class Contacts extends Controller
                 $url = Cloudder::secureShow('campagne/book/livre_mail', $myOpt);
             };
             if($cloudi->name == "bookmailcontactclient") {
-                if(!$client) $recError = true;
-                $myOpt =  [
-                    "transformation"=>[
-                            ["width"=>300, "crop"=>"lfill"],
-                            [   "overlay"=>"client_logo_".$client->slug,
-                                    "height"=>100, 
-                                    "effect"=>"multiply",
-                                    "width"=>100,
-                                    "y"=>0,
-                                    "crop"=>"scale"
-                                ], 
-                            [
-                            "overlay"=>[
-                                "font_family"=>"arial",
-                                "font_size"=>10,
-                                "text"=>"Préface de ".$contact->name. " ".$contact->fname
+                if(!$client) {
+                    $receError = false;
+                } else {
+                    $myOpt =  [
+                        "transformation"=>[
+                                ["width"=>300, "crop"=>"lfill"],
+                                [   "overlay"=>"client_logo_".$client->slug,
+                                        "height"=>100, 
+                                        "effect"=>"multiply",
+                                        "width"=>100,
+                                        "y"=>0,
+                                        "crop"=>"scale"
+                                    ], 
+                                [
+                                "overlay"=>[
+                                    "font_family"=>"arial",
+                                    "font_size"=>10,
+                                    "text"=>"Préface de ".$contact->name. " ".$contact->fname
+                                    ],
+                                "width" => 150,
+                                "crop"=>"scale",
+                                "y" => "65",
                                 ],
-                            "width" => 150,
-                            "crop"=>"scale",
-                            "y" => "65",
-                            ],
-                            ["effect"=>"replace_color:$colorClient:20:00e831"],
-                    ]
-                ];
-                if(!$recError) $url = Cloudder::secureShow('campagne/book/livre_mail', $myOpt);
+                                ["effect"=>"replace_color:$colorClient:20:00e831"],
+                        ]
+                    ];
+                    $url = Cloudder::secureShow('campagne/book/livre_mail', $myOpt);
+                }
+                
             };
             if(!$recError) {
                 $pivotData = ['url' => $url];
