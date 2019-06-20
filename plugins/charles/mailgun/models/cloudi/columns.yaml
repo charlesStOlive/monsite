@@ -11,7 +11,14 @@ columns:
     is_client:
         label: Cloudi pour client ?
         type: switch
+    is_client_needed:
+        label: Les infos clients sont elle utile ?
+        type: switch
+    is_logo_needed:
+        label: le logo est il utilisé ?
+        type: switch
     pivot[url]:
         label: Url
-    pivot[url_ready]:
-        label: Url Ready
+        type: 'partial'
+        path: "$/charles/mailgun/models/cloudi/_url_link.htm"
+        clickable: false

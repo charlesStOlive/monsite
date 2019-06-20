@@ -6,24 +6,17 @@ columns:
     name:
         label: Nom
         searchable: true
-
     logo:
         label: Image
         type: partial
         path: $/charles/marketing/models/client/_column_image.htm
-    
+    cloudi_logo_existe:
+        label: logo ready
+        type: switch
     base_color:
         label: Coueur
         type: colorpicker
+        clickable: false
 
-    cloudis:
-        label: Cloudinary pictures
-        relation: cloudis
-        select: name
-
-    cloudi_logo_id:
-        label: nom du logo
-
-    cloudi_logo_existe:
-        label: logo ready
+    
     

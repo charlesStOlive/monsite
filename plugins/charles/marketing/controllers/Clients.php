@@ -36,13 +36,8 @@ class Clients extends Controller
 
     public function onUploadCloudinary() {
         $client = Client::find(post('id'));
-        $pathMedia = storage_path('app/media');
-        $filename = $pathMedia . $client->logo;
-        $publicId = "client_logo_".$client->slug;
-        trace_log(Cloudder::upload($filename, $publicId));
-
-        // $publicId = "client_logo_".$client->slug;
-        // trace_log(Cloudder::secureShow($publicId.'aaa'));
+        $client->save();
+        $client->uploadCloudinary();
     }
 
     public function onLoadCreateGroupeCloudis()
@@ -54,8 +49,10 @@ class Clients extends Controller
         }
         
     }
-    
 
+
+    
+    // cette fonction n'est plus utilisé
     public function createClientImage($id='null') {
         if($id == 'null') {
             $id = post('id');

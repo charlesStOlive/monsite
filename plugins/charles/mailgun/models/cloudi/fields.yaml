@@ -11,3 +11,15 @@ fields:
     is_client:
         label: Cloudi Client ?
         type: checkbox
+    is_client_needed:
+        label: Les infos clients sont elle utile ?
+        type: checkbox
+    is_logo_needed:
+        label: le logo est il utilisé ?
+        type: checkbox
+    path:
+        label: Path cloudinary picture
+    config:
+        type: codeeditor
+        size: huge
+        language: php

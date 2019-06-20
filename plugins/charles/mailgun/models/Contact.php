@@ -9,6 +9,12 @@ use Storage;
  */
 class Contact extends Model
 {
+    use \October\Rain\Database\Traits\Validation;
+
+    public $rules = [
+        'name'                  => 'required',
+        'fname'                 => 'required',
+    ];
     /**
      * @var string The database table used by the model.
      */

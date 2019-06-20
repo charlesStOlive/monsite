@@ -62,6 +62,14 @@ class Contacts extends Controller
         return Redirect::refresh();
         
     }
+
+    public function onCreateUniqueContactImage()
+    {
+        $id = post('id');
+        $this->createContactImage($id);
+        return Redirect::refresh();
+        
+    }
     
 
     public function createContactImage($id='null') {
@@ -75,9 +83,10 @@ class Contacts extends Controller
         $contact->cloudis()->detach();
 
         $settings = Settings::instance()->value;
+        //Gestion de la couleur.
         $colorClient = $settings['base_color'];
         if($client) {
-            $colorClient = $client->base_color;
+            if($client->base_color) $colorClient = $client->base_color;
         }
         //cloudinary utilise des couleurs sans le # on l'enlève. 
         $colorClient = substr($colorClient, 1);
@@ -85,90 +94,18 @@ class Contacts extends Controller
         $cloudis = Cloudi::where('is_client',0)->get();
 
         foreach($cloudis as $cloudi) {
-            trace_log("debut de ".$cloudi->name);
-            //recError me permet de savoir si j'attache ou pas le nouvel url. 
             $recError = false;
             $url="";
-            if($cloudi->name == "bookmailcontact") {
-                $myOpt =  [
-                    "transformation"=>[
-                        ["width"=>300, "crop"=>"lfill"], 
-                        [
-                        "overlay"=>[
-                            "font_family"=>"arial",
-                            "font_size"=>15,
-                            "font_weight"=>"bold",
-                            "text"=>"Préface"
-                            ],
-                        "width" => 150,
-                        "crop"=>"fit",
-                        "y" => "-30",
-                        ],
-                        [
-                        "overlay"=>[
-                            "font_family"=>"arial",
-                            "font_size"=>20,
-                            "font_weight"=>"bold",
-                            "text"=>$contact->name
-                            ],
-                        "width" => 150,
-                        "crop"=>"lfill",
-                        "y" => "0"
-                        ],
-                        [
-                        "overlay"=>[
-                            "font_family"=>"arial",
-                            "font_size"=>20,
-                            "font_weight"=>"bold",
-                            "text"=>$contact->fname
-                            ],
-                        "width" => 150,
-                        "crop"=>"lfill",
-                        "y" => "30",
-                        ],
-                        ["effect"=>"replace_color:$colorClient:20:00e831"],
-                    ]
-                ];
-                $url = Cloudder::secureShow('campagne/book/livre_mail', $myOpt);
-            };
-            if($cloudi->name == "bookmailcontactclient") {
-                if(!$client) {
-                    trace_log("Pas de client");
-                    $recError = true;
-                } else {
-                    $myOpt =  [
-                        "transformation"=>[
-                                ["width"=>300, "crop"=>"lfill"],
-                                [   "overlay"=>"client_logo_".$client->slug,
-                                        "height"=>100, 
-                                        "effect"=>"multiply",
-                                        "width"=>100,
-                                        "y"=>0,
-                                        "crop"=>"scale"
-                                    ], 
-                                [
-                                "overlay"=>[
-                                    "font_family"=>"arial",
-                                    "font_size"=>10,
-                                    "text"=>"Préface de ".$contact->name. " ".$contact->fname
-                                    ],
-                                "width" => 150,
-                                "crop"=>"scale",
-                                "y" => "65",
-                                ],
-                                ["effect"=>"replace_color:$colorClient:20:00e831"],
-                        ]
-                    ];
-                    $url = Cloudder::secureShow('campagne/book/livre_mail', $myOpt);
-                }
-                
-            };
-            trace_log($cloudi->name." -> recError ".$recError);
+            if($cloudi->is_client_needed && !$client) {
+                $recError = true;
+            } else if($cloudi->is_logo_needed) {
+                if(!$client->cloudiLogoExiste) $recError = true;
+            } 
+            trace_log("recError ".$recError);
             if(!$recError) {
-                $pivotData = ['url' => $url];
+                $pivotData = ['url' => Cloudder::secureShow($cloudi->path, eval($cloudi->config))];
                 $contact->cloudis()->add($cloudi, $pivotData);
             }
-            
         }
         Flash::success('Info OK');
     }

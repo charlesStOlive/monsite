@@ -52,12 +52,17 @@
             data-handler="onTestContactImage"
             data-request-data="id:<?= $this->params[0] ?>"
             data-control="popup"
-            class="btn btn-primary">
+            class="btn btn-default">
             <u>T</u>est picture
+        </button>
+        <button type="button" class="btn btn-primary" data-request="onCreateUniqueContactImage" data-request-data="id:<?= $this->params[0] ?>"
+            data-load-indicator="Creating picture...">
+            Creer les images
         </button>
         <button type="button" class="oc-icon-trash-o btn-icon danger pull-right" data-request="onDelete"
             data-load-indicator="Deleting Contact..." data-request-confirm="Delete this contact?">
         </button>
+        
         <span class="btn-text">
             or <a href="<?= Backend::url('charles/mailgun/contacts') ?>">Cancel</a>
         </span>

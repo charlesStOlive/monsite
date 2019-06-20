@@ -3,6 +3,16 @@
 # ===================================
 
 columns:
+    email:
+        label: email
+
+    campaigns:
+      clickable: false
+      searchable: false
+      sortable: false
+      type: 'partial'
+      path: "$/charles/mailgun/widget/_sendUnique.htm"
+    
     name:
         label: Prenom ( bonjour xxx )
         searchable: true
@@ -11,25 +21,18 @@ columns:
         label: Nom
         searchable: true
 
-    email:
-        label: email
-
-    cv_existe:
-        label: CV existe
+    # cv_existe:
+    #     label: CV existe
 
     client:
         label: client
         relation: client
         select: name
         searchable: true
+        
     cloudis:
         label: Cloudinary pictures
         relation: cloudis
         select: name
 
-    campaigns:
-      clickable: false
-      searchable: false
-      sortable: false
-      type: 'partial'
-      path: "$/charles/mailgun/widget/_sendUnique.htm"
+    

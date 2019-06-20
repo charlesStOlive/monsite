@@ -33,7 +33,7 @@
                     class="btn btn-default">
                     Save and Close
                 </button>
-                <button
+                <!-- <button
                     href="javascript:;"
                     data-handler="onTestClientImage"
                     data-request-data="id:<?= $this->params[0] ?>"
@@ -42,7 +42,7 @@
                     <u>T</u>est picture
                 </button>
                 <a  class="btn btn-secondary oc-icon-files-o " 
-                href="<?= Backend::url('charles/marketing/clients/createClientImage/'.$this->params[0]) ?>">Creer Picture</a>
+                href="<?= Backend::url('charles/marketing/clients/createClientImage/'.$this->params[0]) ?>">Creer Picture</a> -->
                 <!--
                     j'ai enlevé data-handler
                     data-handler="onTest"
@@ -50,10 +50,11 @@
                 <button
                     type="submit"
                     data-request="onUploadCloudinary"
+                    data-hotkey="ctrl+u, cmd+u"
                     data-request-data="id:<?= $this->params[0] ?>"
                     data-load-indicator="Test..."
                     class="btn btn-primary">
-                    <u>U</u>pload
+                    Re<u>U</u>pload ( sauver avant la fiche )
                 </button>
                 <span class="btn-text">
                     or <a href="<?= Backend::url('charles/marketing/clients') ?>">Cancel</a>

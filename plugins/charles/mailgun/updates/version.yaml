@@ -26,3 +26,6 @@
 1.0.9:
     - 'Ajout champs is_contact dans cloudi'
     - create_cloudis_add_bool_client.php
+1.0.10:
+    - 'Enleve champs is_contact et ajoute autre champs dans cloudi'
+    - create_cloudis_add_others_remove_bool_client.php
