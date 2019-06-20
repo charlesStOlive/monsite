@@ -84,9 +84,15 @@ tabs:
             customTags: false
             nameFrom: name
         
-        client:
+        # client:
+        #     label: Client
+        #     type: relation
+        #     selectFrom: name
+        #     placeholder: --select Target--
+        
+        client_id:
             label: Client
-            type: relation
+            type: dropdown
             selectFrom: name
             placeholder: --select Target--
 

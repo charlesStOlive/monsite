@@ -59,7 +59,7 @@ class Client extends Model
     /**
      * Ecouteur d evenement
      */
-        public function afterSave()
+    public function afterSave()
     {
         if($this->cloudiLogoExiste) {
             return Flash::success('Enegistrement OK, Image prête');

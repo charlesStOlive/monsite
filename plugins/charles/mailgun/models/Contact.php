@@ -1,8 +1,10 @@
 <?php namespace Charles\Mailgun\Models;
 
+use Charles\Marketing\Models\Client;
 use Model;
 use Validator;
 use Storage;
+use Redirect;
 
 /**
  * Contact Model
@@ -77,47 +79,34 @@ class Contact extends Model
     public $attachOne = [];
     public $attachMany = [];
 
-    public function getEligibleAttribute() {
-        // trace_log("éligibilité");
-        // $campaigns = $this->campaigns;
+    /**
+     * MODEL EVENT
+     */
+    public function afterSave()
+    {
+        if($this->client_id == 999999) {
+            trace_log("Création d'un client");
+            trace_log($this->id);
+            $this->client_id = null;
+            return Redirect::to('/backend/charles/marketing/clients');
 
-        // if($this->error) {
-        //     return false;
-        // }
-
-        // if(!$this->optin) {
-        //     return false;
-        // }
-
-        //  if(strlen($this->email)<3) {
-        //     trace_log("this-email");
-        //     return false;
-        // }
-
-        //validation de l'email
-        // $rules = ["email" => 'required|email'];
-        // $validator = Validator::make(["email" => $this->email], $rules );
-        // if ($validator->fails()) {
-        //     trace_log("validator->fails");
-        //     //
-        //     return false;
-        // }
-            
+        } 
         
+       
+    }
 
-        // if(isset($campaigns)){
-        //     $badResults = ['complained', 'unsubscribed', 'failed'];
-        //     foreach($campaigns as $campaign) {
-        //         if(($this->email == $campaign->pivot->email) && in_array($campaign->pivot->result_type, $badResults)) {
-        //             return false;
-        //         }
-        //     }
-        //     return true;
+    
 
-        // }
-        return true;
-
-
+    /**
+     * OPTIONS
+     */
+    public function getClientIdOptions() {
+        
+        $list = Client::orderBy('name')->lists('name', 'id');
+        $options = new \October\Rain\Support\Collection($list);
+        $options->put(999999, 'créer une sciété');
+        trace_log($options);
+        return $options;
     }
 
     /*
@@ -132,8 +121,11 @@ class Contact extends Model
     }
 
     /**
-    * MUTATOR
+    * GETTERS
     **/
+    public function getEligibleAttribute() {
+        return true;
+    }
     public function getCvNameAttribute() {
 
         return 'cv_charles_saint-olive_'.Contact::find($this->id)->client['slug'].'_C'.$this->id;
