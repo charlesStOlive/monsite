@@ -1,0 +1,82 @@
+title = "landing"
+url = "/landing/:secure"
+layout = "landing"
+is_hidden = 0
+==
+<?php
+use Charles\Mailgun\Models\Contact;
+use Charles\Marketing\Models\Settings;
+use Carbon\Carbon;
+
+function onStart()
+{
+    $secure  = $this->param('secure');
+    $contact = Contact::where('key', $secure)->first();
+    if($contact) {
+        $this['contact'] = $contact;
+    } else {
+       return Redirect::to('/'); 
+    }
+    $settings = Settings::instance()->value;
+    $colorClient = $settings['base_color'];
+    if($contact->client) {
+        if($contact->client->base_color) $colorClient = $contact->client->base_color;
+    }
+    $this['colorClient'] = $colorClient;
+    $compostings = new \October\Rain\Support\Collection();
+        foreach ($contact->cloudis as $cloudi) {
+            $compostings->put($cloudi->name, $cloudi->pivot->url );
+        }
+    $this['compostings'] = $compostings;
+    //Gestion du rapport
+    $myDay = Carbon::today();
+    $lastWeekEnd = $myDay->copy()->subWeek()->endOfWeek();
+    $actualWeek = $lastWeekEnd->weekOfYear;
+    $oldReport = [];
+    $y = 0;
+    for ($i =$actualWeek; $i>5; $i--) {
+        $oldReport["S".$i] = "maker/pdfreport/".$contact->id."/".$myDay->copy()->subWeek($y)->format('d-m-Y');
+        $y++;
+    }
+    $this['old_report'] = $oldReport;
+    
+}
+?>
+==
+<div class="pt-5 h-100"  style="background-color:{{colorClient}}; color:white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 my-5 text-lg-left text-center align-self-center">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h1 class="display-5">{{contact.name }} {{contact.fname }}</h1>
+                      <p class="lead mb-0">Vous êtes bien venue sur votre landing page.&nbsp;</p>
+                      <p class="">Pour en savoir plus :&nbsp;</p>
+                      <a class="btn btn-outline-light my-2 btn-block" href="{{ 'maker/pdfcv'|app }}/{{ contact.key }}" target="_blank"><i class="fa fa-user fa-fw"></i>Télechargez un CV personalisé</a>
+                      <a class="btn btn-outline-light my-2 btn-block" href="https://charles-saint-olive.com"><i class="fa fa-user fa-fw"></i>Visitez mon site ( sous vue .js )&nbsp;</a>
+                      <p class="lead mt-4 mb-0">Vous pouvez aussi télécharger un rapport PDF</p>
+                      <p>Les données sont issus d'un CRM dédié fabriqué pour l'occasion. ce mini CRM me permet d'effectuer des tests et de présenter ce que que je peux faire avec des données ( + 25Kventes ). les données brut sont disponibles <a style="color:white" href="{{ '/sales' }}">ici</a> </p>
+                      <a class="btn btn-outline-light my-2 btn-block" href="{{ 'maker/pdfreport'|app }}/{{ contact.key }}" target="_blank"><i class="fa fa-user fa-fw"></i>Voir le rapport &nbsp;</a>
+                      <p>Archives  :&nbsp;</p>
+                        {% for key,value in old_report %} <a style="color:white" href="{{ value|app }}">{{ key }}</a> -  {% endfor %}
+                    </div>
+                    <div class="col-md-6">
+                        {% if compostings.bookmailcontactclient is null  %}
+                            <img src="{{ compostings.bookmailcontact }}"/>
+                        {% else  %}
+                            <img src="{{ compostings.bookmailcontactclient }}"/>
+                        {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

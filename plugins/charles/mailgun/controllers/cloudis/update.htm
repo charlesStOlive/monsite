@@ -9,6 +9,14 @@
 
     <?= Form::open(['class' => 'layout']) ?>
 
+    <div class="form-buttons">
+            <button href="javascript:;" class="btn btn-secondary oc-icon-files-o "
+                data-request-data="id:<?= $this->params[0] ?>" data-control="popup" data-handler="onLoadDuplicateForm"
+                data-hotkey="ctrl+i, cmd+i">
+                Dupliquer
+            </button>
+    </div>
+
         <div class="layout-row">
             <?= $this->formRender() ?>
         </div>
@@ -32,6 +40,14 @@
                     data-load-indicator="Saving cloudinary..."
                     class="btn btn-default">
                     Save and Close
+                </button>
+                <button
+                    href="javascript:;"
+                    data-handler="onTestImage"
+                    data-request-data="id:<?= $this->params[0] ?>"
+                    data-control="popup"
+                    class="btn btn-default">
+                    <u>T</u>est picture
                 </button>
                 <button
                     type="button"

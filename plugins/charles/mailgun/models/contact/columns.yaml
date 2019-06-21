@@ -20,6 +20,9 @@ columns:
     fname:
         label: Nom
         searchable: true
+    
+    key:
+        label: personal key
 
     # cv_existe:
     #     label: CV existe

@@ -29,3 +29,9 @@
 1.0.10:
     - 'Enleve champs is_contact et ajoute autre champs dans cloudi'
     - create_cloudis_add_others_remove_bool_client.php
+1.0.11:
+    - 'ajout du champs key'
+    - add_column_contacts_key.php
+1.0.12:
+    - 'seed keys'
+    - seed_keys.php

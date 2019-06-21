@@ -25,9 +25,8 @@ class PdfCvController {
     public function index($user_id)
     {
         $templateCode = "cv_1";
-        trace_log($user_id);
 
-        $data = Contact::find($user_id);
+        $data = Contact::where('key', $user_id)->first();
         if ($data === null) {
             throw new ApplicationException('model not found.');
         }

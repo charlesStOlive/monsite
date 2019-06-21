@@ -6,6 +6,9 @@ use Validator;
 use Storage;
 use Redirect;
 use Backend;
+use Crypt;
+
+use Illuminate\Contracts\Encryption\DecryptException;
 
 /**
  * Contact Model
@@ -17,6 +20,7 @@ class Contact extends Model
     public $rules = [
         'name'                  => 'required',
         'fname'                 => 'required',
+        'key'                 => '|unique:charles_mailgun_contacts',
     ];
     /**
      * @var string The database table used by the model.
@@ -83,6 +87,15 @@ class Contact extends Model
     /**
      * MODEL EVENT
      */
+    public function beforeSave() {
+        if(!$this->key) {
+            $this->key = str_Random(12);
+        }
+        if(!$this->region_id) {
+            $this->region_id = rand(1, 5);
+        }
+        
+    }
 
     
 
@@ -123,5 +136,13 @@ class Contact extends Model
 
         return Storage::exists('media/cv/'.$this->cv_name.'.pdf');
     }
+    public function getKeyEncryptedAttribute() {
+
+        $key = $this->id;
+        return Crypt::encrypt($key);
+    }
+    /**
+     * SETTERS
+     */
 
 }

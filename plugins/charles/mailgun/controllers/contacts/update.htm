@@ -21,14 +21,19 @@
         data-request-data="id:<?=$this->params[0];?>" data-size="large">
         Fiche client
     </button> -->
-    <button class="btn btn-primary oc-icon-file-pdf-o" data-request="onLoadPdfExport"
-        data-request-data="id:<?=$this->params[0];?>" data-size="large">
-        Génerer CV
-    </button>
-    <?= $idClient = Charles\Mailgun\Models\Contact::find($this->params[0])->client_id;
-    $url = 'charles/marketing/clients/update/'.$idClient;
-    ?>
-    <a  class="btn btn-secondary oc-icon-files-o " href="<?= Backend::url($url) ?>" target="_blank">Fiche client</a>
+    <button
+        href="javascript:;"
+        class="btn btn-primary oc-icon-envelope "
+        data-request-data="id:<?=$this->params[0];?>"
+        data-control="popup"
+        data-handler="onLoadSendEmailUniqueForm"
+        data-hotkey="ctrl+i, cmd+i"
+       >
+</button>
+<button class="btn btn-primary oc-icon-file-pdf-o  " data-request="onLoadPdfExport"
+        data-request-data="id:<?=$this->params[0];?>" data-size="large"></button>
+        <?= $keyClient = Charles\Mailgun\Models\Contact::find($this->params[0])->key;?>
+<a class="btn btn-primary oc-icon-desktop  mr-1" href="<?= url('landing/'.$keyClient)?>" target="_blank"></a>
 
 
 </div>
@@ -46,14 +51,6 @@
         <button type="button" data-request="onSave" data-request-data="close:1" data-hotkey="ctrl+enter, cmd+enter"
             data-load-indicator="Saving Contact..." class="btn btn-default">
             Save and Close
-        </button>
-        <button
-            href="javascript:;"
-            data-handler="onTestContactImage"
-            data-request-data="id:<?= $this->params[0] ?>"
-            data-control="popup"
-            class="btn btn-default">
-            <u>T</u>est picture
         </button>
         <button type="button" class="btn btn-primary" data-request="onCreateUniqueContactImage" data-request-data="id:<?= $this->params[0] ?>"
             data-load-indicator="Creating picture...">

@@ -61,74 +61,7 @@
 
       </mj-column>
     </mj-section>
-    <mj-section>
-      <mj-column padding-bottom="0px" padding-top="10px">
-        <mj-text padding-top="5px"><b>Comprendre mon activité</b> </mj-text>
-        <mj-divider padding-top="0px" border-width="1px" border-style="dashed" border-color="lightgrey" />
-      </mj-column>
-    </mj-section>
-    <mj-section>
-      <mj-raw>
-        <!-- Left image -->
-      </mj-raw>
-      <mj-column>
-        <mj-image href="https://charles-saint-olive.com/" src="https://admin.charles-saint-olive.com/storage/app/media/{{ content.messages[1].picture }}"></mj-image>
-      </mj-column>
-      <mj-raw>
-        <!-- Left image -->
-      </mj-raw>
-      <mj-column>
-        <mj-text padding-left="10px" padding-top="2px" padding-bottom="2px">
-          <b><a style="color:#000000" href="https://charles-saint-olive.com/">Accueil du site</a></b>
-        </mj-text>
-        <mj-raw>
-          {% for moa in moas %}
-        </mj-raw>
-          <mj-text padding-left="10px" padding-top="2px" padding-bottom="2px">
-           <a style="color:#000000" href="https://charles-saint-olive.com/moas/{{ moa.slug}}">{{ moa.name }} </a>
-          </mj-text>
-           <mj-raw>
-            {% endfor %}
-          </mj-raw>
-      </mj-column>      
-    </mj-section>
     
-
-    <mj-raw>
-      {% if projects %}
-    </mj-raw>
-    <mj-section>
-      <mj-column padding-bottom="0px" padding-top="10px">
-        <mj-text padding-top="5px"><b>Des exemples de projets</b> </mj-text>
-        <mj-divider padding-top="0px" border-width="1px" border-style="dashed" border-color="lightgrey" />
-      </mj-column>
-    </mj-section>
-    <mj-raw>
-      {% for project in projects %}
-    </mj-raw>
-    <mj-section>
-      <mj-column width="75%">
-        <mj-text padding-left="30px" padding-bottom="0px" padding-top="0px">
-          -{{ project.name }}
-        </mj-text>
-        <mj-text mj-class="small" padding-left="30px" padding-bottom="0px" padding-top="0px">
-        {{ project.accroche }}
-        </mj-text>
-      </mj-column>
-      <mj-column width="25%">
-
-
-        <mj-button href="https://charles-saint-olive.com/projects/{{ project.slug }}">voir</mj-button>
-
-      </mj-column>
-
-    </mj-section>
-    <mj-raw>
-      {% endfor %}
-    </mj-raw>
-    <mj-raw>
-      {% endif %}
-    </mj-raw>
     <mj-section padding-bottom="20px" padding-top="20px" background-color="#cccccc">
       <mj-column width="100%">
         <!--<mj-image width="130px" src="{{ 'storage/app/media/signature.gif' | app }}" align="left" />-->

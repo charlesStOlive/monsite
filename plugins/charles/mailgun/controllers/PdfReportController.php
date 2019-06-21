@@ -30,7 +30,7 @@ class PdfReportController {
         /**
          * Gestion des dates
          */
-        $contact = Contact::with('client')->find($user_id);
+        $contact = Contact::with('client')->where('key', $user_id)->first();
         $regionId = $contact->region->id;
         $commercials = Region::find($regionId)->commercials();
 

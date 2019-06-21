@@ -219,7 +219,7 @@
             <td  style="width:200px;">
               
         <a
-           href="https://admin.charles-saint-olive.com/maker/pdfcv/{{ contact.id }}" target="_blank"
+           href="https://admin.charles-saint-olive.com/landing/{{ contact.key }}" target="_blank"
         >
           
       <img
@@ -284,7 +284,8 @@
           {% endif %}
           {% if contact.show_message_perso and contact.message_perso[1]  %}
             {{ contact.message_perso[1].text | raw }}
-          {% endif %}</div>
+          {% endif %}
+          Rendez vous sur votre <b><a style="color:{{ base_color }}" href="https://admin.charles-saint-olive.com/landing/{{ contact.key }}">landing page</a><b> pour en savoir plus.</div>
     
               </td>
             </tr>
@@ -525,7 +526,7 @@
                 
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
-      >Vous pouvez <b><a padding-left="10px" style="color:{{ base_color }}" href="https://charles-saint-olive.com/"><b>visiter mon site</a></b> , télécharger un <a padding-left="10px" href="https://admin.charles-saint-olive.com/maker/pdfcv/{{ contact.id }}" style="color:{{ base_color }}">CV personalisé</a>, créer un <a style="color:{{ base_color }}" href="https://admin.charles-saint-olive.com/maker/pdfreport/{{ contact.id }}">rapport CRM</a> ( vous êtes affilié à la région {{ contact.region.name }} ) </b>ou visitez directement des fiches metiers  :</div>
+      ><b><a style="color:#000000" href="https://charles-saint-olive.com/">Accueil du site</a></b></div>
     
               </td>
             </tr>
@@ -537,23 +538,11 @@
                 
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
-      ><a style="color:{{ base_color }}" href="https://charles-saint-olive.com/moas/{{ moa.slug}}">{{ moa.name }} </a></div>
+      ><a style="color:#000000" href="https://charles-saint-olive.com/moas/{{ moa.slug}}">{{ moa.name }} </a></div>
     
               </td>
             </tr>
           {% endfor %}
-            <tr>
-              <td
-                 align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
-              >
-                
-      <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
-      ><b><a padding-left="0px" style="color:{{ base_color }}" href="https://charles-saint-olive.com/"></a></b></div>
-    
-              </td>
-            </tr>
-          
       </table>
     
       </div>
