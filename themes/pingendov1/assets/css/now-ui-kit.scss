@@ -7,7 +7,7 @@
 // Color system
  
 $theme-colors: (
-  primary: #f96332,
+  primary: #739aaa,
   secondary: #888,
   light: #FFFFFF,
   dark: #2c2c2c,
@@ -781,7 +781,7 @@ html,body {
     left: 0px;
     top: 0px; 
     pointer-events:none;
-		background:linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(224, 23, 3, 0.6));
+		background:linear-gradient(0deg, rgba(200, 200, 200, 0.3), rgba(224, 23, 3, 0.7));
   }
 }
 

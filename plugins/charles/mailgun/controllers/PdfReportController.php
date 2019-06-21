@@ -37,7 +37,7 @@ class PdfReportController {
         $data['contact'] = $contact;
 
         $compostings = new Collection();
-        foreach ($contact->client->cloudis as $cloudi) {
+        foreach ($contact->cloudis as $cloudi) {
             $compostings->put($cloudi->name, $cloudi->pivot->url );
         }
 
