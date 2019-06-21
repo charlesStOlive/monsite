@@ -38,21 +38,7 @@ class Contacts extends Controller
 
         BackendMenu::setContext('Charles.Mailgun', 'mailgun', 'side-menu-contacts');
     }
-    /**
-     * ABANDON ( INITIALISER UN MODEL DANS AUTRE)
-     */
-    public function formExtendModel($model)
-    {
-        // /*
-        //  * Init proxy field model if we are creating the model
-        //  */
-        // if ($this->action == 'create') {
-        //     trace_log()
-        //     //$model->client = new Client;
-        //     return $model;
-        // }
-        
-    }
+    
 
     public function onLoadCreateGroupeCloudis()
     {

@@ -1,0 +1,21 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: nom de l'entreprise
+    slug:
+        label: Slug
+        preset: name
+    logo:
+        label: logo du client
+        type: mediafinder
+        mode: image
+        span: left
+        imageWidth: 300
+        imageHeight: 150
+    base_color:
+        label: Couleur de bases
+        type: colorpicker
+        span: auto

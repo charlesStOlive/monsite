@@ -5,6 +5,7 @@ use Model;
 use Validator;
 use Storage;
 use Redirect;
+use Backend;
 
 /**
  * Contact Model
@@ -82,18 +83,6 @@ class Contact extends Model
     /**
      * MODEL EVENT
      */
-    public function afterSave()
-    {
-        if($this->client_id == 999999) {
-            trace_log("Création d'un client");
-            trace_log($this->id);
-            $this->client_id = null;
-            return Redirect::to('/backend/charles/marketing/clients');
-
-        } 
-        
-       
-    }
 
     
 

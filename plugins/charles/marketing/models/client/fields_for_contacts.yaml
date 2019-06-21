@@ -1,0 +1,73 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+secondaryTabs:
+    stretch: true
+    defaultTab: Accueil
+    fields:
+        name:
+            label: nom de l'entreprise
+        slug:
+            label: Slug
+            preset: name
+        logo:
+            label: logo du client
+            type: mediafinder
+            mode: image
+            span: left
+            imageWidth: 300
+            imageHeight: 150
+        base_color:
+            label: Couleur de bases
+            type: colorpicker
+            span: auto
+        is_cv_option:
+            label: Personaliser le CV
+            type: checkbox
+            tab: CV
+        cv_option:
+            label: Option du cv
+            type: nestedform
+            usePanelStyles: true
+            tab: CV
+            form:
+                fields:
+                    color:
+                        label: Couleur de bases
+                        type: colorpicker
+                    title:
+                        label: Titre
+                    secteur:
+                        label: Secteur
+                    technical:
+                        label: Compétences techniques
+                        type: taglist
+                        mode: array
+                        options: listTechnical
+                    marketing:
+                        label: Compétences marketing
+                        type: taglist
+                        mode: array
+                        options: listMarketing
+                    soft_skills:
+                        label: Soft Skills
+                        type: taglist
+                        mode: array
+                        options: listSoftSkills
+                    fonctionel:
+                        label: Compétences Fonctionelles
+                        type: taglist
+                        mode: array
+                        options: listFonctionel
+            trigger:
+                action: show
+                field: is_cv_option
+                condition: checked
+
+        description:
+            label: description
+            type: textarea
+            tab: description
+
+        
+    

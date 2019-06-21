@@ -16,6 +16,15 @@ cloudis:
             fields:
                 pivot[url]:
                     label: url
+client:
+    label: Client
+    view:
+        form: $/charles/marketing/models/client/fields_for_contacts_show.yaml
+        toolbarButtons: create|update|link|unlink
+    manage:
+        form: $/charles/marketing/models/client/fields_for_contacts.yaml
+        list: $/charles/marketing/models/client/columns.yaml
+        showSearch: true
 
 
 

@@ -27,6 +27,7 @@ tabs:
             mode: relation
             customTags: false
             nameFrom: name
+            span: auto
 
         show_intro: 
             label: Utiliser l'intro commune du mail.
@@ -56,13 +57,13 @@ tabs:
 
         target:
             type: relation
-            tab: relation
+            tab: Relations
             selectFrom: name
             placeholder: --select Target--
 
         projects:
             label: Projets
-            tab: relation
+            tab: Relations
             type: taglist
             mode: relation
             customTags: false
@@ -70,7 +71,7 @@ tabs:
 
         missions:
             label: Missions
-            tab: relation
+            tab: Relations
             type: taglist
             mode: relation
             customTags: false
@@ -78,42 +79,24 @@ tabs:
 
         moas:
             label: Moas
-            tab: relation
+            tab: Relations
             type: taglist
             mode: relation
             customTags: false
             nameFrom: name
-        
-        # client:
-        #     label: Client
-        #     type: relation
-        #     selectFrom: name
-        #     placeholder: --select Target--
-        
-        client_id:
-            label: Client
-            type: dropdown
-            selectFrom: name
-            placeholder: --select Target--
-
         cloudis@update:
             type: partial
             path: field_cloudis
-            tab: Cloudinaries
+            tab: Relations
 
-        # user_details_section@create:
-        #     label: Creer la fiche client
-        #     type: section
-        #     comment: Cette section concerne le client
-        # client[name]@create:
-        #     label: Nom du client
-        # client[slug]@create:
-        #     label: Slug
-        #     preset: client[name]
-        # client[logo]@create:
-        #     label: logo du client
-        #     type: mediafinder
-        #     mode: image
-        #     span: left
+        user_details_section:
+            label: Gestion fiche client
+            type: section
+        client:
+            type: partial
+            path: field_client
+
+        
+
 
 
