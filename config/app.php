@@ -131,6 +131,7 @@ return [
         'Maatwebsite\Excel\ExcelServiceProvider',
         'Illuminated\Wikipedia\ServiceProvider',
         'JD\Cloudder\CloudderServiceProvider',
+        'NikKanetiya\LaravelColorPalette\ColorPaletteServiceProvider',
     ]),
 
     /*
@@ -148,8 +149,8 @@ return [
 
         // 'Str' => 'Illuminate\Support\Str', // Example
         'Excel' => 'Maatwebsite\Excel\Facades\Excel',
-        'Cloudder' => 'JD\Cloudder\Facades\Cloudder'
-        // 
+        'Cloudder' => 'JD\Cloudder\Facades\Cloudder',
+        'ColorPalette' => 'NikKanetiya\LaravelColorPalette\ColorPaletteFacade'
 
     ]),
 

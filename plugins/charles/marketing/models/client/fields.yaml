@@ -17,10 +17,11 @@ tabs:
             span: left
             imageWidth: 300
             imageHeight: 150
-        base_color:
-            label: Couleur de bases
-            type: colorpicker
-            span: auto
+        # base_color:
+        #     label: Couleur de bases
+        #     type: colorpicker
+        #     span: auto
+        #     availableColors: ['#000000', '#ff0000']
 
         contacts@update:
             type: partial

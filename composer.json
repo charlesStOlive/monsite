@@ -41,7 +41,8 @@
         "wikimedia/composer-merge-plugin": "dev-master",
         "maatwebsite/excel": "~2.1.0",
         "illuminated/wikipedia-grabber": "5.5.*",
-        "jrm2k6/cloudder": "*"
+        "jrm2k6/cloudder": "*",
+        "nikkanetiya/laravel-color-palette": "*"
 
     },
     "require-dev": {
