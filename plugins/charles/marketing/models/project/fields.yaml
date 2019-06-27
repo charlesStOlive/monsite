@@ -19,7 +19,11 @@ fields:
     accroche:
         label: Accroche
         type: text
-
+        span: auto
+    show_carousel:
+        label: Montrer dans le carousel
+        type: checkbox
+        
     client:
         type: relation
         selectFrom: name

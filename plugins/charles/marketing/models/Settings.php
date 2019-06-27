@@ -2,6 +2,7 @@
 
 use Model;
 use Charles\Marketing\Models\Competence;
+use Charles\Mailgun\Models\Contact;
 
 class Settings extends Model
 {
@@ -28,5 +29,9 @@ class Settings extends Model
     public function listFonctionel($fieldName, $value, $formData)
     {
         return Competence::CompetencetypeFilter([7])->lists('name', 'id');
+    }
+    public function listContact($fieldName, $value, $formData)
+    {
+        return Contact::lists('email', 'id');
     }
 }

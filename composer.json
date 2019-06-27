@@ -42,7 +42,8 @@
         "maatwebsite/excel": "~2.1.0",
         "illuminated/wikipedia-grabber": "5.5.*",
         "jrm2k6/cloudder": "*",
-        "nikkanetiya/laravel-color-palette": "*"
+        "nikkanetiya/laravel-color-palette": "*",
+        "mexitek/phpcolors": "dev-master"
 
     },
     "require-dev": {

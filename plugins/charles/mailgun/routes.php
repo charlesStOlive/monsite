@@ -1,5 +1,6 @@
 <?php
 
+use Charles\Mailgun\Models\Contact;
 
 
 Route::post('mail', 'Charles\Mailgun\Controllers\MailController@mails')
@@ -14,3 +15,20 @@ Route::post('api/mg/formSubmit','Charles\Mailgun\Controllers\PostController@form
 Route::get('maker/pdfreport/{user_id}/{sendDate?}/', 'Charles\Mailgun\Controllers\PdfReportController@index');
 //
 Route::get('maker/pdfcv/{user_id}', 'Charles\Mailgun\Controllers\PdfCvController@index');
+//
+Route::options('api/user/{any}', function() {
+    return Response::make('You are connected to the API');
+});
+
+Route::get('api/user/{userkey?}', function($userkey='3lrU70dUgW8R') {
+    $data = Contact::where('key', $userkey)->with('cloudis', 'client')->first();
+    $data['colors'] = $data->client->colors;
+	return $data;
+});
+Route::options('api/{any}', function() {
+    return Response::make('You are connected to the API');
+});
+Route::get('api/pdfreportglobal/{user_id}/{region_id}/{is_pdf}/{sendDate?}/', 'Charles\Mailgun\Controllers\PdfReportGlobalController@index');
+
+
+

@@ -1,5 +1,6 @@
 <?php 
-
+use Charles\Mailgun\Models\Contact;
+//
 use Charles\Marketing\Models\Client;
 use Charles\Marketing\Models\Project;
 use Charles\Marketing\Models\Settings;
@@ -33,12 +34,17 @@ Route::options('api/settings', function() {
 });
 
 Route::get('api/settings', function() {
-	$data['settings'] = Settings::instance()->value;
-	$data['projects'] = Project::with('main_picture', 'client')->get();
-	$data['clients'] = Client::get();
-	$data['competences'] = Competence::get();
-	$data['targets'] = Target::with('missions', 'missions.competences' )->get();
-	$data['moas'] = MOA::get();
+	$settings = Settings::instance()->value;
+	$data['false_contacts'] = Contact::whereIn('email', $settings['contact_demo'] )
+		->with('client')->get();
+	
+	$data['settings'] = $settings;
+
+	$data['projects'] = Project::where('show_carousel',1)->with('main_picture', 'client')->get();
+	//$data['clients'] = Client::get();
+	//$data['competences'] = Competence::get();
+	//$data['targets'] = Target::with('missions', 'missions.competences' )->get();
+	$data['moas'] = MOA::get(['name', 'slug', 'accroche']);
 	return $data;
 });
 Route::options('api/competences', function() {

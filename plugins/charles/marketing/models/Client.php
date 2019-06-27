@@ -4,6 +4,7 @@ use Model;
 use \ToughDeveloper\ImageResizer\Classes\Image;
 use Config;
 use Cloudder;
+use \Mexitek\PHPColors\Color as ColorManipulationClass;
 
 use Flash;
 
@@ -120,6 +121,17 @@ class Client extends Model
 
         // curl_close($handle);
         // return $existe;
+    }
+    public function getColorsAttribute() {
+        $baseColor = new ColorManipulationClass($this->base_color);
+        return $data['colors'] = [
+            "d-2" => '#'.$baseColor->darken(20),
+            "d-1" => '#'.$baseColor->darken(),
+            "color" => ''.$baseColor,
+            "l-2" => '#'.$baseColor->lighten(0.9),
+            "l-1" => '#'.$baseColor->lighten(),
+
+        ];
     }
 
     public function listTechnical($fieldName, $value, $formData)

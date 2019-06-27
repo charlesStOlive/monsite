@@ -11,7 +11,11 @@ tabs:
             label: Introduction du site
             type: richeditor
             size: huge
-
+        contact_demo:
+            label: id client démo
+            type: taglist
+            mode: array
+            options: listContact
         mycv:
             label: cv pdf fixe
             type: mediafinder

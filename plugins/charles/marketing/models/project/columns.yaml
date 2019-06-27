@@ -15,6 +15,9 @@ columns:
         label: Slug
         searchable: true
         span: auto 
+    show_carousel:
+        label: Carousel ? 
+        type: switch
 
     client:
         name: Client
