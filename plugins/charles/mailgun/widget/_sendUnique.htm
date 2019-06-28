@@ -17,7 +17,7 @@ if($contact->eligible) {
 </button>
 <button class="btn btn-primary oc-icon-file-pdf-o  mr-1" data-request="onLoadPdfExport"
         data-request-data="id:<?=$record->id?>" data-size="large"></button>
-<a class="btn btn-primary oc-icon-desktop  mr-1" href="<?= url('landing/'.$record->key)?>" target="_blank"></a>
+<a class="btn btn-primary oc-icon-desktop  mr-1" href="<?= getenv('URL_VUE').'?k='.$record->key?>" target="_blank"></a>
 
 <?php
 } else {

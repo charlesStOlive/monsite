@@ -41,7 +41,7 @@ Route::get('api/settings', function() {
 	
 	$data['settings'] = $settings;
 
-	$data['projects'] = Project::where('show_carousel',1)->with('main_picture', 'client')->get();
+	$data['projects'] = Project::with('main_picture', 'client')->get();
 	//$data['clients'] = Client::get();
 	//$data['competences'] = Competence::get();
 	//$data['targets'] = Target::with('missions', 'missions.competences' )->get();
