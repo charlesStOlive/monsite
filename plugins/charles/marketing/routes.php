@@ -2,6 +2,7 @@
 use Charles\Mailgun\Models\Contact;
 //
 use Charles\Marketing\Models\Client;
+use Charles\Marketing\Models\Experience;
 use Charles\Marketing\Models\Project;
 use Charles\Marketing\Models\Settings;
 use Charles\Marketing\Models\Competence;
@@ -46,6 +47,13 @@ Route::get('api/settings', function() {
 	//$data['targets'] = Target::with('missions', 'missions.competences' )->get();
 	$data['moas'] = MOA::get(['name', 'slug', 'accroche']);
 	return $data;
+});
+Route::options('api/experiences', function() {
+    return Response::make('You are connected to the API');
+});
+
+Route::get('api/experiences', function() {
+	 return Experience::get();
 });
 Route::options('api/competences', function() {
     return Response::make('You are connected to the API');

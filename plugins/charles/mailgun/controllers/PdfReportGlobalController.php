@@ -59,7 +59,7 @@ class PdfReportGlobalController {
         // }
 
         // $data['compostings'] = $compostings;
-
+        $data['global']['regionId'] = $regionId;
         $data['global']['date'] = $myDay->format('d-m-Y');
         $data['global']['weekStart'] = $weekStart->format('d-m-Y');
         $data['global']['weekEnd'] = $weekEnd->format('d-m-Y');
