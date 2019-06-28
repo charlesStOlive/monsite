@@ -203,6 +203,7 @@ class SendEmails extends ControllerBehavior
         if($contact->client) {
             $dataEmail['base_color'] = $contact->client->base_color;
         }
+        $dataEmail['contact_environement'] = $contact->contactEnvironement;
         //$dataEmail['base_color'] = $contact->client->base_color;
         $dataEmail['contact'] = $contact->toArray();
         $dataEmail['target'] = $contact->target()->get(['name', 'slug'])->toArray();
@@ -222,7 +223,7 @@ class SendEmails extends ControllerBehavior
             $compostings->put($cloudi->name, $cloudi->pivot->url );
         }
         $dataEmail['compostings'] = $compostings;
-        
+        $dataEmail['base_url_ctoa'] = getenv('URL_VUE');
         $dataEmail['content'] = $dataCampaign;
         //$dataEmail['url_cv'] = 'app/media/cv/'.$contact->cv_name.'.pdf';
         //Affectation sujet, cible etc. 

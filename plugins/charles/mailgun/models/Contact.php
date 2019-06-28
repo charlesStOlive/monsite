@@ -125,6 +125,14 @@ class Contact extends Model
     /**
     * GETTERS
     **/
+    public function getContactEnvironementAttribute() {
+        if($this->client) {
+            if($this->client->logo &&  $this->client->base_color ) return "full";
+            if($this->client->logo &&  !$this->client->base_color ) return "logo";
+            if(!$this->client->logo &&  $this->client->base_color ) return "color";
+        }
+        return null;
+    }
     public function getEligibleAttribute() {
         return true;
     }

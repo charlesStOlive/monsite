@@ -26,50 +26,61 @@
     <mj-section padding-top="10px">
       <mj-column>
         <mj-text font-size="20px">
-        <span style="color:{{ base_color }}">
-          {% if contact.strict %}
-              Bonjour {{ contact.name }} {{ contact.fname }}, 
-          {% else %}
-              Bonjour {{ contact.name }} ,
-          {% endif %}
+          <span style="color:{{ base_color }}">
+            {% if contact.strict %}
+            Bonjour {{ contact.name }} {{ contact.fname }},
+            {% else %}
+            Bonjour {{ contact.name }} ,
+            {% endif %}
           </span>
         </mj-text>
       </mj-column>
     </mj-section>
     <mj-section padding="0">
       <mj-column padding="0" width="200px">
-      <mj-image padding="0"
-         href="https://admin.charles-saint-olive.com/landing/{{ contact.key }}"
-         src="
-          {% if compostings.bookmailcontactclient is not null  %}{{ compostings.bookmailcontactclient }}{% else %}{{ compostings.bookmailcontact }}{% endif %}"
-         alt=""
-         width="200px" />
+        <mj-image padding="0" href="{{ base_url_ctoa }}{% if contact_environement == 'full' %}/?k={{ contact.key }}{% endif %}" src="
+          {% if compostings.bookmailcontactclient is not null  %}{{ compostings.bookmailcontactclient }}{% else %}{{ compostings.bookmailcontact }}{% endif %}" alt="" width="200px" />
       </mj-column>
-      <mj-column padding="0" width="400px" >   
+      <mj-column padding="0" width="400px">
         <mj-text padding="0" color="#525252">
-          {% if contact.show_message_perso %}
-            {{ contact.message_perso[0].text | raw }}
-          {% endif %}
+          <!-- {% if contact.show_message_perso %}
+          {{ contact.message_perso[0].text | raw }}
+          {% endif %} -->
           {% if contact.show_intro %}
-            {{ content.messages[0].text | raw }}
+          {{ content.messages[0].text | raw }}
           {% endif %}
-          {% if contact.show_message_perso and contact.message_perso[1]  %}
-            {{ contact.message_perso[1].text | raw }}
+          {% if contact_environement == 'full' %}
+          {{ content.messages[1].text | raw }}
+          Rendez vous sur votre <b><a style="color:{{ base_color }}" href="{{ base_url_ctoa }}/?k={{ contact.key }}">application</a></b> pour en savoir plus.
+          {% else %}
+           Rendez vous sur <b><a style="color:{{ base_color }}" href="{{ base_url_ctoa }}">l'application</a></b> pour en savoir plus.
           {% endif %}
-          Rendez vous sur votre <b><a style="color:{{ base_color }}" href="https://admin.charles-saint-olive.com/landing/{{ contact.key }}">landing page</a><b> pour en savoir plus. 
+          {{ content.messages[2].text | raw }}
         </mj-text>
+        
 
       </mj-column>
     </mj-section>
-    
+
+    <mj-raw>
+      {% if contact_environement != 'full' %}
+    </mj-raw>
+    <mj-section>
+      <mj-column>
+        <mj-text mj-class="texte-footer">{{content.messages[3].text | raw}}</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-raw>
+      {% endif %}
+    </mj-raw>
     <mj-section padding-bottom="20px" padding-top="20px" background-color="#cccccc">
       <mj-column width="100%">
         <!--<mj-image width="130px" src="{{ 'storage/app/media/signature.gif' | app }}" align="left" />-->
-        <mj-text  mj-class="texte-footer">Charles Saint Olive</mj-text>
-        <mj-text  padding-bottom="0px" mj-class="texte-footer">06 64 83 42 87</mj-text>
-        <mj-text  padding-bottom="0px" mj-class="texte-footer">charles.stolive@gmail.com</mj-text>
-        <mj-text  padding-bottom="0px" mj-class="texte-footer"><a href="https://charles-saint-olive.com" style="color:#3a5059">charles-saint-olive.com</a></mj-text>
-        
+        <mj-text mj-class="texte-footer">Charles Saint Olive</mj-text>
+        <mj-text padding-bottom="0px" mj-class="texte-footer">06 64 83 42 87</mj-text>
+        <mj-text padding-bottom="0px" mj-class="texte-footer">charles.stolive@gmail.com</mj-text>
+        <mj-text padding-bottom="0px" mj-class="texte-footer"><a href="https://charles-saint-olive.com" style="color:#3a5059">charles-saint-olive.com</a></mj-text>
+
       </mj-column>
     </mj-section>
 
