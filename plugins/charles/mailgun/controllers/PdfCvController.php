@@ -43,7 +43,7 @@ class PdfCvController {
         foreach ($data->cloudis as $cloudi) {
             $compostings->put($cloudi->name, $cloudi->pivot->url );
         }
-
+        
         $data['compostings'] = $compostings;
         if($data->client) {
             if($data->client->base_color) {
@@ -63,6 +63,8 @@ class PdfCvController {
             }
         }
         $data['settings'] = $settings;
+        $data['base_url_ctoa'] = getenv('URL_VUE');
+        $data['contact_environement'] = $data->contactEnvironement;
         /**
          * Construction du pdf
          */
