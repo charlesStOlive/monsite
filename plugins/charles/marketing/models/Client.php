@@ -128,8 +128,8 @@ class Client extends Model
             "d-2" => '#'.$baseColor->darken(20),
             "d-1" => '#'.$baseColor->darken(),
             "color" => ''.$baseColor,
-            "l-2" => '#'.$baseColor->lighten(0.9),
-            "l-1" => '#'.$baseColor->lighten(),
+            "l-2" => '#'.$baseColor->lighten(),
+            "l-1" => '#'.$baseColor->lighten(20),
 
         ];
     }
