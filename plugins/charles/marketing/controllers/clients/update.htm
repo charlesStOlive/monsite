@@ -57,6 +57,13 @@
                     Re<u>U</u>pload ( sauver avant la fiche )
                 </button>
                 <button
+                    href="javascript:;"
+                    data-handler="onAutoCreateContact"
+                    data-control="popup"
+                    data-request-data="id:<?= $this->params[0] ?>"
+                    class="btn btn-primary">
+                    Auto Create contact
+                <button
                     type="submit"
                     data-request="onFindColors"
                     data-hotkey="ctrl+u, cmd+u"

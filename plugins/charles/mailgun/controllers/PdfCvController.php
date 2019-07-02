@@ -8,6 +8,7 @@ use Renatio\DynamicPDF\Classes\PDFWrapper;
 use Charles\Marketing\Models\Settings;
 use Charles\Marketing\Models\Experience;
 use Charles\Mailgun\Models\Contact;
+use Charles\Mailgun\Models\Visit;
 use October\Rain\Support\Collection;
 
 
@@ -76,6 +77,8 @@ class PdfCvController {
                 'logOutputFile' => storage_path('temp/log.htm'),
                 'isRemoteEnabled' => true,
             ];
+
+            $data->visits()->add(new Visit(['type' => 'pdf']));
 
             return $pdf
                 ->loadTemplate($templateCode, compact('data'))

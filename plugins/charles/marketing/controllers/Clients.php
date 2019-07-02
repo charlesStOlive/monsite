@@ -3,11 +3,13 @@
 use BackendMenu;
 use Redirect;
 use Flash;
+use Str;
 use Backend\Classes\Controller;
 
 use Charles\Mailgun\Models\Cloudi;
 //
 use Charles\Marketing\Models\Client;
+use Charles\Mailgun\Models\Contact;
 use Charles\Marketing\Models\Settings;
 //
 use Cloudder;
@@ -23,18 +25,24 @@ class Clients extends Controller
         'Backend.Behaviors.FormController',
         'Backend.Behaviors.ListController',
         'Backend.Behaviors.RelationController',
+        'Charles.Mybehaviors.Behaviors.PdfCvExport',
+        'Charles.Mailgun.Behaviors.SendEmails',
     ];
 
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
     public $relationConfig = 'config_relation.yaml';
+    public $pdfConfig = 'config_pdfexport.yaml';
     public $logoColors = null;
+    //
+    protected $autoCreateContactWidget;
 
     public function __construct()
     {
         parent::__construct();
 
         BackendMenu::setContext('Charles.Marketing', 'marketing', 'side-menu-clients');
+        $this->autoCreateContactWidget = $this->autoCreateContactFormWidget();
     }
 
     public function onUploadCloudinary() {
@@ -61,21 +69,6 @@ class Clients extends Controller
         
     }
 
-    // public function formExtendFields($host, $fields)
-    // {
-    //     $colors = Session::get('logo.colors');
-    //     trace_log($colors);
-    //     foreach ($fields as $field) {
-    //         trace_log($field->fieldName);
-    //         if($field->fieldName == 'base_color') {
-    //             trace_log("Ok champs trouvé");
-    //             trace_log($field->config);
-    //             $field->label = "salut";
-    //             $field->availableColors = $colors;
-    //         }
-                
-    //     }
-    // }
     public function formExtendFields($form)
     {
         $colors = Session::pull('logo.colors');
@@ -89,5 +82,43 @@ class Clients extends Controller
                 'availableColors'=> $availableColors,
             ],
         ]);
+    }
+    public function onAutoCreateContact()
+    {
+       $this->vars['autoCreateContactWidget'] = $this->autoCreateContactWidget;
+       $this->vars['clientId'] =  Client::find(post('id'))->id;
+       return $this->makePartial('$/charles/marketing/controllers/clients/_auto_contact_form.htm');
+    }
+    protected function autoCreateContactFormWidget()
+    {
+        $config = $this->makeConfig('$/charles/marketing/models/client/fields_auto_create_contact.yaml');
+        $config->alias = 'uploadAutoCreateContactForm';
+        $config->arrayName = 'AutoCreateContact';
+        $config->model = new Client;
+        $widget = $this->makeWidget('Backend\Widgets\Form', $config);
+        $widget->bindToController();
+        return $widget;
+    }
+    public function onAutoCreateContactValidation()
+    {
+        $data = $this->autoCreateContactWidget->getSaveData();
+        trace_log($data);
+        
+
+
+        foreach($data['names'] as $name) {
+            //fonction email
+            $contact = new Contact;
+            $contact->name = "Service,";
+            $contact->fname = "RH";
+            $contact->client_id = post('id');
+            $contact->email = $name.'@'.$data['email_suffix'];
+            $contact->save();
+            $contact->segments()->attach($data['segment']);
+        }
+
+        // Flash::info("le(s) email(s) de test sont partis ! ");
+
+        return Redirect::refresh();
     }
 }

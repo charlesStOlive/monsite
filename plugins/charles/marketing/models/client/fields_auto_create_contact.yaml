@@ -1,0 +1,15 @@
+fields:
+    segment:
+        label: Nom du segments
+        type: dropdown
+        options: listSegments
+    email_suffix:
+        label: sufix de l'email
+    names:
+      label: adresse à créer
+      default: true
+      type: checkboxlist
+      options:
+        contact: contact
+        info: info
+        recrutement: recrutement

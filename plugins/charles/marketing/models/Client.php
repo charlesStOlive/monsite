@@ -1,6 +1,7 @@
 <?php namespace Charles\Marketing\Models;
 
 use Model;
+use Charles\Mailgun\Models\Segment;
 use \ToughDeveloper\ImageResizer\Classes\Image;
 use Config;
 use Cloudder;
@@ -149,5 +150,9 @@ class Client extends Model
     public function listFonctionel($fieldName, $value, $formData)
     {
         return Competence::CompetencetypeFilter([7])->lists('name', 'id');
+    }
+    public function listSegments($fieldName, $value, $formData)
+    {
+        return Segment::lists('name', 'id');
     }
 }

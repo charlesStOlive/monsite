@@ -1,6 +1,7 @@
 <?php
 
 use Charles\Mailgun\Models\Contact;
+use Charles\Mailgun\Models\Visit;
 
 
 Route::post('mail', 'Charles\Mailgun\Controllers\MailController@mails')
@@ -21,9 +22,10 @@ Route::options('api/user/{any}', function() {
 });
 
 Route::get('api/user/{userkey?}', function($userkey='3lrU70dUgW8R') {
-    $data = Contact::where('key', $userkey)->with('cloudis', 'client')->first();
-    $data['colors'] = $data->client->colors;
-	return $data;
+    $contact = Contact::where('key', $userkey)->with('cloudis', 'client')->first();
+    $contact->visits()->add(new Visit(['type' => 'site']));
+    $contact['colors'] = $contact->client->colors;
+	return $contact;
 });
 Route::options('api/{any}', function() {
     return Response::make('You are connected to the API');

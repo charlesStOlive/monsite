@@ -87,18 +87,7 @@ tabs:
         cloudis@update:
             type: partial
             path: field_cloudis
-            tab: Images Cloud
-        visits:
-            type: partial
-            path: field_visits
-            tab: Statistiques
-
-        user_details_section:
-            label: Gestion fiche client
-            type: section
-        client:
-            type: partial
-            path: field_client
+            tab: Relations
 
         
 

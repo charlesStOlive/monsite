@@ -1,0 +1,12 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    type:
+        label: Type
+        searchable: true
+    updated_at:
+        label: date
+        type: timesince
+    

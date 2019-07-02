@@ -8,11 +8,12 @@ contacts:
     view:
         list: $/charles/mailgun/models/contact/columns.yaml
         toolbarButtons: add|create|delete
+        recordUrl: charles/mailgun/contacts/update/:id
     manage:
         showSearch: true
         recordsPerPage: 10
         list: $/charles/mailgun/models/contact/columns.yaml
-        form: $/charles/mailgun/models/contact/fields.yaml
+        form: $/charles/mailgun/models/contact/fields_for_client.yaml
 
 cloudis:
     label: Image cloudinary

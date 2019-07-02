@@ -7,6 +7,7 @@ use Storage;
 use Redirect;
 use Backend;
 use Crypt;
+use Cloudder;
 
 use Illuminate\Contracts\Encryption\DecryptException;
 
@@ -30,12 +31,12 @@ class Contact extends Model
     /**
      * @var array Guarded fields
      */
-    protected $guarded = ['*'];
+    protected $guarded = [''];
 
     /**
      * @var array Fillable fields
      */
-    protected $fillable = [];
+    protected $fillable = ['id'];
 
     protected $jsonable = ['message_perso'];
 
@@ -49,7 +50,9 @@ class Contact extends Model
     public $hasOne = [
 
     ];
-    public $hasMany = [];
+    public $hasMany = [
+        'visits' => ['Charles\Mailgun\Models\Visit'],
+    ];
     public $belongsTo = [
         'target' => ['Charles\Marketing\Models\Target'],
         'client' => ['Charles\Marketing\Models\Client'],
@@ -95,6 +98,13 @@ class Contact extends Model
             $this->region_id = rand(1, 5);
         }
         
+
+        
+    }
+    public function afterSave() {
+            if($this->contactEnvironement == 'full')  {
+                $this->createCloudis();   
+        }  
     }
 
     
@@ -152,5 +162,26 @@ class Contact extends Model
     /**
      * SETTERS
      */
+    
+     /**
+      * METHODS
+      */
+      public function createCloudis() {
+        if($this->contactEnvironement != 'full') throw new ApplicationException('Environement client pas prêt !');
+        $this->cloudis()->detach();
+        //Client et couleurs
+        $contact = $this;
+        $client = $this->client;
+        $colorClient = substr($client->base_color, 1);
+        //On réécupère tous les cloudis ( sauf les anciens liées à un client )
+        $cloudis = Cloudi::where('is_client',0)->get();
+
+        foreach($cloudis as $cloudi) {
+            $recError = false;
+            $url="";
+            $pivotData = ['url' => Cloudder::secureShow($cloudi->path, eval($cloudi->config))];
+            $this->cloudis()->add($cloudi, $pivotData);
+            }
+      }
 
 }

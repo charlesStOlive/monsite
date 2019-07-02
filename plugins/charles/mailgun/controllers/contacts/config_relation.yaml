@@ -26,5 +26,11 @@ client:
         list: $/charles/marketing/models/client/columns.yaml
         showSearch: true
 
+visits:
+    label: Visites
+    view:
+        list: $/charles/mailgun/models/visit/columns.yaml
+        toolbarButtons: delete
+
 
 
