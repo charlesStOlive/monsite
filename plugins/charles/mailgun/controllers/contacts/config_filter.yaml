@@ -8,3 +8,15 @@ scopes:
         scope: segmentFilter
         modelClass: Charles\Mailgun\Models\Segment
         nameFrom: name
+
+    visits_site:
+        label: Filtrer par visite
+        type: switch
+        default: 0
+        scope: hasVisitsFilter
+
+    client:
+        label: A un client
+        type: switch
+        default: 2
+        scope: hasClientFilter

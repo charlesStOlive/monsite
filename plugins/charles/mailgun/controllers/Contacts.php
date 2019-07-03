@@ -4,12 +4,15 @@ use BackendMenu;
 use Backend\Classes\Controller;
 use Charles\Marketing\Models\Client;
 use Charles\Mailgun\Models\Contact;
+use Charles\Mailgun\Models\Visit;
 use Charles\Mailgun\Models\Cloudi;
 use Charles\Marketing\Models\Settings;
 //
 use Cloudder;
 use Flash;
 use Redirect;
+use Session;
+
 
 /**
  * Contacts Back-end Controller
@@ -38,5 +41,25 @@ class Contacts extends Controller
         parent::__construct();
 
         BackendMenu::setContext('Charles.Mailgun', 'mailgun', 'side-menu-contacts');
+    }
+
+    public function listInjectRowClass($record, $definition)
+    {
+        // Injection de style CSS selon$record
+        if ($record->visits()->count()) {
+            return 'positive important';
+        }
+    }
+
+    public function onRemoveStats()
+    {
+        /**
+         * [$id du model]
+         * @var string
+         */
+        Visit::where('contact_id', post('id'))->delete();
+        return Redirect::Refresh()
+;
+
     }
 }

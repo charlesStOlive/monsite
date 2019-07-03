@@ -109,7 +109,7 @@ class Clients extends Controller
         foreach($data['names'] as $name) {
             //fonction email
             $contact = new Contact;
-            $contact->name = "Service,";
+            $contact->name = "Service";
             $contact->fname = "RH";
             $contact->client_id = post('id');
             $contact->email = $name.'@'.$data['email_suffix'];

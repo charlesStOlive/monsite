@@ -131,6 +131,20 @@ class Contact extends Model
             $q->whereIn('id', $filtered);
         });
     }
+    public function scopeHasVisits($query, $filtered)
+    {
+         return $query->has('visits');
+    }
+    public function scopeHasVisitsFilter($query,  $filtered)
+    {
+        if($filtered == 2 ) return $query->has('visits');
+        if($filtered == 1 ) return $query->doesnthave('visits');
+    }
+    public function scopeHasClientFilter($query,  $filtered)
+    {
+        if($filtered == 2 ) return $query->has('client');
+        if($filtered == 1 ) return $query->doesnthave('client');
+    }
 
     /**
     * GETTERS

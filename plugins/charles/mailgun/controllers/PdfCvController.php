@@ -23,16 +23,67 @@ use Yaml;
 
 class PdfCvController {
 
-    public function index($user_id)
+    public function index($user_key)
     {
         $templateCode = "cv_1";
+        $data = $this->preparePdf($user_key);
+        /**
+         * Construction du pdf
+         */
+        try {
+            /** @var PDFWrapper $pdf */
+            $pdf = app('dynamicpdf');
 
-        $data = Contact::where('key', $user_id)->first();
+            $options = [
+                'logOutputFile' => storage_path('temp/log.htm'),
+                'isRemoteEnabled' => true,
+            ];
+
+            $data->visits()->add(new Visit(['type' => 'pdf']));
+
+            return $pdf
+                ->loadTemplate($templateCode, compact('data'))
+                ->setOptions($options)
+                ->stream();
+
+        } catch (Exception $e) {
+            throw new ApplicationException($e->getMessage());
+        }
+    }
+
+    public function test($user_key)
+    {
+        $templateCode = "cv_1";
+        $data = $this->preparePdf($user_key);
+        /**
+         * Construction du pdf
+         */
+        try {
+            /** @var PDFWrapper $pdf */
+            $pdf = app('dynamicpdf');
+
+            $options = [
+                'logOutputFile' => storage_path('temp/log.htm'),
+                'isRemoteEnabled' => true,
+            ];
+
+            return $pdf
+                ->loadTemplate($templateCode, compact('data'))
+                ->setOptions($options)
+                ->stream();
+
+        } catch (Exception $e) {
+            throw new ApplicationException($e->getMessage());
+        }
+    }
+
+    public function preparePdf($user_key) {
+        //
+        $data = Contact::where('key', $user_key)->first();
         if ($data === null) {
             throw new ApplicationException('model not found.');
         }
-
-
+        //
         $data['experiences'] =  Experience::with('projects', 'competences')->get();
         $settings = Settings::instance()->value;
         
@@ -66,28 +117,9 @@ class PdfCvController {
         $data['settings'] = $settings;
         $data['base_url_ctoa'] = getenv('URL_VUE');
         $data['contact_environement'] = $data->contactEnvironement;
-        /**
-         * Construction du pdf
-         */
-        try {
-            /** @var PDFWrapper $pdf */
-            $pdf = app('dynamicpdf');
 
-            $options = [
-                'logOutputFile' => storage_path('temp/log.htm'),
-                'isRemoteEnabled' => true,
-            ];
+        return $data;
 
-            $data->visits()->add(new Visit(['type' => 'pdf']));
-
-            return $pdf
-                ->loadTemplate($templateCode, compact('data'))
-                ->setOptions($options)
-                ->stream();
-
-        } catch (Exception $e) {
-            throw new ApplicationException($e->getMessage());
-        }
     }
 
 }
