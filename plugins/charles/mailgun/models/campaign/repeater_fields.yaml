@@ -3,23 +3,31 @@ title:
     description: Title h2
     icon: icon-header
     fields:
-        code: 
-            span: auto
-            label: code
-        label:
+        code:
+            label: Code
+        value:
             span: auto
             label: Title
+        value-t:
+            type: richeditor
+            size: huge
+            span: auto
         
 text:
     name: Textarea
     description: Basic text field
     icon: icon-file-text-o
     fields:
-        code: 
-            label: code
-        text:
+        code:
+            label: Code
+        value:
             type: richeditor
             size: huge
+            span: auto
+        value-t:
+            type: richeditor
+            size: huge
+            span: auto
 
         
 picture:
@@ -28,14 +36,24 @@ picture:
     icon: icon-picture-o
     fields:
         code:
-            label: code
-        picture:
+            label: Code
+        value:
             label: Picture
             type: mediafinder
             mode: image
             prompt: choose image
             imageWidth: 160
             imageHeight: 90
+            span: auto
+        value-t:
+            label: Picture
+            type: mediafinder
+            mode: image
+            prompt: choose image
+            imageWidth: 160
+            imageHeight: 90
+            span: auto
+        
         
 
 

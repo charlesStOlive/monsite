@@ -43,36 +43,44 @@
       </mj-column>
       <mj-column padding="0" width="400px">
         <mj-text padding="0" color="#525252">
-          <!-- {% if contact.show_message_perso %}
-          {{ contact.message_perso[0].text | raw }}
-          {% endif %} -->
+          {% if contact.show_message_perso %}
+            {{ contact.message_perso[0].text | raw }}
+          {% endif %}
           {% if contact.show_intro %}
-          {{ content.messages[0].text | raw }}
+            {{ content.intro | raw }}
           {% endif %}
-          {% if contact_environement == 'full' %}
-          {{ content.messages[1].text | raw }}
-          Rendez vous sur votre <b><a style="color:{{ base_color }}" href="{{ base_url_ctoa }}/?k={{ contact.key }}">application</a></b> pour en savoir plus.
-          {% else %}
-           Rendez vous sur <b><a style="color:{{ base_color }}" href="{{ base_url_ctoa }}">l'application</a></b> pour en savoir plus.
-          {% endif %}
-          {{ content.messages[2].text | raw }}
+            {{ content.intro2 | raw }}
         </mj-text>
+        
         
 
       </mj-column>
     </mj-section>
 
     <mj-raw>
-      {% if contact_environement != 'full' %}
+      {% if contact_environement == 'full' %}
+    </mj-raw>
+    <mj-section padding-top="0px">
+      <mj-column>
+        <mj-text padding-top="0px">
+        {{content.complement | raw}}
+        Rendez vous sur l'<b><a style="color:{{ base_color }}" href="{{ base_url_ctoa }}/?k={{ contact.key }}">application</a></b> pour en savoir plus.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-raw>
+      {% else %}
     </mj-raw>
     <mj-section>
       <mj-column>
-        <mj-text mj-class="texte-footer">{{content.messages[3].text | raw}}</mj-text>
+        <mj-text mj-class="texte-footer">{{content.messages.not_full | raw}}</mj-text>
       </mj-column>
     </mj-section>
     <mj-raw>
       {% endif %}
     </mj-raw>
+
+
     <mj-section padding-bottom="20px" padding-top="20px" background-color="#cccccc">
       <mj-column width="100%">
         <!--<mj-image width="130px" src="{{ 'storage/app/media/signature.gif' | app }}" align="left" />-->

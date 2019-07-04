@@ -39,12 +39,20 @@
       </mj-column>
       <mj-column padding="0" width="400px">
         <mj-text padding="0" color="#525252">
-          {{ content.messages[0].text | raw }}
-          Rendez vous sur mon <b><a style="color:{{ base_color }}" href="{{ base_url_ctoa }}/?k={{ contact.key }}">application</a></b> pour en savoir plus.
-          {{ content.messages[1].text | raw }}
+          {{ content.intro | raw }}
+          Rendez vous sur l'<b><a style="color:{{ base_color }}" href="{{ base_url_ctoa }}/?k={{ contact.key }}">application</a></b> pour en savoir plus.
+      
         </mj-text>
         
 
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding-top="0">
+      <mj-column>
+        <mj-text>
+          {{ content.after_ctoa | raw }}
+        </mj-text> 
       </mj-column>
     </mj-section>
 

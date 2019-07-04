@@ -115,7 +115,7 @@ class Contact extends Model
     public function getClientIdOptions() {
         
         $list = Client::orderBy('name')->lists('name', 'id');
-        $options = new \October\Rain\Support\Collection($list);
+        $options = new \October\Rain\Support\Collection(json_decode($list));
         $options->put(999999, 'créer une sciété');
         trace_log($options);
         return $options;

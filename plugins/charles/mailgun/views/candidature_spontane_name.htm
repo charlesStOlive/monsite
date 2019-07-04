@@ -54,7 +54,8 @@
     <style type="text/css">
       @media only screen and (min-width:480px) {
         .mj-column-per-100 { width:100% !important; max-width: 100%; }
-.mj-column-per-50 { width:50% !important; max-width: 50%; }
+.mj-column-px-200 { width:200px !important; max-width: 200px; }
+.mj-column-px-400 { width:400px !important; max-width: 400px; }
 .mj-column-per-75 { width:75% !important; max-width: 75%; }
 .mj-column-per-25 { width:25% !important; max-width: 25%; }
       }
@@ -99,7 +100,7 @@
           <tbody>
             <tr>
               <td
-                 style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:10px;text-align:center;vertical-align:top;"
+                 style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:10px;text-align:center;"
               >
                 <!--[if mso | IE]>
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
@@ -112,7 +113,7 @@
           <![endif]-->
             
       <div
-         class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+         class="mj-column-per-100 outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
       >
         
       <table
@@ -125,36 +126,22 @@
               >
                 
       <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:20px;line-height:20px;text-align:left;color:#546e7a;"
-      >
-        {% if contact.strict %}
-            Bonjour {{ contact.name }} {{ contact.fname }}, 
-        {% else %}
-            Bonjour {{ contact.name }},
-        {% endif %}
-      </div>
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:20px;line-height:20px;text-align:left;color:#525252;"
+      ><span style="color:{{ base_color }}">
+            Bonjour {{ contact.name }} {{ contact.fname }},
+          </span></div>
     
               </td>
             </tr>
           
             <tr>
               <td
-                 align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                 align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:0;word-break:break-word;"
               >
                 
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#525252;"
-      >
-        {% if contact.show_message_perso %}
-            {{ contact.message_perso[0].text | raw }}
-          {% endif %}
-          {% if contact.show_intro %}
-            {{ content.messages[0].text | raw }}
-          {% endif %}
-          {% if contact.show_message_perso and contact.message_perso[1]  %}
-            {{ contact.message_perso[1].text | raw }}
-          {% endif %}
-      </div>
+      >{{ content.explication | raw }}</div>
     
               </td>
             </tr>
@@ -199,7 +186,143 @@
           <tbody>
             <tr>
               <td
-                 style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0px;text-align:center;vertical-align:top;"
+                 style="direction:ltr;font-size:0px;padding:0;padding-bottom:0px;padding-top:0px;text-align:center;"
+              >
+                <!--[if mso | IE]>
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                
+        <tr>
+      
+            <td
+               class="" style="vertical-align:top;width:200px;"
+            >
+          <![endif]-->
+            
+      <div
+         class="mj-column-px-200 outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+      >
+        
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"
+      >
+        <tbody>
+          <tr>
+            <td  style="vertical-align:top;padding:0;">
+              
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%"
+      >
+        
+            <tr>
+              <td
+                 align="center" style="font-size:0px;padding:0;word-break:break-word;"
+              >
+                
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;"
+      >
+        <tbody>
+          <tr>
+            <td  style="width:200px;">
+              
+        <a
+           href="{{ base_url_ctoa }}{% if contact_environement == 'full' %}/?k={{ contact.key }}{% endif %}" target="_blank"
+        >
+          
+      <img
+         alt="" height="auto" src="
+          {% if compostings.bookmailcontactclient is not null  %}{{ compostings.bookmailcontactclient }}{% else %}{{ compostings.bookmailcontact }}{% endif %}" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="200"
+      />
+    
+        </a>
+      
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+              </td>
+            </tr>
+          
+      </table>
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]>
+            </td>
+          
+            <td
+               class="" style="vertical-align:top;width:400px;"
+            >
+          <![endif]-->
+            
+      <div
+         class="mj-column-px-400 outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+      >
+        
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
+      >
+        
+            <tr>
+              <td
+                 align="left" style="font-size:0px;padding:0;word-break:break-word;"
+              >
+                
+      <div
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#525252;"
+      >{{ content.intro | raw }}
+          Rendez vous sur l'<b><a style="color:{{ base_color }}" href="{{ base_url_ctoa }}/?k={{ contact.key }}">application</a></b> pour en savoir plus.</div>
+    
+              </td>
+            </tr>
+          
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]>
+            </td>
+          
+        </tr>
+      
+                  </table>
+                <![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]>
+          </td>
+        </tr>
+      </table>
+      
+      <table
+         align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+      >
+        <tr>
+          <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+      <![endif]-->
+    
+      
+      <div  style="Margin:0px auto;max-width:600px;">
+        
+        <table
+           align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;"
+        >
+          <tbody>
+            <tr>
+              <td
+                 style="direction:ltr;font-size:0px;padding:0;padding-bottom:0px;padding-top:0px;text-align:center;"
               >
                 <!--[if mso | IE]>
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
@@ -212,7 +335,83 @@
           <![endif]-->
             
       <div
-         class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+         class="mj-column-per-100 outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+      >
+        
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
+      >
+        
+            <tr>
+              <td
+                 align="left" style="font-size:0px;padding:0;word-break:break-word;"
+              >
+                
+      <div
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#525252;"
+      >{{ content.after_ctoa | raw }}</div>
+    
+              </td>
+            </tr>
+          
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]>
+            </td>
+          
+        </tr>
+      
+                  </table>
+                <![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]>
+          </td>
+        </tr>
+      </table>
+      <![endif]-->
+    
+    {% if moas %}
+      
+      <!--[if mso | IE]>
+      <table
+         align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+      >
+        <tr>
+          <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+      <![endif]-->
+    
+      
+      <div  style="Margin:0px auto;max-width:600px;">
+        
+        <table
+           align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;"
+        >
+          <tbody>
+            <tr>
+              <td
+                 style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0px;text-align:center;"
+              >
+                <!--[if mso | IE]>
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                
+        <tr>
+      
+            <td
+               class="" style="vertical-align:top;width:600px;"
+            >
+          <![endif]-->
+            
+      <div
+         class="mj-column-per-100 outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
       >
         
       <table
@@ -232,10 +431,8 @@
               >
                 
       <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
-      >
-        <b>Comprendre mon activité</b>
-      </div>
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:{{ base_color }};"
+      ><b>Les missions d'un digital manager</b></div>
     
               </td>
             </tr>
@@ -294,7 +491,11 @@
           </td>
         </tr>
       </table>
+      <![endif]-->
+    
+    {% for moa in moas %}
       
+      <!--[if mso | IE]>
       <table
          align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
       >
@@ -311,54 +512,46 @@
           <tbody>
             <tr>
               <td
-                 style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0px;text-align:center;vertical-align:top;"
+                 style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0px;text-align:center;"
               >
                 <!--[if mso | IE]>
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                 
         <tr>
-      <![endif]-->
-      <!-- Left image -->
-          <!--[if mso | IE]>
-            <td
-               class="" style="vertical-align:top;width:300px;"
-            >
-          <![endif]-->
-            
-      <div
-         class="mj-column-per-50 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
-      >
-        
-      <table
-         border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
-      >
-        
-            <tr>
-              <td
-                 align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"
-              >
-                
-      <table
-         border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;"
-      >
-        <tbody>
-          <tr>
-            <td  style="width:250px;">
-              
-        <a
-           href="https://demobo.charles-saint-olive.com/" target="_blank"
-        >
-          
-      <img
-         height="auto" src="https://admin.charles-saint-olive.com/storage/app/media/{{ content.messages[1].picture }}" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="250"
-      />
-    
-        </a>
       
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            <td
+               class="" style="vertical-align:top;width:450px;"
+            >
+          <![endif]-->
+            
+      <div
+         class="mj-column-per-75 outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+      >
+        
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
+      >
+        
+            <tr>
+              <td
+                 align="left" style="font-size:0px;padding:10px 25px;padding-top:0px;padding-bottom:0px;padding-left:30px;word-break:break-word;"
+              >
+                
+      <div
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#525252;"
+      >-{{ moa.name }}</div>
+    
+              </td>
+            </tr>
+          
+            <tr>
+              <td
+                 align="left" style="font-size:0px;padding:10px 25px;padding-top:0px;padding-bottom:0px;padding-left:30px;word-break:break-word;"
+              >
+                
+      <div
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:10px;line-height:14px;text-align:left;color:#C9C9C9;"
+      >{{ moa.accroche }}</div>
     
               </td>
             </tr>
@@ -369,16 +562,14 @@
     
           <!--[if mso | IE]>
             </td>
-          <![endif]-->
-    <!-- Left image -->
-          <!--[if mso | IE]>
+          
             <td
-               class="" style="vertical-align:top;width:300px;"
+               class="" style="vertical-align:top;width:150px;"
             >
           <![endif]-->
             
       <div
-         class="mj-column-per-50 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+         class="mj-column-per-25 outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
       >
         
       <table
@@ -387,42 +578,24 @@
         
             <tr>
               <td
-                 align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                 align="center" vertical-align="middle" style="font-size:0px;padding:10px 25px;word-break:break-word;"
               >
                 
-      <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
+      <table
+         border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;line-height:100%;"
       >
-        <b><a padding-left="0px" style="color:#3a5059" href="https://charles-saint-olive.com/">Accueil du site</a></b>
-      </div>
-    
-              </td>
-            </tr>
-          {% for moa in moas %}
-            <tr>
-              <td
-                 align="left" style="font-size:0px;padding:10px 25px;padding-top:2px;padding-bottom:2px;padding-left:10px;word-break:break-word;"
-              >
-                
-      <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
-      >
-        &nbsp;-<a style="color:#3a5059" href="https://charles-saint-olive.com/moas/{{ moa.slug}}">{{ moa.name }} </a>
-      </div>
-    
-              </td>
-            </tr>
-          {% endfor %}
-            <tr>
-              <td
-                 align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
-              >
-                
-      <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
-      >
-        <b><a padding-left="0px" style="color:#3a5059" href="https://charles-saint-olive.com/"></a></b>
-      </div>
+        <tr>
+          <td
+             align="center" bgcolor="{{ base_color }}" role="presentation" style="border:none;border-radius:3px;cursor:auto;mso-padding-alt:10px 25px;background:{{ base_color }};" valign="middle"
+          >
+            <a
+               href="{{ base_url_ctoa }}/moas/{{ moa.slug }}?k={{ contact.key }}" style="display:inline-block;background:{{ base_color }};color:#ffffff;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:120%;Margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:3px;" target="_blank"
+            >
+              voir
+            </a>
+          </td>
+        </tr>
+      </table>
     
               </td>
             </tr>
@@ -452,7 +625,13 @@
       </table>
       <![endif]-->
     
-    {% if projects %}
+    {% endfor %}<!-- <mj-section>
+      <mj-column>
+        <mj-text padding-bottom="0px" padding-top="0px">
+         <a style="color:black" href="{{ base_url_ctoa }}/moas?k={{ contact.key }}">Toutes les missions possibles</a>
+        </mj-text>
+      </mj-column>
+    </mj-section> -->{% endif %}{% if projects %}
       
       <!--[if mso | IE]>
       <table
@@ -471,7 +650,7 @@
           <tbody>
             <tr>
               <td
-                 style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0px;text-align:center;vertical-align:top;"
+                 style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0px;text-align:center;"
               >
                 <!--[if mso | IE]>
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
@@ -484,7 +663,7 @@
           <![endif]-->
             
       <div
-         class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+         class="mj-column-per-100 outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
       >
         
       <table
@@ -504,10 +683,8 @@
               >
                 
       <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
-      >
-        <b>Des exemples de projets</b>
-      </div>
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:{{ base_color }};"
+      ><b>Des projets...</b></div>
     
               </td>
             </tr>
@@ -587,7 +764,7 @@
           <tbody>
             <tr>
               <td
-                 style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0px;text-align:center;vertical-align:top;"
+                 style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0px;text-align:center;"
               >
                 <!--[if mso | IE]>
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
@@ -600,7 +777,7 @@
           <![endif]-->
             
       <div
-         class="mj-column-per-75 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+         class="mj-column-per-75 outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
       >
         
       <table
@@ -613,10 +790,8 @@
               >
                 
       <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#000000;"
-      >
-        -{{ project.name }}
-      </div>
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;text-align:left;color:#525252;"
+      >-{{ project.name }}</div>
     
               </td>
             </tr>
@@ -628,9 +803,7 @@
                 
       <div
          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:10px;line-height:14px;text-align:left;color:#C9C9C9;"
-      >
-        {{ project.accroche }}
-      </div>
+      >{{ project.accroche }}</div>
     
               </td>
             </tr>
@@ -648,7 +821,7 @@
           <![endif]-->
             
       <div
-         class="mj-column-per-25 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+         class="mj-column-per-25 outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
       >
         
       <table
@@ -665,10 +838,10 @@
       >
         <tr>
           <td
-             align="center" bgcolor="#546e7a" role="presentation" style="border:none;border-radius:3px;cursor:auto;mso-padding-alt:10px 25px;background:#546e7a;" valign="middle"
+             align="center" bgcolor="{{ base_color }}" role="presentation" style="border:none;border-radius:3px;cursor:auto;mso-padding-alt:10px 25px;background:{{ base_color }};" valign="middle"
           >
             <a
-               href="https://charles-saint-olive.com/projects/{{ project.slug }}" style="display:inline-block;background:#546e7a;color:#ffffff;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:120%;Margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:3px;" target="_blank"
+               href="{{ base_url_ctoa }}/projects/{{ project.slug }}?k={{ contact.key }}" style="display:inline-block;background:{{ base_color }};color:#ffffff;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:120%;Margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:3px;" target="_blank"
             >
               voir
             </a>
@@ -723,7 +896,7 @@
           <tbody>
             <tr>
               <td
-                 style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:20px;padding-top:20px;text-align:center;vertical-align:top;"
+                 style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:20px;padding-top:20px;text-align:center;"
               >
                 <!--[if mso | IE]>
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
@@ -736,7 +909,7 @@
           <![endif]-->
             
       <div
-         class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+         class="mj-column-per-100 outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
       >
         
       <table
@@ -749,10 +922,8 @@
               >
                 
       <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:10px;line-height:12px;text-align:left;color:#000000;"
-      >
-        Charles Saint Olive
-      </div>
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:10px;line-height:12px;text-align:left;color:#525252;"
+      >Charles Saint Olive</div>
     
               </td>
             </tr>
@@ -763,10 +934,8 @@
               >
                 
       <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:10px;line-height:12px;text-align:left;color:#000000;"
-      >
-        06 64 83 42 87
-      </div>
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:10px;line-height:12px;text-align:left;color:#525252;"
+      >06 64 83 42 87</div>
     
               </td>
             </tr>
@@ -777,10 +946,8 @@
               >
                 
       <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:10px;line-height:12px;text-align:left;color:#000000;"
-      >
-        embauche@charles-saint-olive.com
-      </div>
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:10px;line-height:12px;text-align:left;color:#525252;"
+      >charles.stolive@gmail.com</div>
     
               </td>
             </tr>
@@ -791,10 +958,8 @@
               >
                 
       <div
-         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:10px;line-height:12px;text-align:left;color:#000000;"
-      >
-        <a href="https://charles-saint-olive.com" style="color:#3a5059">charles-saint-olive.com</a>
-      </div>
+         style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:10px;line-height:12px;text-align:left;color:#525252;"
+      ><a href="https://charles-saint-olive.com" style="color:#3a5059">charles-saint-olive.com</a></div>
     
               </td>
             </tr>

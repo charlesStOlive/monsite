@@ -224,12 +224,25 @@ class SendEmails extends ControllerBehavior
         }
         $dataEmail['compostings'] = $compostings;
         $dataEmail['base_url_ctoa'] = getenv('URL_VUE');
-        $dataEmail['content'] = $dataCampaign;
+
+        $myMessages = [];
+        foreach($dataCampaign['messages'] as $msg) {
+            if (!$contact->strict && $msg['value-t']) {
+                $msg['value'] = $msg['value-t'];
+            } 
+            $myMessages[$msg['code']] = $msg['value'];
+        }
+        trace_log($myMessages);
+
+
+        $dataEmail['content'] =  $myMessages;
+
         //$dataEmail['url_cv'] = 'app/media/cv/'.$contact->cv_name.'.pdf';
         //Affectation sujet, cible etc. 
         $subject = $dataCampaign['subject'];
         $email = $contact->email;
         $isTest = false;
+        
         //Modification si c'est un test
         if($testEmail) {
             $email = $testEmail;
