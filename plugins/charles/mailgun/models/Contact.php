@@ -209,7 +209,6 @@ class Contact extends Model
             $code = new \October\Rain\Support\Collection($campaign->messages);
             $myArray = $code->pluck('code', 'code');
         }
-        trace_log($myArray);
         return $myArray;
     }
 }

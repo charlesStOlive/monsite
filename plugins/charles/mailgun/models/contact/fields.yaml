@@ -45,6 +45,7 @@ tabs:
                     code:
                         label: code du paragraphe à remplacer
                         type: dropdown
+                        placeholder: Choisissez un paragraphe
                         options: listParagraphCode
                     value:
                         type: richeditor

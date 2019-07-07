@@ -224,13 +224,12 @@ class SendEmails extends ControllerBehavior
         }
         $dataEmail['compostings'] = $compostings;
         $dataEmail['base_url_ctoa'] = getenv('URL_VUE');
-
         $myMessages = [];
         foreach($dataCampaign['messages'] as $msg) {
             if (!$contact->strict && $msg['value-t']) {
                 $msg['value'] = $msg['value-t'];
             }
-            if($dataCampaign->use_personalisation) {
+            if($dataCampaign['use_personalisation'] &&  $contact->show_message_perso )  {
                 $msgPerso = $this->getMessagePerso($contact->message_perso, $msg['code'] );
                 if($msgPerso)  $msg['value'] = $msgPerso;
             } 
