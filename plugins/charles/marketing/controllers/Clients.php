@@ -111,6 +111,7 @@ class Clients extends Controller
             $contact = new Contact;
             $contact->name = "Service";
             $contact->fname = "RH";
+            $contact->strict = true;
             $contact->client_id = post('id');
             $contact->email = $name.'@'.$data['email_suffix'];
             $contact->save();
