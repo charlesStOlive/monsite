@@ -1,0 +1,9 @@
+tabs:
+    stretch: true
+    defaultTab: Option Mailgun
+    fields:
+        cloudi_contact_id:
+            label: Id contact pour tests cloudis
+            type: dropdown
+            placeholder: choisissez un contact
+            options: listContacts

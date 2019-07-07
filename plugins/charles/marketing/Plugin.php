@@ -149,10 +149,10 @@ class Plugin extends PluginBase
             'site_settings' => [
                 'label'       => 'Site option',
                 'description' => 'Champs fixe du site en vue.',
-                'category'    => 'Site vue',
+                'category'    => 'Mes Options',
                 'icon'        => 'icon-cog',
                 'class'       => 'Charles\Marketing\Models\Settings',
-                'order'       => 500
+                'order'       => 1
                 // 'keywords'    => 'security location',
                 // 'permissions' => ['acme.users.access_settings']
             ]

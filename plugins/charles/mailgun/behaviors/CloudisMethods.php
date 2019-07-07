@@ -6,10 +6,12 @@ use Charles\Marketing\Models\Client;
 use Charles\Mailgun\Models\Contact;
 use Charles\Mailgun\Models\Cloudi;
 use Charles\Marketing\Models\Settings;
+use Charles\Mailgun\Models\Settings as MailgunSettings;
 //
 use Cloudder;
 use Flash;
 use Redirect;
+use ApplicationException;
 
 
 class CloudisMethods extends ControllerBehavior
@@ -87,14 +89,15 @@ class CloudisMethods extends ControllerBehavior
         Flash::success('Info OK');
     }
 
-    public function onTestImage($id='null') {
+    public function onTestImage($id=null) {
         if($id == 'null') {
             $id = post('id');
         }
         //
         $cloudi = Cloudi::find($id);
         //
-        $contact = Contact::first();
+        trace_log(MailgunSettings::get('cloudi_contact_id'));
+        $contact = Contact::find(MailgunSettings::get('cloudi_contact_id'));
         //Client et couleurs
         $client = $contact->client;
         $colorClient = $this->getColors($client);

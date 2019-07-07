@@ -170,4 +170,19 @@ class Plugin extends PluginBase
             ],
         ];
     }
+    public function registerSettings()
+    {
+        return [
+            'mailgun_settings' => [
+                'label'       => 'Options campagnes',
+                'description' => 'id de tests',
+                'category'    => 'Mes Options',
+                'icon'        => 'icon-cog',
+                'class'       => 'Charles\Mailgun\Models\Settings',
+                'order'       => 2
+                // 'keywords'    => 'security location',
+                // 'permissions' => ['acme.users.access_settings']
+            ]
+        ];
+    }
 }
