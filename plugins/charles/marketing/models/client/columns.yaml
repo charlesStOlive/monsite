@@ -17,6 +17,9 @@ columns:
         label: Coueur
         type: colorpicker
         clickable: false
+    updated_at:
+        label: MAJ
+        type: timesince
 
     
     

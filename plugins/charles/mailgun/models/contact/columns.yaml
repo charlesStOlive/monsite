@@ -37,5 +37,9 @@ columns:
         label: Cloudinary pictures
         relation: cloudis
         select: name
+    
+    updated_at:
+        label: MAJ
+        type: timesince
 
     
