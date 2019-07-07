@@ -14,7 +14,7 @@
       <mj-class name="small" font-size="10px" padding-top="0px" padding-bottom="0px" line-height="14px" color="#C9C9C9"></mj-class>
       <mj-class name="alinea" padding-top="0px" align="center"></mj-class>
       <mj-class name="texte-sans-padding" padding-top="0" padding-bottom="0px"></mj-class>
-      <mj-text line-height="20px"></mj-text>
+      <mj-text line-height="20px" color="#525252"></mj-text>
       <mj-class name="texte-footer" line-height="12px" font-size="10px" padding-bottom="0px"></mj-class>
       <mj-section padding-bottom="0px" padding-top="0px"></mj-section>
     </mj-attributes>
@@ -42,7 +42,7 @@
           {% if compostings.bookmailcontactclient is not null  %}{{ compostings.bookmailcontactclient }}{% else %}{{ compostings.bookmailcontact }}{% endif %}" alt="" width="200px" />
       </mj-column>
       <mj-column padding="0" width="400px">
-        <mj-text padding="0" color="#525252">
+        <mj-text padding="0" >
           {% if contact.show_message_perso %}
             {{ contact.message_perso[0].text | raw }}
           {% endif %}

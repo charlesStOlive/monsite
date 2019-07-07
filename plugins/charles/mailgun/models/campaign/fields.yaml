@@ -14,6 +14,12 @@ fields:
 
     template:
         label: Code du template
+        span: auto
+    
+    use_personalisation:
+        label: le template accèpte des blocs persos ? 
+        type: checkbox
+    
 
     # date_info_update:
     #     label: Date de mise à jours des données de ventes courtiers

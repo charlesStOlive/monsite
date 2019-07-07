@@ -197,5 +197,19 @@ class Contact extends Model
             $this->cloudis()->add($cloudi, $pivotData);
             }
       }
-
+    /**
+     * Lists
+     */
+    
+    public function listParagraphCode($fieldName, $value, $formData)
+    {
+        $myArray = '';
+        $campaigns = Campaign::where('use_personalisation',1)->get();
+        foreach($campaigns as $campaign) {
+            $code = new \October\Rain\Support\Collection($campaign->messages);
+            $myArray = $code->pluck('code', 'code');
+        }
+        trace_log($myArray);
+        return $myArray;
+    }
 }

@@ -16,6 +16,7 @@ tabs:
         strict:
             label: Utiliser la version stricte
             type: checkbox
+            default: 1
 
         email:
             label: email

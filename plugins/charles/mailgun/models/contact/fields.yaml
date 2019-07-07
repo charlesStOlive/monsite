@@ -16,6 +16,7 @@ tabs:
         strict:
             label: Utiliser la version stricte
             type: checkbox
+            default: 1
 
         email:
             label: email
@@ -29,14 +30,8 @@ tabs:
             nameFrom: name
             span: auto
 
-        show_intro: 
-            label: Utiliser l'intro commune du mail.
-            default: true
-            type: checkbox
-            tab: email
-
         show_message_perso:
-            label: Mettre un message perso 
+            label: Remplacer des paragraphes par des messages perso
             default: false
             type: checkbox
             tab: email
@@ -47,7 +42,11 @@ tabs:
             titleFrom: title_when_collapsed
             form:
                 fields:
-                    text:
+                    code:
+                        label: code du paragraphe à remplacer
+                        type: dropdown
+                        options: listParagraphCode
+                    value:
                         type: richeditor
                         size: huge
             trigger:

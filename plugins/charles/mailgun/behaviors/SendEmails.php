@@ -229,6 +229,10 @@ class SendEmails extends ControllerBehavior
         foreach($dataCampaign['messages'] as $msg) {
             if (!$contact->strict && $msg['value-t']) {
                 $msg['value'] = $msg['value-t'];
+            }
+            if($dataCampaign->use_personalisation) {
+                $msgPerso = $this->getMessagePerso($contact->message_perso, $msg['code'] );
+                if($msgPerso)  $msg['value'] = $msgPerso;
             } 
             $myMessages[$msg['code']] = $msg['value'];
         }
@@ -262,6 +266,16 @@ class SendEmails extends ControllerBehavior
                 $headers->addTextHeader('X-Mailgun-Variables', '{"email": "'. $contact->email . '", ' .'"campaign_id": "' . $dataCampaign['id'] . '"}');
             }
         });
+    }
+
+    public function getMessagePerso($msgs, $value) {
+        $messageToReturn = null;
+        foreach($msgs as $msg) {
+            if ($msg['code'] ==  $value) {
+                $messageToReturn = $msg['value'];
+            }
+        }
+        return $messageToReturn;
     }
 
 

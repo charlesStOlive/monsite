@@ -38,6 +38,9 @@
 1.0.13:
     - 'visits'
     - create_visits_table.php 
+1.0.14:
+    - 'add campaigns use personalisation'
+    - add_column_campaigns_use_personalisation.php
 
 
     
