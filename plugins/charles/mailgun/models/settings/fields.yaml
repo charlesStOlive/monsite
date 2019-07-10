@@ -7,3 +7,13 @@ tabs:
             type: dropdown
             placeholder: choisissez un contact
             options: listContacts
+        lettre_motivation:
+            type: repeater
+            tab: Lettre Motivation
+            form:
+                fields:
+                    code:
+                        label: code paragraphe
+                    value:
+                        type: richeditor
+                        size: huge

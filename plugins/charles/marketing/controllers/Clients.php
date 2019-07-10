@@ -25,14 +25,13 @@ class Clients extends Controller
         'Backend.Behaviors.FormController',
         'Backend.Behaviors.ListController',
         'Backend.Behaviors.RelationController',
-        'Charles.Mybehaviors.Behaviors.PdfCvExport',
+        'Charles.Mybehaviors.Behaviors.ActionExport',
         'Charles.Mailgun.Behaviors.SendEmails',
     ];
 
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
     public $relationConfig = 'config_relation.yaml';
-    public $pdfConfig = 'config_pdfexport.yaml';
     public $logoColors = null;
     //
     protected $autoCreateContactWidget;

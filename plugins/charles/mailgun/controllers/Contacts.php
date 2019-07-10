@@ -25,7 +25,7 @@ class Contacts extends Controller
         'Charles.Mailgun.Behaviors.SendEmails',
         'Charles.Mailgun.Behaviors.CloudisMethods',
         'Charles.Mybehaviors.Behaviors.DuplicateModel',
-        'Charles.Mybehaviors.Behaviors.PdfCvExport',
+        'Charles.Mybehaviors.Behaviors.ActionExport',
         'Backend.Behaviors.RelationController',
 
     ];
@@ -33,7 +33,6 @@ class Contacts extends Controller
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
     public $duplicateConfig = 'config_duplicate.yaml';
-    public $pdfConfig = 'config_pdfexport.yaml';
     public $relationConfig = 'config_relation.yaml';
 
     public function __construct()

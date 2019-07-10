@@ -20,21 +20,13 @@
     <!-- <button class="btn btn-primary oc-icon-file-pdf-o" data-request="onLoadClient"
         data-request-data="id:<?=$this->params[0];?>" data-size="large">
         Fiche client
-    </button> -->
-    <button
-        href="javascript:;"
-        class="btn btn-primary oc-icon-envelope "
-        data-request-data="id:<?=$this->params[0];?>"
-        data-control="popup"
-        data-handler="onLoadSendEmailUniqueForm"
-        data-hotkey="ctrl+i, cmd+i"
-       >
+    </button> --> 
+<button href="javascript:;" class="btn btn-primary oc-icon-pencil"
+        data-request-data="id:<?= $this->params[0] ?>" data-control="popup" data-handler="onLoadActionExportForm"
+        data-hotkey="ctrl+i, cmd+i">
+        Actions
 </button>
-<!-- <button class="btn btn-primary oc-icon-file-pdf-o  " data-request="onLoadPdfExport"
-        data-request-data="id:<?=$this->params[0];?>" data-size="large"></button> -->
-        <?= $keyClient = Charles\Mailgun\Models\Contact::find($this->params[0])->key;?>
-<a class="btn btn-primary oc-icon-file-pdf-o" href="<?= url('/maker/pdfcvtest/'.$keyClient)?>" target="_blank"></a>
-<a class="btn btn-primary oc-icon-desktop  mr-1" href="<?= getenv('URL_VUE').'?k='.$keyClient?>" target="_blank"></a>
+
 
 
 </div>

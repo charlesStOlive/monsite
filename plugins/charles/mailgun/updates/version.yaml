@@ -41,6 +41,9 @@
 1.0.14:
     - 'add campaigns use personalisation'
     - add_column_campaigns_use_personalisation.php
+1.0.15:
+    - 'jout du champs messages_lm'
+    - add_column_contacts_lm.php
 
 
     

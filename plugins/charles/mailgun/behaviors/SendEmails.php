@@ -5,9 +5,6 @@ use Backend\Classes\ControllerBehavior;
 
 use Charles\Mailgun\Models\Contact;
 use Charles\Mailgun\Models\Campaign;
-use Charles\Marketing\Models\Moa;
-use Charles\Marketing\Models\Project;
-use Charles\Marketing\Models\Settings;
 
 use Flash;
 use Redirect;
@@ -198,32 +195,15 @@ class SendEmails extends ControllerBehavior
         $contact = Contact::with('region')->find($idContact);
         //création du array data email
         $dataEmail = [];
-        $settings = Settings::instance()->value;
-        $dataEmail['base_color'] = $settings['base_color'];
-        if($contact->client) {
-            $dataEmail['base_color'] = $contact->client->base_color;
-        }
+        $dataEmail['base_color'] = $contact->clientColor;
         $dataEmail['contact_environement'] = $contact->contactEnvironement;
-        //$dataEmail['base_color'] = $contact->client->base_color;
         $dataEmail['contact'] = $contact->toArray();
-        $dataEmail['target'] = $contact->target()->get(['name', 'slug'])->toArray();
-        //
-        if($contact->projects()->count()) {
-            $dataEmail['projects'] = $contact->projects()->get(['name', 'slug', 'accroche'])->toArray();
-        } else {
-            $dataEmail['projects'] = Project::whereIn('id', array(2, 6, 8))->get(['name', 'slug', 'accroche'])->toArray();
-        }
-        if($contact->moas()->count()) {
-            $dataEmail['moas'] = $contact->moas()->get(['name', 'slug', 'accroche'])->toArray();
-        } else {
-            $dataEmail['moas'] = Moa::whereIn('id', array(4, 7, 8))->get(['name', 'slug', 'accroche'])->toArray();
-        }
-        $compostings = new \October\Rain\Support\Collection();
-        foreach ($contact->cloudis as $cloudi) {
-            $compostings->put($cloudi->name, $cloudi->pivot->url );
-        }
-        $dataEmail['compostings'] = $compostings;
+        $dataEmail['projects'] = $contact->projectsDefault;
+        $dataEmail['moas'] = $contact->moasDefault;
+        $dataEmail['compostings'] = $contact->cloudisDefault;
         $dataEmail['base_url_ctoa'] = getenv('URL_VUE');
+        //
+        //
         $myMessages = [];
         foreach($dataCampaign['messages'] as $msg) {
             if (!$contact->strict && $msg['value-t']) {
@@ -235,9 +215,6 @@ class SendEmails extends ControllerBehavior
             } 
             $myMessages[$msg['code']] = $msg['value'];
         }
-        trace_log($myMessages);
-
-
         $dataEmail['content'] =  $myMessages;
 
         //$dataEmail['url_cv'] = 'app/media/cv/'.$contact->cv_name.'.pdf';

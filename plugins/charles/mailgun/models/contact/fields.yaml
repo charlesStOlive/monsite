@@ -54,6 +54,21 @@ tabs:
                 action: show
                 field: show_message_perso
                 condition: checked
+        
+        messages_lm:
+            type: repeater
+            tab: Lettre Motivation
+            titleFrom: title_when_collapsed
+            form:
+                fields:
+                    code:
+                        label: code paragraphe
+                        type: dropdown
+                        placeholder: Choisissez un paragraphe
+                        options: listParagraphLMCode
+                    value:
+                        type: richeditor
+                        size: huge
 
         target:
             type: relation

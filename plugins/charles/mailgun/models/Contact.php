@@ -1,6 +1,8 @@
 <?php namespace Charles\Mailgun\Models;
 
 use Charles\Marketing\Models\Client;
+use Charles\Marketing\Models\Project;
+use Charles\Marketing\Models\Moa;
 use Model;
 use Validator;
 use Storage;
@@ -38,7 +40,7 @@ class Contact extends Model
      */
     protected $fillable = ['id'];
 
-    protected $jsonable = ['message_perso'];
+    protected $jsonable = ['message_perso', 'messages_lm'];
 
     protected $casts = [
         'nameFname' => 'string',
@@ -173,6 +175,40 @@ class Contact extends Model
         $key = $this->id;
         return Crypt::encrypt($key);
     }
+
+    public function getClientColorAttribute() {
+        $value=null;
+        $value = Settings::get('base_color');
+        if($this->client) {
+            if($this->client->base_color) $value = $this->client->base_color;
+        }
+        return $value;
+    }
+    public function getProjectsDefaultAttribute() {
+        $value= null;
+        if($this->projects()->count()) {
+            $value = $this->projects()->get(['name', 'slug', 'accroche'])->toArray();
+        } else {
+            $value = Project::whereIn('id', array(2, 6, 8))->get(['name', 'slug', 'accroche'])->toArray();
+        }
+        return $value;
+    }
+    public function getMoasDefaultAttribute() {
+        $value= null;
+        if($this->moas()->count()) {
+            $value = $this->moas()->get(['name', 'slug', 'accroche'])->toArray();
+        } else {
+            $value = Moa::whereIn('id', array(4, 7, 8))->get(['name', 'slug', 'accroche'])->toArray();
+        }
+        return $value;
+    }
+    public function getCloudisDefaultAttribute() {
+        $values = new \October\Rain\Support\Collection();
+        foreach ($this->cloudis as $cloudi) {
+            $values->put($cloudi->slug, $cloudi->pivot->url );
+        }
+        return $values;
+    }
     /**
      * SETTERS
      */
@@ -209,6 +245,14 @@ class Contact extends Model
             $code = new \October\Rain\Support\Collection($campaign->messages);
             $myArray = $code->pluck('code', 'code');
         }
+        return $myArray;
+    }
+
+    public function listParagraphLMCode($fieldName, $value, $formData)
+    {
+        $myArray = '';
+        $lm = new \October\Rain\Support\Collection(Settings::get('lettre_motivation'));
+        $myArray =  $lm->pluck('code', 'code');
         return $myArray;
     }
 }

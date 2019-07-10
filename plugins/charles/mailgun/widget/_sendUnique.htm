@@ -1,32 +1,6 @@
-<!-- <?php
 
-$contact = Charles\Mailgun\Models\Contact::find($record->id);
-
-if($contact->eligible) {
-
-?> -->
-
-<button
-        href="javascript:;"
-        class="btn oc-icon-envelope"
-        data-request-data="id:<?=$record->id?>"
-        data-control="popup"
-        data-handler="onLoadSendEmailUniqueForm"
-        data-hotkey="ctrl+i, cmd+i"
-       >
+<button href="javascript:;" class="btn btn-primary oc-icon-pencil"
+        data-request-data="id:<?=$record->id?>" data-control="popup" data-handler="onLoadActionExportForm"
+        data-hotkey="ctrl+i, cmd+i">
+        Actions
 </button>
- 
-<a class="btn oc-icon-file-pdf-o" href="<?= url('/maker/pdfcvtest/'.$record->key)?>" target="_blank"></a>
-<a class="btn oc-icon-desktop" href="<?= getenv('URL_VUE').'?k='.$record->key?>" target="_blank"></a>
-<button class="btn btn-danger oc-icon-eraser  mr-1" data-request="onRemoveStats"
-        data-request-data="id:<?=$record->id?>" data-size="large"></button>
-
-
-<!-- <?php
-} else {
-        ?>
-<span>Contact non éligible au mail</span>
-
-<?php
-} 
-?>-->

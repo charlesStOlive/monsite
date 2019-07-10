@@ -6,6 +6,7 @@ use Backend\Classes\ControllerBehavior;
 use October\Rain\Exception\ApplicationException;
 use Renatio\DynamicPDF\Classes\PDFWrapper;
 use Charles\Marketing\Models\Settings;
+use Charles\Mailgun\Models\Settings as MailgunSettings;
 use Charles\Marketing\Models\Experience;
 use Charles\Mailgun\Models\Contact;
 use Charles\Mailgun\Models\Visit;
@@ -45,6 +46,35 @@ class PdfCvController {
                 ->loadTemplate($templateCode, compact('data'))
                 ->setOptions($options)
                 ->stream();
+
+        } catch (Exception $e) {
+            throw new ApplicationException($e->getMessage());
+        }
+    }
+
+    public function lettreMotivation($user_key)
+    {
+        $templateCode = "lettre-de-motivation";
+        $data = $this->prepareLM($user_key);
+        /**
+         * Construction du pdf
+         */
+        try {
+            /** @var PDFWrapper $pdf */
+            $pdf = app('dynamicpdf');
+
+            $options = [
+                'logOutputFile' => storage_path('temp/log.htm'),
+                'isRemoteEnabled' => true,
+            ];
+
+            //$data->visits()->add(new Visit(['type' => 'lm_pdf']));
+
+
+            return $pdf
+                ->loadTemplate($templateCode, compact('data'))
+                ->setOptions($options)
+                ->download($data['file_name']);
 
         } catch (Exception $e) {
             throw new ApplicationException($e->getMessage());
@@ -114,12 +144,50 @@ class PdfCvController {
                 if(array_key_exists('fonctionel', $clientOption)) $settings['cv_option']['fonctionel'] = $clientOption['fonctionel'];
             }
         }
+        $data['base_color'] = $data->clientColor;
         $data['settings'] = $settings;
         $data['base_url_ctoa'] = getenv('URL_VUE');
         $data['contact_environement'] = $data->contactEnvironement;
 
         return $data;
 
+    }
+
+    public function prepareLM($user_key) {
+        //
+        $data = Contact::where('key', $user_key)->first();
+        if ($data === null) {
+            throw new ApplicationException('model not found.');
+        }
+        //
+        $myMessages = [];
+        foreach(MailgunSettings::get('lettre_motivation') as $msg) {
+            $myMessages[$msg['code']] = $msg['value'];
+            $msgPerso = $this->getMessagePerso($data->messages_lm, $msg['code'] );
+            if($msgPerso)  $msg['value'] = $msgPerso;
+            $myMessages[$msg['code']] = $msg['value'];
+        }
+        trace_log($myMessages);
+        $data['file_name'] = "lettre_m_saint_olive_pour_".$data->client->slug.".pdf";
+        $data['base_color'] = $data->clientColor;
+        $data['contents'] =  $myMessages;
+        $data['base_url_ctoa'] = getenv('URL_VUE');
+        $data['contact_environement'] = $data->contactEnvironement;
+        $data['compostings'] = $data->cloudisDefault;
+        trace_log($data);
+        return $data;
+
+    }
+
+    public function getMessagePerso($msgs, $value) {
+        $messageToReturn = null;
+        if(!$msgs) return null;
+        foreach($msgs as $msg) {
+            if ($msg['code'] ==  $value) {
+                $messageToReturn = $msg['value'];
+            }
+        }
+        return $messageToReturn;
     }
 
 }

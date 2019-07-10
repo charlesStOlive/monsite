@@ -1,0 +1,37 @@
+<?= Form::open() ?>
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="popup">×</button>
+    <h4 class="modal-title">
+        Que voulez vous faire ? 
+    </h4>
+</div>
+
+<div class="modal-body">
+   
+</div>
+
+<div class="modal-footer">
+        <button
+            href="javascript:;"
+            class="btn btn-primary oc-icon-envelope"
+            data-request-data="id:<?=$modelId?>,close:1"
+            data-control="popup"
+            data-dismiss="popup"
+            data-handler="onLoadSendEmailUniqueForm"
+            data-hotkey="ctrl+i, cmd+i"
+        >
+    </button>
+    <a class="btn btn-primary oc-icon-file-pdf-o" href="<?= url('/maker/pdfcvtest/'.$keyClient)?>" target="_blank"></a>
+    <a class="btn btn-primary oc-icon-desktop  mr-1" href="<?= getenv('URL_VUE').'?k='.$keyClient?>" target="_blank"></a>
+    <a class="btn btn-primary oc-icon-file-pdf-o" href="<?= url('/maker/pdflm/'.$keyClient)?>" target="_blank"></a>
+
+    <button
+            type="button"
+            class="btn btn-default"
+            data-dismiss="popup">
+      Annuler
+    </button>
+</div>
+
+<?= Form::close() ?>
