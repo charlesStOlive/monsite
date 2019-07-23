@@ -1,0 +1,126 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    defaultTab: Accueil
+    fields:
+        name:
+            label: Nom
+            span: auto
+
+        slug:
+            label: Slug
+            preset: name
+            span: auto
+
+        url:
+            label: URL
+            type: mediafinder
+            mode: image
+            span: auto
+        
+        scene:
+            label: Scène de l'objet
+            type: relation
+        
+        position:
+            tab: Position/Rotation/Scale
+            label: Position
+            type: nestedform
+            usePanelStyles: true
+            form:
+                fields:
+                    _x:
+                        label: pos x
+                        default: 0
+                        span: storm
+                        cssClass: col-sm-4
+                    _y:
+                        label: pos y
+                        default: 0
+                        span: storm
+                        cssClass: col-sm-4
+                    _z:
+                        label: pos z
+                        default: 0
+                        span: storm
+                        cssClass: col-sm-4
+        rotation:
+            tab: Position/Rotation/Scale
+            label: Rotation
+            type: nestedform
+            usePanelStyles: true
+            form:
+                fields:
+                    _x:
+                        label: rot x
+                        default: 0
+                        span: storm
+                        cssClass: col-sm-4
+                    _y:
+                        label: rot y
+                        default: 0
+                        span: storm
+                        cssClass: col-sm-4
+                    _z:
+                        label: rot z
+                        default: 0
+                        span: storm
+                        cssClass: col-sm-4
+        scale:
+            tab: Position/Rotation/Scale
+            label: Rotation
+            type: nestedform
+            usePanelStyles: true
+            form:
+                fields:
+                    _x:
+                        label: scale x
+                        default: 1
+                        span: storm
+                        cssClass: col-sm-4
+                    _y:
+                        label: scale y
+                        default: 1
+                        span: storm
+                        cssClass: col-sm-4
+                    _z:
+                        label: scale z
+                        default: 1
+                        span: storm
+                        cssClass: col-sm-4
+
+        replace_tex:
+            tab: textures
+            label: Remplacer la texture
+            span: auto
+            type: checkbox
+            default: 0
+
+        new_tex:
+            tab: textures
+            label: Nouvelle texture
+            span: auto
+            trigger:
+                action: show
+                field: pivot[replace_tex]
+                condition: checked
+
+        has_mesh_animes:
+                tab: Animations
+                label: Y a t il des animations ?
+                span: auto
+                type: checkbox
+                default: 0
+                
+        mesh_animes:
+            label: Animations
+            tab: Animations
+            type: repeater
+            prompt: Liste des animations existantes dans l'objet
+            groups: $/charles/troisd/models/mesh/repeater_fields.yaml
+            trigger:
+                action: show
+                field: has_mesh_animes
+                condition: checked

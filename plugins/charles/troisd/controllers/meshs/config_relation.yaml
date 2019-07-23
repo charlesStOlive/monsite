@@ -1,0 +1,19 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+
+      
+hps:
+    label: HP
+    view:
+        list: $/charles/troisd/models/hp/columns.yaml
+        toolbarButtons: add|create|delete
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+        list: $/charles/troisd/models/hp/columns.yaml
+        form: $/charles/troisd/models/hp/fields.yaml
+
+
+

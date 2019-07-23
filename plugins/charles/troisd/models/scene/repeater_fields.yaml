@@ -1,0 +1,67 @@
+skybox:
+    name: Sky Box
+    description: Ajouter un skyBox
+    icon: icon-repeat
+    fields:
+        activate:
+            label: Activer un skybox
+            type: checkbox
+            default: 1
+            span: auto
+        size:
+            label: Taille
+            type: number
+            default: 1000
+            span: auto
+        texture:
+            label: Texture
+            type: dropdown
+            options: 
+                sunny: "3d/textures/TropicalSunnyDay"
+                night: "3d/textures/TropicalSunnyDay"
+            span: auto
+        disableLighting:
+            label: Supprimer la lumière
+            type: checkbox
+            default: 1
+            span: auto
+        
+water:
+    name: Ajouter de l'eau
+    icon: icon-long-arrow-right
+    fields:
+        activate:
+            label: Activer l'eau
+            type: checkbox
+            default: 1
+            span: auto
+        _y:
+            label: Hauteur de l'eau
+            type: Number
+            span: auto
+            default: -0.1
+        windForce:
+            label: force du vent
+            type: number
+            span: auto
+            default: -2
+        waveHeight:
+            label: Hauteur des vagues
+            type: number
+            span: auto
+            default: 0.1
+        bumpHeight:
+            label: Hauteur des irégularités
+            type: number
+            span: auto
+            default: 0.1
+        waveLength:
+            label: Longueur des vagues
+            type: number
+            span: auto
+            default: 0.05
+        colorBlendFactor:
+            label: Color blend factor
+            type: number
+            span: auto
+            default: 0.1

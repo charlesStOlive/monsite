@@ -1,0 +1,8 @@
+1.0.1: 
+- 'First version of Troisd'
+- create_instances_table.php
+- create_hps_table.php
+- create_hps_tags_table.php
+- create_meshs_table.php
+- create_scenes_table.php
+- create_tags_table.php

@@ -1,0 +1,34 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Nom
+        span: auto
+
+    slug:
+        label: Slug
+        preset: name
+        span: auto
+
+    template_name:
+        label: Nom du template
+        type: dropdown
+        options:
+            base: "Basic"
+            fog: "Fumée"
+            plane: "Avion"
+        span: auto
+
+    meshs:
+        type: partial
+        path: field_meshs   
+    
+    environements:
+        label: Ajouter des environements
+        type: repeater
+        prompt: Ajouter skybox, water, ground, etc. 
+        groups: $/charles/troisd/models/scene/repeater_fields.yaml
+    
+

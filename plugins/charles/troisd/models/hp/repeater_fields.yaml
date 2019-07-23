@@ -1,0 +1,20 @@
+text:
+    name: HTML text
+    icon: icon-file-text-o
+    fields:
+        txt:
+            type: richeditor
+        
+picture:
+    name: Picture
+    description: Ajouter une image
+    icon: icon-picture-o
+    fields:
+        value:
+            label: Picture
+            type: mediafinder
+            mode: image
+            prompt: choose image
+            imageWidth: 160
+            imageHeight: 90
+            span: auto

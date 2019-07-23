@@ -1,0 +1,20 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+
+      
+meshs:
+    label: Objets
+    view:
+        list: $/charles/troisd/models/mesh/columns.yaml
+        toolbarButtons: add|create|delete
+    manage:
+        showSearch: true
+        recordsPerPage: 20
+        list: $/charles/troisd/models/mesh/columns.yaml
+        form: $/charles/troisd/models/mesh/fields_for_scene.yaml
+
+
+
+
