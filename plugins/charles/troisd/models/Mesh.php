@@ -10,7 +10,7 @@ class Mesh extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'charles_troisd_meshes';
+    public $table = 'charles_troisd_meshs';
 
     /**
      * @var array Guarded fields
