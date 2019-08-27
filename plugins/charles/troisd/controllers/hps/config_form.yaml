@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Hp
+
+# Model Form Field configuration
+form: $/charles/troisd/models/hp/fields.yaml
+
+# Model Class name
+modelClass: Charles\Troisd\Models\Hp
+
+# Default redirect location
+defaultRedirect: charles/troisd/hps
+
+# Create page
+create:
+    title: Create Hp
+    redirect: charles/troisd/hps/update/:id
+    redirectClose: charles/troisd/hps
+
+# Update page
+update:
+    title: Edit Hp
+    redirect: charles/troisd/hps
+    redirectClose: charles/troisd/hps
+
+# Preview page
+preview:
+    title: Preview Hp

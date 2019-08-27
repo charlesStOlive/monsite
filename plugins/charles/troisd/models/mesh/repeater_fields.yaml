@@ -1,0 +1,33 @@
+repeat:
+    name: Boucle
+    description: Les animations en boucles
+    icon: icon-repeat
+    fields:
+        slug:
+            span: auto
+            label: Code de l'animation en boucle
+        wait:
+            span: auto
+            label: Attente entre 2 boucles
+            default: 0
+        auto_play:
+            label: Jouer automatiquement
+            type: checkbox
+            default: 0
+        
+oneway:
+    name: Animation unique
+    icon: icon-long-arrow-right
+    fields:
+        slug:
+            label: Code de l'animation unique
+            span: auto
+        waitbefore:
+            span: auto
+            label: Attente avant de lancer l'animation
+            default: 0
+        auto_play:
+            label: Jouer automatiquement
+            type: checkbox
+            default: 0
+            span: auto

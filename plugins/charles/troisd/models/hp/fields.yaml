@@ -1,0 +1,130 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    stretch: true
+    defaultTab: Accueil
+    fields:
+        name:
+            label: Nom HP
+            span: auto
+
+        slug:
+            label: Slug
+            preset: name
+            span: auto
+        is_ready:
+            label: HP pret pour production ?
+            type: checkbox
+            default: 0
+            span: auto
+        
+        type_btn:
+            type: dropdown
+            options:
+                pills: "Pills"
+                object: "Objet"
+            span: auto
+
+        
+        position:
+            label: Position
+            type: nestedform
+            usePanelStyles: true
+            form:
+                fields:
+                    _x:
+                        label: pos x
+                        default: 0
+                        span: storm
+                        cssClass: col-sm-4
+                    _y:
+                        label: pos y
+                        default: 0
+                        span: storm
+                        cssClass: col-sm-4
+                    _z:
+                        label: pos z
+                        default: 0
+                        span: storm
+                        cssClass: col-sm-4
+
+        is_launch_content:
+            tab: Contenu
+            label: Lancer du contenu ?
+            span: auto
+            type: checkbox
+            defaultValue: 0
+        
+        type_interface:
+            tab: Contenu
+            type: dropdown
+            options:
+                left: "Volet Droit"
+                bottom: "Volet bas"
+                full: "Volt Complet"
+                middle: "Popup milieu"
+            span: auto
+            trigger:
+                action: show
+                field: is_launch_content
+                condition: checked
+        
+        content:
+            tab: Contenu
+            label: Contenu
+            type: repeater
+            prompt: Ajouter du contenu
+            groups: $/charles/troisd/models/hp/repeater_fields.yaml
+            trigger:
+                action: show
+                field: is_launch_content
+                condition: checked
+
+        is_filter_hps_tags:
+            tab: Tag
+            label: Filtrer des tags ?
+            span: auto
+            type: checkbox
+            defaultValue: 0
+
+        is_launch_mesh_animes:
+            tab: Animation
+            label: Lancer une animation ?
+            span: auto
+            type: checkbox
+            defaultValue: 0
+        
+        launch_mesh_animes:
+            tab: Animation
+            type: repeater
+            prompt: Liste des animations à lancer
+            form:
+                fields:
+                    action:
+                        label: Action
+                        type: dropdown
+                        options:
+                            play: Play
+                            stop: Stop
+                            reverse: Lecture arrière
+                        span: auto
+                    name: 
+                        label: Nom de l'animation
+                        type: dropdown
+                        options: listMeshAnimes
+                        span: auto
+
+            trigger:
+                action: show
+                field: is_launch_mesh_animes
+                condition: checked
+        
+
+        
+        
+
+        
+
+        

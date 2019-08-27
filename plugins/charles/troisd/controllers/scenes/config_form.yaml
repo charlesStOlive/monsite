@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Scene
+
+# Model Form Field configuration
+form: $/charles/troisd/models/scene/fields.yaml
+
+# Model Class name
+modelClass: Charles\Troisd\Models\Scene
+
+# Default redirect location
+defaultRedirect: charles/troisd/scenes
+
+# Create page
+create:
+    title: Create Scene
+    redirect: charles/troisd/scenes/update/:id
+    redirectClose: charles/troisd/scenes
+
+# Update page
+update:
+    title: Edit Scene
+    redirect: charles/troisd/scenes
+    redirectClose: charles/troisd/scenes
+
+# Preview page
+preview:
+    title: Preview Scene

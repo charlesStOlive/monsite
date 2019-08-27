@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Instance
+
+# Model Form Field configuration
+form: $/charles/troisd/models/instance/fields.yaml
+
+# Model Class name
+modelClass: Charles\Troisd\Models\Instance
+
+# Default redirect location
+defaultRedirect: charles/troisd/instances
+
+# Create page
+create:
+    title: Create Instance
+    redirect: charles/troisd/instances/update/:id
+    redirectClose: charles/troisd/instances
+
+# Update page
+update:
+    title: Edit Instance
+    redirect: charles/troisd/instances
+    redirectClose: charles/troisd/instances
+
+# Preview page
+preview:
+    title: Preview Instance

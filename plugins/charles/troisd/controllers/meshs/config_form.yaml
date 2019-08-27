@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Mesh
+
+# Model Form Field configuration
+form: $/charles/troisd/models/mesh/fields.yaml
+
+# Model Class name
+modelClass: Charles\Troisd\Models\Mesh
+
+# Default redirect location
+defaultRedirect: charles/troisd/meshs
+
+# Create page
+create:
+    title: Create Mesh
+    redirect: charles/troisd/meshs/update/:id
+    redirectClose: charles/troisd/meshs
+
+# Update page
+update:
+    title: Edit Mesh
+    redirect: charles/troisd/meshs
+    redirectClose: charles/troisd/meshs
+
+# Preview page
+preview:
+    title: Preview Mesh
