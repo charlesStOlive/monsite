@@ -107,6 +107,32 @@ class PdfCvController {
         }
     }
 
+    public function downloadCv($user_key)
+    {
+        $templateCode = "cv_1";
+        $data = $this->preparePdf($user_key);
+        /**
+         * Construction du pdf
+         */
+        try {
+            /** @var PDFWrapper $pdf */
+            $pdf = app('dynamicpdf');
+
+            $options = [
+                'logOutputFile' => storage_path('temp/log.htm'),
+                'isRemoteEnabled' => true,
+            ];
+
+            return $pdf
+                ->loadTemplate($templateCode, compact('data'))
+                ->setOptions($options)
+                ->download($data['file_name']);
+
+        } catch (Exception $e) {
+            throw new ApplicationException($e->getMessage());
+        }
+    }
+
     public function preparePdf($user_key) {
         //
         $data = Contact::where('key', $user_key)->first();
@@ -148,6 +174,7 @@ class PdfCvController {
         $data['settings'] = $settings;
         $data['base_url_ctoa'] = getenv('URL_VUE');
         $data['contact_environement'] = $data->contactEnvironement;
+        $data['file_name'] = "cv_saint_olive_pour_".$data->client->slug.".pdf";
 
         return $data;
 
