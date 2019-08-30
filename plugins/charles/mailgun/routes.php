@@ -14,6 +14,7 @@ Route::get('maker/pdfreport/{user_id}/{sendDate?}/', 'Charles\Mailgun\Controller
 Route::get('maker/pdfcv/{user_key}', 'Charles\Mailgun\Controllers\PdfCvController@index');
 Route::get('maker/pdflm/{user_key}', 'Charles\Mailgun\Controllers\PdfCvController@lettreMotivation');
 Route::get('maker/pdfcvtest/{user_key}', 'Charles\Mailgun\Controllers\PdfCvController@test');
+Route::get('maker/pdfcvdownload/{user_key}', 'Charles\Mailgun\Controllers\PdfCvController@downloadCv');
 //
 Route::get('api/user/{userkey?}', 'Charles\Mailgun\Controllers\UserApiController@index');
 //
