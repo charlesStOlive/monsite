@@ -94,6 +94,10 @@ class Google_Service_CloudHealthcare_Resource_ProjectsLocationsDatasetsDicomStor
    * requested. See the operation documentation for the appropriate value for this
    * field.
    * @param array $optParams Optional parameters.
+   *
+   * @opt_param int options.requestedPolicyVersion Optional. The policy format
+   * version to be returned. Acceptable values are 0, 1, and 3. If the value is 0,
+   * or the field is omitted, policy format version 1 will be returned.
    * @return Google_Service_CloudHealthcare_Policy
    */
   public function getIamPolicy($resource, $optParams = array())
@@ -106,8 +110,9 @@ class Google_Service_CloudHealthcare_Resource_ProjectsLocationsDatasetsDicomStor
    * Imports data into the DICOM store by copying it from the specified source.
    * For errors, the Operation will be populated with error details (in the form
    * of ImportDicomDataErrorDetails in error.details), which will hold finer-
-   * grained error information. The metadata field type is OperationMetadata.
-   * (dicomStores.import)
+   * grained error information. Errors are also logged to Stackdriver (see
+   * [Viewing logs](/healthcare/docs/how-tos/stackdriver-logging)). The metadata
+   * field type is OperationMetadata. (dicomStores.import)
    *
    * @param string $name The name of the DICOM store resource into which the data
    * is imported (e.g., `projects/{project_id}/locations/{location_id}/datasets/{d

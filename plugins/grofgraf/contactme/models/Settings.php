@@ -16,6 +16,8 @@ class Settings extends Model
         'email' => ['required', 'email'],
         'name_label' => ['required'],
         'email_label' => ['required'],
+        'subject_label' => ['required_if:enable_subject,1'],
+        'phone_number_label' => ['required_if:enable_phone_number,1'],
         'message_label' => ['required'],
         'button_text' => ['required'],
         'confirmation_message' => ['required'],
@@ -30,8 +32,10 @@ class Settings extends Model
     public $translatable = [
       'name_label',
       'email_label',
+      'subject_label',
+      'phone_number_label',
       'attachment_label',
-      'message_content',
+      'message_label',
       'button_text',
       'captcha_label',
       'confirmation_message',
@@ -47,7 +51,7 @@ class Settings extends Model
     public $settingsFields = 'fields.yaml';
 
     public function filterFields($fields, $context = null){
-      if (class_exists("\GrofGraf\MailgunSubscribe\Components\SubscribeForm")) {
+      if (class_exists("\GrofGraf\MailgunSubscribe\Components\SubscribeForm") || class_exists("\GrofGraf\LocalMaillist\Components\SubscribeForm")) {
         $fields->auto_subscribe->hidden = false;
         $fields->maillist_title->hidden = false;
         $fields->maillist_subscribe_label->hidden = false;

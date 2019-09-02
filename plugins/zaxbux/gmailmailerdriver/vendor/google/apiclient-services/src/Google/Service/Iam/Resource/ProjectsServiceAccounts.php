@@ -105,8 +105,9 @@ class Google_Service_Iam_Resource_ProjectsServiceAccounts extends Google_Service
    * (serviceAccounts.enable)
    *
    * @param string $name The resource name of the service account in the following
-   * format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_UNIQUE_ID}'. Using
-   * `-` as a wildcard for the `PROJECT_ID` will infer the project from the
+   * format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. Using `-` as a
+   * wildcard for the `PROJECT_ID` will infer the project from the account. The
+   * `ACCOUNT` value can be the `email` address or the `unique_id` of the service
    * account.
    * @param Google_Service_Iam_EnableServiceAccountRequest $postBody
    * @param array $optParams Optional parameters.
@@ -154,6 +155,10 @@ class Google_Service_Iam_Resource_ProjectsServiceAccounts extends Google_Service
    * requested. See the operation documentation for the appropriate value for this
    * field.
    * @param array $optParams Optional parameters.
+   *
+   * @opt_param int options.requestedPolicyVersion Optional. The policy format
+   * version to be returned. Acceptable values are 0, 1, and 3. If the value is 0,
+   * or the field is omitted, policy format version 1 will be returned.
    * @return Google_Service_Iam_Policy
    */
   public function getIamPolicy($resource, $optParams = array())
@@ -170,12 +175,12 @@ class Google_Service_Iam_Resource_ProjectsServiceAccounts extends Google_Service
    * with the service accounts, such as `projects/my-project-123`.
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string pageToken Optional pagination token returned in an earlier
+   * ListServiceAccountsResponse.next_page_token.
    * @opt_param int pageSize Optional limit on the number of service accounts to
    * include in the response. Further accounts can subsequently be obtained by
    * including the ListServiceAccountsResponse.next_page_token in a subsequent
    * request.
-   * @opt_param string pageToken Optional pagination token returned in an earlier
-   * ListServiceAccountsResponse.next_page_token.
    * @return Google_Service_Iam_ListServiceAccountsResponse
    */
   public function listProjectsServiceAccounts($name, $optParams = array())
@@ -315,7 +320,7 @@ class Google_Service_Iam_Resource_ProjectsServiceAccounts extends Google_Service
    * (serviceAccounts.undelete)
    *
    * @param string $name The resource name of the service account in the following
-   * format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_UNIQUE_ID}'. Using
+   * format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_UNIQUE_ID}`. Using
    * `-` as a wildcard for the `PROJECT_ID` will infer the project from the
    * account.
    * @param Google_Service_Iam_UndeleteServiceAccountRequest $postBody
