@@ -57,8 +57,8 @@ class Google_Service_CloudHealthcare_Resource_ProjectsLocationsDatasetsFhirStore
     return $this->call('Observation-lastn', array($params), "Google_Service_CloudHealthcare_HttpBody");
   }
   /**
-   * Retrieves all the resources in the patient compartment for a `Patient`
-   * resource.
+   * Retrieves all the resources directly referenced by a patient, as well as all
+   * of the resources in the patient compartment.
    *
    * Implements the FHIR extended operation [Patient-
    * everything](http://hl7.org/implement/standards/fhir/STU3/patient-
@@ -81,6 +81,14 @@ class Google_Service_CloudHealthcare_Resource_ProjectsLocationsDatasetsFhirStore
    * @opt_param string end The response includes records prior to the end date. If
    * no end date is provided, all records subsequent to the start date are in
    * scope.
+   * @opt_param int _count Maximum number of resources in a page. Defaults to 100.
+   * @opt_param string pageToken Used to retrieve the next or previous page of
+   * results when using pagination. Value should be set to the value of page_token
+   * set in next or previous page links' url. Next and previous page are returned
+   * in the response bundle's links field, where `link.relation` is "previous" or
+   * "next".
+   *
+   * Omit `page_token` if no previous request has been made.
    * @return Google_Service_CloudHealthcare_HttpBody
    */
   public function PatientEverything($name, $optParams = array())
@@ -352,6 +360,14 @@ class Google_Service_CloudHealthcare_Resource_ProjectsLocationsDatasetsFhirStore
    * @param string $name The name of the resource to retrieve.
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string at Only include resource versions that were current at some
+   * point during the time period specified in the date time value. The date
+   * parameter format is yyyy-mm-ddThh:mm:ss[Z|(+|-)hh:mm]
+   *
+   * Clients may specify any of the following:
+   *
+   * *  An entire year: `_at=2019` *  An entire month: `_at=2019-01` *  A specific
+   * day: `_at=2019-01-20` *  A specific second: `_at=2018-12-31T23:59:58Z`
    * @opt_param int count The maximum number of search results on a page. Defaults
    * to 1000.
    * @opt_param string since Only include resource versions that were created at
@@ -365,14 +381,6 @@ class Google_Service_CloudHealthcare_Resource_ProjectsLocationsDatasetsFhirStore
    * request, where `link.relation` is "first", "previous", "next" or "last".
    *
    * Omit `page` if no previous request has been made.
-   * @opt_param string at Only include resource versions that were current at some
-   * point during the time period specified in the date time value. The date
-   * parameter format is yyyy-mm-ddThh:mm:ss[Z|(+|-)hh:mm]
-   *
-   * Clients may specify any of the following:
-   *
-   * *  An entire year: `_at=2019` *  An entire month: `_at=2019-01` *  A specific
-   * day: `_at=2019-01-20` *  A specific second: `_at=2018-12-31T23:59:58Z`
    * @return Google_Service_CloudHealthcare_HttpBody
    */
   public function history($name, $optParams = array())
@@ -462,20 +470,29 @@ class Google_Service_CloudHealthcare_Resource_ProjectsLocationsDatasetsFhirStore
    * request cannot be mapped to a valid API method on a FHIR store, a generic GCP
    * error might be returned instead.
    *
-   * # Search Parameters
-   *
    * The server's capability statement, retrieved through capabilities, indicates
    * what search parameters are supported on each FHIR resource. A list of all
    * search parameters defined by the specification can be found in the [FHIR
    * Search Parameter Registry](http://hl7.org/implement/standards/fhir/STU3
    * /searchparameter-registry.html).
    *
-   * # Search Modifiers
+   * Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`,
+   * `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `:recurse`.
    *
-   * Modifier   | Supported ----------- | --------- `:missing`  | Yes `:exact`
-   * | Yes `:contains` | Yes `:text`     | Yes `:in`       | Yes `:not-in`   | Yes
-   * `:above`    | Yes `:below`    | Yes `:[type]`   | Yes `:not`      | Yes
-   * `:recurse`  | No (fhir.search)
+   * Supported search result parameters: `_sort`, `_count`, `_include`,
+   * `_revinclude`, `_summary=text`, `_summary=data`, and `_elements`.
+   *
+   * The maximum number of search results returned defaults to 100, which can be
+   * overridden by the `_count` parameter up to a maximum limit of 1000. If there
+   * are additional results, the returned `Bundle` will contain pagination links.
+   *
+   * Resources with a total size larger than 5MB or a field count larger than
+   * 50,000 might not be fully searchable as the server might trim its generated
+   * search index in those cases.
+   *
+   * Note: FHIR resources are indexed asynchronously, so there might be a slight
+   * delay between the time a resource is created or changes and when the change
+   * is reflected in search results. (fhir.search)
    *
    * @param string $parent Name of the FHIR store to retrieve resources from.
    * @param Google_Service_CloudHealthcare_SearchResourcesRequest $postBody

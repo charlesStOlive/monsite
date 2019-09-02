@@ -81,12 +81,12 @@ class Plugin extends PluginBase {
 
 			if ($credentials = Settings::instance()->credentials) {
 
-				$client = GoogleAPI::getClient($credentials, Settings::get(Settings::TOKEN_FIELD));
-
 				try {
-					$isAuthorized = $client->isAccessTokenExpired() && !$client->getRefreshToken();
+					$client = GoogleAPI::getClient($credentials, Settings::get(Settings::TOKEN_FIELD));
 
-					if ($isAuthorized) {
+					$isAuthorized = !$client->isAccessTokenExpired() && !empty($client->getRefreshToken());
+
+					if (!$isAuthorized) {
 						$authUrl = $client->createAuthUrl();
 					}
 				} catch (\InvalidArgumentException $ex) {
@@ -103,23 +103,24 @@ class Plugin extends PluginBase {
 					return;
 				}
 
-				// If there is no previous token or it's expired, request authorization from the user.
+				
 				if ($isAuthorized) {
-					$widget->addFields([
-							'_authorize' => [
-									'type' => 'partial',
-									'path' => '~/plugins/zaxbux/gmailmailerdriver/partials/_google_api_authorize.htm'
-							]
-					]);
-					$widget->getField('_authorize')->value = $authUrl;
-				} else {
-					// Tell user that authorization was successful
-					$widget->addFields([
+						// Tell user that authorization was successful
+						$widget->addFields([
 							'_authorized' => [
-									'type' => 'partial',
-									'path' => '~/plugins/zaxbux/gmailmailerdriver/partials/_google_api_authorized.htm'
-							]
-					]);
+								'type' => 'partial',
+								'path' => '~/plugins/zaxbux/gmailmailerdriver/partials/_google_api_authorized.htm'
+								]
+						]);
+				} else {
+					// If there is no previous token or it's expired, request authorization from the user.
+					$widget->addFields([
+						'_authorize' => [
+								'type' => 'partial',
+								'path' => '~/plugins/zaxbux/gmailmailerdriver/partials/_google_api_authorize.htm'
+						]
+				]);
+				$widget->getField('_authorize')->value = $authUrl;
 				}
 			}
 		});
