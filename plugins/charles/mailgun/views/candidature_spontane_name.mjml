@@ -38,10 +38,10 @@
         <mj-image padding="0" href="{{ base_url_ctoa }}{% if contact_environement == 'full' %}/?k={{ contact.key }}{% endif %}" src="
           {% if compostings.bookmailcontactclient is not null  %}{{ compostings.bookmailcontactclient }}{% else %}{{ compostings.bookmailcontact }}{% endif %}" alt="" width="200px" />
       </mj-column>
-      <mj-column  width="400px">
+      <mj-column width="400px">
         <mj-text padding="0">
           {{ content.intro | raw }}
-          Rendez vous sur l'<b><a style="color:{{ base_color }}" href="{{ base_url_ctoa }}/?k={{ contact.key }}">application</a></b> pour en savoir plus.
+          Rendez vous sur l'<b><a style="color:{{ base_color }}" href="{{ base_url_ctoa }}/?k={{ contact.key }}">application</a></b> ou téléchargez <b><a style="color:{{ base_color }}" href="{{ base_url_ctoa }}/maker/pdfcvtest/{{ contact.key }}">mon CV</a></b> pour en savoir plus
         </mj-text>
       </mj-column>
     </mj-section>
@@ -54,7 +54,7 @@
       </mj-column>
     </mj-section>
 
-     <mj-raw>
+    <mj-raw>
       {% if moas %}
     </mj-raw>
     <mj-section>
@@ -72,7 +72,7 @@
           -{{ moa.name }}
         </mj-text>
         <mj-text mj-class="small" padding-left="30px" padding-bottom="0px" padding-top="0px">
-        {{ moa.accroche }}
+          {{ moa.accroche }}
         </mj-text>
       </mj-column>
       <mj-column width="25%">
@@ -98,7 +98,7 @@
     <mj-raw>
       {% endif %}
     </mj-raw>
-   
+
 
     <mj-raw>
       {% if projects %}
@@ -118,7 +118,7 @@
           -{{ project.name }}
         </mj-text>
         <mj-text mj-class="small" padding-left="30px" padding-bottom="0px" padding-top="0px">
-        {{ project.accroche }}
+          {{ project.accroche }}
         </mj-text>
       </mj-column>
       <mj-column width="25%">

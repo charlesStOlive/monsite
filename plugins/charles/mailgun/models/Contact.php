@@ -239,11 +239,14 @@ class Contact extends Model
     
     public function listParagraphCode($fieldName, $value, $formData)
     {
-        $myArray = '';
+        $myArray = new \October\Rain\Support\Collection();
         $campaigns = Campaign::where('use_personalisation',1)->get();
+        
         foreach($campaigns as $campaign) {
             $code = new \October\Rain\Support\Collection($campaign->messages);
-            $myArray = $code->pluck('code', 'code');
+            $tempArray = $code->pluck('code', 'code');
+            $myArray = $myArray->merge($tempArray);
+            trace_log($myArray);
         }
         return $myArray;
     }
