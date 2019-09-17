@@ -9,7 +9,7 @@ class addColumnContactsLm extends Migration
     {
         Schema::table('charles_mailgun_contacts', function($table)
         {
-            $table->string('messages_lm')->nullable(); 
+            $table->text('messages_lm')->nullable(); 
         });
     }
 
