@@ -42,9 +42,12 @@ class PdfCvController {
 
             $data->visits()->add(new Visit(['type' => 'pdf']));
 
+            
+
             return $pdf
                 ->loadTemplate($templateCode, compact('data'))
                 ->setOptions($options)
+                ->save(storage_path('app/media/cv/'.$data->cv_name.'.pdf'))
                 ->stream();
 
         } catch (Exception $e) {
@@ -97,9 +100,12 @@ class PdfCvController {
                 'isRemoteEnabled' => true,
             ];
 
+            trace_log(storage_path('app/media/cv/'.$data->cv_name.'.pdf'));
+
             return $pdf
                 ->loadTemplate($templateCode, compact('data'))
                 ->setOptions($options)
+                ->save(storage_path('app/media/cv/'.$data->cv_name.'.pdf'))
                 ->stream();
 
         } catch (Exception $e) {

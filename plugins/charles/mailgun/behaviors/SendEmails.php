@@ -12,6 +12,8 @@ use Db;
 use View;
 use Mail;
 use Session;
+use Storage;
+use ApplicationException;
 use Illuminate\Database\QueryException;
 
 
@@ -165,8 +167,9 @@ class SendEmails extends ControllerBehavior
         $data = $this->sendEmailUniqueWidget->getSaveData();
         $idContact = post('id');
         $dataCampaign = Campaign::find($data['sent_campaign']);
+        $addPj = $data['add_pj'];
 
-        $this->sendEmail($idContact, $dataCampaign);
+        $this->sendEmail($idContact, $dataCampaign, null, $addPj );
 
         Flash::info("L'email  a bien été envoyé ");
         return Redirect::refresh();
@@ -191,8 +194,14 @@ class SendEmails extends ControllerBehavior
 
 
 
-    public function sendEmail($idContact, $dataCampaign, $testEmail=null) {
+    public function sendEmail($idContact, $dataCampaign, $testEmail=null, $addPj=false) {
         $contact = Contact::with('region')->find($idContact);
+        //
+        if($addPj) {
+            $pjExist = Storage::exists('media/cv/'.$contact->cv_name.'.pdf');
+            trace_log("adresse cv : ".'cv/'.$contact->cv_name.'.pdf');
+            if(!$pjExist) throw new ApplicationException('Erreur CV introuvable. affichez le une fois');
+        }
         //création du array data email
         $dataEmail = [];
         $dataEmail['base_color'] = $contact->clientColor;
@@ -231,10 +240,13 @@ class SendEmails extends ControllerBehavior
         }
         $html = View::make($dataCampaign['template'], $dataEmail)->render();
 
-        Mail::raw(['html' => $html], function ($message) use($dataCampaign, $email, $subject, $contact, $isTest ) {
+        Mail::raw(['html' => $html], function ($message) use($dataCampaign, $email, $subject, $contact, $isTest, $addPj ) {
             $message->to($email);
             $message->subject($subject);
             $message->from('charles.stolive@gmail.com', 'Charles Saint-Olive');
+            if($addPj) {
+                $message->attach(storage_path('app/media/cv/'.$contact->cv_name.'.pdf')); 
+            }
             //$message->attach(storage_path('app/media/cv/'.$contact->cv_name.'.pdf'));
             if(!$isTest) {
             //Si ce n'est pas un test on met les headers. 
