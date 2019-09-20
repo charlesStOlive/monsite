@@ -11,5 +11,5 @@ fields:
     add_pj:
       label: Mettre le CV
       type: checkbox
-      default: true
+      default: false
     
