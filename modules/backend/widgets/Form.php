@@ -364,7 +364,7 @@ class Form extends WidgetBase
          *
          * Example usage:
          *
-         *     Event::listen('backend.form.beforeRefresh', function((\Backend\Widgets\Form) $formWidget, (stdClass) $dataHolder) {
+         *     Event::listen('backend.form.beforeRefresh', function ((\Backend\Widgets\Form) $formWidget, (stdClass) $dataHolder) {
          *         $dataHolder->data = $arrayOfSaveDataToReplaceExistingDataWith;
          *     });
          *
@@ -391,7 +391,7 @@ class Form extends WidgetBase
          *
          * Example usage:
          *
-         *     Event::listen('backend.form.refreshFields', function((\Backend\Widgets\Form) $formWidget, (array) $allFields) {
+         *     Event::listen('backend.form.refreshFields', function ((\Backend\Widgets\Form) $formWidget, (array) $allFields) {
          *         $allFields['name']->required = false;
          *     });
          *
@@ -432,7 +432,7 @@ class Form extends WidgetBase
          *
          * Example usage:
          *
-         *     Event::listen('backend.form.refresh', function((\Backend\Widgets\Form) $formWidget, (array) $result) {
+         *     Event::listen('backend.form.refresh', function ((\Backend\Widgets\Form) $formWidget, (array) $result) {
          *         $result['#my-partial-id' => $formWidget->makePartial('$/path/to/custom/backend/partial.htm')];
          *         return $result;
          *     });
@@ -476,7 +476,7 @@ class Form extends WidgetBase
          *
          * Example usage:
          *
-         *     Event::listen('backend.form.extendFieldsBefore', function((\Backend\Widgets\Form) $formWidget) {
+         *     Event::listen('backend.form.extendFieldsBefore', function ((\Backend\Widgets\Form) $formWidget) {
          *         // You should always check to see if you're extending correct model/controller
          *         if (!$widget->model instanceof \Foo\Example\Models\Bar) {
          *             return;
@@ -549,7 +549,7 @@ class Form extends WidgetBase
          *
          * Example usage:
          *
-         *     Event::listen('backend.form.extendFields', function((\Backend\Widgets\Form) $formWidget) {
+         *     Event::listen('backend.form.extendFields', function ((\Backend\Widgets\Form) $formWidget) {
          *         // Only for the User controller
          *         if (!$widget->getController() instanceof \RainLab\User\Controllers\Users) {
          *             return;
@@ -688,14 +688,19 @@ class Form extends WidgetBase
             $fieldObj = $this->makeFormField($name, $config);
             $fieldTab = is_array($config) ? array_get($config, 'tab') : null;
 
-            /*
-             * Check that the form field matches the active context
-             */
+            // Check that the form field matches the active context
             if ($fieldObj->context !== null) {
                 $context = is_array($fieldObj->context) ? $fieldObj->context : [$fieldObj->context];
                 if (!in_array($this->getContext(), $context)) {
                     continue;
                 }
+            }
+
+            // Apply the field name to the validation engine
+            $attrName = implode('.', HtmlHelper::nameToArray($fieldObj->fieldName));
+
+            if ($this->model && method_exists($this->model, 'setValidationAttributeName')) {
+                $this->model->setValidationAttributeName($attrName, $fieldObj->label);
             }
 
             $this->allFields[$name] = $fieldObj;
@@ -794,6 +799,7 @@ class Form extends WidgetBase
             $field->context = $fieldContext;
         }
 
+        $attrName = implode('.', HtmlHelper::nameToArray($field->fieldName));
         $field->arrayName = $this->arrayName;
         $field->idPrefix = $this->getId();
 
@@ -835,15 +841,6 @@ class Form extends WidgetBase
          * Set field value
          */
         $field->value = $this->getFieldValue($field);
-
-        /*
-         * Apply the field name to the validation engine
-         */
-        $attrName = implode('.', HtmlHelper::nameToArray($field->fieldName));
-
-        if ($this->model && method_exists($this->model, 'setValidationAttributeName')) {
-            $this->model->setValidationAttributeName($attrName, $field->label);
-        }
 
         /*
          * Check model if field is required
