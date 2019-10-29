@@ -79,7 +79,7 @@ class Plugin extends PluginBase
         $divId = 'pc-'.$widgetName.'-'.$options['componentAlias'];
 
         return '
-        <div id="'.$divId.'">
+        <div id="'.$divId.'" class="empowered-component">
             '.$this->preloaderContent().'
         </div>
         <script>

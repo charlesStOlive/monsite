@@ -482,6 +482,8 @@ abstract class FormComponentBase extends EmpoweredComponentBase
             }
         }
 
+        // $this->formWidget->alias = $this->alias;
+
         $assets = ['X_OCTOBER_ASSETS' => $this->formWidget->getAssetPaths()];
         if (empty($result)) {
             $result = ['#'.$this->getDivId() => $this->formWidget->render($this->options)];

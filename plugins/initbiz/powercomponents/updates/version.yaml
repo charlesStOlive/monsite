@@ -54,3 +54,9 @@
     - 'Minor fixes'
 1.0.28:
     - 'Small fixes, NL translation added'
+1.0.29:
+    - 'Fix list pagination'
+1.0.30:
+    - 'Fix typo'
+1.0.31:
+    - 'Fix pc:util for creating pages'

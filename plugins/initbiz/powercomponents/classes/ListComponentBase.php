@@ -213,6 +213,8 @@ abstract class ListComponentBase extends EmpoweredComponentBase
             $data['toolbarWidget'] = $this->toolbarWidget;
         }
 
+        $this->listWidget->alias = $this->alias;
+
         $assets = $this->listWidget->getAssetPaths();
 
         return [ 'X_OCTOBER_ASSETS' => $assets, '#'.$this->getDivId() => $this->makePartial('list', $data)];
@@ -232,9 +234,11 @@ abstract class ListComponentBase extends EmpoweredComponentBase
 
         $assets = $this->listWidget->getAssetPaths();
 
+        $this->listWidget->alias = $this->alias;
+
         $this->defaultSuffix = 'pc-table';
 
-        return [ 'X_OCTOBER_ASSETS' => $assets, '#'.$this->getDivId() => $this->makePartial('table', $data)];
+        return [ 'X_OCTOBER_ASSETS' => $assets, '#'.$this->getDivId() => $this->makePartial('list_table', $data)];
     }
 
 

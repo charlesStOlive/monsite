@@ -20,8 +20,9 @@
     });
 
     //copy the innerHTML to input on every selection-change
-    <?= $fieldAlias ?>.on('selection-change', function() {
+    <?= $fieldAlias ?>.on('editor-change', function() {
         $("#<?= $this->getId('input') ?>").val(<?= $fieldAlias ?>.root.innerHTML);
+        $("#<?= $this->getId('input') ?>").trigger('change');
     });
 
     $( document ).ready(function() {
@@ -29,6 +30,8 @@
         <?= $fieldAlias ?>.setContents([]);
         // initialize the content to exactly what we have in our server (i.e. what we saved the last time as validated/sanitized by our server)
         <?= $fieldAlias ?>.clipboard.dangerouslyPasteHTML(0, '<?= $this->vars['value'] ?>');
+        $('#<?= $this->getId("input") ?>').trigger("load");
+        
     });
 
     //TODO: store delta object in DB https://stackoverflow.com/questions/47055282/store-javascript-delta-object-in-database
