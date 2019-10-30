@@ -59,3 +59,6 @@
 1.0.19:
     - 'add show_carousel to Project'
     - create_projects_table_add_show_carousel.php
+1.0.20:
+    - 'add cloudi to client'
+    - ext_client_add_cloudiid.php

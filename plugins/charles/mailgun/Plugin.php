@@ -61,32 +61,32 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        // ContactModel::extend(function($model){
-        //         $model->belongsToMany['results'] = [
-        //             'Charles\Mailgun\Models\Contact',
-        //             'table' => 'charles_mailgun_campaign_courtier',
-        //             'pivot' => ['result_type'],
-        //             'pivotModel' => 'Charles\Mailgun\Models\ContactCampaignPivot'
-        //         ];
-        //     });
+        \Charles\Marketing\Models\Client::extend(function($model){
+                $model->belongsTo['cloudi'] = ['Charles\Mailgun\Models\Cloudi'];
+        });
 
-        // Event::listen('backend.list.extendColumns', function($widget) {
-        //     if(($widget->getController() instanceof ContactsController) && ($widget->model instanceof ContactModel)) {
-        //         $widget->addColumns([
-        //             'campaigns' => [
-        //                 'label' => 'Campagnes',
-        //                 'clickable' => false,
-        //                 'searchable' => false,
-        //                 'sortable' => false,
-        //                 'type' => 'partial',
-        //                 'path' => '$/charles/mailgun/widget/_sendUnique.htm',                    ]
-        //         ]);
-        //     }
-        // });
+        // Extend all backend form usage
+        Event::listen('backend.form.extendFields', function($widget) {
 
-        // ContactsController::extend(function($controller) {
-        //     $controller->implement[] = 'Charles.Mailgun.Behaviors.SendEmails';
-        // });
+            //Only for the User controller
+            if (!$widget->getController() instanceof \Charles\Marketing\Controllers\Clients) {
+                return;
+            }
+
+            // Only for the User model
+            if (!$widget->model instanceof \Charles\Marketing\Models\Client) {
+                return;
+            }
+
+            // Add an extra cloudi field
+            $widget->addTabFields([
+                'cloudi' => [
+                    'tab' => 'Cloudinaries',
+                    'label'   => 'Campagne de base',
+                    'type'    => 'relation'
+                ]
+            ]);
+        });
 
     }
 
