@@ -61,7 +61,7 @@
     </mj-raw>
     <mj-section>
       <mj-column padding-bottom="0px" padding-top="10px">
-        <mj-text color="{{ base_color }}" padding-top="5px"><b>Les missions d'un digital manager</b> </mj-text>
+        <mj-text color="{{ base_color }}" padding-top="5px"><b>Des missions possibles :</b> </mj-text>
         <mj-divider padding-top="0px" border-width="1px" border-style="dashed" border-color="lightgrey" />
       </mj-column>
     </mj-section>
@@ -107,7 +107,7 @@
     </mj-raw>
     <mj-section>
       <mj-column padding-bottom="0px" padding-top="10px">
-        <mj-text color="{{ base_color }}" padding-top="5px"><b>Des projets...</b> </mj-text>
+        <mj-text color="{{ base_color }}" padding-top="5px"><b>Des projets :</b> </mj-text>
         <mj-divider padding-top="0px" border-width="1px" border-style="dashed" border-color="lightgrey" />
       </mj-column>
     </mj-section>
