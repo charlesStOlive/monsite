@@ -50,7 +50,7 @@
 
     <mj-section padding-top="0">
       <mj-column>
-        <mj-text>
+        <mj-text color="#525252">
           {{ content.after_ctoa | raw }}
         </mj-text>
       </mj-column>
