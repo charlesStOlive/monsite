@@ -1,0 +1,153 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+      <mj-class name="bg-primary" background-color="#546e7a" color="#ffffff"></mj-class>
+      <mj-class name="bg-secondary" background-color="#263238" color="#ffffff"></mj-class>
+      <mj-class name="primary" color="#546e7a"></mj-class>
+      <!-- <mj-class name="secondary" color="#263238"></mj-class> -->
+
+      <!-- <mj-column border="1px dotted #ff0000"></mj-column>-->
+
+      <mj-class name="titre" text-transform="uppercase" align="center"></mj-class>
+      <mj-class name="grand" font-size="28px" font-weight="700" line-height="24px" padding-top="0px" padding-bottom="0px" align="center"></mj-class>
+      <mj-class name="moyen" font-size="18px" align="center"></mj-class>
+      <mj-class name="small" font-size="10px" padding-top="0px" padding-bottom="0px" line-height="14px" color="#C9C9C9"></mj-class>
+      <mj-class name="alinea" padding-top="0px" align="center"></mj-class>
+      <mj-class name="texte-sans-padding" padding-top="0" padding-bottom="0px"></mj-class>
+      <mj-text line-height="20px"></mj-text>
+      <mj-class name="texte-footer" line-height="12px" font-size="10px" padding-bottom="0px"></mj-class>
+      <mj-section padding-bottom="0px" padding-top="0px"></mj-section>
+    </mj-attributes>
+  </mj-head>
+  <mj-body>
+    <mj-raw>
+      <!-- Intro text -->
+    </mj-raw>
+    <mj-section padding-top="10px">
+      <mj-column>
+        <mj-text font-size="20px">
+          <span style="color:{{ base_color }}">
+            Bonjour,
+          </span>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section padding="0">
+      <mj-column padding="0" width="200px">
+        <mj-image padding="0" href="{{ base_url_ctoa }}{% if contact_environement == 'full' %}/?k={{ contact.key }}{% endif %}" src="
+          {% if compostings.bookmailcontactclient is not null  %}{{ compostings.bookmailcontactclient }}{% else %}{{ compostings.bookmailcontact }}{% endif %}" alt="" width="200px" />
+      </mj-column>
+      <mj-column padding="0" width="400px">
+        <mj-text padding="0" color="#525252">
+          {{ content.intro | raw }}
+          J'ai fait <b><a style="color:{{ base_color }}" href="{{ base_url_ctoa }}/?k={{ contact.key }}">un site</a></b> qui vous présente mon profil, vous trouverez <b>mon CV</b> en PJ.
+
+        </mj-text>
+
+
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding-top="0">
+      <mj-column>
+        <mj-text>
+          {{ content.after_ctoa | raw }}
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-raw>
+      {% if moas %}
+    </mj-raw>
+    <mj-section>
+      <mj-column padding-bottom="0px" padding-top="10px">
+        <mj-text color="{{ base_color }}" padding-top="5px"><b>Les missions d'un digital manager</b> </mj-text>
+        <mj-divider padding-top="0px" border-width="1px" border-style="dashed" border-color="lightgrey" />
+      </mj-column>
+    </mj-section>
+    <mj-raw>
+      {% for moa in moas %}
+    </mj-raw>
+    <mj-section>
+      <mj-column width="75%">
+        <mj-text padding-left="30px" padding-bottom="0px" padding-top="0px">
+          -{{ moa.name }}
+        </mj-text>
+        <mj-text mj-class="small" padding-left="30px" padding-bottom="0px" padding-top="0px">
+          {{ moa.accroche }}
+        </mj-text>
+      </mj-column>
+      <mj-column width="25%">
+
+
+        <mj-button background-color="{{ base_color }}" href="{{ base_url_ctoa }}/moas/{{ moa.slug }}?k={{ contact.key }}">voir</mj-button>
+
+      </mj-column>
+
+    </mj-section>
+    <mj-raw>
+      {% endfor %}
+    </mj-raw>
+
+    <!--<mj-section>
+      <mj-column>
+        <mj-text padding-bottom="0px" padding-top="0px">
+         <a style="color:black" href="{{ base_url_ctoa }}/moas?k={{ contact.key }}">Toutes les missions possibles</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>-->
+
+    <mj-raw>
+      {% endif %}
+    </mj-raw>
+
+
+    <mj-raw>
+      {% if projects %}
+    </mj-raw>
+    <mj-section>
+      <mj-column padding-bottom="0px" padding-top="10px">
+        <mj-text color="{{ base_color }}" padding-top="5px"><b>Des projets...</b> </mj-text>
+        <mj-divider padding-top="0px" border-width="1px" border-style="dashed" border-color="lightgrey" />
+      </mj-column>
+    </mj-section>
+    <mj-raw>
+      {% for project in projects %}
+    </mj-raw>
+    <mj-section>
+      <mj-column width="75%">
+        <mj-text padding-left="30px" padding-bottom="0px" padding-top="0px">
+          -{{ project.name }}
+        </mj-text>
+        <mj-text mj-class="small" padding-left="30px" padding-bottom="0px" padding-top="0px">
+          {{ project.accroche }}
+        </mj-text>
+      </mj-column>
+      <mj-column width="25%">
+
+
+        <mj-button background-color="{{ base_color }}" href="{{ base_url_ctoa }}/projects/{{ project.slug }}?k={{ contact.key }}">voir</mj-button>
+
+      </mj-column>
+
+    </mj-section>
+    <mj-raw>
+      {% endfor %}
+    </mj-raw>
+    <mj-raw>
+      {% endif %}
+    </mj-raw>
+
+    <mj-section padding-bottom="20px" padding-top="20px" background-color="#cccccc">
+      <mj-column width="100%">
+        <!--<mj-image width="130px" src="{{ 'storage/app/media/signature.gif' | app }}" align="left" />-->
+        <mj-text mj-class="texte-footer">Charles Saint Olive</mj-text>
+        <mj-text padding-bottom="0px" mj-class="texte-footer">06 64 83 42 87</mj-text>
+        <mj-text padding-bottom="0px" mj-class="texte-footer">charles.stolive@gmail.com</mj-text>
+        <mj-text padding-bottom="0px" mj-class="texte-footer"><a href="https://charles-saint-olive.com" style="color:#3a5059">charles-saint-olive.com</a></mj-text>
+
+      </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml>
