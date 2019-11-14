@@ -27,7 +27,7 @@
       <mj-column>
         <mj-text font-size="20px">
           <span style="color:{{ base_color }}">
-            Bonjour {{ contact.name }} {{ contact.fname }},
+            A l'attention de {{ contact.name }} {{ contact.fname }},
           </span>
         </mj-text>
         <mj-text padding-top="0" padding-bottom="0"> {{ content.explication | raw }}</mj-text>
