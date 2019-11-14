@@ -7,6 +7,10 @@ tabs:
             type: dropdown
             placeholder: choisissez un contact
             options: listContacts
+        message_motivation:
+            label: Message de motivation
+            type: textarea
+            size: large
         lettre_motivation:
             type: repeater
             tab: Lettre Motivation

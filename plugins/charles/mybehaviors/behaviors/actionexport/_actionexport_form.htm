@@ -15,13 +15,24 @@
             Envoyer un email</button>
         <a class="btn btn-primary oc-icon-file-pdf-o m-y" href="<?= url('/maker/pdfcvtest/'.$keyClient)?>"
             target="_blank">Afficher le CV</a>
-            <a class="btn btn-primary oc-icon-file-pdf-o m-y" href="<?= url('/maker/pdfcvdownload/'.$keyClient)?>"
-                target="_blank">Télécharger le CV</a>
+        <a class="btn btn-primary oc-icon-file-pdf-o m-y" href="<?= url('/maker/pdfcvdownload/'.$keyClient)?>"
+            target="_blank">Télécharger le CV</a>
         <a class=" btn btn-primary oc-icon-desktop m-y" href="<?= getenv('URL_VUE').'?k='.$keyClient?>"
             target="_blank">Voir son site</a>
-        <a class=" btn btn-primary oc-icon-file-pdf-o m-y" href="<?= url('/maker/pdflm/'.$keyClient)?>" target="_blank">Créer
+        <a class=" btn btn-primary oc-icon-file-pdf-o m-y" href="<?= url('/maker/pdflm/'.$keyClient)?>"
+            target="_blank">Créer
             Lettre M</a>
+        <a class=" btn btn-primary oc-icon-file-pdf-o m-y" href="<?= url('/maker/pdflm/'.$keyClient)?>"
+            target="_blank">Lettre M</a>
     </div>
+    <div class="form-buttons">
+        <input type="text" class="form-control"
+            value="<?= $message_motivation. ' ' .getenv('URL_VUE').'?k='.$keyClient?>" id="key">
+        <a class=" btn btn-primary" onclick="myFunction('key')">Copy texte</a>
+    </div>
+
+
+
 </div>
 
 <div class="modal-footer">
@@ -31,5 +42,15 @@
         Annuler
     </button>
 </div>
+
+<script>
+    function myFunction(inputos) {
+        var copyText = document.getElementById(inputos);
+        copyText.select();
+        copyText.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+        //alert("Copied the text: " + copyText.value);
+    }
+</script>
 
 <?= Form::close() ?>
