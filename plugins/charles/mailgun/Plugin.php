@@ -83,7 +83,8 @@ class Plugin extends PluginBase
                 'cloudi' => [
                     'tab' => 'Cloudinaries',
                     'label'   => 'Campagne de base',
-                    'type'    => 'relation'
+                    'type'    => 'relation',
+                    'placeholder' => '--choisissez une campagne--'
                 ]
             ]);
         });
