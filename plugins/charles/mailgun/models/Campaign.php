@@ -130,4 +130,11 @@ class Campaign extends Model
                     ->orWhere('result_type', 'complained');
             })->count();
     }
+    //
+    //
+    //
+    public function listCloudinaris($fieldName, $value, $formData)
+    {
+        return Cloudi::lists('name', 'name');
+    }
 }

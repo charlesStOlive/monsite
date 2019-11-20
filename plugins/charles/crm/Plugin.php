@@ -89,7 +89,7 @@ class Plugin extends PluginBase
                 'url'         => Backend::url('charles/crm/regions'),
                 'icon'        => 'icon-cubes',
                 'permissions' => ['charles.crm.*'],
-                'order'       => 500,
+                'order'       => 3,
 
                 'sideMenu' => [
                     'side-menu-regions' => [

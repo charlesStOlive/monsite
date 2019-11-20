@@ -84,11 +84,11 @@ class Plugin extends PluginBase
 
         return [
             'marketing' => [
-                'label'       => 'marketing',
+                'label'       => 'Marketing',
                 'url'         => Backend::url('charles/marketing/clients'),
                 'icon'        => 'icon-leaf',
                 'permissions' => ['charles.marketing.*'],
-                'order'       => 500,
+                'order'       => 2,
 
                 'sideMenu' => [
                         'side-menu-clients' => [

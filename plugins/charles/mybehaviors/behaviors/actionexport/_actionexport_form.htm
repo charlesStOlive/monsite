@@ -6,34 +6,52 @@
         Que voulez vous faire ?
     </h4>
 </div>
-
 <div class="modal-body">
-    <div class="form-buttons">
-        <button href="javascript:;" class=" btn btn-primary oc-icon-envelope m-y"
-            data-request-data="id:<?=$modelId?>,close:1" data-control="popup" data-dismiss="popup"
-            data-handler="onLoadSendEmailUniqueForm" data-hotkey="ctrl+i, cmd+i">
-            Envoyer un email</button>
-        <a class="btn btn-primary oc-icon-file-pdf-o m-y" href="<?= url('/maker/pdfcvtest/'.$keyClient)?>"
-            target="_blank">Afficher le CV</a>
-        <a class="btn btn-primary oc-icon-file-pdf-o m-y" href="<?= url('/maker/pdfcvdownload/'.$keyClient)?>"
-            target="_blank">Télécharger le CV</a>
-        <a class=" btn btn-primary oc-icon-desktop m-y" href="<?= getenv('URL_VUE').'?k='.$keyClient?>"
-            target="_blank">Voir son site</a>
-        <a class=" btn btn-primary oc-icon-file-pdf-o m-y" href="<?= url('/maker/pdflm/'.$keyClient)?>"
-            target="_blank">Créer
-            Lettre M</a>
-        <a class=" btn btn-primary oc-icon-file-pdf-o m-y" href="<?= url('/maker/pdflm/'.$keyClient)?>"
-            target="_blank">Lettre M</a>
+    <div class="control-tabs content-tabs" data-control="tab">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#contentTabOne">Actions</a></li>
+            <li><a href="#contentTabTwo">Messages</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active">
+                <div class="form-buttons">
+                    <button href="javascript:;" class=" btn btn-primary oc-icon-envelope m-y"
+                        data-request-data="id:<?=$modelId?>,close:1" data-control="popup" data-dismiss="popup"
+                        data-handler="onLoadSendEmailUniqueForm" data-hotkey="ctrl+i, cmd+i">
+                        Envoyer un email</button>
+                    <a class="btn btn-primary oc-icon-file-pdf-o m-y" href="<?= url('/maker/pdfcvtest/'.$keyClient)?>"
+                        target="_blank">Afficher le CV</a>
+                    <a class="btn btn-primary oc-icon-file-pdf-o m-y"
+                        href="<?= url('/maker/pdfcvdownload/'.$keyClient)?>" target="_blank">Télécharger le CV</a>
+                    <a class=" btn btn-primary oc-icon-desktop m-y" href="<?= getenv('URL_VUE').'?k='.$keyClient?>"
+                        target="_blank">Voir son site</a>
+                    <a class=" btn btn-primary oc-icon-file-pdf-o m-y" href="<?= url('/maker/pdflm/'.$keyClient)?>"
+                        target="_blank">Créer
+                        Lettre M</a>
+                    <a class=" btn btn-primary oc-icon-file-pdf-o m-y" href="<?= url('/maker/pdflm/'.$keyClient)?>"
+                        target="_blank">Lettre M</a>
+                </div>
+            </div>
+            <div class="tab-pane m-t-md">
+                <?php 
+                $messages->each(function ($item, $key) {  ?>
+                <div class="form-buttons ">
+                    <textarea type="textarea" class="form-control" id="<?=$key?>"><?=$item ?></textarea>
+                    <a class=" btn btn-default" onclick="myFunction('<?=$key?>')">Copy <?= $key ?></a>
+                </div>
+                <?php }); ?>
+            </div>
+        </div>
     </div>
-    <div class="form-buttons">
-        <input type="text" class="form-control"
-            value="<?= $message_motivation. ' ' .getenv('URL_VUE').'?k='.$keyClient?>" id="key">
-        <a class=" btn btn-primary" onclick="myFunction('key')">Copy texte</a>
-    </div>
-
-
-
 </div>
+
+
+
+
+
+
+
+
 
 <div class="modal-footer">
 

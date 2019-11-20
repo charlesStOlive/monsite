@@ -10,6 +10,7 @@ use Flash;
 use Redirect;
 use Db;
 use View;
+use Twig;
 use Mail;
 use Session;
 use Storage;
@@ -215,14 +216,14 @@ class SendEmails extends ControllerBehavior
         //
         $myMessages = [];
         foreach($dataCampaign['messages'] as $msg) {
-            if (!$contact->strict && $msg['value-t']) {
-                $msg['value'] = $msg['value-t'];
-            }
+            // if (!$contact->strict && $msg['value-t']) {
+            //     $msg['value'] = $msg['value-t'];
+            // }
             if($dataCampaign['use_personalisation'] &&  $contact->show_message_perso )  {
                 $msgPerso = $this->getMessagePerso($contact->message_perso, $msg['code'] );
                 if($msgPerso)  $msg['value'] = $msgPerso;
             } 
-            $myMessages[$msg['code']] = $msg['value'];
+            $myMessages[$msg['code']] = Twig::parse($msg['value'], compact('contact'));
         }
         $dataEmail['content'] =  $myMessages;
 

@@ -139,11 +139,11 @@ class Plugin extends PluginBase
 
         return [
             'mailgun' => [
-                'label'       => 'Gestion des campagnes',
+                'label'       => 'Campagnes',
                 'url'         => Backend::url('charles/mailgun/contacts'),
                 'icon'        => 'icon-envelope',
                 'permissions' => ['charles.mailgun.*'],
-                'order'       => 500,
+                'order'       => 1,
 
                 'sideMenu' => [
                         'side-menu-campaigns' => [

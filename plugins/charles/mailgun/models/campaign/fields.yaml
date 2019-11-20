@@ -32,14 +32,14 @@ fields:
 
 tabs:
     fields:
-        picture@update:
-            tab: Contenu de l'email
-            label: Pastille
-            mode: image
-            imageWidth: '80'
-            imageHeight: '80'
-            type: fileupload
-            span: left
+        # picture@update:
+        #     tab: Contenu de l'email
+        #     label: Pastille
+        #     mode: image
+        #     imageWidth: '80'
+        #     imageHeight: '80'
+        #     type: fileupload
+        #     span: left
 
         messages:
             tab: Contenu de l'email

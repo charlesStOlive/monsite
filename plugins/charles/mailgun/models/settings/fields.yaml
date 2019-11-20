@@ -10,7 +10,19 @@ tabs:
         message_motivation:
             label: Message de motivation
             type: textarea
-            size: large
+        message_linkedin:
+            label: Message linkedin
+            type: textarea
+        messages:
+            type: repeater
+            tab: Message pré-fabriqué
+            form:
+                fields:
+                    id:
+                        label: code messages
+                    value:
+                        type: textarea
+                        size: huge
         lettre_motivation:
             type: repeater
             tab: Lettre Motivation

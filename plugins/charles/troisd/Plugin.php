@@ -88,7 +88,7 @@ class Plugin extends PluginBase
                 'url'         => Backend::url('charles/troisd/scenes'),
                 'icon'        => 'icon-cubes',
                 'permissions' => ['charles.troisd.*'],
-                'order'       => 3,
+                'order'       => 10,
                 'sideMenu' => [
                     'side-menu-scenes' => [
                         'label'       => 'Scenes',

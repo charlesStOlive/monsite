@@ -6,12 +6,11 @@ title:
         code:
             label: Code
         value:
-            span: auto
-            label: Title
-        value-t:
-            type: richeditor
-            size: huge
-            span: auto
+            label: Texts
+        # value-t:
+        #     type: richeditor
+        #     size: huge
+        #     span: auto
         
 text:
     name: Textarea
@@ -21,13 +20,12 @@ text:
         code:
             label: Code
         value:
+            label: Texte html
             type: richeditor
-            size: huge
-            span: auto
-        value-t:
-            type: richeditor
-            size: huge
-            span: auto
+        # value-t:
+        #     type: richeditor
+        #     size: huge
+        #     span: auto
 
         
 picture:
@@ -39,20 +37,8 @@ picture:
             label: Code
         value:
             label: Picture
-            type: mediafinder
-            mode: image
-            prompt: choose image
-            imageWidth: 160
-            imageHeight: 90
-            span: auto
-        value-t:
-            label: Picture
-            type: mediafinder
-            mode: image
-            prompt: choose image
-            imageWidth: 160
-            imageHeight: 90
-            span: auto
+            type: dropdown
+            options: listCloudinaris
         
         
 
