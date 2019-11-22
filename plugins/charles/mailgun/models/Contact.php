@@ -258,4 +258,8 @@ class Contact extends Model
         $myArray =  $lm->pluck('code', 'code');
         return $myArray;
     }
+    public function listCloudinaris()
+    {
+        return Cloudi::lists('name', 'slug');
+    }
 }

@@ -39,36 +39,22 @@ tabs:
         message_perso:
             type: repeater
             tab: email
-            titleFrom: title_when_collapsed
-            form:
-                fields:
-                    code:
-                        label: code du paragraphe à remplacer
-                        type: dropdown
-                        placeholder: Choisissez un paragraphe
-                        options: listParagraphCode
-                    value:
-                        type: richeditor
-                        size: huge
+            prompt: Add content block
+            groups: $/charles/mailgun/models/campaign/repeater_fields.yaml
             trigger:
                 action: show
                 field: show_message_perso
                 condition: checked
         
+
+        
         messages_lm:
+            label: Paragraphe lettre de motivation
+            commentAbove: ordre de priorité [ Option -> Secteur -> Contact ]
             type: repeater
-            tab: Lettre Motivation
-            titleFrom: title_when_collapsed
-            form:
-                fields:
-                    code:
-                        label: code paragraphe
-                        type: dropdown
-                        placeholder: Choisissez un paragraphe
-                        options: listParagraphLMCode
-                    value:
-                        type: richeditor
-                        size: huge
+            tab: Lettre motivation
+            prompt: Ajouter des paragraphes
+            groups: $/charles/mailgun/models/contact/repeater_fields_lm.yaml
 
         target:
             type: relation

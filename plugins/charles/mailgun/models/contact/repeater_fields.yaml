@@ -19,6 +19,8 @@ text:
     fields:
         code:
             label: Code
+            type: dropdown
+            options: listParagraphCode
         value:
             label: Texte html
             type: richeditor
@@ -38,8 +40,6 @@ picture:
         value:
             label: Picture
             type: dropdown
-            options: listCloudinaris
-        
-        
+            options: listCloudinaris        
 
 
