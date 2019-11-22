@@ -84,17 +84,17 @@ class Plugin extends PluginBase
 
         return [
             'marketing' => [
-                'label'       => 'Marketing',
-                'url'         => Backend::url('charles/marketing/clients'),
+                'label'       => 'Contenu',
+                'url'         => Backend::url('charles/marketing/secteurs'),
                 'icon'        => 'icon-leaf',
                 'permissions' => ['charles.marketing.*'],
                 'order'       => 2,
 
                 'sideMenu' => [
-                        'side-menu-clients' => [
-                            'label'       => 'Clients',
-                            'icon'        => 'icon-building',
-                            'url'         => Backend::url('charles/marketing/clients'),
+                        'side-menu-secteurs' => [
+                            'label'       => 'Secteur',
+                            'icon'        => 'icon-dot-circle-o',
+                            'url'         => Backend::url('charles/marketing/secteurs'),
                         ],
                         'side-menu-experiences' => [
                             'label'       => 'Experiences',

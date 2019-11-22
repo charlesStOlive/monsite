@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Secteur
+
+# Model Form Field configuration
+form: $/charles/marketing/models/secteur/fields.yaml
+
+# Model Class name
+modelClass: Charles\Marketing\Models\Secteur
+
+# Default redirect location
+defaultRedirect: charles/marketing/secteurs
+
+# Create page
+create:
+    title: Create Secteur
+    redirect: charles/marketing/secteurs/update/:id
+    redirectClose: charles/marketing/secteurs
+
+# Update page
+update:
+    title: Edit Secteur
+    redirect: charles/marketing/secteurs
+    redirectClose: charles/marketing/secteurs
+
+# Preview page
+preview:
+    title: Preview Secteur

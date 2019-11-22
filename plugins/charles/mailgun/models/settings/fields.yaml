@@ -24,12 +24,9 @@ tabs:
                         type: textarea
                         size: huge
         lettre_motivation:
+            label: Paragraphe lettre de motivation
+            commentAbove: ordre de priorité [ Option -> Secteur -> Contact ]
             type: repeater
-            tab: Lettre Motivation
-            form:
-                fields:
-                    code:
-                        label: code paragraphe
-                    value:
-                        type: richeditor
-                        size: huge
+            tab: Lettre motivation
+            prompt: Ajouter des paragraphes
+            groups: $/charles/mailgun/models/settings/repeater_fields.yaml

@@ -45,7 +45,9 @@ class Client extends Model
         'projects' => ['Charles\Marketing\Models\Project'],
         'contacts' => ['Charles\Mailgun\Models\Contact'],
     ];
-    public $belongsTo = [];
+    public $belongsTo = [
+        'secteur' => ['Charles\Marketing\Models\Secteur'],
+    ];
     public $belongsToMany = [
         'cloudis' => [
             'Charles\Mailgun\Models\Cloudi',
@@ -134,6 +136,27 @@ class Client extends Model
 
         ];
     }
+
+    public function getCvMessagesAttribute() {
+        $messagesCv = $this->secteur->cv_option;
+        if($this->is_cv_option) {
+                $clientOption = $this->cv_option;
+                if($clientOption['title']) $messagesCv['title'] = $clientOption['title'];
+                if($clientOption['secteur']) $messagesCv['secteur'] = $clientOption['secteur'];
+                if(array_key_exists('technical', $clientOption)) {
+                    $messagesCv['technical'] = $clientOption['technical'];
+                }
+                if(array_key_exists('marketing', $clientOption)) $messagesCv['marketing'] = $clientOption['marketing'];
+                if(array_key_exists('soft_skills', $clientOption)) $messagesCv['soft_skills'] = $clientOption['soft_skills'];
+                if(array_key_exists('fonctionel', $clientOption)) $messagesCv['fonctionel'] = $clientOption['fonctionel'];
+            }
+        return $messagesCv;
+    }
+
+
+    /**
+     * LISTES
+     */
 
     public function listTechnical($fieldName, $value, $formData)
     {

@@ -62,3 +62,9 @@
 1.0.20:
     - 'add cloudi to client'
     - ext_client_add_cloudiid.php
+1.1.01:
+    - 'add secteur'
+    - create_secteurs_table.php
+1.1.02:
+    - 'seed secteur'
+    - seed_keys.php

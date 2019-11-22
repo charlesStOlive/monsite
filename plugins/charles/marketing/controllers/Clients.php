@@ -40,7 +40,7 @@ class Clients extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Charles.Marketing', 'marketing', 'side-menu-clients');
+        BackendMenu::setContext('Charles.Mailgun', 'mailgun', 'side-menu-clients');
         $this->autoCreateContactWidget = $this->autoCreateContactFormWidget();
     }
 
@@ -116,8 +116,6 @@ class Clients extends Controller
             $contact->save();
             $contact->segments()->attach($data['segment']);
         }
-
-        // Flash::info("le(s) email(s) de test sont partis ! ");
 
         return Redirect::refresh();
     }

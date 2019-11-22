@@ -146,26 +146,30 @@ class Plugin extends PluginBase
                 'order'       => 1,
 
                 'sideMenu' => [
-                        'side-menu-campaigns' => [
-                            'label'       => 'Campagnes',
-                            'icon'        => 'icon-envelope',
-                            'url'         => Backend::url('charles/mailgun/campaigns'),
-                        ],
-
                         'side-menu-contacts' => [
                             'label'       => 'Contacts',
                             'icon'        => 'icon-users',
                             'url'         => Backend::url('charles/mailgun/contacts'),
                         ],
-                        'side-menu-segments' => [
-                            'label'       => 'Segments',
-                            'icon'        => 'icon-dot-circle-o',
-                            'url'         => Backend::url('charles/mailgun/segments'),
+                        'side-menu-clients' => [
+                            'label'       => 'Clients',
+                            'icon'        => 'icon-building',
+                            'url'         => Backend::url('charles/marketing/clients'),
                         ],
                         'side-menu-cloudis' => [
                             'label'       => 'Cloudinaries',
                             'icon'        => 'icon-cloud',
                             'url'         => Backend::url('charles/mailgun/cloudis'),
+                        ],
+                        'side-menu-campaigns' => [
+                            'label'       => 'Campagnes',
+                            'icon'        => 'icon-envelope',
+                            'url'         => Backend::url('charles/mailgun/campaigns'),
+                        ],
+                        'side-menu-segments' => [
+                            'label'       => 'Segments',
+                            'icon'        => 'icon-dot-circle-o',
+                            'url'         => Backend::url('charles/mailgun/segments'),
                         ],
                 ],
             ],

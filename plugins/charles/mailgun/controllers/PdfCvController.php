@@ -8,9 +8,11 @@ use Renatio\DynamicPDF\Classes\PDFWrapper;
 use Charles\Marketing\Models\Settings;
 use Charles\Mailgun\Models\Settings as MailgunSettings;
 use Charles\Marketing\Models\Experience;
+use Charles\Marketing\Models\Secteur;
 use Charles\Mailgun\Models\Contact;
 use Charles\Mailgun\Models\Visit;
 use October\Rain\Support\Collection;
+use Twig;
 
 
 use Config;
@@ -91,6 +93,7 @@ class PdfCvController {
         /**
          * Construction du pdf
          */
+        trace_log($data['settings']);
         try {
             /** @var PDFWrapper $pdf */
             $pdf = app('dynamicpdf');
@@ -163,52 +166,44 @@ class PdfCvController {
             if($data->client->base_color) {
                 $settings['base_color'] = $data->client->base_color;
             }
-            if($data->client->is_cv_option) {
-                $clientOption = $data->client->cv_option;
-                if($clientOption['color']) $settings['cv_option']['color'] = $clientOption['color'];
-                if($clientOption['title']) $settings['cv_option']['title'] = $clientOption['title'];
-                if($clientOption['secteur']) $settings['cv_option']['secteur'] = $clientOption['secteur'];
-                if(array_key_exists('technical', $clientOption)) {
-                    $settings['cv_option']['technical'] = $clientOption['technical'];
-                }
-                if(array_key_exists('marketing', $clientOption)) $settings['cv_option']['marketing'] = $clientOption['marketing'];
-                if(array_key_exists('soft_skills', $clientOption)) $settings['cv_option']['soft_skills'] = $clientOption['soft_skills'];
-                if(array_key_exists('fonctionel', $clientOption)) $settings['cv_option']['fonctionel'] = $clientOption['fonctionel'];
-            }
+            $settings['cv_option'] = $data->client->cvMessages;
         }
         $data['base_color'] = $data->clientColor;
         $data['settings'] = $settings;
         $data['base_url_ctoa'] = getenv('URL_VUE');
         $data['contact_environement'] = $data->contactEnvironement;
         $data['file_name'] = "cv_saint_olive_pour_".$data->client->slug.".pdf";
-
         return $data;
 
     }
 
     public function prepareLM($user_key) {
         //
-        $data = Contact::where('key', $user_key)->first();
-        if ($data === null) {
+        $contact = Contact::where('key', $user_key)->first();
+        if ($contact === null) {
             throw new ApplicationException('model not found.');
         }
         //
-        $myMessages = [];
-        foreach(MailgunSettings::get('lettre_motivation') as $msg) {
-            $myMessages[$msg['code']] = $msg['value'];
-            $msgPerso = $this->getMessagePerso($data->messages_lm, $msg['code'] );
+        $myMessages = new \October\Rain\Support\Collection();;
+        $baseMessages = MailgunSettings::get('lettre_motivation');
+        $messagesSecteur = $contact->client->secteur->messages_lm;
+        foreach($baseMessages as $msg) {
+            $msgPerso = $this->getMessagePerso($contact->messages_lm, $msg['code'] );
+            $msgSecteur = $this->getMessagePerso($messagesSecteur, $msg['code'] );
+            if($msgSecteur)  $msg['value'] = $msgSecteur;
             if($msgPerso)  $msg['value'] = $msgPerso;
-            $myMessages[$msg['code']] = $msg['value'];
+            $msg['value'] = Twig::parse($msg['value'], compact('contact'));
+            $myMessages->put($msg['code'], $msg);
         }
         trace_log($myMessages);
-        $data['file_name'] = "lettre_m_saint_olive_pour_".$data->client->slug.".pdf";
-        $data['base_color'] = $data->clientColor;
-        $data['contents'] =  $myMessages;
-        $data['base_url_ctoa'] = getenv('URL_VUE');
-        $data['contact_environement'] = $data->contactEnvironement;
-        $data['compostings'] = $data->cloudisDefault;
-        trace_log($data);
-        return $data;
+        $contact['file_name'] = "lettre_m_saint_olive_pour_".$contact->client->slug.".pdf";
+        $contact['base_color'] = $contact->clientColor;
+        $contact['contents'] =  $myMessages;
+        $contact['base_url_ctoa'] = getenv('URL_VUE');
+        $contact['contact_environement'] = $contact->contactEnvironement;
+        $contact['compostings'] = $contact->cloudisDefault;
+        trace_log($contact);
+        return $contact;
 
     }
 

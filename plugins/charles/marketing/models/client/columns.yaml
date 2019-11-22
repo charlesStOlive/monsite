@@ -6,6 +6,11 @@ columns:
     name:
         label: Nom
         searchable: true
+    secteur:
+        label: Secteur
+        relation: secteur
+        select: name
+        searchable: true
     logo:
         label: Image
         type: partial

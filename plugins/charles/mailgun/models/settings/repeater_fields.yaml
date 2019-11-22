@@ -1,0 +1,32 @@
+    
+text:
+    name: Textarea
+    description: Basic text field
+    icon: icon-file-text-o
+    fields:
+        code:
+            label: Code
+        value:
+            label: Texte html
+            type: richeditor
+        # value-t:
+        #     type: richeditor
+        #     size: huge
+        #     span: auto
+
+        
+picture:
+    name: Picture
+    description: Quote item
+    icon: icon-picture-o
+    fields:
+        code:
+            label: Code
+        value:
+            label: Picture
+            type: dropdown
+            options: listCloudinaris
+        
+        
+
+

@@ -23,4 +23,10 @@ class Settings extends Model
         }
         return $list;
     }
+    public function listCloudinaris()
+    {
+        return Cloudi::lists('name', 'slug');
+    }
+
+    
 }

@@ -3,6 +3,7 @@
 use Model;
 use Charles\Marketing\Models\Competence;
 use Charles\Mailgun\Models\Contact;
+use Charles\Mailgun\Models\Cloudi;
 
 class Settings extends Model
 {

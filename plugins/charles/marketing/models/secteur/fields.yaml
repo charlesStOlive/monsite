@@ -1,58 +1,40 @@
 # ===================================
 #  Form Field Definitions
 # ===================================
+
 tabs:
     stretch: true
     defaultTab: Accueil
     fields:
         name:
-            label: nom de l'entreprise
-            span: auto
+            label: Nom du secteur
         slug:
             label: Slug
             preset: name
-            span: auto
-        secteur:
+        cloudi:
+            label: Choisissez l'image de base
             type: relation
             selectFrom: name
-            placeholder: --select Secteur--
-        logo:
-            label: logo du client
-            type: mediafinder
-            mode: image
-            span: left
-            imageWidth: 300
-            imageHeight: 150
-        # base_color:
-        #     label: Couleur de bases
-        #     type: colorpicker
-        #     span: auto
-        #     availableColors: ['#000000', '#ff0000']
-
-        contacts@update:
-            type: partial
-            path: field_contacts
-            tab: Contacts
-        
-        # cloudis@update:
-        #     type: partial
-        #     path: field_cloudis
-        #     tab: Cloudinaries
-        
+            placeholder: --select Cloudi--
+        site_intro:
+            label: Introduction du site
+            type: richeditor
+            size: huge
         is_cv_option:
-            label: Personaliser le CV
-            type: checkbox
-            tab: CV
+                label: Personaliser le CV
+                type: checkbox
+                tab: CV
         cv_option:
             label: Option du cv
+            commentAbove: Attention vous devez saisir tous les champs du Secteur. Ces champs ne seront pas pris en compte s'il y a une personalisation du CV chez le client. 
             type: nestedform
             usePanelStyles: true
             tab: CV
             form:
                 fields:
-                    color:
-                        label: Couleur de bases
-                        type: colorpicker
+                    # color:
+                    #     label: Couleur de bases
+                    #     type: colorpicker
                     title:
                         label: Titre
                     secteur:
@@ -81,14 +63,19 @@ tabs:
                 action: show
                 field: is_cv_option
                 condition: checked
-
-                
-
-
-        description:
-            label: description
-            type: textarea
-            tab: description
-
-        
-    
+        is_messages_lm:
+                label: Personaliser la lettre de motivation
+                type: checkbox
+                tab: Lettre motivation
+        messages_lm:
+            label: Paragraphe lettre de motivation
+            commentAbove: Vous pouvez modifier uniquement les paragraphes qui vous interessent. ordre [ Option -> Secteur -> Contact ]
+            type: repeater
+            tab: Lettre motivation
+            titleFrom: title_when_collapsed
+            prompt: Ajouter des paragraphes
+            groups: $/charles/marketing/models/secteur/repeater_fields.yaml
+            trigger:
+                action: show
+                field: is_messages_lm
+                condition: checked
