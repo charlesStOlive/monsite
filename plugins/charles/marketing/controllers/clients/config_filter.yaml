@@ -12,13 +12,13 @@ scopes:
     cv:
         label: Cv personalisé
         type: checkbox
-        default: 1
+        default: 0
         conditions: is_cv_option = true
 
     cloudi:
         label: Cloudi personalisé
         type: checkbox
-        default: 1
+        default: 0
         conditions: cloudi_id is not null
 
     # client:
