@@ -89,6 +89,17 @@ class Client extends Model
         return Cloudder::upload($filename, $publicId);
     }
 
+    /*
+    ** SCOPE
+    */
+
+    public function scopeSecteurFilter($query, $filtered)
+    {
+         return $query->whereHas('secteur', function($q) use ($filtered) {
+            $q->whereIn('id', $filtered);
+        });
+    }
+
     /**
      * GETTERS
      */

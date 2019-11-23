@@ -1,0 +1,28 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+    segments:
+        label: Filtrer par secteur
+        scope: secteurFilter
+        modelClass: Charles\Marketing\Models\Secteur
+        nameFrom: name
+
+    cv:
+        label: Cv personalisé
+        type: checkbox
+        default: 1
+        conditions: is_cv_option = true
+
+    cloudi:
+        label: Cloudi personalisé
+        type: checkbox
+        default: 1
+        conditions: cloudi_id is not null
+
+    # client:
+    #     label: A un client
+    #     type: switch
+    #     default: 2
+    #     scope: hasClientFilter
