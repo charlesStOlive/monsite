@@ -34,9 +34,9 @@ columns:
         searchable: true
         
     cloudis:
-        label: Cloudinary pictures
+        label: Images cloudi
         relation: cloudis
-        select: name
+        useRelationCount: true
     
     updated_at:
         label: MAJ

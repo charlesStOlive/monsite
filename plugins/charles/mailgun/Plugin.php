@@ -77,6 +77,9 @@ class Plugin extends PluginBase
             if (!$widget->model instanceof \Charles\Marketing\Models\Client) {
                 return;
             }
+            if($widget->isNested) {
+                return;
+            }
 
             // Add an extra cloudi field
             $widget->addTabFields([
@@ -140,7 +143,7 @@ class Plugin extends PluginBase
         return [
             'mailgun' => [
                 'label'       => 'Campagnes',
-                'url'         => Backend::url('charles/mailgun/contacts'),
+                'url'         => Backend::url('charles/marketing/clients'),
                 'icon'        => 'icon-envelope',
                 'permissions' => ['charles.mailgun.*'],
                 'order'       => 1,

@@ -12,7 +12,8 @@ Route::post('api/mg/formSubmit','Charles\Mailgun\Controllers\PostController@form
 Route::get('maker/pdfreport/{user_id}/{sendDate?}/', 'Charles\Mailgun\Controllers\PdfReportController@index');
 //
 Route::get('maker/pdfcv/{user_key}', 'Charles\Mailgun\Controllers\PdfCvController@index');
-Route::get('maker/pdflm/{user_key}', 'Charles\Mailgun\Controllers\PdfCvController@lettreMotivation');
+Route::get('maker/pdflm/{user_key}', 'Charles\Mailgun\Controllers\PdfCvController@download_lm');
+Route::get('maker/pdflms/{user_key}', 'Charles\Mailgun\Controllers\PdfCvController@stream_lm');
 Route::get('maker/pdfcvtest/{user_key}', 'Charles\Mailgun\Controllers\PdfCvController@test');
 Route::get('maker/pdfcvdownload/{user_key}', 'Charles\Mailgun\Controllers\PdfCvController@downloadCv');
 //

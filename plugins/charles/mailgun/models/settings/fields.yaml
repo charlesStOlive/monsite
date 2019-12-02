@@ -7,15 +7,14 @@ tabs:
             type: dropdown
             placeholder: choisissez un contact
             options: listContacts
-        message_motivation:
-            label: Message de motivation
-            type: textarea
-        message_linkedin:
-            label: Message linkedin
-            type: textarea
+        # message_motivation:
+        #     label: Message de motivation
+        #     type: textarea
+        # message_linkedin:
+        #     label: Message linkedin
+        #     type: textarea
         messages:
             type: repeater
-            tab: Message pré-fabriqué
             form:
                 fields:
                     id:

@@ -32,9 +32,9 @@ secondaryTabs:
             tab: CV
             form:
                 fields:
-                    color:
-                        label: Couleur de bases
-                        type: colorpicker
+                    # color:
+                    #     label: Couleur de bases
+                    #     type: colorpicker
                     title:
                         label: Titre
                     secteur:

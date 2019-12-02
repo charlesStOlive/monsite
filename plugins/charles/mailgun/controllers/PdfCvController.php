@@ -57,7 +57,7 @@ class PdfCvController {
         }
     }
 
-    public function lettreMotivation($user_key)
+    public function download_lm($user_key)
     {
         $templateCode = "lettre-de-motivation";
         $data = $this->prepareLM($user_key);
@@ -80,6 +80,35 @@ class PdfCvController {
                 ->loadTemplate($templateCode, compact('data'))
                 ->setOptions($options)
                 ->download($data['file_name']);
+
+        } catch (Exception $e) {
+            throw new ApplicationException($e->getMessage());
+        }
+    }
+
+    public function stream_lm($user_key)
+    {
+        $templateCode = "lettre-de-motivation";
+        $data = $this->prepareLM($user_key);
+        /**
+         * Construction du pdf
+         */
+        try {
+            /** @var PDFWrapper $pdf */
+            $pdf = app('dynamicpdf');
+
+            $options = [
+                'logOutputFile' => storage_path('temp/log.htm'),
+                'isRemoteEnabled' => true,
+            ];
+
+            //$data->visits()->add(new Visit(['type' => 'lm_pdf']));
+
+
+            return $pdf
+                ->loadTemplate($templateCode, compact('data'))
+                ->setOptions($options)
+                ->stream();
 
         } catch (Exception $e) {
             throw new ApplicationException($e->getMessage());

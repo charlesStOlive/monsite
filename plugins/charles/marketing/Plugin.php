@@ -64,12 +64,11 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-        return []; // Remove this line to activate
 
         return [
-            'charles.marketing.some_permission' => [
-                'tab' => 'marketing',
-                'label' => 'Some permission'
+            'charles.marketing.*' => [
+                'tab' => 'Contenus',
+                'label' => 'AUtoriser accès contenu'
             ],
         ];
     }
@@ -84,7 +83,7 @@ class Plugin extends PluginBase
 
         return [
             'marketing' => [
-                'label'       => 'Contenu',
+                'label'       => 'Contenus',
                 'url'         => Backend::url('charles/marketing/secteurs'),
                 'icon'        => 'icon-leaf',
                 'permissions' => ['charles.marketing.*'],
