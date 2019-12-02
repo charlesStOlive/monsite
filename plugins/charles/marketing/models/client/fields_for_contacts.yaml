@@ -18,11 +18,11 @@ secondaryTabs:
             imageWidth: 300
             imageHeight: 150
         base_color:
-            label: Couleur de bases
+            label: Couleur de base
             type: colorpicker
             span: auto
         is_cv_option:
-            label: Personaliser le CV
+            label: Personnaliser le CV
             type: checkbox
             tab: CV
         cv_option:
@@ -33,7 +33,7 @@ secondaryTabs:
             form:
                 fields:
                     # color:
-                    #     label: Couleur de bases
+                    #     label: Couleur de base
                     #     type: colorpicker
                     title:
                         label: Titre

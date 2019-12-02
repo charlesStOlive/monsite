@@ -9,7 +9,7 @@ list: $/charles/mailgun/models/contact/columns.yaml
 modelClass: Charles\Mailgun\Models\Contact
 
 # List Title
-title: Manage Contacts
+title: Manage Contact
 
 # Link URL for each record
 recordUrl: charles/mailgun/contacts/update/:id

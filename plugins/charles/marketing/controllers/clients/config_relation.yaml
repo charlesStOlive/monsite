@@ -4,7 +4,7 @@
 
 
 contacts:
-    label: Contacts
+    label: Contact
     view:
         list: $/charles/mailgun/models/contact/columns.yaml
         toolbarButtons: add|create|delete

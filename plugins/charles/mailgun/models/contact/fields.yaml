@@ -6,17 +6,17 @@ tabs:
     defaultTab: Accueil
     fields:
         name:
-            label: prenomou titre
+            label: Prénom ou titre
             span: auto
 
         fname:
             label: Nom de famille
             span: auto
 
-        strict:
-            label: Utiliser la version stricte
-            type: checkbox
-            default: 1
+        # strict:
+        #     label: Utiliser la version stricte
+        #     type: checkbox
+        #     default: 1
 
         email:
             label: email

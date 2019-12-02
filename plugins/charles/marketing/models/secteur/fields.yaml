@@ -21,7 +21,7 @@ tabs:
             type: richeditor
             size: huge
         is_cv_option:
-                label: Personaliser le CV
+                label: Personnaliser le CV
                 type: checkbox
                 tab: CV
         cv_option:
@@ -33,7 +33,7 @@ tabs:
             form:
                 fields:
                     # color:
-                    #     label: Couleur de bases
+                    #     label: Couleur de base
                     #     type: colorpicker
                     title:
                         label: Titre
@@ -64,7 +64,7 @@ tabs:
                 field: is_cv_option
                 condition: checked
         is_messages_lm:
-                label: Personaliser la lettre de motivation
+                label: Personnaliser la lettre de motivation
                 type: checkbox
                 tab: Lettre motivation
         messages_lm:

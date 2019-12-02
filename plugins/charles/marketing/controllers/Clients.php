@@ -75,7 +75,7 @@ class Clients extends Controller
         if($colors) $availableColors = $colors;
         $form->addTabFields([
             'base_color' => [
-                'label'=> 'Couleur de bases',
+                'label'=> 'Couleur de base',
                 'type'=> 'colorpicker',
                 'span'=> 'auto',
                 'availableColors'=> $availableColors,

@@ -6,16 +6,17 @@ tabs:
     defaultTab: Accueil
     fields:
         name:
-            label: nom de l'entreprise
+            label: Nom de l'entreprise
             span: auto
         slug:
             label: Slug
             preset: name
             span: auto
         secteur:
+            label: Secteur d'activité
             type: relation
             selectFrom: name
-            placeholder: --select Secteur--
+            default: 1
         logo:
             label: logo du client
             type: mediafinder
@@ -24,11 +25,10 @@ tabs:
             imageWidth: 300
             imageHeight: 150
         # base_color:
-        #     label: Couleur de bases
+        #     label: Couleur de base
         #     type: colorpicker
         #     span: auto
         #     availableColors: ['#000000', '#ff0000']
-
         contacts@update:
             type: partial
             path: field_contacts
@@ -40,7 +40,7 @@ tabs:
         #     tab: Cloudinaries
         
         is_cv_option:
-            label: Personaliser le CV
+            label: Personnaliser le CV
             type: checkbox
             tab: CV
         cv_option:
@@ -51,7 +51,7 @@ tabs:
             form:
                 fields:
                     # color:
-                    #     label: Couleur de bases
+                    #     label: Couleur de base
                     #     type: colorpicker
                     title:
                         label: Titre
@@ -86,9 +86,9 @@ tabs:
 
 
         description:
-            label: description
+            label: Information sup
             type: textarea
-            tab: description
+            tab: Info
 
         
     

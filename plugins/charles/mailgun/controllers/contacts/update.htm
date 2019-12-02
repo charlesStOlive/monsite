@@ -15,17 +15,16 @@
         data-hotkey="ctrl+i, cmd+i">
         Dupliquer
     </button>
-    
-    
+
+
     <!-- <button class="btn btn-primary oc-icon-file-pdf-o" data-request="onLoadClient"
         data-request-data="id:<?=$this->params[0];?>" data-size="large">
         Fiche client
-    </button> --> 
-<button href="javascript:;" class="btn btn-primary oc-icon-pencil"
-        data-request-data="id:<?= $this->params[0] ?>" data-control="popup" data-handler="onLoadActionExportForm"
-        data-hotkey="ctrl+i, cmd+i">
+    </button> -->
+    <button href="javascript:;" class="btn btn-primary oc-icon-pencil" data-request-data="id:<?= $this->params[0] ?>"
+        data-control="popup" data-handler="onLoadActionExportForm" data-hotkey="ctrl+i, cmd+i">
         Actions
-</button>
+    </button>
 
 
 
@@ -39,22 +38,22 @@
     <div class="loading-indicator-container">
         <button type="submit" data-request="onSave" data-request-data="redirect:0" data-hotkey="ctrl+s, cmd+s"
             data-load-indicator="Saving Contact..." class="btn btn-primary">
-            <u>S</u>ave
+            <u>S</u>auver
         </button>
         <button type="button" data-request="onSave" data-request-data="close:1" data-hotkey="ctrl+enter, cmd+enter"
             data-load-indicator="Saving Contact..." class="btn btn-default">
-            Save and Close
+            Sauver & fermer
         </button>
-        <button type="button" class="btn btn-primary" data-request="onCreateUniqueContactImage" data-request-data="id:<?= $this->params[0] ?>"
-            data-load-indicator="Creating picture...">
+        <button type="button" class="btn btn-primary" data-request="onCreateUniqueContactImage"
+            data-request-data="id:<?= $this->params[0] ?>" data-load-indicator="Creating picture...">
             Creer les images
         </button>
         <button type="button" class="oc-icon-trash-o btn-icon danger pull-right" data-request="onDelete"
             data-load-indicator="Deleting Contact..." data-request-confirm="Delete this contact?">
         </button>
-        
+
         <span class="btn-text">
-            or <a href="<?= Backend::url('charles/mailgun/contacts') ?>">Cancel</a>
+            ou <a href="<?= Backend::url('charles/mailgun/contacts') ?>">Abdn</a>
         </span>
     </div>
 </div>
@@ -64,6 +63,6 @@
 <?php else: ?>
 
 <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-<p><a href="<?= Backend::url('charles/mailgun/contacts') ?>" class="btn btn-default">Return to contacts list</a></p>
+<p><a href="<?= Backend::url('charles/mailgun/contacts') ?>" class="btn btn-default">Retour liste</a></p>
 
 <?php endif ?>

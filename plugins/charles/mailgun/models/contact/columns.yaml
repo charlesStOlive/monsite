@@ -4,25 +4,24 @@
 
 columns:
     email:
-        label: email
+        label: E-mail
 
     campaigns:
-      clickable: false
-      searchable: false
-      sortable: false
-      type: 'partial'
-      path: "$/charles/mailgun/widget/_sendUnique.htm"
+        label: Actions
+        clickable: false
+        searchable: false
+        sortable: false
+        width: 50px
+        type: 'partial'
+        path: "$/charles/mailgun/widget/_sendUnique.htm"
     
     name:
-        label: Prenom ( bonjour xxx )
+        label: Prenom / Titre
         searchable: true
 
     fname:
         label: Nom
         searchable: true
-    
-    key:
-        label: personal key
 
     # cv_existe:
     #     label: CV existe
@@ -37,9 +36,12 @@ columns:
         label: Images cloudi
         relation: cloudis
         useRelationCount: true
+
+    key:
+        label: Clé publique
     
     updated_at:
         label: MAJ
-        type: timesince
+        type: timetense
 
     

@@ -6,20 +6,20 @@ tabs:
     defaultTab: Accueil
     fields:
         name:
-            label: prenomou titre
+            label: Prénom ou titre
             span: auto
 
         fname:
             label: Nom de famille
             span: auto
 
-        strict:
-            label: Utiliser la version stricte
-            type: checkbox
-            default: 1
+        # strict:
+        #     label: Utiliser la version stricte
+        #     type: checkbox
+        #     default: 1
 
-        email:
-            label: email
+        E-mail:
+            label: E-mail
             span: auto
 
         segments:
@@ -30,17 +30,17 @@ tabs:
             nameFrom: name
             span: auto
 
-        show_intro: 
-            label: Utiliser l'intro commune du mail.
-            default: true
-            type: checkbox
-            tab: email
+        # show_intro: 
+        #     label: Utiliser l'intro commune du mail.
+        #     default: true
+        #     type: checkbox
+        #     tab: email
 
-        show_message_perso:
-            label: Mettre un message perso 
-            default: false
-            type: checkbox
-            tab: email
+        # show_message_perso:
+        #     label: Mettre un message perso 
+        #     default: false
+        #     type: checkbox
+        #     tab: email
 
         message_perso:
             type: repeater
@@ -56,15 +56,15 @@ tabs:
                 field: show_message_perso
                 condition: checked
 
-        target:
-            type: relation
-            tab: Relations
-            selectFrom: name
-            placeholder: --select Target--
+        # target:
+        #     type: relation
+        #     tab: Personnalisation des contenus
+        #     selectFrom: name
+        #     placeholder: --select Target--
 
         projects:
             label: Projets
-            tab: Relations
+            tab: Personnalisation des contenus
             type: taglist
             mode: relation
             customTags: false
@@ -72,7 +72,7 @@ tabs:
 
         missions:
             label: Missions
-            tab: Relations
+            tab: Personnalisation des contenus
             type: taglist
             mode: relation
             customTags: false
@@ -80,7 +80,7 @@ tabs:
 
         moas:
             label: Moas
-            tab: Relations
+            tab: Personnalisation des contenus
             type: taglist
             mode: relation
             customTags: false
@@ -88,7 +88,7 @@ tabs:
         cloudis@update:
             type: partial
             path: field_cloudis
-            tab: Relations
+            tab: Personnalisation des contenus
 
         
 

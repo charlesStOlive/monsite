@@ -10,13 +10,13 @@ scopes:
         nameFrom: name
 
     cv:
-        label: Cv personalisé
+        label: Cv Personnalisé
         type: checkbox
         default: 0
         conditions: is_cv_option = true
 
     cloudi:
-        label: Cloudi personalisé
+        label: Cloudi Personnalisé
         type: checkbox
         default: 0
         conditions: cloudi_id is not null

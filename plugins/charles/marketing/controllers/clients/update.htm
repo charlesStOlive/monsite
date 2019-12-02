@@ -1,39 +1,29 @@
 <?php Block::put('breadcrumb') ?>
-    <ul>
-        <li><a href="<?= Backend::url('charles/marketing/clients') ?>">Clients</a></li>
-        <li><?= e($this->pageTitle) ?></li>
-    </ul>
+<ul>
+    <li><a href="<?= Backend::url('charles/marketing/clients') ?>">Clients</a></li>
+    <li><?= e($this->pageTitle) ?></li>
+</ul>
 <?php Block::endPut() ?>
 
 <?php if (!$this->fatalError): ?>
 
-    <?= Form::open(['class' => 'layout']) ?>
+<?= Form::open(['class' => 'layout']) ?>
 
-        <div class="layout-row">
-            <?= $this->formRender() ?>
-        </div>
+<div class="layout-row">
+    <?= $this->formRender() ?>
+</div>
 
-        <div class="form-buttons">
-            <div class="loading-indicator-container">
-                <button
-                    type="submit"
-                    data-request="onSave"
-                    data-request-data="redirect:0"
-                    data-hotkey="ctrl+s, cmd+s"
-                    data-load-indicator="Saving Client..."
-                    class="btn btn-primary">
-                    <u>S</u>ave
-                </button>
-                <button
-                    type="button"
-                    data-request="onSave"
-                    data-request-data="close:1"
-                    data-hotkey="ctrl+enter, cmd+enter"
-                    data-load-indicator="Saving Client..."
-                    class="btn btn-default">
-                    Save and Close
-                </button>
-                <!-- <button
+<div class="form-buttons">
+    <div class="loading-indicator-container">
+        <button type="submit" data-request="onSave" data-request-data="redirect:0" data-hotkey="ctrl+s, cmd+s"
+            data-load-indicator="Saving Client..." class="btn btn-primary">
+            <u>S</u>auver
+        </button>
+        <button type="button" data-request="onSave" data-request-data="close:1" data-hotkey="ctrl+enter, cmd+enter"
+            data-load-indicator="Saving Client..." class="btn btn-default">
+            Sauver & fermer
+        </button>
+        <!-- <button
                     href="javascript:;"
                     data-handler="onTestClientImage"
                     data-request-data="id:<?= $this->params[0] ?>"
@@ -43,46 +33,33 @@
                 </button>
                 <a  class="btn btn-secondary oc-icon-files-o " 
                 href="<?= Backend::url('charles/marketing/clients/createClientImage/'.$this->params[0]) ?>">Creer Picture</a> -->
-                <!--
+        <!--
                     j'ai enlevé data-handler
                     data-handler="onTest"
                 -->
-                <button
-                    type="submit"
-                    data-request="onUploadCloudinary"
-                    data-hotkey="ctrl+u, cmd+u"
-                    data-request-data="id:<?= $this->params[0] ?>"
-                    data-load-indicator="Test..."
-                    class="btn btn-primary">
-                    Re<u>U</u>pload ( sauver avant la fiche )
-                </button>
-                <button
-                    href="javascript:;"
-                    data-handler="onAutoCreateContact"
-                    data-control="popup"
-                    data-request-data="id:<?= $this->params[0] ?>"
-                    class="btn btn-primary">
-                    Auto Create contact
-                <button
-                    type="submit"
-                    data-request="onFindColors"
-                    data-hotkey="ctrl+u, cmd+u"
-                    data-request-data="id:<?= $this->params[0] ?>"
-                    data-load-indicator="Nous recherchons les couleurs du logo."
-                    class="btn btn-primary">
-                    Trouver couleurs
-                </button>
-                <span class="btn-text">
-                    or <a href="<?= Backend::url('charles/marketing/clients') ?>">Cancel</a>
-                </span>
-            </div>
-        </div>
+        <button type="submit" data-request="onUploadCloudinary" data-hotkey="ctrl+u, cmd+u"
+            data-request-data="id:<?= $this->params[0] ?>" data-load-indicator="Test..." class="btn btn-primary">
+            Re<u>U</u>pload ( sauver avant la fiche )
+        </button>
+        <button href="javascript:;" data-handler="onAutoCreateContact" data-control="popup"
+            data-request-data="id:<?= $this->params[0] ?>" class="btn btn-primary">
+            Contacts <b>auto</b>
+            <button type="submit" data-request="onFindColors" data-hotkey="ctrl+u, cmd+u"
+                data-request-data="id:<?= $this->params[0] ?>"
+                data-load-indicator="Nous recherchons les couleurs du logo." class="btn btn-primary">
+                Trouver couleurs
+            </button>
+            <span class="btn-text">
+                ou <a href="<?= Backend::url('charles/marketing/clients') ?>">Abdn</a>
+            </span>
+    </div>
+</div>
 
-    <?= Form::close() ?>
+<?= Form::close() ?>
 
 <?php else: ?>
 
-    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-    <p><a href="<?= Backend::url('charles/marketing/clients') ?>" class="btn btn-default">Return to clients list</a></p>
+<p class="flash-message static error"><?= e($this->fatalError) ?></p>
+<p><a href="<?= Backend::url('charles/marketing/clients') ?>" class="btn btn-default">Retour liste</a></p>
 
 <?php endif ?>

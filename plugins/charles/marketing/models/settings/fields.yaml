@@ -20,7 +20,7 @@ tabs:
             label: cv pdf fixe
             type: mediafinder
         base_color:
-            label: Couleur de bases
+            label: Couleur de base
             type: colorpicker
         cv_option:
             label: Option du cv
