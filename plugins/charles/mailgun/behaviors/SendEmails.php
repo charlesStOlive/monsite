@@ -110,15 +110,16 @@ class SendEmails extends ControllerBehavior
         $dataCampaign = Campaign::with('picture')->find(post('id'))->toArray();
         $emailTest = $data['emailTest'];
 
-
-        foreach($data['contacts'] as $idContact) {
+        $contacts = new \October\Rain\Support\Collection($data['contacts']);
+        $contacts = $contacts->pluck('id');
+        foreach($contacts as $contactId) {
             //fonction email
-            $this->sendEmail($idContact, $dataCampaign, $emailTest);
+            $this->sendEmail($contactId, $dataCampaign, $emailTest);
         }
 
         Flash::info("le(s) email(s) de test sont partis ! ");
-
-        return Redirect::refresh();
+        return true;
+        //return Redirect::refresh();
     }
 
      // Envoi d'une campagne d'emailings (2)
@@ -169,8 +170,9 @@ class SendEmails extends ControllerBehavior
         $idContact = post('id');
         $dataCampaign = Campaign::find($data['sent_campaign']);
         $addPj = $data['add_pj'];
-
-        $this->sendEmail($idContact, $dataCampaign, null, $addPj );
+        $emailTest = null;
+        if($data['is_test']) $emailTest = $data['emailTest'];
+        $this->sendEmail($idContact, $dataCampaign, $emailTest, $addPj );
 
         Flash::info("L'email  a bien été envoyé ");
         return Redirect::refresh();

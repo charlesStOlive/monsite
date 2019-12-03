@@ -8,6 +8,19 @@ fields:
       type: dropdown
       nameFrom: name
     
+    is_test:
+      label: Tester l'email sur adresse perso
+      type: checkbox
+      default: false
+    
+    emailTest:
+        label: Email de test 
+        default: charles.stolive@gmail.com
+        trigger:
+          action: show
+          field: is_test
+          condition: checked
+    
     add_pj:
       label: Mettre le CV
       type: checkbox

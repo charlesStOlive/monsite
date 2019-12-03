@@ -132,9 +132,23 @@ class Campaign extends Model
     }
     //
     //
+    /**
+     * LISTS
+     */
     //
     public function listCloudinaris($fieldName, $value, $formData)
     {
         return Cloudi::lists('name', 'name');
+    }
+
+    public function listContacts($fieldName, $value, $formData)
+    {
+        $contacts =  Contact::HasClientFilter(2)->get();
+        $list = new \October\Rain\Support\Collection();
+        foreach($contacts as $contact) {
+            $list->put($contact->id,  $contact->name.' '.$contact->fname.' || '.$contact->client->name);
+
+        }
+        return $list;
     }
 }

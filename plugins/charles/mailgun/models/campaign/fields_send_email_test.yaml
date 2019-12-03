@@ -8,9 +8,22 @@ fields:
         label: Email de test 
         default: charles.stolive@gmail.com
 
+    # contacts:
+    #   label: Choisissez jusqu'à 4 contacts
+    #   type: taglist
+    #   mode: array
+    #   options: listContacts
+
     contacts:
-      label: Choisissez jusqu'à 4 contacts
-      type: taglist
-      mode: relation
-      nameFrom: fname
+        label: Simulez les contacts suivants
+        type: repeater
+        prompt: Ajouter un contact
+        titleFrom: title_when_collapsed
+        form:
+            fields:
+                id:
+                    label: Nom ou Société
+                    type: dropdown
+                    options: listContacts
+
     
