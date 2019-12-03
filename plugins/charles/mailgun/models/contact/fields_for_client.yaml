@@ -18,7 +18,7 @@ tabs:
         #     type: checkbox
         #     default: 1
 
-        E-mail:
+        email:
             label: E-mail
             span: auto
 
